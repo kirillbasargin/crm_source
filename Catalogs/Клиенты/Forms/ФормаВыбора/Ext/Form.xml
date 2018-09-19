@@ -1,0 +1,404 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.6">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoTitle>false</AutoTitle>
+	<CommandSet>
+		<ExcludedCommand>Copy</ExcludedCommand>
+		<ExcludedCommand>Create</ExcludedCommand>
+		<ExcludedCommand>CreateFolder</ExcludedCommand>
+	</CommandSet>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ФормаВыбрать" id="36">
+				<Type>CommandBarButton</Type>
+				<Representation>PictureAndText</Representation>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Item.Клиенты.StandardCommand.Choose</CommandName>
+				<ExtendedTooltip name="ФормаВыбратьРасширеннаяПодсказка" id="37"/>
+			</Button>
+			<Button name="ФормаСоздать" id="34">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.СоздатьКлиента</CommandName>
+				<ExtendedTooltip name="ФормаСоздатьРасширеннаяПодсказка" id="35"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаПанельПоиска" id="38">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа панель поиска</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа панель поиска</v8:content>
+				</v8:item>
+			</ToolTip>
+			<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаПанельПоискаРасширеннаяПодсказка" id="39"/>
+			<ChildItems>
+				<CheckBoxField name="РежимПоиска" id="50">
+					<DataPath>РежимПоиска</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<CheckBoxType>Tumbler</CheckBoxType>
+					<EditFormat>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>БЛ=Телефон; БИ=ФИО</v8:content>
+						</v8:item>
+					</EditFormat>
+					<ContextMenu name="РежимПоискаКонтекстноеМеню" id="51"/>
+					<ExtendedTooltip name="РежимПоискаРасширеннаяПодсказка" id="52"/>
+					<Events>
+						<Event name="OnChange">РежимПоискаПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+				<UsualGroup name="Группа1" id="62">
+					<HorizontalSpacing>Half</HorizontalSpacing>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="63"/>
+					<ChildItems>
+						<InputField name="ПолеПоиска" id="53">
+							<DataPath>ПолеПоиска</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<ContextMenu name="ПолеПоискаКонтекстноеМеню" id="54"/>
+							<ExtendedTooltip name="ПолеПоискаРасширеннаяПодсказка" id="55"/>
+							<Events>
+								<Event name="OnChange">ПолеПоискаПриИзменении</Event>
+								<Event name="EditTextChange">ПолеПоискаИзменениеТекстаРедактирования</Event>
+								<Event name="TextEditEnd">ПолеПоискаОкончаниеВводаТекста</Event>
+							</Events>
+						</InputField>
+						<Button name="ВыполнитьПоиск" id="46">
+							<Type>UsualButton</Type>
+							<CommandName>Form.Command.ВыполнитьПоиск</CommandName>
+							<ExtendedTooltip name="ВыполнитьПоискРасширеннаяПодсказка" id="47"/>
+						</Button>
+						<Button name="СброситьПоиск" id="48">
+							<Type>UsualButton</Type>
+							<Height>1</Height>
+							<CommandName>Form.Command.СброситьПоиск</CommandName>
+							<ExtendedTooltip name="СброситьПоискРасширеннаяПодсказка" id="49"/>
+						</Button>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="СписокКомпоновщикНастроекПользовательскиеНастройки" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа пользовательских настроек</v8:content>
+				</v8:item>
+			</Title>
+			<VerticalStretch>false</VerticalStretch>
+			<Group>Vertical</Group>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="СписокКомпоновщикНастроекПользовательскиеНастройкиРасширеннаяПодсказка" id="2"/>
+		</UsualGroup>
+		<Table name="Клиенты" id="3">
+			<CommandBarLocation>None</CommandBarLocation>
+			<DefaultItem>true</DefaultItem>
+			<ChoiceMode>true</ChoiceMode>
+			<UseAlternationRowColor>true</UseAlternationRowColor>
+			<InitialTreeView>ExpandTopLevel</InitialTreeView>
+			<Output>Disable</Output>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>Клиенты</DataPath>
+			<RowPictureDataPath>Клиенты.DefaultPicture</RowPictureDataPath>
+			<AutoRefresh>false</AutoRefresh>
+			<AutoRefreshPeriod>60</AutoRefreshPeriod>
+			<Period>
+				<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+				<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+				<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+			</Period>
+			<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+			<RestoreCurrentRow>false</RestoreCurrentRow>
+			<TopLevelParent xsi:nil="true"/>
+			<ShowRoot>true</ShowRoot>
+			<AllowRootChoice>false</AllowRootChoice>
+			<UpdateOnDataChange>Auto</UpdateOnDataChange>
+			<UserSettingsGroup>СписокКомпоновщикНастроекПользовательскиеНастройки</UserSettingsGroup>
+			<ContextMenu name="КлиентыКонтекстноеМеню" id="4"/>
+			<AutoCommandBar name="КлиентыКоманднаяПанель" id="5">
+				<Autofill>false</Autofill>
+			</AutoCommandBar>
+			<ExtendedTooltip name="КлиентыРасширеннаяПодсказка" id="6"/>
+			<SearchStringAddition name="КлиентыСтрокаПоиска" id="7">
+				<AdditionSource>
+					<Item>Клиенты</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="КлиентыСтрокаПоискаКонтекстноеМеню" id="8"/>
+				<ExtendedTooltip name="КлиентыСтрокаПоискаРасширеннаяПодсказка" id="9"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="КлиентыСостояниеПросмотра" id="10">
+				<AdditionSource>
+					<Item>Клиенты</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="КлиентыСостояниеПросмотраКонтекстноеМеню" id="11"/>
+				<ExtendedTooltip name="КлиентыСостояниеПросмотраРасширеннаяПодсказка" id="12"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="КлиентыУправлениеПоиском" id="13">
+				<AdditionSource>
+					<Item>Клиенты</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="КлиентыУправлениеПоискомКонтекстноеМеню" id="14"/>
+				<ExtendedTooltip name="КлиентыУправлениеПоискомРасширеннаяПодсказка" id="15"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="Ссылка" id="16">
+					<DataPath>~Клиенты.Ref</DataPath>
+					<Visible>false</Visible>
+					<DefaultItem>true</DefaultItem>
+					<ContextMenu name="СсылкаКонтекстноеМеню" id="17"/>
+					<ExtendedTooltip name="СсылкаРасширеннаяПодсказка" id="18"/>
+				</LabelField>
+				<LabelField name="ФИО" id="22">
+					<DataPath>Клиенты.ФИО</DataPath>
+					<DefaultItem>true</DefaultItem>
+					<ContextMenu name="ФИОКонтекстноеМеню" id="23"/>
+					<ExtendedTooltip name="ФИОРасширеннаяПодсказка" id="24"/>
+				</LabelField>
+				<LabelField name="ТипКлиента" id="25">
+					<DataPath>Клиенты.ТипКлиента</DataPath>
+					<Visible>false</Visible>
+					<DefaultItem>true</DefaultItem>
+					<ContextMenu name="ТипКлиентаКонтекстноеМеню" id="26"/>
+					<ExtendedTooltip name="ТипКлиентаРасширеннаяПодсказка" id="27"/>
+				</LabelField>
+				<LabelField name="ОсновнойТелефон" id="28">
+					<DataPath>Клиенты.ОсновнойТелефон</DataPath>
+					<DefaultItem>true</DefaultItem>
+					<ContextMenu name="ОсновнойТелефонКонтекстноеМеню" id="29"/>
+					<ExtendedTooltip name="ОсновнойТелефонРасширеннаяПодсказка" id="30"/>
+				</LabelField>
+				<CheckBoxField name="ВИП" id="31">
+					<DataPath>Клиенты.ВИП</DataPath>
+					<DefaultItem>true</DefaultItem>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ВИПКонтекстноеМеню" id="32"/>
+					<ExtendedTooltip name="ВИПРасширеннаяПодсказка" id="33"/>
+				</CheckBoxField>
+				<LabelField name="Телефоны" id="56">
+					<DataPath>Клиенты.Телефоны</DataPath>
+					<Visible>false</Visible>
+					<ContextMenu name="ТелефоныКонтекстноеМеню" id="57"/>
+					<ExtendedTooltip name="ТелефоныРасширеннаяПодсказка" id="58"/>
+				</LabelField>
+				<LabelField name="Email" id="59">
+					<DataPath>Клиенты.Email</DataPath>
+					<Visible>false</Visible>
+					<ContextMenu name="EmailКонтекстноеМеню" id="60"/>
+					<ExtendedTooltip name="EmailРасширеннаяПодсказка" id="61"/>
+				</LabelField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Клиенты" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Клиенты</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<UseAlways>
+				<Field>Клиенты.Ссылка</Field>
+				<Field>Клиенты.Телефоны</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ
+	СправочникКлиенты.Ссылка КАК Ссылка,
+	СправочникКлиенты.ПометкаУдаления КАК ПометкаУдаления,
+	СправочникКлиенты.Родитель КАК Родитель,
+	СправочникКлиенты.ЭтоГруппа КАК ЭтоГруппа,
+	СправочникКлиенты.Код КАК Код,
+	СправочникКлиенты.Наименование КАК Наименование,
+	СправочникКлиенты.ФИО КАК ФИО,
+	СправочникКлиенты.ТипКлиента КАК ТипКлиента,
+	СправочникКлиенты.МестоРождения КАК МестоРождения,
+	СправочникКлиенты.ДатаРождения КАК ДатаРождения,
+	СправочникКлиенты.Пол КАК Пол,
+	СправочникКлиенты.Брокер КАК Брокер,
+	СправочникКлиенты.ОсновнойТелефон КАК ОсновнойТелефон,
+	СправочникКлиенты.НеЗвонить КАК НеЗвонить,
+	СправочникКлиенты.НеРассылатьСМС КАК НеРассылатьСМС,
+	СправочникКлиенты.НеРассылатьПочту КАК НеРассылатьПочту,
+	СправочникКлиенты.Комментарий КАК Комментарий,
+	СправочникКлиенты.Ответственный КАК Ответственный,
+	СправочникКлиенты.Автор КАК Автор,
+	СправочникКлиенты.ИНН КАК ИНН,
+	СправочникКлиенты.ИННВведенКорректно КАК ИННВведенКорректно,
+	СправочникКлиенты.КПП КАК КПП,
+	СправочникКлиенты.КППВведенКорректно КАК КППВведенКорректно,
+	СправочникКлиенты.ВИП КАК ВИП,
+	СправочникКлиенты.GUID КАК GUID,
+	СправочникКлиенты.Предопределенный КАК Предопределенный,
+	СправочникКлиенты.ИмяПредопределенныхДанных КАК ИмяПредопределенныхДанных,
+	ЕСТЬNULL(КлиентыКонтактнаяИнформация.Телефоны, "") КАК Телефоны,
+	ЕСТЬNULL(КлиентыКонтактнаяИнформация.Email, "") КАК Email
+ИЗ
+	Справочник.Клиенты КАК СправочникКлиенты
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.КлиентыКонтактнаяИнформация КАК КлиентыКонтактнаяИнформация
+		ПО (КлиентыКонтактнаяИнформация.Клиент = СправочникКлиенты.Ссылка)
+{ГДЕ
+	(КлиентыКонтактнаяИнформация.Телефоны ПОДОБНО &amp;Телефоны),
+	(СправочникКлиенты.ФИО ПОДОБНО &amp;ФИО)}</QueryText>
+				<MainTable>Catalog.Клиенты</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="ПолеПоиска" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Поиск</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="РежимПоиска" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Режим поиска</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СозданиеКлиентаИзЗапроса" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создание клиента из запроса</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="СоздатьКлиента" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать клиента</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать клиента</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CreateListItem</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СоздатьКлиента</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ВыполнитьПоиск" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполнить поиск</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполнить поиск</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Find</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ВыполнитьПоиск</Action>
+			<Representation>Picture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="СброситьПоиск" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сбросить поиск</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сбросить поиск</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CancelSearch</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СброситьПоиск</Action>
+			<Representation>Picture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="ОсновнойТелефон">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<KeyParameter>true</KeyParameter>
+		</Parameter>
+	</Parameters>
+</Form>

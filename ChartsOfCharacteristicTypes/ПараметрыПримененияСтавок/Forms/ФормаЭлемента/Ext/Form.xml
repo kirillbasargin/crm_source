@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.6">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<ChildItems>
+		<InputField name="Код" id="1">
+			<DataPath>Объект.Code</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="КодКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="КодРасширеннаяПодсказка" id="3"/>
+		</InputField>
+		<InputField name="Наименование" id="4">
+			<DataPath>Объект.Description</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="НаименованиеКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="6"/>
+		</InputField>
+		<UsualGroup name="Группа1" id="19">
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="20"/>
+			<ChildItems>
+				<InputField name="ТипЗначения" id="7">
+					<DataPath>Объект.ValueType</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТипЗначенияКонтекстноеМеню" id="8"/>
+					<ExtendedTooltip name="ТипЗначенияРасширеннаяПодсказка" id="9"/>
+				</InputField>
+				<CheckBoxField name="Диапазон" id="21">
+					<DataPath>Объект.Диапазон</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ДиапазонКонтекстноеМеню" id="22"/>
+					<ExtendedTooltip name="ДиапазонРасширеннаяПодсказка" id="23"/>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="Группа2" id="30">
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="31"/>
+			<ChildItems>
+				<InputField name="ЗначениеДа" id="24">
+					<DataPath>Объект.ЗначениеДа</DataPath>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ChoiceForm>Catalog.ПараметрыПримененияСтавок_Значения.Form.ФормаВыбораОдноЗначение</ChoiceForm>
+					<ChoiceParameterLinks>
+						<xr:Link>
+							<xr:Name>Отбор.Владелец</xr:Name>
+							<xr:DataPath xsi:type="xs:string">Объект.Ref</xr:DataPath>
+							<xr:ValueChange>Clear</xr:ValueChange>
+						</xr:Link>
+					</ChoiceParameterLinks>
+					<ContextMenu name="ЗначениеДаКонтекстноеМеню" id="25"/>
+					<ExtendedTooltip name="ЗначениеДаРасширеннаяПодсказка" id="26"/>
+				</InputField>
+				<InputField name="ЗначениеНет" id="27">
+					<DataPath>Объект.ЗначениеНет</DataPath>
+					<ChoiceForm>Catalog.ПараметрыПримененияСтавок_Значения.Form.ФормаВыбораОдноЗначение</ChoiceForm>
+					<ChoiceParameterLinks>
+						<xr:Link>
+							<xr:Name>Отбор.Владелец</xr:Name>
+							<xr:DataPath xsi:type="xs:string">Объект.Ref</xr:DataPath>
+							<xr:ValueChange>Clear</xr:ValueChange>
+						</xr:Link>
+					</ChoiceParameterLinks>
+					<ContextMenu name="ЗначениеНетКонтекстноеМеню" id="28"/>
+					<ExtendedTooltip name="ЗначениеНетРасширеннаяПодсказка" id="29"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="МетаданныеИмя" id="10">
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="МетаданныеИмяКонтекстноеМеню" id="11"/>
+			<ExtendedTooltip name="МетаданныеИмяРасширеннаяПодсказка" id="12"/>
+		</InputField>
+		<InputField name="ИмяПоляКомпановки" id="13">
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ИмяПоляКомпановкиКонтекстноеМеню" id="14"/>
+			<ExtendedTooltip name="ИмяПоляКомпановкиРасширеннаяПодсказка" id="15"/>
+		</InputField>
+		<InputField name="МетаданныеПолныйПуть" id="16">
+			<ContextMenu name="МетаданныеПолныйПутьКонтекстноеМеню" id="17"/>
+			<ExtendedTooltip name="МетаданныеПолныйПутьРасширеннаяПодсказка" id="18"/>
+		</InputField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:ChartOfCharacteristicTypesObject.ПараметрыПримененияСтавок</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+</Form>

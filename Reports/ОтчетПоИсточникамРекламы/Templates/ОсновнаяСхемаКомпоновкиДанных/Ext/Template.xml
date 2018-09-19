@@ -1,0 +1,1124 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанныхВстреча</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПериодВстреча</dataPath>
+			<field>Период</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Период </v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ДФ='dd.MM.yyyy'</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">5</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВзаимодействиеВстреча</dataPath>
+			<field>Взаимодействие</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Взаимодействие </v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+					<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПроектВстреча</dataPath>
+			<field>Проект</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проект</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИсточникПриходаКлиентаВстреча</dataPath>
+			<field>ИсточникПриходаКлиента</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Источник прихода клиента</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РасшифровкаИсточникаПриходаВстреча</dataPath>
+			<field>РасшифровкаИсточникаПрихода</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Расшифровка источника прихода </v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	СоответствиеГруппПользователейОфисам.ГруппаПользователей.Родитель КАК ГруппаПользователей,
+	СоответствиеГруппПользователейОфисам.Офис КАК Офис,
+	СоответствиеГруппПользователейОфисам.Проект КАК Проект
+ПОМЕСТИТЬ вт_СоответствиеОфисов
+ИЗ
+	РегистрСведений.СоответствиеГруппПользователейОфисам КАК СоответствиеГруппПользователейОфисам
+ГДЕ
+	СоответствиеГруппПользователейОфисам.ГруппаПользователей.Родитель.Наименование В ("Филиал", "Земля Розница", "Земля опт", "Коммерческая Недвижимость", "Центральный офис")
+{ГДЕ
+	СоответствиеГруппПользователейОфисам.Проект.*}
+
+СГРУППИРОВАТЬ ПО
+	СоответствиеГруппПользователейОфисам.ГруппаПользователей.Родитель,
+	СоответствиеГруппПользователейОфисам.Офис,
+	СоответствиеГруппПользователейОфисам.Проект
+
+ИНДЕКСИРОВАТЬ ПО
+	ГруппаПользователей,
+	Офис,
+	Проект
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВЫБОР
+		КОГДА Взаимодействия.Взаимодействие ССЫЛКА Документ.Встреча
+			ТОГДА ВЫРАЗИТЬ(Взаимодействия.Взаимодействие КАК Документ.Встреча)
+		КОГДА Взаимодействия.Взаимодействие ССЫЛКА Документ.ТелефонныйЗвонок
+			ТОГДА ВЫРАЗИТЬ(Взаимодействия.Взаимодействие КАК Документ.ТелефонныйЗвонок)
+		ИНАЧЕ НЕОПРЕДЕЛЕНО
+	КОНЕЦ КАК Взаимодействие,
+	Взаимодействия.ДатаВзаимодействия КАК ДатаВзаимодействия
+ПОМЕСТИТЬ вт_СписокВзаимодействий
+ИЗ
+	РегистрСведений.Взаимодействия КАК Взаимодействия
+ГДЕ
+	Взаимодействия.ДатаВзаимодействия МЕЖДУ &amp;ДатаНачало И &amp;ДатаКонец
+	И (Взаимодействия.ГруппаОтветственного, Взаимодействия.Офис, Взаимодействия.Проект) В
+			(ВЫБРАТЬ
+				вт_СоответствиеОфисов.ГруппаПользователей КАК ГруппаПользователей,
+				вт_СоответствиеОфисов.Офис КАК Офис,
+				вт_СоответствиеОфисов.Проект КАК Проект
+			ИЗ
+				вт_СоответствиеОфисов КАК вт_СоответствиеОфисов)
+	И Взаимодействия.ТипВзаимодействия = ЗНАЧЕНИЕ(Перечисление.ТипыВзаимодействий.Встреча)
+	И Взаимодействия.Статус = ЗНАЧЕНИЕ(Перечисление.СтатусыВзаимодействий.Завершено)
+	И Взаимодействия.АктивностьВзаимодействия = ЗНАЧЕНИЕ(Перечисление.ТипАктивностиВзаимодействия.Первичное)
+{ГДЕ
+	Взаимодействия.Проект.*}
+
+ИНДЕКСИРОВАТЬ ПО
+	Взаимодействие
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	вт_СписокВзаимодействий.Взаимодействие КАК Взаимодействие,
+	ВЫРАЗИТЬ(ПредметыПапкиВзаимодействий.Предмет КАК Документ.Запрос) КАК ДокументЗапрос,
+	вт_СписокВзаимодействий.ДатаВзаимодействия КАК ДатаВзаимодействия,
+	ВЫРАЗИТЬ(ПредметыПапкиВзаимодействий.Предмет КАК Документ.Запрос).Проект КАК Проект
+ПОМЕСТИТЬ вт_Запросы
+ИЗ
+	вт_СписокВзаимодействий КАК вт_СписокВзаимодействий
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ПредметыПапкиВзаимодействий КАК ПредметыПапкиВзаимодействий
+		ПО вт_СписокВзаимодействий.Взаимодействие = ПредметыПапкиВзаимодействий.Взаимодействие
+ГДЕ
+	вт_СписокВзаимодействий.Взаимодействие &lt;&gt; НЕОПРЕДЕЛЕНО
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	вт_Запросы.ДокументЗапрос КАК ДокументЗапрос,
+	ПараметрыЗапросаЛинейный.РасшифровкаИсточниковПриходаКлиента КАК ИсточникПриходаКлиента,
+	вт_Запросы.ДатаВзаимодействия КАК ДатаВзаимодействия,
+	ВЫБОР
+		КОГДА &amp;Периодичность = 1
+			ТОГДА НАЧАЛОПЕРИОДА(вт_Запросы.ДатаВзаимодействия, ДЕНЬ)
+		КОГДА &amp;Периодичность = 2
+			ТОГДА НАЧАЛОПЕРИОДА(вт_Запросы.ДатаВзаимодействия, НЕДЕЛЯ)
+		КОГДА &amp;Периодичность = 3
+			ТОГДА НАЧАЛОПЕРИОДА(вт_Запросы.ДатаВзаимодействия, МЕСЯЦ)
+		КОГДА &amp;Периодичность = 4
+			ТОГДА НАЧАЛОПЕРИОДА(вт_Запросы.ДатаВзаимодействия, КВАРТАЛ)
+		КОГДА &amp;Периодичность = 5
+			ТОГДА НАЧАЛОПЕРИОДА(вт_Запросы.ДатаВзаимодействия, ПОЛУГОДИЕ)
+		КОГДА &amp;Периодичность = 6
+			ТОГДА НАЧАЛОПЕРИОДА(вт_Запросы.ДатаВзаимодействия, ГОД)
+	КОНЕЦ КАК Период,
+	вт_Запросы.Взаимодействие КАК Взаимодействие,
+	ПараметрыЗапросаЛинейный.УточнениеРасшифровкиИсточникаПрихода КАК РасшифровкаИсточникаПрихода,
+	вт_Запросы.Проект КАК Проект
+{ВЫБРАТЬ
+	Взаимодействие.*,
+	Период,
+	ИсточникПриходаКлиента.*,
+	РасшифровкаИсточникаПрихода.*,
+	Проект}
+ИЗ
+	вт_Запросы КАК вт_Запросы
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.ПараметрыЗапросаЛинейный КАК ПараметрыЗапросаЛинейный
+		ПО вт_Запросы.ДокументЗапрос = ПараметрыЗапросаЛинейный.Запрос
+{ГДЕ
+	ПараметрыЗапросаЛинейный.РасшифровкаИсточниковПриходаКлиента.* КАК ИсточникПриходаКлиента}</query>
+		<autoFillFields>false</autoFillFields>
+	</dataSet>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанныхТелефонныйЗвонок</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПроектЗвонок</dataPath>
+			<field>Проект</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проект</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РасшифровкаИсточникаПриходаЗвонок</dataPath>
+			<field>РасшифровкаИсточникаПрихода</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Расшифровка источника прихода</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИсточникПриходаКлиентаЗвонок</dataPath>
+			<field>ИсточникПриходаКлиента</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Источник прихода клиента</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВзаимодействиеЗвонок</dataPath>
+			<field>Взаимодействие</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Взаимодействие</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+					<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПериодЗвонок</dataPath>
+			<field>Период</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Период</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВЫБОР
+		КОГДА Взаимодействия.Взаимодействие ССЫЛКА Документ.ТелефонныйЗвонок
+			ТОГДА ВЫРАЗИТЬ(Взаимодействия.Взаимодействие КАК Документ.ТелефонныйЗвонок)
+		ИНАЧЕ НЕОПРЕДЕЛЕНО
+	КОНЕЦ КАК Взаимодействие,
+	Взаимодействия.ДатаВзаимодействия КАК ДатаВзаимодействия
+ПОМЕСТИТЬ вт_СписокВзаимодействий
+ИЗ
+	РегистрСведений.Взаимодействия КАК Взаимодействия
+ГДЕ
+	Взаимодействия.ДатаВзаимодействия МЕЖДУ &amp;ДатаНачало И &amp;ДатаКонец
+	И Взаимодействия.ТипВзаимодействия = ЗНАЧЕНИЕ(Перечисление.ТипыВзаимодействий.ТелефонныйЗвонок)
+	И Взаимодействия.Статус = ЗНАЧЕНИЕ(Перечисление.СтатусыВзаимодействий.Завершено)
+	И Взаимодействия.АктивностьВзаимодействия = ЗНАЧЕНИЕ(Перечисление.ТипАктивностиВзаимодействия.Первичное)
+	И Взаимодействия.ГруппаОтветственного.Наименование = "ГПТ"
+{ГДЕ
+	Взаимодействия.Проект.*}
+
+ИНДЕКСИРОВАТЬ ПО
+	Взаимодействие
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	вт_СписокВзаимодействий.Взаимодействие КАК Взаимодействие,
+	ВЫРАЗИТЬ(ПредметыПапкиВзаимодействий.Предмет КАК Документ.Запрос) КАК ДокументЗапрос,
+	вт_СписокВзаимодействий.ДатаВзаимодействия КАК ДатаВзаимодействия,
+	ВЫРАЗИТЬ(ПредметыПапкиВзаимодействий.Предмет КАК Документ.Запрос).Проект КАК Проект
+ПОМЕСТИТЬ вт_Запросы
+ИЗ
+	вт_СписокВзаимодействий КАК вт_СписокВзаимодействий
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ПредметыПапкиВзаимодействий КАК ПредметыПапкиВзаимодействий
+		ПО вт_СписокВзаимодействий.Взаимодействие = ПредметыПапкиВзаимодействий.Взаимодействие
+ГДЕ
+	вт_СписокВзаимодействий.Взаимодействие &lt;&gt; НЕОПРЕДЕЛЕНО
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	вт_Запросы.ДокументЗапрос КАК ДокументЗапрос,
+	ПараметрыЗапросаЛинейный.РасшифровкаИсточниковПриходаКлиента КАК ИсточникПриходаКлиента,
+	вт_Запросы.ДатаВзаимодействия КАК ДатаВзаимодействия,
+	ВЫБОР
+		КОГДА &amp;Периодичность = 1
+			ТОГДА НАЧАЛОПЕРИОДА(вт_Запросы.ДатаВзаимодействия, ДЕНЬ)
+		КОГДА &amp;Периодичность = 2
+			ТОГДА НАЧАЛОПЕРИОДА(вт_Запросы.ДатаВзаимодействия, НЕДЕЛЯ)
+		КОГДА &amp;Периодичность = 3
+			ТОГДА НАЧАЛОПЕРИОДА(вт_Запросы.ДатаВзаимодействия, МЕСЯЦ)
+		КОГДА &amp;Периодичность = 4
+			ТОГДА НАЧАЛОПЕРИОДА(вт_Запросы.ДатаВзаимодействия, КВАРТАЛ)
+		КОГДА &amp;Периодичность = 5
+			ТОГДА НАЧАЛОПЕРИОДА(вт_Запросы.ДатаВзаимодействия, ПОЛУГОДИЕ)
+		КОГДА &amp;Периодичность = 6
+			ТОГДА НАЧАЛОПЕРИОДА(вт_Запросы.ДатаВзаимодействия, ГОД)
+	КОНЕЦ КАК Период,
+	вт_Запросы.Взаимодействие КАК Взаимодействие,
+	ПараметрыЗапросаЛинейный.УточнениеРасшифровкиИсточникаПрихода КАК РасшифровкаИсточникаПрихода,
+	вт_Запросы.Проект КАК Проект
+{ВЫБРАТЬ
+	ИсточникПриходаКлиента.*,
+	РасшифровкаИсточникаПрихода.*,
+	Взаимодействие.*,
+	Период,
+	Проект}
+ИЗ
+	вт_Запросы КАК вт_Запросы
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.ПараметрыЗапросаЛинейный КАК ПараметрыЗапросаЛинейный
+		ПО вт_Запросы.ДокументЗапрос = ПараметрыЗапросаЛинейный.Запрос
+{ГДЕ
+	ПараметрыЗапросаЛинейный.РасшифровкаИсточниковПриходаКлиента.* КАК ИсточникПриходаКлиента}</query>
+		<autoFillFields>false</autoFillFields>
+	</dataSet>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанныхСделки</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИсточникПриходаКлиентаСделка</dataPath>
+			<field>ИсточникПриходаКлиента</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Источник прихода клиента</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Сделка</dataPath>
+			<field>Сделка</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сделка</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+					<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПроектСделка</dataPath>
+			<field>Проект</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проект</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПериодСделка</dataPath>
+			<field>Период</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Период</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РасшифровкаИсточникаПриходаСделка</dataPath>
+			<field>РасшифровкаИсточникаПрихода</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Расшифровка источника прихода</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	Сделки.Ссылка КАК Ссылка,
+	ВЫБОР
+		КОГДА &amp;Периодичность = 1
+			ТОГДА НАЧАЛОПЕРИОДА(Сделки.ДатаСозданияСделки, ДЕНЬ)
+		КОГДА &amp;Периодичность = 2
+			ТОГДА НАЧАЛОПЕРИОДА(Сделки.ДатаСозданияСделки, НЕДЕЛЯ)
+		КОГДА &amp;Периодичность = 3
+			ТОГДА НАЧАЛОПЕРИОДА(Сделки.ДатаСозданияСделки, МЕСЯЦ)
+		КОГДА &amp;Периодичность = 4
+			ТОГДА НАЧАЛОПЕРИОДА(Сделки.ДатаСозданияСделки, КВАРТАЛ)
+		КОГДА &amp;Периодичность = 5
+			ТОГДА НАЧАЛОПЕРИОДА(Сделки.ДатаСозданияСделки, ПОЛУГОДИЕ)
+		КОГДА &amp;Периодичность = 6
+			ТОГДА НАЧАЛОПЕРИОДА(Сделки.ДатаСозданияСделки, ГОД)
+	КОНЕЦ КАК Период,
+	Сделки.ЗаявкаНаСделку.ДокументОснование.РасшифровкаИсточниковПриходаКлиента КАК ЗаявкаНаСделкуДокументОснованиеРасшифровкаИсточниковПриходаКлиента,
+	Сделки.ЗаявкаНаСделку.ДокументОснование.УточнениеРасшифровкиИсточникаПрихода КАК ЗаявкаНаСделкуДокументОснованиеУточнениеРасшифровкиИсточникаПрихода,
+	Сделки.ЗаявкаНаСделку.Проект КАК ЗаявкаНаСделкуПроект
+{ВЫБРАТЬ 
+	Ссылка.* КАК Сделка,
+	Период,
+	ЗаявкаНаСделкуДокументОснованиеУточнениеРасшифровкиИсточникаПрихода.* КАК РасшифровкаИсточникаПрихода,
+	ЗаявкаНаСделкуДокументОснованиеРасшифровкаИсточниковПриходаКлиента.* КАК ИсточникПриходаКлиента,
+	ЗаявкаНаСделкуПроект КАК Проект}
+ИЗ
+	Справочник.Сделки КАК Сделки
+ГДЕ
+	НЕ Сделки.ПометкаУдаления
+	И Сделки.ДатаСозданияСделки МЕЖДУ &amp;ДатаНачало И &amp;ДатаКонец
+	И (Сделки.ЗаявкаНаСделку.ДокументОснование.РасшифровкаИсточниковПриходаКлиента &lt;&gt; ЗНАЧЕНИЕ(Справочник.РасшифровкаИсточниковПриходаКлиента.ПустаяСсылка)
+			ИЛИ Сделки.ЗаявкаНаСделку.ДокументОснование.УточнениеРасшифровкиИсточникаПрихода &lt;&gt; ЗНАЧЕНИЕ(Справочник.УточнениеРасшифровкиИсточниковПриходаКлиента.ПустаяСсылка))
+	И НЕ Сделки.СтатусСделки = ЗНАЧЕНИЕ(Перечисление.СтатусыСделокСправочник.Расторгнута)
+{ГДЕ
+	Сделки.ЗаявкаНаСделку.ДокументОснование.РасшифровкаИсточниковПриходаКлиента.* КАК ИсточникПриходаКлиента,
+	Сделки.ЗаявкаНаСделку.Проект.* КАК Проект}</query>
+		<autoFillFields>false</autoFillFields>
+	</dataSet>
+	<totalField>
+		<dataPath>ВзаимодействиеЗвонок</dataPath>
+		<expression>Количество(ВзаимодействиеЗвонок)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ВзаимодействиеВстреча</dataPath>
+		<expression>Количество(ВзаимодействиеВстреча)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Сделка</dataPath>
+		<expression>Количество(Сделка)</expression>
+	</totalField>
+	<parameter>
+		<name>ДатаКонец</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата конец</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаОкончания</expression>
+	</parameter>
+	<parameter>
+		<name>ДатаНачало</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата начало</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаНачала</expression>
+	</parameter>
+	<parameter>
+		<name>Периодичность</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Периодичность</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>0</v8:Digits>
+				<v8:FractionDigits>0</v8:FractionDigits>
+				<v8:AllowedSign>Any</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+		<value xsi:type="xs:decimal">0</value>
+		<useRestriction>false</useRestriction>
+		<availableValue>
+			<value xsi:type="xs:decimal">1</value>
+			<presentation xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>День</v8:content>
+				</v8:item>
+			</presentation>
+		</availableValue>
+		<availableValue>
+			<value xsi:type="xs:decimal">2</value>
+			<presentation xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Неделя</v8:content>
+				</v8:item>
+			</presentation>
+		</availableValue>
+		<availableValue>
+			<value xsi:type="xs:decimal">3</value>
+			<presentation xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Месяц</v8:content>
+				</v8:item>
+			</presentation>
+		</availableValue>
+		<availableValue>
+			<value xsi:type="xs:decimal">4</value>
+			<presentation xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Квартал</v8:content>
+				</v8:item>
+			</presentation>
+		</availableValue>
+		<availableValue>
+			<value xsi:type="xs:decimal">5</value>
+			<presentation xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Полугодие</v8:content>
+				</v8:item>
+			</presentation>
+		</availableValue>
+		<availableValue>
+			<value xsi:type="xs:decimal">6</value>
+			<presentation xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Год</v8:content>
+				</v8:item>
+			</presentation>
+		</availableValue>
+	</parameter>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<template>
+		<name>Макет1</name>
+		<template xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:AreaTemplate">
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">ПериодВстреча</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>Размещение</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:DataCompositionTextPlacementType">Wrap</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+			</dcsat:item>
+		</template>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>ПериодВстреча</dcsat:name>
+			<dcsat:expression>ВЫБОР 
+    КОГДА &amp;Периодичность = 1  
+        ТОГДА Формат(ПериодВстреча, "ДФ='дд ММММ гггг ""г.""' ")      КОГДА &amp;Периодичность = 2  
+        ТОГДА "Неделя: "  + Формат(ПериодВстреча, "ДФ='дд.ММ' ")  + " - " + Формат(ДобавитьКДате(ПериодВстреча,"День",6), "ДФ='дд.ММ' ")
+    КОГДА &amp;Периодичность = 3  
+        ТОГДА Формат(ПериодВстреча, "ДФ='ММММ гггг ""г.""' ") 
+    КОГДА &amp;Периодичность = 4  
+        ТОГДА Формат(ПериодВстреча,"ДФ='к ""квартал"" гггг ""г.""'" ) 
+    КОГДА &amp;Периодичность = 5 
+        ТОГДА 
+        ВЫБОР 
+            КОГДА Квартал(ПериодВстреча) &lt; 3 
+                ТОГДА "1" ИНАЧЕ "2"
+        КОНЕЦ + Формат(ПериодВстреча, "ДФ=' ""полугодие"" гггг ""г."" '")
+    КОГДА &amp;Периодичность = 6 
+        ТОГДА Формат(ПериодВстреча,"ДФ='гггг ""г.""'")
+КОНЕЦ</dcsat:expression>
+		</parameter>
+	</template>
+	<template>
+		<name>Макет2</name>
+		<template xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:AreaTemplate">
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Итого</v8:content>
+							</v8:item>
+						</dcsat:value>
+					</dcsat:item>
+				</dcsat:tableCell>
+			</dcsat:item>
+		</template>
+	</template>
+	<template>
+		<name>Макет3</name>
+		<template xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:AreaTemplate">
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">ПериодЗвонок</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>Размещение</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:DataCompositionTextPlacementType">Wrap</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+			</dcsat:item>
+		</template>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>ПериодЗвонок</dcsat:name>
+			<dcsat:expression>ВЫБОР 
+    КОГДА &amp;Периодичность = 1  
+        ТОГДА Формат(ПериодЗвонок, "ДФ='дд ММММ гггг ""г.""' ")      КОГДА &amp;Периодичность = 2  
+        ТОГДА "Неделя: "  + Формат(ПериодЗвонок, "ДФ='дд.ММ' ")  + " - " + Формат(ДобавитьКДате(ПериодЗвонок,"День",6), "ДФ='дд.ММ' ")
+    КОГДА &amp;Периодичность = 3  
+        ТОГДА Формат(ПериодЗвонок, "ДФ='ММММ гггг ""г.""' ") 
+    КОГДА &amp;Периодичность = 4  
+        ТОГДА Формат(ПериодЗвонок,"ДФ='к ""квартал"" гггг ""г.""'" ) 
+    КОГДА &amp;Периодичность = 5 
+        ТОГДА 
+        ВЫБОР 
+            КОГДА Квартал(ПериодЗвонок) &lt; 3 
+                ТОГДА "1" ИНАЧЕ "2"
+        КОНЕЦ + Формат(ПериодЗвонок, "ДФ=' ""полугодие"" гггг ""г."" '")
+    КОГДА &amp;Периодичность = 6 
+        ТОГДА Формат(ПериодЗвонок,"ДФ='гггг ""г.""'")
+КОНЕЦ</dcsat:expression>
+		</parameter>
+	</template>
+	<template>
+		<name>Макет4</name>
+		<template xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:AreaTemplate">
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">ПериодСделка</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>Размещение</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:DataCompositionTextPlacementType">Wrap</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+			</dcsat:item>
+		</template>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>ПериодСделка</dcsat:name>
+			<dcsat:expression>ВЫБОР 
+    КОГДА &amp;Периодичность = 1  
+        ТОГДА Формат(ПериодСделка, "ДФ='дд ММММ гггг ""г.""' ")      КОГДА &amp;Периодичность = 2  
+        ТОГДА "Неделя: "  + Формат(ПериодСделка, "ДФ='дд.ММ' ")  + " - " + Формат(ДобавитьКДате(ПериодСделка,"День",6), "ДФ='дд.ММ' ")
+    КОГДА &amp;Периодичность = 3  
+        ТОГДА Формат(ПериодСделка, "ДФ='ММММ гггг ""г.""' ") 
+    КОГДА &amp;Периодичность = 4  
+        ТОГДА Формат(ПериодСделка,"ДФ='к ""квартал"" гггг ""г.""'" ) 
+    КОГДА &amp;Периодичность = 5 
+        ТОГДА 
+        ВЫБОР 
+            КОГДА Квартал(ПериодСделка) &lt; 3 
+                ТОГДА "1" ИНАЧЕ "2"
+        КОНЕЦ + Формат(ПериодСделка, "ДФ=' ""полугодие"" гггг ""г."" '")
+    КОГДА &amp;Периодичность = 6 
+        ТОГДА Формат(ПериодСделка,"ДФ='гггг ""г.""'")
+КОНЕЦ</dcsat:expression>
+		</parameter>
+	</template>
+	<groupTemplate>
+		<groupField>ПериодВстреча</groupField>
+		<templateType>Header</templateType>
+		<template>Макет1</template>
+	</groupTemplate>
+	<groupTemplate>
+		<groupField>ПериодВстреча</groupField>
+		<templateType>OverallHeader</templateType>
+		<template>Макет2</template>
+	</groupTemplate>
+	<groupTemplate>
+		<groupField>ПериодЗвонок</groupField>
+		<templateType>OverallHeader</templateType>
+		<template>Макет2</template>
+	</groupTemplate>
+	<groupTemplate>
+		<groupField>ПериодЗвонок</groupField>
+		<templateType>Header</templateType>
+		<template>Макет3</template>
+	</groupTemplate>
+	<groupTemplate>
+		<groupField>ПериодСделка</groupField>
+		<templateType>OverallHeader</templateType>
+		<template>Макет2</template>
+	</groupTemplate>
+	<groupTemplate>
+		<groupField>ПериодСделка</groupField>
+		<templateType>Header</templateType>
+		<template>Макет4</template>
+	</groupTemplate>
+	<settingsVariant>
+		<dcsset:name>Встречи</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Встречи</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ВзаимодействиеВстреча</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">ПроектВстреча</dcsset:left>
+					<dcsset:comparisonType>InList</dcsset:comparisonType>
+					<dcsset:right xsi:type="v8:ValueListType">
+						<v8:valueType/>
+						<v8:lastId xsi:type="xs:decimal">-1</v8:lastId>
+					</dcsset:right>
+					<dcsset:userSettingID>c1b6082f-f917-4adc-8a5f-0ffcfed01c4c</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ИсточникПриходаКлиентаВстреча</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="xs:string">00000000-0000-0000-0000-000000000000</dcsset:right>
+					<dcsset:userSettingID>02964268-bc10-4c67-b569-edfe15be7df0</dcsset:userSettingID>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Периодичность</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">1</dcscor:value>
+					<dcsset:userSettingID>acdc5149-b59f-42c4-8f2c-53dbca2fd5aa</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">ThisMonth</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>4805477c-a1be-4aa0-b7b4-50feca779a03</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Море</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Заголовок</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отчет по источникам рекламы: вариант "По встречам"</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemTable">
+				<dcsset:column>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ПериодВстреча</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:column>
+				<dcsset:row>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ПроектВстреча</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+					<dcsset:item>
+						<dcsset:groupItems>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>ИсточникПриходаКлиентаВстреча</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+						</dcsset:groupItems>
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						</dcsset:selection>
+						<dcsset:item>
+							<dcsset:groupItems>
+								<dcsset:item xsi:type="dcsset:GroupItemField">
+									<dcsset:field>РасшифровкаИсточникаПриходаВстреча</dcsset:field>
+									<dcsset:groupType>Items</dcsset:groupType>
+									<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+									<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+									<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+								</dcsset:item>
+							</dcsset:groupItems>
+							<dcsset:order>
+								<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+							</dcsset:order>
+							<dcsset:selection>
+								<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+							</dcsset:selection>
+						</dcsset:item>
+					</dcsset:item>
+				</dcsset:row>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+	<settingsVariant>
+		<dcsset:name>ТелефонныеЗвонки</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Телефонные звонки</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ВзаимодействиеЗвонок</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ИсточникПриходаКлиентаЗвонок</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>90c37144-f658-47f9-86ef-c3231efdea2b</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">ПроектЗвонок</dcsset:left>
+					<dcsset:comparisonType>InList</dcsset:comparisonType>
+					<dcsset:right xsi:type="v8:ValueListType">
+						<v8:valueType/>
+						<v8:lastId xsi:type="xs:decimal">-1</v8:lastId>
+					</dcsset:right>
+					<dcsset:userSettingID>04e9c63d-88dd-4193-996b-ad07f029d968</dcsset:userSettingID>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Периодичность</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">1</dcscor:value>
+					<dcsset:userSettingID>cab43d0e-9e0e-4024-b4e4-73da164c6a2c</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">ThisMonth</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>85b96968-623d-43ee-ada7-64c7affc49c8</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Море</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Заголовок</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отчет по источникам рекламы: вариант "По телефонным звонкам"</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemTable">
+				<dcsset:column>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ПериодЗвонок</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:column>
+				<dcsset:row>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ПроектЗвонок</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+					<dcsset:item>
+						<dcsset:groupItems>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>ИсточникПриходаКлиентаЗвонок</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+						</dcsset:groupItems>
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						</dcsset:selection>
+						<dcsset:item>
+							<dcsset:groupItems>
+								<dcsset:item xsi:type="dcsset:GroupItemField">
+									<dcsset:field>РасшифровкаИсточникаПриходаЗвонок</dcsset:field>
+									<dcsset:groupType>Items</dcsset:groupType>
+									<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+									<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+									<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+								</dcsset:item>
+							</dcsset:groupItems>
+							<dcsset:order>
+								<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+							</dcsset:order>
+							<dcsset:selection>
+								<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+							</dcsset:selection>
+						</dcsset:item>
+					</dcsset:item>
+				</dcsset:row>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+	<settingsVariant>
+		<dcsset:name>Сделки</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>По сделкам</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Сделка</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ИсточникПриходаКлиентаСделка</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>1ad0a8a9-88ed-4b45-adde-4163aafedf99</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ПроектСделка</dcsset:left>
+					<dcsset:comparisonType>InList</dcsset:comparisonType>
+					<dcsset:right xsi:type="v8:ValueListType">
+						<v8:valueType/>
+						<v8:lastId xsi:type="xs:decimal">-1</v8:lastId>
+					</dcsset:right>
+					<dcsset:userSettingID>5b9f96d3-193c-4057-b395-3a4248634cb7</dcsset:userSettingID>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Периодичность</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">1</dcscor:value>
+					<dcsset:userSettingID>b0a0dbe7-6070-473d-a132-4716587549c7</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">ThisMonth</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>d38ef400-89e9-481a-8c52-c49c8fd4c205</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Море</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Заголовок</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отчет по источникам рекламы: вариант "По сделкам"</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemTable">
+				<dcsset:column>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ПериодСделка</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:column>
+				<dcsset:row>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ПроектСделка</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+					<dcsset:item>
+						<dcsset:groupItems>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>ИсточникПриходаКлиентаСделка</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+						</dcsset:groupItems>
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						</dcsset:selection>
+						<dcsset:item>
+							<dcsset:groupItems>
+								<dcsset:item xsi:type="dcsset:GroupItemField">
+									<dcsset:field>РасшифровкаИсточникаПриходаСделка</dcsset:field>
+									<dcsset:groupType>Items</dcsset:groupType>
+									<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+									<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+									<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+								</dcsset:item>
+							</dcsset:groupItems>
+							<dcsset:order>
+								<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+							</dcsset:order>
+							<dcsset:selection>
+								<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+							</dcsset:selection>
+						</dcsset:item>
+					</dcsset:item>
+				</dcsset:row>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

@@ -1,0 +1,1030 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.6">
+	<AutoTitle>false</AutoTitle>
+	<ShowTitle>false</ShowTitle>
+	<ShowCloseButton>false</ShowCloseButton>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаВверх" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа вверх</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа вверх</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаВверхРасширеннаяПодсказка" id="2"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаПриоритеты" id="3">
+					<Visible>false</Visible>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Заявки</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа приоритеты</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ГруппаПриоритетыРасширеннаяПодсказка" id="4"/>
+					<ChildItems>
+						<Table name="ПриоритетыЗаявок" id="249">
+							<Representation>Tree</Representation>
+							<ReadOnly>true</ReadOnly>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<InitialTreeView>ExpandAllLevels</InitialTreeView>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>ПриоритетыЗаявок</DataPath>
+							<ContextMenu name="ПриоритетыЗаявокКонтекстноеМеню" id="250"/>
+							<AutoCommandBar name="ПриоритетыЗаявокКоманднаяПанель" id="251">
+								<Autofill>false</Autofill>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ПриоритетыЗаявокРасширеннаяПодсказка" id="252"/>
+							<SearchStringAddition name="ПриоритетыЗаявокСтрокаПоиска" id="253">
+								<AdditionSource>
+									<Item>ПриоритетыЗаявок</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ПриоритетыЗаявокСтрокаПоискаКонтекстноеМеню" id="254"/>
+								<ExtendedTooltip name="ПриоритетыЗаявокСтрокаПоискаРасширеннаяПодсказка" id="255"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ПриоритетыЗаявокСостояниеПросмотра" id="256">
+								<AdditionSource>
+									<Item>ПриоритетыЗаявок</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ПриоритетыЗаявокСостояниеПросмотраКонтекстноеМеню" id="257"/>
+								<ExtendedTooltip name="ПриоритетыЗаявокСостояниеПросмотраРасширеннаяПодсказка" id="258"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ПриоритетыЗаявокУправлениеПоиском" id="259">
+								<AdditionSource>
+									<Item>ПриоритетыЗаявок</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ПриоритетыЗаявокУправлениеПоискомКонтекстноеМеню" id="260"/>
+								<ExtendedTooltip name="ПриоритетыЗаявокУправлениеПоискомРасширеннаяПодсказка" id="261"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="OnActivateRow">ПриоритетыЗаявокПриАктивизацииСтроки</Event>
+							</Events>
+							<ChildItems>
+								<InputField name="ПриоритетыЗаявокПриоритет" id="262">
+									<DataPath>ПриоритетыЗаявок.Приоритет</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ПриоритетыЗаявокПриоритетКонтекстноеМеню" id="263"/>
+									<ExtendedTooltip name="ПриоритетыЗаявокПриоритетРасширеннаяПодсказка" id="264"/>
+								</InputField>
+								<InputField name="ПриоритетыЗаявокКоличество" id="265">
+									<DataPath>ПриоритетыЗаявок.Количество</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ПриоритетыЗаявокКоличествоКонтекстноеМеню" id="266"/>
+									<ExtendedTooltip name="ПриоритетыЗаявокКоличествоРасширеннаяПодсказка" id="267"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаМенеджеры" id="92">
+					<Visible>false</Visible>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Менеджеры</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа менеджеры</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ГруппаМенеджерыРасширеннаяПодсказка" id="93"/>
+					<ChildItems>
+						<Table name="МенеджерыСегодня" id="268">
+							<Representation>Tree</Representation>
+							<ReadOnly>true</ReadOnly>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<InitialTreeView>ExpandAllLevels</InitialTreeView>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>МенеджерыСегодня</DataPath>
+							<ContextMenu name="МенеджерыСегодняКонтекстноеМеню" id="269"/>
+							<AutoCommandBar name="МенеджерыСегодняКоманднаяПанель" id="270">
+								<Autofill>false</Autofill>
+							</AutoCommandBar>
+							<ExtendedTooltip name="МенеджерыСегодняРасширеннаяПодсказка" id="271"/>
+							<SearchStringAddition name="МенеджерыСегодняСтрокаПоиска" id="272">
+								<AdditionSource>
+									<Item>МенеджерыСегодня</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="МенеджерыСегодняСтрокаПоискаКонтекстноеМеню" id="273"/>
+								<ExtendedTooltip name="МенеджерыСегодняСтрокаПоискаРасширеннаяПодсказка" id="274"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="МенеджерыСегодняСостояниеПросмотра" id="275">
+								<AdditionSource>
+									<Item>МенеджерыСегодня</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="МенеджерыСегодняСостояниеПросмотраКонтекстноеМеню" id="276"/>
+								<ExtendedTooltip name="МенеджерыСегодняСостояниеПросмотраРасширеннаяПодсказка" id="277"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="МенеджерыСегодняУправлениеПоиском" id="278">
+								<AdditionSource>
+									<Item>МенеджерыСегодня</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="МенеджерыСегодняУправлениеПоискомКонтекстноеМеню" id="279"/>
+								<ExtendedTooltip name="МенеджерыСегодняУправлениеПоискомРасширеннаяПодсказка" id="280"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<InputField name="МенеджерыСегодняПроект" id="281">
+									<DataPath>МенеджерыСегодня.Проект</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="МенеджерыСегодняПроектКонтекстноеМеню" id="282"/>
+									<ExtendedTooltip name="МенеджерыСегодняПроектРасширеннаяПодсказка" id="283"/>
+								</InputField>
+								<InputField name="МенеджерыСегодняМенеджер" id="284">
+									<DataPath>МенеджерыСегодня.Менеджер</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="МенеджерыСегодняМенеджерКонтекстноеМеню" id="285"/>
+									<ExtendedTooltip name="МенеджерыСегодняМенеджерРасширеннаяПодсказка" id="286"/>
+								</InputField>
+								<InputField name="МенеджерыСегодняКоличество" id="287">
+									<DataPath>МенеджерыСегодня.Количество</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="МенеджерыСегодняКоличествоКонтекстноеМеню" id="288"/>
+									<ExtendedTooltip name="МенеджерыСегодняКоличествоРасширеннаяПодсказка" id="289"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаНиз" id="94">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа низ</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа низ</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаНизРасширеннаяПодсказка" id="95"/>
+			<ChildItems>
+				<Pages name="СтраницыЗаявки" id="311">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Заявки</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страницы заявки</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="СтраницыЗаявкиРасширеннаяПодсказка" id="312"/>
+					<ChildItems>
+						<Page name="СтраницаЗаявки" id="313">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Заявки</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Страница заявки</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ExtendedTooltip name="СтраницаЗаявкиРасширеннаяПодсказка" id="314"/>
+							<ChildItems>
+								<Table name="Заявки" id="125">
+									<UseAlternationRowColor>true</UseAlternationRowColor>
+									<InitialTreeView>ExpandAllLevels</InitialTreeView>
+									<EnableStartDrag>true</EnableStartDrag>
+									<DataPath>Заявки</DataPath>
+									<RowPictureDataPath>Заявки.DefaultPicture</RowPictureDataPath>
+									<CommandSet>
+										<ExcludedCommand>Change</ExcludedCommand>
+										<ExcludedCommand>Choose</ExcludedCommand>
+										<ExcludedCommand>Copy</ExcludedCommand>
+										<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+										<ExcludedCommand>Create</ExcludedCommand>
+										<ExcludedCommand>Delete</ExcludedCommand>
+										<ExcludedCommand>LoadDynamicListSettings</ExcludedCommand>
+										<ExcludedCommand>OutputList</ExcludedCommand>
+										<ExcludedCommand>Refresh</ExcludedCommand>
+										<ExcludedCommand>SaveDynamicListSettings</ExcludedCommand>
+										<ExcludedCommand>SearchHistory</ExcludedCommand>
+										<ExcludedCommand>SetDateInterval</ExcludedCommand>
+										<ExcludedCommand>SetDeletionMark</ExcludedCommand>
+										<ExcludedCommand>ShowMultipleSelection</ExcludedCommand>
+									</CommandSet>
+									<AutoRefresh>false</AutoRefresh>
+									<AutoRefreshPeriod>60</AutoRefreshPeriod>
+									<Period>
+										<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+										<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+										<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+									</Period>
+									<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+									<RestoreCurrentRow>false</RestoreCurrentRow>
+									<TopLevelParent xsi:nil="true"/>
+									<ShowRoot>true</ShowRoot>
+									<AllowRootChoice>false</AllowRootChoice>
+									<UpdateOnDataChange>Auto</UpdateOnDataChange>
+									<ContextMenu name="ЗаявкиКонтекстноеМеню" id="126"/>
+									<AutoCommandBar name="ЗаявкиКоманднаяПанель" id="127">
+										<ChildItems>
+											<Button name="ЗаявкиОбновитьФорму" id="293">
+												<Type>CommandBarButton</Type>
+												<DefaultButton>true</DefaultButton>
+												<CommandName>Form.Command.ОбновитьФорму</CommandName>
+												<BackColor>style:ButtonBackColor</BackColor>
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Обновить форму</v8:content>
+													</v8:item>
+												</Title>
+												<ExtendedTooltip name="ЗаявкиОбновитьФормуРасширеннаяПодсказка" id="294"/>
+											</Button>
+											<Button name="ЗаявкиСоздатьЗаявку" id="295">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.СоздатьЗаявку</CommandName>
+												<ExtendedTooltip name="ЗаявкиСоздатьЗаявкуРасширеннаяПодсказка" id="296"/>
+											</Button>
+											<Button name="ЗаявкиНастройкаСписка" id="297">
+												<Type>CommandBarButton</Type>
+												<Representation>Picture</Representation>
+												<OnlyInAllActions>true</OnlyInAllActions>
+												<CommandName>Form.Item.Заявки.StandardCommand.ListSettings</CommandName>
+												<ExtendedTooltip name="ЗаявкиНастройкаСпискаРасширеннаяПодсказка" id="298"/>
+											</Button>
+											<Button name="ЗаявкиОткрытьУправлениеЗаявками" id="299">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.ОткрытьУправлениеРаспределениемЗаявок</CommandName>
+												<ExtendedTooltip name="ЗаявкиОткрытьУправлениеЗаявкамиРасширеннаяПодсказка" id="300"/>
+											</Button>
+											<Button name="ЗаявкиОтчетМенеджера" id="301">
+												<Type>CommandBarButton</Type>
+												<Visible>false</Visible>
+												<CommandName>Form.Command.ОтчетМенеджера</CommandName>
+												<ExtendedTooltip name="ЗаявкиОтчетМенеджераРасширеннаяПодсказка" id="302"/>
+											</Button>
+											<Button name="ЗаявкиОтчетПоВзаимодействиям" id="309">
+												<Type>CommandBarButton</Type>
+												<OnlyInAllActions>true</OnlyInAllActions>
+												<CommandName>Form.Command.ОтчетПоВзаимодействиям</CommandName>
+												<ExtendedTooltip name="ЗаявкиОтчетПоВзаимодействиямРасширеннаяПодсказка" id="310"/>
+											</Button>
+											<Button name="ЗаявкиОтчетПоЭффективностиМенеджетраГПТ" id="318">
+												<Type>CommandBarButton</Type>
+												<OnlyInAllActions>true</OnlyInAllActions>
+												<CommandName>Form.Command.ОтчетПоЭффективностиМенеджетраГПТ</CommandName>
+												<ExtendedTooltip name="ЗаявкиОтчетПоЭффективностиМенеджетраГПТРасширеннаяПодсказка" id="319"/>
+											</Button>
+										</ChildItems>
+									</AutoCommandBar>
+									<ExtendedTooltip name="ЗаявкиРасширеннаяПодсказка" id="128"/>
+									<SearchStringAddition name="ЗаявкиСтрокаПоиска" id="129">
+										<AdditionSource>
+											<Item>Заявки</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ЗаявкиСтрокаПоискаКонтекстноеМеню" id="130"/>
+										<ExtendedTooltip name="ЗаявкиСтрокаПоискаРасширеннаяПодсказка" id="131"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="ЗаявкиСостояниеПросмотра" id="132">
+										<AdditionSource>
+											<Item>Заявки</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ЗаявкиСостояниеПросмотраКонтекстноеМеню" id="133"/>
+										<ExtendedTooltip name="ЗаявкиСостояниеПросмотраРасширеннаяПодсказка" id="134"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="ЗаявкиУправлениеПоиском" id="135">
+										<AdditionSource>
+											<Item>Заявки</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="ЗаявкиУправлениеПоискомКонтекстноеМеню" id="136"/>
+										<ExtendedTooltip name="ЗаявкиУправлениеПоискомРасширеннаяПодсказка" id="137"/>
+									</SearchControlAddition>
+									<ChildItems>
+										<LabelField name="ЗаявкиСсылка" id="225">
+											<DataPath>Заявки.Ссылка</DataPath>
+											<Visible>false</Visible>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Заявка</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="ЗаявкиСсылкаКонтекстноеМеню" id="226"/>
+											<ExtendedTooltip name="ЗаявкиСсылкаРасширеннаяПодсказка" id="227"/>
+										</LabelField>
+										<LabelField name="ЗаявкиНомер" id="195">
+											<DataPath>Заявки.Номер</DataPath>
+											<ContextMenu name="ЗаявкиНомерКонтекстноеМеню" id="196"/>
+											<ExtendedTooltip name="ЗаявкиНомерРасширеннаяПодсказка" id="197"/>
+										</LabelField>
+										<LabelField name="ЗаявкиreqData" id="144">
+											<DataPath>Заявки.reqData</DataPath>
+											<ContextMenu name="ЗаявкиreqDataКонтекстноеМеню" id="145"/>
+											<ExtendedTooltip name="ЗаявкиreqDataРасширеннаяПодсказка" id="146"/>
+										</LabelField>
+										<LabelField name="ЗаявкиПлановоеВремя" id="201">
+											<DataPath>Заявки.ПлановоеВремя</DataPath>
+											<Format>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>ДЛФ=T</v8:content>
+												</v8:item>
+											</Format>
+											<ContextMenu name="ЗаявкиПлановоеВремяКонтекстноеМеню" id="202"/>
+											<ExtendedTooltip name="ЗаявкиПлановоеВремяРасширеннаяПодсказка" id="203"/>
+										</LabelField>
+										<LabelField name="ЗаявкиID" id="138">
+											<DataPath>Заявки.ID</DataPath>
+											<Visible>false</Visible>
+											<ContextMenu name="ЗаявкиIDКонтекстноеМеню" id="139"/>
+											<ExtendedTooltip name="ЗаявкиIDРасширеннаяПодсказка" id="140"/>
+										</LabelField>
+										<LabelField name="ЗаявкиКонтакт" id="192">
+											<DataPath>Заявки.Контакт</DataPath>
+											<ContextMenu name="ЗаявкиКонтактКонтекстноеМеню" id="193"/>
+											<ExtendedTooltip name="ЗаявкиКонтактРасширеннаяПодсказка" id="194"/>
+										</LabelField>
+										<LabelField name="ЗаявкиreqContact" id="141">
+											<DataPath>Заявки.reqContact</DataPath>
+											<ContextMenu name="ЗаявкиreqContactКонтекстноеМеню" id="142"/>
+											<ExtendedTooltip name="ЗаявкиreqContactРасширеннаяПодсказка" id="143"/>
+										</LabelField>
+										<LabelField name="ЗаявкиПриоритет" id="213">
+											<DataPath>Заявки.Приоритет</DataPath>
+											<ContextMenu name="ЗаявкиПриоритетКонтекстноеМеню" id="214"/>
+											<ExtendedTooltip name="ЗаявкиПриоритетРасширеннаяПодсказка" id="215"/>
+										</LabelField>
+										<LabelField name="ЗаявкиВидНедвижимости" id="174">
+											<DataPath>Заявки.ВидНедвижимости</DataPath>
+											<ContextMenu name="ЗаявкиВидНедвижимостиКонтекстноеМеню" id="175"/>
+											<ExtendedTooltip name="ЗаявкиВидНедвижимостиРасширеннаяПодсказка" id="176"/>
+										</LabelField>
+										<LabelField name="ЗаявкиПроект" id="219">
+											<DataPath>Заявки.Проект</DataPath>
+											<ContextMenu name="ЗаявкиПроектКонтекстноеМеню" id="220"/>
+											<ExtendedTooltip name="ЗаявкиПроектРасширеннаяПодсказка" id="221"/>
+										</LabelField>
+										<LabelField name="ЗаявкиСтатус" id="228">
+											<DataPath>Заявки.Статус</DataPath>
+											<ContextMenu name="ЗаявкиСтатусКонтекстноеМеню" id="229"/>
+											<ExtendedTooltip name="ЗаявкиСтатусРасширеннаяПодсказка" id="230"/>
+										</LabelField>
+										<LabelField name="ЗаявкиКоличествоПоНомеру" id="315">
+											<DataPath>~Заявки.КоличествоПоНомеру</DataPath>
+											<Visible>false</Visible>
+											<ContextMenu name="ЗаявкиКоличествоПоНомеруКонтекстноеМеню" id="316"/>
+											<ExtendedTooltip name="ЗаявкиКоличествоПоНомеруРасширеннаяПодсказка" id="317"/>
+										</LabelField>
+										<LabelField name="ЗаявкиreqEmail" id="147">
+											<DataPath>Заявки.reqEmail</DataPath>
+											<Visible>false</Visible>
+											<ContextMenu name="ЗаявкиreqEmailКонтекстноеМеню" id="148"/>
+											<ExtendedTooltip name="ЗаявкиreqEmailРасширеннаяПодсказка" id="149"/>
+										</LabelField>
+										<LabelField name="ЗаявкиreqID" id="150">
+											<DataPath>Заявки.reqID</DataPath>
+											<Visible>false</Visible>
+											<ContextMenu name="ЗаявкиreqIDКонтекстноеМеню" id="151"/>
+											<ExtendedTooltip name="ЗаявкиreqIDРасширеннаяПодсказка" id="152"/>
+										</LabelField>
+										<LabelField name="ЗаявкиreqStatus" id="153">
+											<DataPath>Заявки.reqStatus</DataPath>
+											<Visible>false</Visible>
+											<ContextMenu name="ЗаявкиreqStatusКонтекстноеМеню" id="154"/>
+											<ExtendedTooltip name="ЗаявкиreqStatusРасширеннаяПодсказка" id="155"/>
+										</LabelField>
+										<LabelField name="ЗаявкиreqText" id="156">
+											<DataPath>Заявки.reqText</DataPath>
+											<Visible>false</Visible>
+											<ContextMenu name="ЗаявкиreqTextКонтекстноеМеню" id="157"/>
+											<ExtendedTooltip name="ЗаявкиreqTextРасширеннаяПодсказка" id="158"/>
+										</LabelField>
+										<LabelField name="ЗаявкиreqType" id="159">
+											<DataPath>Заявки.reqType</DataPath>
+											<Visible>false</Visible>
+											<ContextMenu name="ЗаявкиreqTypeКонтекстноеМеню" id="160"/>
+											<ExtendedTooltip name="ЗаявкиreqTypeРасширеннаяПодсказка" id="161"/>
+										</LabelField>
+										<LabelField name="ЗаявкиUCID" id="162">
+											<DataPath>Заявки.UCID</DataPath>
+											<Visible>false</Visible>
+											<ContextMenu name="ЗаявкиUCIDКонтекстноеМеню" id="163"/>
+											<ExtendedTooltip name="ЗаявкиUCIDРасширеннаяПодсказка" id="164"/>
+										</LabelField>
+										<LabelField name="ЗаявкиАвтор" id="165">
+											<DataPath>Заявки.Автор</DataPath>
+											<Visible>false</Visible>
+											<ContextMenu name="ЗаявкиАвторКонтекстноеМеню" id="166"/>
+											<ExtendedTooltip name="ЗаявкиАвторРасширеннаяПодсказка" id="167"/>
+										</LabelField>
+										<LabelField name="ЗаявкиВидЗаявкиНаЗвонок" id="171">
+											<DataPath>Заявки.ВидЗаявкиНаЗвонок</DataPath>
+											<ContextMenu name="ЗаявкиВидЗаявкиНаЗвонокКонтекстноеМеню" id="172"/>
+											<ExtendedTooltip name="ЗаявкиВидЗаявкиНаЗвонокРасширеннаяПодсказка" id="173"/>
+										</LabelField>
+										<LabelField name="ЗаявкиГруппаРаспределения" id="177">
+											<DataPath>Заявки.ГруппаРаспределения</DataPath>
+											<Visible>false</Visible>
+											<ContextMenu name="ЗаявкиГруппаРаспределенияКонтекстноеМеню" id="178"/>
+											<ExtendedTooltip name="ЗаявкиГруппаРаспределенияРасширеннаяПодсказка" id="179"/>
+										</LabelField>
+										<LabelField name="ЗаявкиДата" id="180">
+											<DataPath>Заявки.Дата</DataPath>
+											<Visible>false</Visible>
+											<ContextMenu name="ЗаявкиДатаКонтекстноеМеню" id="181"/>
+											<ExtendedTooltip name="ЗаявкиДатаРасширеннаяПодсказка" id="182"/>
+										</LabelField>
+										<LabelField name="ЗаявкиДатаПоследнейЗагрузки" id="183">
+											<DataPath>Заявки.ДатаПоследнейЗагрузки</DataPath>
+											<Visible>false</Visible>
+											<ContextMenu name="ЗаявкиДатаПоследнейЗагрузкиКонтекстноеМеню" id="184"/>
+											<ExtendedTooltip name="ЗаявкиДатаПоследнейЗагрузкиРасширеннаяПодсказка" id="185"/>
+										</LabelField>
+										<LabelField name="ЗаявкиДатаРаспределения" id="186">
+											<DataPath>Заявки.ДатаРаспределения</DataPath>
+											<Visible>false</Visible>
+											<ContextMenu name="ЗаявкиДатаРаспределенияКонтекстноеМеню" id="187"/>
+											<ExtendedTooltip name="ЗаявкиДатаРаспределенияРасширеннаяПодсказка" id="188"/>
+										</LabelField>
+										<LabelField name="ЗаявкиКомментарий" id="189">
+											<DataPath>Заявки.Комментарий</DataPath>
+											<Visible>false</Visible>
+											<ContextMenu name="ЗаявкиКомментарийКонтекстноеМеню" id="190"/>
+											<ExtendedTooltip name="ЗаявкиКомментарийРасширеннаяПодсказка" id="191"/>
+										</LabelField>
+										<LabelField name="ЗаявкиОтветственный" id="198">
+											<DataPath>Заявки.Ответственный</DataPath>
+											<Visible>false</Visible>
+											<ContextMenu name="ЗаявкиОтветственныйКонтекстноеМеню" id="199"/>
+											<ExtendedTooltip name="ЗаявкиОтветственныйРасширеннаяПодсказка" id="200"/>
+										</LabelField>
+										<LabelField name="ЗаявкиПопытокДозвониться" id="207">
+											<DataPath>Заявки.ПопытокДозвониться</DataPath>
+											<ContextMenu name="ЗаявкиПопытокДозвонитьсяКонтекстноеМеню" id="208"/>
+											<ExtendedTooltip name="ЗаявкиПопытокДозвонитьсяРасширеннаяПодсказка" id="209"/>
+										</LabelField>
+										<LabelField name="ЗаявкиПредметВзаимодействия" id="210">
+											<DataPath>Заявки.ПредметВзаимодействия</DataPath>
+											<Visible>false</Visible>
+											<ContextMenu name="ЗаявкиПредметВзаимодействияКонтекстноеМеню" id="211"/>
+											<ExtendedTooltip name="ЗаявкиПредметВзаимодействияРасширеннаяПодсказка" id="212"/>
+										</LabelField>
+										<CheckBoxField name="ЗаявкиПроведен" id="216">
+											<DataPath>Заявки.Проведен</DataPath>
+											<Visible>false</Visible>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="ЗаявкиПроведенКонтекстноеМеню" id="217"/>
+											<ExtendedTooltip name="ЗаявкиПроведенРасширеннаяПодсказка" id="218"/>
+										</CheckBoxField>
+										<LabelField name="ЗаявкиСайт" id="222">
+											<DataPath>Заявки.Сайт</DataPath>
+											<Visible>false</Visible>
+											<ContextMenu name="ЗаявкиСайтКонтекстноеМеню" id="223"/>
+											<ExtendedTooltip name="ЗаявкиСайтРасширеннаяПодсказка" id="224"/>
+										</LabelField>
+										<CheckBoxField name="ЗаявкиРассмотрено" id="306">
+											<DataPath>Заявки.Рассмотрено</DataPath>
+											<Visible>false</Visible>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="ЗаявкиРассмотреноКонтекстноеМеню" id="307"/>
+											<ExtendedTooltip name="ЗаявкиРассмотреноРасширеннаяПодсказка" id="308"/>
+										</CheckBoxField>
+										<LabelField name="ЗаявкиРассмотретьПосле" id="303">
+											<DataPath>Заявки.РассмотретьПосле</DataPath>
+											<Visible>false</Visible>
+											<ContextMenu name="ЗаявкиРассмотретьПослеКонтекстноеМеню" id="304"/>
+											<ExtendedTooltip name="ЗаявкиРассмотретьПослеРасширеннаяПодсказка" id="305"/>
+										</LabelField>
+										<LabelField name="ЗаявкиТема" id="231">
+											<DataPath>Заявки.Тема</DataPath>
+											<Visible>false</Visible>
+											<ContextMenu name="ЗаявкиТемаКонтекстноеМеню" id="232"/>
+											<ExtendedTooltip name="ЗаявкиТемаРасширеннаяПодсказка" id="233"/>
+										</LabelField>
+										<LabelField name="ЗаявкиТипВызова" id="234">
+											<DataPath>Заявки.ТипВызова</DataPath>
+											<Visible>false</Visible>
+											<ContextMenu name="ЗаявкиТипВызоваКонтекстноеМеню" id="235"/>
+											<ExtendedTooltip name="ЗаявкиТипВызоваРасширеннаяПодсказка" id="236"/>
+										</LabelField>
+										<LabelField name="ЗаявкиТипПоступленияЗаявки" id="237">
+											<DataPath>Заявки.ТипПоступленияЗаявки</DataPath>
+											<Visible>false</Visible>
+											<ContextMenu name="ЗаявкиТипПоступленияЗаявкиКонтекстноеМеню" id="238"/>
+											<ExtendedTooltip name="ЗаявкиТипПоступленияЗаявкиРасширеннаяПодсказка" id="239"/>
+										</LabelField>
+										<LabelField name="ЗаявкиЭтапРаботы" id="240">
+											<DataPath>Заявки.ЭтапРаботы</DataPath>
+											<Visible>false</Visible>
+											<ContextMenu name="ЗаявкиЭтапРаботыКонтекстноеМеню" id="241"/>
+											<ExtendedTooltip name="ЗаявкиЭтапРаботыРасширеннаяПодсказка" id="242"/>
+										</LabelField>
+										<CheckBoxField name="ЗаявкиЭтоТестоваяЗаявка" id="243">
+											<DataPath>Заявки.ЭтоТестоваяЗаявка</DataPath>
+											<Visible>false</Visible>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="ЗаявкиЭтоТестоваяЗаявкаКонтекстноеМеню" id="244"/>
+											<ExtendedTooltip name="ЗаявкиЭтоТестоваяЗаявкаРасширеннаяПодсказка" id="245"/>
+										</CheckBoxField>
+										<LabelField name="ЗаявкиСтандартнаяКартинка" id="246">
+											<DataPath>Заявки.DefaultPicture</DataPath>
+											<Visible>false</Visible>
+											<ContextMenu name="ЗаявкиСтандартнаяКартинкаКонтекстноеМеню" id="247"/>
+											<ExtendedTooltip name="ЗаявкиСтандартнаяКартинкаРасширеннаяПодсказка" id="248"/>
+										</LabelField>
+										<LabelField name="ЗаявкиВзаимодействие" id="168">
+											<DataPath>Заявки.Взаимодействие</DataPath>
+											<ContextMenu name="ЗаявкиВзаимодействиеКонтекстноеМеню" id="169"/>
+											<ExtendedTooltip name="ЗаявкиВзаимодействиеРасширеннаяПодсказка" id="170"/>
+										</LabelField>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</Page>
+					</ChildItems>
+				</Pages>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ЗаявкиМенеджеров</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ПриоритетыЗаявок" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Приоритеты заявок</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Приоритет" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Приоритет</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:EnumRef.ПриоритетыЗаявокНаЗвонок</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Количество" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Количество</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="Заявки" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заявки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<QueryText>//ВЫБРАТЬ РАЗРЕШЕННЫЕ
+//	КОЛИЧЕСТВО(ДокументЗаявкаНаЗвонок.Ссылка) КАК Количество,
+//	ДокументЗаявкаНаЗвонок.reqContact КАК reqContact
+//ПОМЕСТИТЬ ВТ_КоличествоЗаявок
+//ИЗ
+//	Документ.ЗаявкаНаЗвонок КАК ДокументЗаявкаНаЗвонок
+//ГДЕ
+//	ДокументЗаявкаНаЗвонок.ДатаРаспределения МЕЖДУ &amp;НачалоДня И &amp;КонецДня
+//{ГДЕ
+//	(ДокументЗаявкаНаЗвонок.Ответственный = &amp;Ответственный),
+//	(ДокументЗаявкаНаЗвонок.Приоритет = &amp;Приоритет)}
+
+//СГРУППИРОВАТЬ ПО
+//	ДокументЗаявкаНаЗвонок.reqContact
+//ИНДЕКСИРОВАТЬ ПО
+//	reqContact
+//;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ДокументЗаявкаНаЗвонок.Ссылка КАК Ссылка,
+	ДокументЗаявкаНаЗвонок.ПометкаУдаления КАК ПометкаУдаления,
+	ДокументЗаявкаНаЗвонок.Номер КАК Номер,
+	ДокументЗаявкаНаЗвонок.Дата КАК Дата,
+	ДокументЗаявкаНаЗвонок.Проведен КАК Проведен,
+	ДокументЗаявкаНаЗвонок.ID КАК ID,
+	ДокументЗаявкаНаЗвонок.reqData КАК reqData,
+	ДокументЗаявкаНаЗвонок.reqContact КАК reqContact,
+	ДокументЗаявкаНаЗвонок.Контакт КАК Контакт,
+	ДокументЗаявкаНаЗвонок.reqEmail КАК reqEmail,
+	ДокументЗаявкаНаЗвонок.Сайт КАК Сайт,
+	ДокументЗаявкаНаЗвонок.Проект КАК Проект,
+	ДокументЗаявкаНаЗвонок.ВидНедвижимости КАК ВидНедвижимости,
+	ДокументЗаявкаНаЗвонок.Статус КАК Статус,
+	ДокументЗаявкаНаЗвонок.ВидЗаявкиНаЗвонок КАК ВидЗаявкиНаЗвонок,
+	ДокументЗаявкаНаЗвонок.ТипВызова КАК ТипВызова,
+	ДокументЗаявкаНаЗвонок.ГруппаРаспределения КАК ГруппаРаспределения,
+	ДокументЗаявкаНаЗвонок.ТипПоступленияЗаявки КАК ТипПоступленияЗаявки,
+	ДокументЗаявкаНаЗвонок.ДатаПоследнейЗагрузки КАК ДатаПоследнейЗагрузки,
+	ДокументЗаявкаНаЗвонок.ДатаРаспределения КАК ДатаРаспределения,
+	ДокументЗаявкаНаЗвонок.ЭтапРаботы КАК ЭтапРаботы,
+	ДокументЗаявкаНаЗвонок.ПопытокДозвониться КАК ПопытокДозвониться,
+	ДокументЗаявкаНаЗвонок.ПлановоеВремя КАК ПлановоеВремя,
+	ДокументЗаявкаНаЗвонок.Приоритет КАК Приоритет,
+	ДокументЗаявкаНаЗвонок.ЭтоТестоваяЗаявка КАК ЭтоТестоваяЗаявка,
+	ДокументЗаявкаНаЗвонок.reqText КАК reqText,
+	ДокументЗаявкаНаЗвонок.reqStatus КАК reqStatus,
+	ДокументЗаявкаНаЗвонок.reqType КАК reqType,
+	ДокументЗаявкаНаЗвонок.reqID КАК reqID,
+	ДокументЗаявкаНаЗвонок.UCID КАК UCID,
+	ДокументЗаявкаНаЗвонок.ПредметВзаимодействия КАК ПредметВзаимодействия,
+	ДокументЗаявкаНаЗвонок.Взаимодействие КАК Взаимодействие,
+	ДокументЗаявкаНаЗвонок.Тема КАК Тема,
+	ДокументЗаявкаНаЗвонок.Автор КАК Автор,
+	ДокументЗаявкаНаЗвонок.Ответственный КАК Ответственный,
+	ДокументЗаявкаНаЗвонок.Комментарий КАК Комментарий,
+	ДокументЗаявкаНаЗвонок.МоментВремени КАК МоментВремени,
+	ЕСТЬNULL(ПредметыПапкиВзаимодействий.Рассмотрено, ЛОЖЬ) КАК Рассмотрено,
+	ЕСТЬNULL(ПредметыПапкиВзаимодействий.РассмотретьПосле, ДАТАВРЕМЯ(1, 1, 1)) КАК РассмотретьПосле,
+	ВЫБОР
+		КОГДА ДокументЗаявкаНаЗвонок.Взаимодействие ССЫЛКА Документ.Встреча
+			ТОГДА ЗНАЧЕНИЕ(Перечисление.ТипыВзаимодействий.Встреча)
+		КОГДА ДокументЗаявкаНаЗвонок.Взаимодействие ССЫЛКА Документ.ТелефонныйЗвонок
+			ТОГДА ЗНАЧЕНИЕ(Перечисление.ТипыВзаимодействий.ТелефонныйЗвонок)
+		ИНАЧЕ ЗНАЧЕНИЕ(Перечисление.ТипыВзаимодействий.ПустаяСсылка)
+	КОНЕЦ КАК ТипВзаимодействия
+	//ЕСТЬNULL(ВТ_КоличествоЗаявок.Количество, 0) КАК КоличествоПоНомеру
+ИЗ
+	Документ.ЗаявкаНаЗвонок КАК ДокументЗаявкаНаЗвонок
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ПредметыПапкиВзаимодействий КАК ПредметыПапкиВзаимодействий
+		ПО ДокументЗаявкаНаЗвонок.Взаимодействие = ПредметыПапкиВзаимодействий.Взаимодействие
+		//ЛЕВОЕ СОЕДИНЕНИЕ ВТ_КоличествоЗаявок КАК ВТ_КоличествоЗаявок
+		//ПО ДокументЗаявкаНаЗвонок.reqContact = ВТ_КоличествоЗаявок.reqContact
+{ГДЕ
+	(ДокументЗаявкаНаЗвонок.Ответственный = &amp;Ответственный),
+	(ДокументЗаявкаНаЗвонок.Приоритет = &amp;Приоритет)}</QueryText>
+				<MainTable>Document.ЗаявкаНаЗвонок</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">ПометкаУдаления</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemGroup">
+							<dcsset:groupType>AndGroup</dcsset:groupType>
+							<dcsset:item xsi:type="dcsset:FilterItemComparison">
+								<dcsset:left xsi:type="dcscor:Field">ДатаРаспределения</dcsset:left>
+								<dcsset:comparisonType>GreaterOrEqual</dcsset:comparisonType>
+								<dcsset:right xsi:type="v8:StandardBeginningDate">
+									<v8:variant xsi:type="v8:StandardBeginningDateVariant">BeginningOfThisDay</v8:variant>
+								</dcsset:right>
+								<dcsset:userSettingID>dd5a76f8-f94a-436c-a271-a23c1abf65d4</dcsset:userSettingID>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:FilterItemComparison">
+								<dcsset:left xsi:type="dcscor:Field">ДатаРаспределения</dcsset:left>
+								<dcsset:comparisonType>LessOrEqual</dcsset:comparisonType>
+								<dcsset:right xsi:type="v8:StandardBeginningDate">
+									<v8:variant xsi:type="v8:StandardBeginningDateVariant">BeginningOfNextDay</v8:variant>
+								</dcsset:right>
+								<dcsset:userSettingID>fbaf2528-a378-4a7f-b911-f0da45b3fb03</dcsset:userSettingID>
+							</dcsset:item>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">ЭтоТестоваяЗаявка</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:use>false</dcsset:use>
+							<dcsset:left xsi:type="dcscor:Field">Статус</dcsset:left>
+							<dcsset:comparisonType>InList</dcsset:comparisonType>
+							<dcsset:right xsi:type="v8:ValueListType">
+								<v8:valueType/>
+								<v8:lastId xsi:type="xs:decimal">-1</v8:lastId>
+							</dcsset:right>
+							<dcsset:userSettingID>e6ce5e2e-1aac-47e6-9c30-5df1c34f21d9</dcsset:userSettingID>
+							<dcsset:userSettingPresentation xsi:type="xs:string">Статусы</dcsset:userSettingPresentation>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:use>false</dcsset:use>
+							<dcsset:left xsi:type="dcscor:Field">Приоритет</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:userSettingID>a29bbb42-eafb-44c8-93e2-ca3c8a3a025c</dcsset:userSettingID>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:use>false</dcsset:use>
+							<dcsset:left xsi:type="dcscor:Field">Контакт</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:userSettingID>c9b11d89-6592-4e5f-83fd-249abb77969b</dcsset:userSettingID>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>reqContact</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>reqData</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:item>
+							<dcsset:selection/>
+							<dcsset:filter>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">ТипВзаимодействия</dcsset:left>
+									<dcsset:comparisonType>Equal</dcsset:comparisonType>
+									<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.ТипыВзаимодействий.Встреча</dcsset:right>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">Взаимодействие.Отменено</dcsset:left>
+									<dcsset:comparisonType>Equal</dcsset:comparisonType>
+									<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">Статус</dcsset:left>
+									<dcsset:comparisonType>Equal</dcsset:comparisonType>
+									<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.СтатусЗаявкиCallBack.Обработано</dcsset:right>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">Рассмотрено</dcsset:left>
+									<dcsset:comparisonType>Equal</dcsset:comparisonType>
+									<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">РассмотретьПосле</dcsset:left>
+									<dcsset:comparisonType>Less</dcsset:comparisonType>
+									<dcsset:right xsi:type="v8:StandardBeginningDate">
+										<v8:variant xsi:type="v8:StandardBeginningDateVariant">BeginningOfThisDay</v8:variant>
+									</dcsset:right>
+								</dcsset:item>
+							</dcsset:filter>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>ЦветФона</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Color">#FFB5A1</dcscor:value>
+								</dcscor:item>
+							</dcsset:appearance>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="МенеджерыСегодня" id="4">
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Проект" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Проект</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DefinedType.ЗначениеДоступа</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="Менеджер" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Менеджер</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Пользователи</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Количество" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Количество</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="Активные" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Активные</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОбщееКоличествоЗаявок" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Общее количество заявок</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ОбновитьФорму" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить форму</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить форму</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.СинхронизацияДанныхПодсистема</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ОбновитьФорму</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="СоздатьЗаявку" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать заявку</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать заявку</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CreateListItem</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СоздатьЗаявку</Action>
+			<Representation>Picture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОткрытьУправлениеРаспределениемЗаявок" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Управление заявками</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть управление распределением заявок</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Use>
+				<xr:Common>false</xr:Common>
+				<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+				<xr:Value name="Role.ОбработкаЗаявокНаЗвонок_Администратор">true</xr:Value>
+			</Use>
+			<Action>ОткрытьУправлениеЗаявками</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОтчетМенеджера" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отчет менеджера</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отчет менеджера</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОтчетМенеджера</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОтчетПоВзаимодействиям" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отчет по взаимодействиям</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отчет по взаимодействиям</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОтчетПоВзаимодействиям</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОтчетПоЭффективностиМенеджетраГПТ" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Эффективность менеджера ГПТ</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отчет по эффективности менеджетра ГПТ</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОтчетПоЭффективностиМенеджетраГПТ</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

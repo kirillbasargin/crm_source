@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.6">
+	<Subsystem uuid="7554fd98-d162-415c-b978-73628f25afaa">
+		<Properties>
+			<Name>Телефония</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Телефония</v8:content>
+				</v8:item>
+			</Synonym>
+			<Comment/>
+			<IncludeHelpInContents>true</IncludeHelpInContents>
+			<IncludeInCommandInterface>false</IncludeInCommandInterface>
+			<Explanation/>
+			<Picture>
+				<xr:Ref>CommonPicture.Телефония</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Content>
+				<xr:Item xsi:type="xr:MDObjectRef">Role.Телефония_Администратор</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Role.Телефония_Пользователь</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.УправлениеТелефониейСервер</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.УправлениеТелефониейКлиент</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.УправлениеТелефониейКлиентПовтИсп</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.УправлениеТелефониейСерверПовтИсп</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.УправлениеТелефониейКлиентСервер</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.ИсторияЗвонков</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.СостоянияТелефонныхЗвонков</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.СтатусыЗвонков</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.ТипыЗвонков</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.ВидыЗвонков</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Constant.ПутьККомпонентеТелефонии</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.Телефония</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.ПользовательскиеНастройкиТелефонии</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.Телефония_ПередатьЗвонок</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.Телефония_УправляемаяПередачаЗвонка</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.Телефония_ВходящийОтвеченный</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.Телефония_ВходящийНеОтвеченный</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.Телефония_ИсходящийОтвеченный</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.Телефония_ИсходящийНеОтвеченный</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.Телефония_Коллекция</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.Телефония_Подключена</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.Телефония_Отключена</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.Телефония_ЗавершитьТекущиеЗвонки</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.Телефония_Дозвон</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.ПараметрыПолученияЗаявокНаCallBack</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.Телефония_СвободнаяЛиния</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.Телефония_Ожидание</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.Телефония_АктивнаяЛиния</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Constant.aesDeviceIp</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Constant.aesDevicePassword</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Constant.aesLogging</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Constant.aesServerIpAddr</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Constant.aesServerPort</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Constant.aesUserName</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Constant.aesUserPassword</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.СоответствиеЗапросовЗвонкам</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.УправлениеТелефониейОбработкаСобытий_AvayaMediaLibrary</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.УправлениеТелефониейОбработкаСобытий</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Constant.ИспользоватьAvayaMediaLibrary</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.Телефония_ОтветитьНаЗвонок</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.Телефония_УдержатьЗвонок</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.Телефония_НеЗарегистрирована</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.Телефония_ОтветитьНаЗвонок_нов</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.Телефония_ПерейтиПоКлиенту</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.Телефония_Передать</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.Телефония_Завершить</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.Телефония_ПоставитьНаУдержание</xr:Item>
+			</Content>
+		</Properties>
+		<ChildObjects>
+			<Subsystem>Администрирование</Subsystem>
+		</ChildObjects>
+	</Subsystem>
+</MetaDataObject>

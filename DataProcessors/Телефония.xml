@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.6">
+	<DataProcessor uuid="49b6b0c5-f838-4fdd-bcd4-7720dd1a2d41">
+		<InternalInfo>
+			<xr:GeneratedType name="DataProcessorObject.Телефония" category="Object">
+				<xr:TypeId>8830da0f-f6ce-4592-a88c-989811dfc3b9</xr:TypeId>
+				<xr:ValueId>2f36d70f-cacd-4711-b6e8-53e312ad83c2</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="DataProcessorManager.Телефония" category="Manager">
+				<xr:TypeId>2e156b58-173f-4d2f-81e4-b3858e053293</xr:TypeId>
+				<xr:ValueId>b4bec677-7a5e-4630-b9f5-b77b95383b8a</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<Name>Телефония</Name>
+			<Synonym/>
+			<Comment/>
+			<UseStandardCommands>true</UseStandardCommands>
+			<DefaultForm>DataProcessor.Телефония.Form.РабочаяПанельТелефонии</DefaultForm>
+			<AuxiliaryForm/>
+			<IncludeHelpInContents>false</IncludeHelpInContents>
+			<ExtendedPresentation/>
+			<Explanation/>
+		</Properties>
+		<ChildObjects>
+			<Form>РабочаяПанельТелефонии_v1</Form>
+			<Form>НастройкиТелефонии</Form>
+			<Form>ВыборАдресатаПеревода</Form>
+			<Form>КарточкаЗвонка</Form>
+			<Form>ОПрограмме</Form>
+			<Form>РабочаяПанельТелефонии</Form>
+			<Template>AvayaMediaComponent</Template>
+			<Template>AvayaWfoIntegration</Template>
+			<Template>ServiceProvider</Template>
+			<Template>ServiceProviderWrapper</Template>
+			<Template>RegAsm</Template>
+			<Template>Документация</Template>
+			<Template>AvayaMediaLibrary</Template>
+			<Template>RegAddIn</Template>
+		</ChildObjects>
+	</DataProcessor>
+</MetaDataObject>

@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.6">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<ChildItems>
+		<Table name="НаборЗаписей" id="1">
+			<Representation>List</Representation>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>НаборЗаписей</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="НаборЗаписейКонтекстноеМеню" id="2"/>
+			<AutoCommandBar name="НаборЗаписейКоманднаяПанель" id="3"/>
+			<ExtendedTooltip name="НаборЗаписейРасширеннаяПодсказка" id="4"/>
+			<SearchStringAddition name="НаборЗаписейСтрокаПоиска" id="5">
+				<AdditionSource>
+					<Item>НаборЗаписей</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="НаборЗаписейСтрокаПоискаКонтекстноеМеню" id="6"/>
+				<ExtendedTooltip name="НаборЗаписейСтрокаПоискаРасширеннаяПодсказка" id="7"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="НаборЗаписейСостояниеПросмотра" id="8">
+				<AdditionSource>
+					<Item>НаборЗаписей</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="НаборЗаписейСостояниеПросмотраКонтекстноеМеню" id="9"/>
+				<ExtendedTooltip name="НаборЗаписейСостояниеПросмотраРасширеннаяПодсказка" id="10"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="НаборЗаписейУправлениеПоиском" id="11">
+				<AdditionSource>
+					<Item>НаборЗаписей</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="НаборЗаписейУправлениеПоискомКонтекстноеМеню" id="12"/>
+				<ExtendedTooltip name="НаборЗаписейУправлениеПоискомРасширеннаяПодсказка" id="13"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="НомерСтроки" id="14">
+					<DataPath>НаборЗаписей.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="НомерСтрокиКонтекстноеМеню" id="15"/>
+					<ExtendedTooltip name="НомерСтрокиРасширеннаяПодсказка" id="16"/>
+				</LabelField>
+				<InputField name="Регистратор" id="17">
+					<DataPath>НаборЗаписей.Recorder</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="РегистраторКонтекстноеМеню" id="18"/>
+					<ExtendedTooltip name="РегистраторРасширеннаяПодсказка" id="19"/>
+				</InputField>
+				<InputField name="Анкета" id="20">
+					<DataPath>НаборЗаписей.Анкета</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="АнкетаКонтекстноеМеню" id="21"/>
+					<ExtendedTooltip name="АнкетаРасширеннаяПодсказка" id="22"/>
+				</InputField>
+				<InputField name="Вопрос" id="23">
+					<DataPath>НаборЗаписей.Вопрос</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ВопросКонтекстноеМеню" id="24"/>
+					<ExtendedTooltip name="ВопросРасширеннаяПодсказка" id="25"/>
+				</InputField>
+				<InputField name="ЭлементарныйВопрос" id="26">
+					<DataPath>НаборЗаписей.ЭлементарныйВопрос</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ЭлементарныйВопросКонтекстноеМеню" id="27"/>
+					<ExtendedTooltip name="ЭлементарныйВопросРасширеннаяПодсказка" id="28"/>
+				</InputField>
+				<InputField name="НомерЯчейки" id="29">
+					<DataPath>НаборЗаписей.НомерЯчейки</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="НомерЯчейкиКонтекстноеМеню" id="30"/>
+					<ExtendedTooltip name="НомерЯчейкиРасширеннаяПодсказка" id="31"/>
+				</InputField>
+				<InputField name="Ответ" id="32">
+					<DataPath>НаборЗаписей.Ответ</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ОтветКонтекстноеМеню" id="33"/>
+					<ExtendedTooltip name="ОтветРасширеннаяПодсказка" id="34"/>
+				</InputField>
+				<InputField name="ОткрытыйОтвет" id="35">
+					<DataPath>НаборЗаписей.ОткрытыйОтвет</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ОткрытыйОтветКонтекстноеМеню" id="36"/>
+					<ExtendedTooltip name="ОткрытыйОтветРасширеннаяПодсказка" id="37"/>
+				</InputField>
+				<InputField name="ПараметрПечати" id="38">
+					<DataPath>НаборЗаписей.ПараметрПечати</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ПараметрПечатиКонтекстноеМеню" id="39"/>
+					<ExtendedTooltip name="ПараметрПечатиРасширеннаяПодсказка" id="40"/>
+				</InputField>
+				<CheckBoxField name="ИспользоватьСпецСимволДляЗамены" id="41">
+					<DataPath>НаборЗаписей.ИспользоватьСпецСимволДляЗамены</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ИспользоватьСпецСимволДляЗаменыКонтекстноеМеню" id="42"/>
+					<ExtendedTooltip name="ИспользоватьСпецСимволДляЗаменыРасширеннаяПодсказка" id="43"/>
+				</CheckBoxField>
+				<CheckBoxField name="ЗначениеПараметраЗаполнено" id="44">
+					<DataPath>НаборЗаписей.ЗначениеПараметраЗаполнено</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ЗначениеПараметраЗаполненоКонтекстноеМеню" id="45"/>
+					<ExtendedTooltip name="ЗначениеПараметраЗаполненоРасширеннаяПодсказка" id="46"/>
+				</CheckBoxField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="НаборЗаписей" id="1">
+			<Type>
+				<v8:Type>cfg:InformationRegisterRecordSet.ОтветыНаВопросыАнкет</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+	</Attributes>
+</Form>

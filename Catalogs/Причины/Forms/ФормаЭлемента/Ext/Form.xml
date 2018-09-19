@@ -1,0 +1,381 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.6">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаЗакрыть" id="14">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Close</CommandName>
+				<ExtendedTooltip name="ФормаЗакрытьРасширеннаяПодсказка" id="48"/>
+			</Button>
+			<Button name="ФормаПеренестиОбъектыВТЧ" id="40">
+				<Type>CommandBarButton</Type>
+				<Visible>false</Visible>
+				<Enabled>false</Enabled>
+				<CommandName>Form.Command.ПеренестиОбъектыВТЧ</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Перенести объекты</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаПеренестиОбъектыВТЧРасширеннаяПодсказка" id="49"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="BeforeWriteAtServer">ПередЗаписьюНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="Группа5" id="94">
+			<HorizontalStretch>true</HorizontalStretch>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа5РасширеннаяПодсказка" id="95"/>
+			<ChildItems>
+				<InputField name="Код" id="1">
+					<DataPath>Объект.Code</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КодКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="КодРасширеннаяПодсказка" id="50"/>
+				</InputField>
+				<InputField name="Наименование" id="3">
+					<DataPath>Объект.Description</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<HorizontalStretch>true</HorizontalStretch>
+					<ContextMenu name="НаименованиеКонтекстноеМеню" id="4"/>
+					<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="51"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="Группа2" id="43">
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="52"/>
+			<ChildItems>
+				<UsualGroup name="Группа3" id="44">
+					<Enabled>false</Enabled>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="Группа3РасширеннаяПодсказка" id="53"/>
+					<ChildItems>
+						<CheckBoxField name="Сделка" id="22">
+							<DataPath>Объект.Сделка</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="СделкаКонтекстноеМеню" id="23"/>
+							<ExtendedTooltip name="СделкаРасширеннаяПодсказка" id="54"/>
+						</CheckBoxField>
+						<CheckBoxField name="Актуальная" id="24">
+							<DataPath>Объект.Актуальная</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="АктуальнаяКонтекстноеМеню" id="25"/>
+							<ExtendedTooltip name="АктуальнаяРасширеннаяПодсказка" id="55"/>
+						</CheckBoxField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="Группа4" id="45">
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="Группа4РасширеннаяПодсказка" id="56"/>
+					<ChildItems>
+						<CheckBoxField name="ВыдачаСертификата" id="46">
+							<DataPath>Объект.ВыдачаСертификата</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ВыдачаСертификатаКонтекстноеМеню" id="47"/>
+							<ExtendedTooltip name="ВыдачаСертификатаРасширеннаяПодсказка" id="57"/>
+						</CheckBoxField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="Группа1" id="37">
+			<Group>Horizontal</Group>
+			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="58"/>
+			<ChildItems>
+				<Table name="Подарки" id="7">
+					<Representation>List</Representation>
+					<ReadOnly>true</ReadOnly>
+					<AutoInsertNewRow>true</AutoInsertNewRow>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<DataPath>Объект.Подарки</DataPath>
+					<SearchStringLocation>None</SearchStringLocation>
+					<ViewStatusLocation>None</ViewStatusLocation>
+					<SearchControlLocation>None</SearchControlLocation>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="ПодаркиКонтекстноеМеню" id="8"/>
+					<AutoCommandBar name="ПодаркиКоманднаяПанель" id="9">
+						<Autofill>false</Autofill>
+						<ChildItems>
+							<Button name="ПодаркиДобавить" id="15">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.Подарки.StandardCommand.Add</CommandName>
+								<ExtendedTooltip name="ПодаркиДобавитьРасширеннаяПодсказка" id="59"/>
+							</Button>
+							<Button name="ПодаркиСкопировать" id="21">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.Подарки.StandardCommand.Copy</CommandName>
+								<ExtendedTooltip name="ПодаркиСкопироватьРасширеннаяПодсказка" id="60"/>
+							</Button>
+							<Button name="ПодаркиУдалить" id="16">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.Подарки.StandardCommand.Delete</CommandName>
+								<ExtendedTooltip name="ПодаркиУдалитьРасширеннаяПодсказка" id="61"/>
+							</Button>
+							<Button name="ПодаркиПереместитьВверх" id="17">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.Подарки.StandardCommand.MoveUp</CommandName>
+								<ExtendedTooltip name="ПодаркиПереместитьВверхРасширеннаяПодсказка" id="62"/>
+							</Button>
+							<Button name="ПодаркиПереместитьВниз" id="18">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.Подарки.StandardCommand.MoveDown</CommandName>
+								<ExtendedTooltip name="ПодаркиПереместитьВнизРасширеннаяПодсказка" id="63"/>
+							</Button>
+							<Button name="УстановитьВсеФлажкиАктуальности" id="41">
+								<Type>CommandBarButton</Type>
+								<Representation>Picture</Representation>
+								<CommandName>Form.Command.УстановитьВсеФлажкиАктуальности</CommandName>
+								<Picture>
+									<xr:Ref>StdPicture.CheckAll</xr:Ref>
+									<xr:LoadTransparent>true</xr:LoadTransparent>
+								</Picture>
+								<ExtendedTooltip name="УстановитьВсеФлажкиАктуальностиРасширеннаяПодсказка" id="64"/>
+							</Button>
+							<Button name="ПодаркиСнятьВсеФлажкиАктуальности" id="42">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.СнятьВсеФлажкиАктуальности</CommandName>
+								<Picture>
+									<xr:Ref>StdPicture.UncheckAll</xr:Ref>
+									<xr:LoadTransparent>true</xr:LoadTransparent>
+								</Picture>
+								<ExtendedTooltip name="ПодаркиСнятьВсеФлажкиАктуальностиРасширеннаяПодсказка" id="65"/>
+							</Button>
+						</ChildItems>
+					</AutoCommandBar>
+					<ExtendedTooltip name="ПодаркиРасширеннаяПодсказка" id="66"/>
+					<SearchStringAddition name="ПодаркиСтрокаПоиска" id="67">
+						<AdditionSource>
+							<Item>Подарки</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ПодаркиСтрокаПоискаКонтекстноеМеню" id="68"/>
+						<ExtendedTooltip name="ПодаркиСтрокаПоискаРасширеннаяПодсказка" id="69"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="ПодаркиСостояниеПросмотра" id="70">
+						<AdditionSource>
+							<Item>Подарки</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ПодаркиСостояниеПросмотраКонтекстноеМеню" id="71"/>
+						<ExtendedTooltip name="ПодаркиСостояниеПросмотраРасширеннаяПодсказка" id="72"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="ПодаркиУправлениеПоиском" id="73">
+						<AdditionSource>
+							<Item>Подарки</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="ПодаркиУправлениеПоискомКонтекстноеМеню" id="74"/>
+						<ExtendedTooltip name="ПодаркиУправлениеПоискомРасширеннаяПодсказка" id="75"/>
+					</SearchControlAddition>
+					<Events>
+						<Event name="BeforeDeleteRow">ПодаркиПередУдалением</Event>
+						<Event name="OnActivateRow">ПодаркиПриАктивизацииСтроки</Event>
+						<Event name="OnStartEdit">ПодаркиПриНачалеРедактирования</Event>
+					</Events>
+					<ChildItems>
+						<LabelField name="ПодаркиНомерСтроки" id="10">
+							<DataPath>Объект.Подарки.LineNumber</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ПодаркиНомерСтрокиКонтекстноеМеню" id="11"/>
+							<ExtendedTooltip name="ПодаркиНомерСтрокиРасширеннаяПодсказка" id="76"/>
+						</LabelField>
+						<InputField name="ПодаркиНоменклатура" id="12">
+							<DataPath>Объект.Подарки.Номенклатура</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ПодаркиНоменклатураКонтекстноеМеню" id="13"/>
+							<ExtendedTooltip name="ПодаркиНоменклатураРасширеннаяПодсказка" id="77"/>
+							<Events>
+								<Event name="OnChange">ПодаркиНоменклатураПриИзменении</Event>
+							</Events>
+						</InputField>
+						<InputField name="ПодаркиПроект" id="19">
+							<DataPath>1/0:a49a4236-85df-494b-9bef-823f37ca88fb/0:38d84260-4704-4323-a741-78167078b6d9</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ПодаркиПроектКонтекстноеМеню" id="20"/>
+							<ExtendedTooltip name="ПодаркиПроектРасширеннаяПодсказка" id="78"/>
+						</InputField>
+						<InputField name="ПодаркиКлючСтроки" id="38">
+							<DataPath>Объект.Подарки.КлючСтроки</DataPath>
+							<Visible>false</Visible>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ПодаркиКлючСтрокиКонтекстноеМеню" id="39"/>
+							<ExtendedTooltip name="ПодаркиКлючСтрокиРасширеннаяПодсказка" id="79"/>
+						</InputField>
+						<CheckBoxField name="ПодаркиАктуален" id="26">
+							<DataPath>Объект.Подарки.Актуален</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ПодаркиАктуаленКонтекстноеМеню" id="27"/>
+							<ExtendedTooltip name="ПодаркиАктуаленРасширеннаяПодсказка" id="80"/>
+						</CheckBoxField>
+					</ChildItems>
+				</Table>
+				<Table name="Объекты" id="28">
+					<ReadOnly>true</ReadOnly>
+					<SelectionMode>SingleRow</SelectionMode>
+					<AutoInsertNewRow>true</AutoInsertNewRow>
+					<AutoAddIncomplete>true</AutoAddIncomplete>
+					<SearchOnInput>Use</SearchOnInput>
+					<HorizontalStretch>false</HorizontalStretch>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<DataPath>Объект.Объекты</DataPath>
+					<SearchStringLocation>None</SearchStringLocation>
+					<ViewStatusLocation>None</ViewStatusLocation>
+					<SearchControlLocation>None</SearchControlLocation>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="ОбъектыКонтекстноеМеню" id="29"/>
+					<AutoCommandBar name="ОбъектыКоманднаяПанель" id="30"/>
+					<ExtendedTooltip name="ОбъектыРасширеннаяПодсказка" id="81"/>
+					<SearchStringAddition name="ОбъектыСтрокаПоиска" id="82">
+						<AdditionSource>
+							<Item>Объекты</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ОбъектыСтрокаПоискаКонтекстноеМеню" id="83"/>
+						<ExtendedTooltip name="ОбъектыСтрокаПоискаРасширеннаяПодсказка" id="84"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="ОбъектыСостояниеПросмотра" id="85">
+						<AdditionSource>
+							<Item>Объекты</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ОбъектыСостояниеПросмотраКонтекстноеМеню" id="86"/>
+						<ExtendedTooltip name="ОбъектыСостояниеПросмотраРасширеннаяПодсказка" id="87"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="ОбъектыУправлениеПоиском" id="88">
+						<AdditionSource>
+							<Item>Объекты</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="ОбъектыУправлениеПоискомКонтекстноеМеню" id="89"/>
+						<ExtendedTooltip name="ОбъектыУправлениеПоискомРасширеннаяПодсказка" id="90"/>
+					</SearchControlAddition>
+					<Events>
+						<Event name="OnStartEdit">ОбъектыПриНачалеРедактирования</Event>
+						<Event name="OnChange">ОбъектыПриИзменении</Event>
+					</Events>
+					<ChildItems>
+						<InputField name="ОбъектыКлючСтроки" id="35">
+							<DataPath>Объект.Объекты.КлючСтроки</DataPath>
+							<Visible>false</Visible>
+							<SkipOnInput>true</SkipOnInput>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ОбъектыКлючСтрокиКонтекстноеМеню" id="36"/>
+							<ExtendedTooltip name="ОбъектыКлючСтрокиРасширеннаяПодсказка" id="91"/>
+						</InputField>
+						<InputField name="ОбъектыПроект" id="33">
+							<DataPath>Объект.Объекты.Проект</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Объект</v8:content>
+								</v8:item>
+							</Title>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoChoiceIncomplete>true</AutoChoiceIncomplete>
+							<QuickChoice>true</QuickChoice>
+							<ChooseType>false</ChooseType>
+							<IncompleteChoiceMode>OnActivate</IncompleteChoiceMode>
+							<ContextMenu name="ОбъектыПроектКонтекстноеМеню" id="34"/>
+							<ExtendedTooltip name="ОбъектыПроектРасширеннаяПодсказка" id="92"/>
+							<Events>
+								<Event name="StartChoice">ОбъектыПроектНачалоВыбора</Event>
+							</Events>
+						</InputField>
+					</ChildItems>
+				</Table>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="Комментарий" id="5">
+			<DataPath>Объект.Комментарий</DataPath>
+			<Enabled>false</Enabled>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<HorizontalStretch>true</HorizontalStretch>
+			<ContextMenu name="КомментарийКонтекстноеМеню" id="6"/>
+			<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="93"/>
+		</InputField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.Причины</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ПеренестиОбъектыВТЧ" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перенести объекты ВТЧ</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перенести объекты ВТЧ</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПеренестиОбъектыВТЧ</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="УстановитьВсеФлажкиАктуальности" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить все флажки актуальности</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить все флажки актуальности</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>УстановитьВсеФлажкиАктуальности</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="СнятьВсеФлажкиАктуальности" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять все флажки актуальности</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять все флажки актуальности</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СнятьВсеФлажкиАктуальности</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

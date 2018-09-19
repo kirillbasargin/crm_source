@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.6">
+	<Subsystem uuid="fe20274d-b4a3-489c-b926-626fb9a88b90">
+		<Properties>
+			<Name>НормативноСправочнаяИнформация</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Нормативно справочная информация</v8:content>
+				</v8:item>
+			</Synonym>
+			<Comment/>
+			<IncludeHelpInContents>true</IncludeHelpInContents>
+			<IncludeInCommandInterface>false</IncludeInCommandInterface>
+			<Explanation/>
+			<Picture/>
+			<Content>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.СтатусыОбъектовНедвижимости</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.ВидыОбъектовНедвижимости</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.ПолФизическогоЛица</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.ЮридическоеФизическоеЛицо</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.Проекты</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.ОбъектыСтроительства</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.Банки</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.НазначениеОбъектовНедвижимости</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.ПравообладателиОбъектовСтроительства</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.Организации</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.ГруппыПравообладателя</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.ОбъектыНедвижимости</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.ТипыРезервов</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.СтроительныеОси</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.Подъезды</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.Фазы</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.ТипыОтделки</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.Серии</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.Клиенты</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.ВидыДокументовФизическихЛиц</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.ФИОФизическихЛиц</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.ДокументыФизическихЛиц</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.Квартирограмма</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.ТипыЦен</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.СкидкиНаОбъектыНедвижимости</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.Контрагенты</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.ОтделенияИпотечныхБанков</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.СвидетельстваОРожденииФизическихЛиц</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.СтатусыОбъектовНедвижимости</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.АккредитацияОбъектовСтроительстваВБанках</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.НазначениеОбъектовСтроительства</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.СоответствиеПроектовУПНПроектамCRM</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.ПроектыУПН</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.КорпусаОбъектовСтроительства</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.СтроительныеОсиПоОбъектамНедвижимости</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.ОбъектыНедвижимостиПрисоединенныеФайлы</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.Мотивации</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.ОСПоВоеннойИпотеке</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.ГражданствоФизическихЛиц</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonCommand.ОткрытьФормуСпискаСправочникаОбъектыНедвижимости</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonCommand.ОткрытьФормуСпискаСправочникаОбъектыСтроительства</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonCommand.ПанельОтчетовРаботаСКлиентами</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommandGroup.Справочники</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonCommand.ОткрытьФормуСпискаСправочникаСправочникаКлиенты</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Constant.ПроверяющийПользователь</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">SessionParameter.ОтладкаЗапросовRLS</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.СоставыГруппПользователейИсторияИзмений</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.КлиентыКонтактнаяИнформация</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.СоставСемьи</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.ИсключенияДублированияКлиентов</xr:Item>
+			</Content>
+		</Properties>
+		<ChildObjects/>
+	</Subsystem>
+</MetaDataObject>

@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.6">
+	<Enum uuid="c8d2441a-b1c7-4233-8e4a-b44cdb02b6ea">
+		<InternalInfo>
+			<xr:GeneratedType name="EnumRef.ПриоритетыЗаявокНаЗвонок" category="Ref">
+				<xr:TypeId>032adc45-df87-4e5f-9873-95b29d6c45c6</xr:TypeId>
+				<xr:ValueId>67def85c-3e9c-4980-9271-bc28f8637001</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="EnumManager.ПриоритетыЗаявокНаЗвонок" category="Manager">
+				<xr:TypeId>c4136093-ad3c-4de2-b63b-7442eb3c403c</xr:TypeId>
+				<xr:ValueId>9918e66b-18a1-4396-a68e-8be3df0b0789</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="EnumList.ПриоритетыЗаявокНаЗвонок" category="List">
+				<xr:TypeId>cbe4b196-6624-46c4-86a6-8c65c7b5b63c</xr:TypeId>
+				<xr:ValueId>da7c0ea4-bd21-4ee0-b076-cc963225894d</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<Name>ПриоритетыЗаявокНаЗвонок</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Приоритеты заявок на звонок</v8:content>
+				</v8:item>
+			</Synonym>
+			<Comment/>
+			<UseStandardCommands>false</UseStandardCommands>
+			<Characteristics/>
+			<QuickChoice>true</QuickChoice>
+			<ChoiceMode>BothWays</ChoiceMode>
+			<DefaultListForm/>
+			<DefaultChoiceForm/>
+			<AuxiliaryListForm/>
+			<AuxiliaryChoiceForm/>
+			<ListPresentation/>
+			<ExtendedListPresentation/>
+			<Explanation/>
+			<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
+		</Properties>
+		<ChildObjects>
+			<EnumValue uuid="03c85898-e04f-4079-a20c-0d7a5ccad91a">
+				<Properties>
+					<Name>Приоритет1</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Приоритет 1 (заказ звонка; заявки с план. временем до 15 мин от текущего времени)</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>заказ звонка; заявки с план временем до 15 мин от текущего времени</Comment>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="32824d35-f725-4724-bacb-bfb1fad70b32">
+				<Properties>
+					<Name>Приоритет2</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Приоритет 2 (все заявки)</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>все заявки за исключением п.1,3,4</Comment>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="574fb2b1-9e15-4ddf-a83c-0836fbb6a437">
+				<Properties>
+					<Name>Приоритет3</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Приоритет 3 (запланированные взаимодействия на сегодня)</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>запланированные взаимодействия на сегодня </Comment>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="a6934810-f42c-4ce3-b320-1c7d9530c10f">
+				<Properties>
+					<Name>Приоритет4</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Приоритет 4 (база обзвона)</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>база обзвона</Comment>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="3c97830f-3830-4b46-82e4-94e4a37ad845">
+				<Properties>
+					<Name>Приоритет5</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Приоритет 5 (Контроль)</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>Архив</Comment>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="53d4a6e7-072a-45b5-b769-63961785872f">
+				<Properties>
+					<Name>Приоритет6</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Приоритет 6 (Архив)</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment>Контроль</Comment>
+				</Properties>
+			</EnumValue>
+		</ChildObjects>
+	</Enum>
+</MetaDataObject>

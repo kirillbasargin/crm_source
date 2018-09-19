@@ -1,0 +1,420 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.6">
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="Группа1" id="121">
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="122"/>
+			<ChildItems>
+				<InputField name="Код" id="1">
+					<DataPath>Объект.Code</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КодКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="КодРасширеннаяПодсказка" id="3"/>
+				</InputField>
+				<InputField name="Наименование" id="4">
+					<DataPath>Объект.Description</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="НаименованиеКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="6"/>
+				</InputField>
+				<CheckBoxField name="ТолькоОтправкаПисем" id="118">
+					<DataPath>Объект.ТолькоОтправкаПисем</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ТолькоОтправкаПисемКонтекстноеМеню" id="119"/>
+					<ExtendedTooltip name="ТолькоОтправкаПисемРасширеннаяПодсказка" id="120"/>
+					<Events>
+						<Event name="OnChange">ТолькоОтправкаПисемПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+		<Pages name="Страницы" id="110">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<HorizontalStretch>true</HorizontalStretch>
+			<ExtendedTooltip name="СтраницыРасширеннаяПодсказка" id="111"/>
+			<ChildItems>
+				<Page name="Общие" id="112">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Общие</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Общие</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ОбщиеРасширеннаяПодсказка" id="113"/>
+					<ChildItems>
+						<InputField name="username" id="7">
+							<DataPath>Объект.username</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="usernameКонтекстноеМеню" id="8"/>
+							<ExtendedTooltip name="usernameРасширеннаяПодсказка" id="9"/>
+						</InputField>
+						<InputField name="password" id="10">
+							<DataPath>Объект.password</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="passwordКонтекстноеМеню" id="11"/>
+							<ExtendedTooltip name="passwordРасширеннаяПодсказка" id="12"/>
+						</InputField>
+						<InputField name="ПродуктивныйСтенд" id="13">
+							<DataPath>Объект.ПродуктивныйСтенд</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ПродуктивныйСтендКонтекстноеМеню" id="14"/>
+							<ExtendedTooltip name="ПродуктивныйСтендРасширеннаяПодсказка" id="15"/>
+						</InputField>
+						<InputField name="ТестовыйСтенд" id="16">
+							<DataPath>Объект.ТестовыйСтенд</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ТестовыйСтендКонтекстноеМеню" id="17"/>
+							<ExtendedTooltip name="ТестовыйСтендРасширеннаяПодсказка" id="18"/>
+						</InputField>
+						<InputField name="ПродуктивныйСтенд_Token" id="19">
+							<DataPath>Объект.ПродуктивныйСтенд_Token</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ПродуктивныйСтенд_TokenКонтекстноеМеню" id="20"/>
+							<ExtendedTooltip name="ПродуктивныйСтенд_TokenРасширеннаяПодсказка" id="21"/>
+						</InputField>
+						<InputField name="ТестовыйСтенд_Token" id="22">
+							<DataPath>Объект.ТестовыйСтенд_Token</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ТестовыйСтенд_TokenКонтекстноеМеню" id="23"/>
+							<ExtendedTooltip name="ТестовыйСтенд_TokenРасширеннаяПодсказка" id="24"/>
+						</InputField>
+					</ChildItems>
+				</Page>
+				<Page name="Прокси" id="114">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Прокси</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Прокси</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ПроксиРасширеннаяПодсказка" id="115"/>
+					<ChildItems>
+						<CheckBoxField name="ИспользоватьПрокси" id="25">
+							<DataPath>Объект.ИспользоватьПрокси</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ИспользоватьПроксиКонтекстноеМеню" id="26"/>
+							<ExtendedTooltip name="ИспользоватьПроксиРасширеннаяПодсказка" id="27"/>
+						</CheckBoxField>
+						<InputField name="ПротоколПрокси" id="28">
+							<DataPath>Объект.ПротоколПрокси</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ПротоколПроксиКонтекстноеМеню" id="29"/>
+							<ExtendedTooltip name="ПротоколПроксиРасширеннаяПодсказка" id="30"/>
+						</InputField>
+						<InputField name="ПроксиСервер" id="31">
+							<DataPath>Объект.ПроксиСервер</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ПроксиСерверКонтекстноеМеню" id="32"/>
+							<ExtendedTooltip name="ПроксиСерверРасширеннаяПодсказка" id="33"/>
+						</InputField>
+						<InputField name="ПортПрокси" id="34">
+							<DataPath>Объект.ПортПрокси</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ПортПроксиКонтекстноеМеню" id="35"/>
+							<ExtendedTooltip name="ПортПроксиРасширеннаяПодсказка" id="36"/>
+						</InputField>
+						<InputField name="ИмяПользователяПрокси" id="37">
+							<DataPath>Объект.ИмяПользователяПрокси</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ИмяПользователяПроксиКонтекстноеМеню" id="38"/>
+							<ExtendedTooltip name="ИмяПользователяПроксиРасширеннаяПодсказка" id="39"/>
+						</InputField>
+						<InputField name="ПарольПрокси" id="40">
+							<DataPath>Объект.ПарольПрокси</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ПарольПроксиКонтекстноеМеню" id="41"/>
+							<ExtendedTooltip name="ПарольПроксиРасширеннаяПодсказка" id="42"/>
+						</InputField>
+						<CheckBoxField name="ИспользоватьАутентификациюОСПрокси" id="43">
+							<DataPath>Объект.ИспользоватьАутентификациюОСПрокси</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ИспользоватьАутентификациюОСПроксиКонтекстноеМеню" id="44"/>
+							<ExtendedTooltip name="ИспользоватьАутентификациюОСПроксиРасширеннаяПодсказка" id="45"/>
+						</CheckBoxField>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+		<InputField name="АдресДляРассылки" id="101">
+			<DataPath>Объект.АдресДляРассылки</DataPath>
+			<ContextMenu name="АдресДляРассылкиКонтекстноеМеню" id="102"/>
+			<ExtendedTooltip name="АдресДляРассылкиРасширеннаяПодсказка" id="103"/>
+		</InputField>
+		<InputField name="ПочтаПолучателяЗаявок" id="123">
+			<DataPath>1/0:22892f82-66ed-46fc-ada4-56296a31b4ac</DataPath>
+			<ContextMenu name="ПочтаПолучателяЗаявокКонтекстноеМеню" id="124"/>
+			<ExtendedTooltip name="ПочтаПолучателяЗаявокРасширеннаяПодсказка" id="125"/>
+		</InputField>
+		<UsualGroup name="ГруппаПолучатели" id="145">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Получатели заявок</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа получатели</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Representation>StrongSeparation</Representation>
+			<ExtendedTooltip name="ГруппаПолучателиРасширеннаяПодсказка" id="146"/>
+			<ChildItems>
+				<Table name="ПочтовыеАдресаПолучателейЗаявок" id="126">
+					<AutoInsertNewRow>true</AutoInsertNewRow>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<DataPath>Объект.ПочтовыеАдресаПолучателейЗаявок</DataPath>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="ПочтовыеАдресаПолучателейЗаявокКонтекстноеМеню" id="127"/>
+					<AutoCommandBar name="ПочтовыеАдресаПолучателейЗаявокКоманднаяПанель" id="128"/>
+					<ExtendedTooltip name="ПочтовыеАдресаПолучателейЗаявокРасширеннаяПодсказка" id="129"/>
+					<SearchStringAddition name="ПочтовыеАдресаПолучателейЗаявокСтрокаПоиска" id="130">
+						<AdditionSource>
+							<Item>ПочтовыеАдресаПолучателейЗаявок</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ПочтовыеАдресаПолучателейЗаявокСтрокаПоискаКонтекстноеМеню" id="131"/>
+						<ExtendedTooltip name="ПочтовыеАдресаПолучателейЗаявокСтрокаПоискаРасширеннаяПодсказка" id="132"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="ПочтовыеАдресаПолучателейЗаявокСостояниеПросмотра" id="133">
+						<AdditionSource>
+							<Item>ПочтовыеАдресаПолучателейЗаявок</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ПочтовыеАдресаПолучателейЗаявокСостояниеПросмотраКонтекстноеМеню" id="134"/>
+						<ExtendedTooltip name="ПочтовыеАдресаПолучателейЗаявокСостояниеПросмотраРасширеннаяПодсказка" id="135"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="ПочтовыеАдресаПолучателейЗаявокУправлениеПоиском" id="136">
+						<AdditionSource>
+							<Item>ПочтовыеАдресаПолучателейЗаявок</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="ПочтовыеАдресаПолучателейЗаявокУправлениеПоискомКонтекстноеМеню" id="137"/>
+						<ExtendedTooltip name="ПочтовыеАдресаПолучателейЗаявокУправлениеПоискомРасширеннаяПодсказка" id="138"/>
+					</SearchControlAddition>
+					<ChildItems>
+						<LabelField name="ПочтовыеАдресаПолучателейЗаявокНомерСтроки" id="139">
+							<DataPath>Объект.ПочтовыеАдресаПолучателейЗаявок.LineNumber</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ПочтовыеАдресаПолучателейЗаявокНомерСтрокиКонтекстноеМеню" id="140"/>
+							<ExtendedTooltip name="ПочтовыеАдресаПолучателейЗаявокНомерСтрокиРасширеннаяПодсказка" id="141"/>
+						</LabelField>
+						<InputField name="ПочтовыеАдресаПолучателейЗаявокПочтаПолучателяЗаявок" id="142">
+							<DataPath>Объект.ПочтовыеАдресаПолучателейЗаявок.ПочтаПолучателяЗаявок</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ПочтовыеАдресаПолучателейЗаявокПочтаПолучателяЗаявокКонтекстноеМеню" id="143"/>
+							<ExtendedTooltip name="ПочтовыеАдресаПолучателейЗаявокПочтаПолучателяЗаявокРасширеннаяПодсказка" id="144"/>
+						</InputField>
+						<InputField name="ПочтовыеАдресаПолучателейЗаявокПроект" id="147">
+							<DataPath>Объект.ПочтовыеАдресаПолучателейЗаявок.Проект</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ПочтовыеАдресаПолучателейЗаявокПроектКонтекстноеМеню" id="148"/>
+							<ExtendedTooltip name="ПочтовыеАдресаПолучателейЗаявокПроектРасширеннаяПодсказка" id="149"/>
+						</InputField>
+					</ChildItems>
+				</Table>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаНастройкиПравДоступа" id="116">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки прав доступа</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа настройки прав доступа</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Representation>StrongSeparation</Representation>
+			<ExtendedTooltip name="ГруппаНастройкиПравДоступаРасширеннаяПодсказка" id="117"/>
+			<ChildItems>
+				<Table name="НастройкиПравДоступаПользователей" id="46">
+					<Representation>List</Representation>
+					<AutoInsertNewRow>true</AutoInsertNewRow>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<DataPath>Объект.НастройкиПравДоступаПользователей</DataPath>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="НастройкиПравДоступаПользователейКонтекстноеМеню" id="47"/>
+					<AutoCommandBar name="НастройкиПравДоступаПользователейКоманднаяПанель" id="48"/>
+					<ExtendedTooltip name="НастройкиПравДоступаПользователейРасширеннаяПодсказка" id="49"/>
+					<SearchStringAddition name="НастройкиПравДоступаПользователейСтрокаПоиска" id="50">
+						<AdditionSource>
+							<Item>НастройкиПравДоступаПользователей</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="НастройкиПравДоступаПользователейСтрокаПоискаКонтекстноеМеню" id="51"/>
+						<ExtendedTooltip name="НастройкиПравДоступаПользователейСтрокаПоискаРасширеннаяПодсказка" id="52"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="НастройкиПравДоступаПользователейСостояниеПросмотра" id="53">
+						<AdditionSource>
+							<Item>НастройкиПравДоступаПользователей</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="НастройкиПравДоступаПользователейСостояниеПросмотраКонтекстноеМеню" id="54"/>
+						<ExtendedTooltip name="НастройкиПравДоступаПользователейСостояниеПросмотраРасширеннаяПодсказка" id="55"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="НастройкиПравДоступаПользователейУправлениеПоиском" id="56">
+						<AdditionSource>
+							<Item>НастройкиПравДоступаПользователей</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="НастройкиПравДоступаПользователейУправлениеПоискомКонтекстноеМеню" id="57"/>
+						<ExtendedTooltip name="НастройкиПравДоступаПользователейУправлениеПоискомРасширеннаяПодсказка" id="58"/>
+					</SearchControlAddition>
+					<ChildItems>
+						<LabelField name="НастройкиПравДоступаПользователейНомерСтроки" id="59">
+							<DataPath>Объект.НастройкиПравДоступаПользователей.LineNumber</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="НастройкиПравДоступаПользователейНомерСтрокиКонтекстноеМеню" id="60"/>
+							<ExtendedTooltip name="НастройкиПравДоступаПользователейНомерСтрокиРасширеннаяПодсказка" id="61"/>
+						</LabelField>
+						<InputField name="НастройкиПравДоступаПользователейГруппаПользователей" id="107">
+							<DataPath>Объект.НастройкиПравДоступаПользователей.ГруппаПользователя</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="НастройкиПравДоступаПользователейГруппаПользователейКонтекстноеМеню" id="108"/>
+							<ExtendedTooltip name="НастройкиПравДоступаПользователейГруппаПользователейРасширеннаяПодсказка" id="109"/>
+						</InputField>
+						<InputField name="НастройкиПравДоступаПользователейОбъектДоступа" id="62">
+							<DataPath>Объект.НастройкиПравДоступаПользователей.ОбъектДоступа</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="НастройкиПравДоступаПользователейОбъектДоступаКонтекстноеМеню" id="63"/>
+							<ExtendedTooltip name="НастройкиПравДоступаПользователейОбъектДоступаРасширеннаяПодсказка" id="64"/>
+							<Events>
+								<Event name="StartChoice">НастройкиПравДоступаПользователейОбъектДоступаНачалоВыбора</Event>
+								<Event name="ChoiceProcessing">НастройкиПравДоступаПользователейОбъектДоступаОбработкаВыбора</Event>
+							</Events>
+						</InputField>
+						<InputField name="НастройкиПравДоступаПользователейВидОбъектаДоступа" id="65">
+							<DataPath>1/0:35b0d5a7-d26f-4ebb-85f1-565dc6694b49/0:cbda4d50-a445-45c4-afdd-1259663aedfe</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="НастройкиПравДоступаПользователейВидОбъектаДоступаКонтекстноеМеню" id="66"/>
+							<ExtendedTooltip name="НастройкиПравДоступаПользователейВидОбъектаДоступаРасширеннаяПодсказка" id="67"/>
+						</InputField>
+						<InputField name="НастройкиПравДоступаПользователейusername" id="68">
+							<DataPath>Объект.НастройкиПравДоступаПользователей.username</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="НастройкиПравДоступаПользователейusernameКонтекстноеМеню" id="69"/>
+							<ExtendedTooltip name="НастройкиПравДоступаПользователейusernameРасширеннаяПодсказка" id="70"/>
+						</InputField>
+						<InputField name="НастройкиПравДоступаПользователейpassword" id="71">
+							<DataPath>Объект.НастройкиПравДоступаПользователей.password</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="НастройкиПравДоступаПользователейpasswordКонтекстноеМеню" id="72"/>
+							<ExtendedTooltip name="НастройкиПравДоступаПользователейpasswordРасширеннаяПодсказка" id="73"/>
+						</InputField>
+						<CheckBoxField name="НастройкиПравДоступаПользователейИспользоватьПрокси" id="74">
+							<DataPath>Объект.НастройкиПравДоступаПользователей.ИспользоватьПрокси</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="НастройкиПравДоступаПользователейИспользоватьПроксиКонтекстноеМеню" id="75"/>
+							<ExtendedTooltip name="НастройкиПравДоступаПользователейИспользоватьПроксиРасширеннаяПодсказка" id="76"/>
+						</CheckBoxField>
+						<InputField name="НастройкиПравДоступаПользователейПротоколПрокси" id="77">
+							<DataPath>Объект.НастройкиПравДоступаПользователей.ПротоколПрокси</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="НастройкиПравДоступаПользователейПротоколПроксиКонтекстноеМеню" id="78"/>
+							<ExtendedTooltip name="НастройкиПравДоступаПользователейПротоколПроксиРасширеннаяПодсказка" id="79"/>
+						</InputField>
+						<InputField name="НастройкиПравДоступаПользователейПроксиСервер" id="80">
+							<DataPath>Объект.НастройкиПравДоступаПользователей.ПроксиСервер</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="НастройкиПравДоступаПользователейПроксиСерверКонтекстноеМеню" id="81"/>
+							<ExtendedTooltip name="НастройкиПравДоступаПользователейПроксиСерверРасширеннаяПодсказка" id="82"/>
+						</InputField>
+						<InputField name="НастройкиПравДоступаПользователейПортПрокси" id="83">
+							<DataPath>Объект.НастройкиПравДоступаПользователей.ПортПрокси</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="НастройкиПравДоступаПользователейПортПроксиКонтекстноеМеню" id="84"/>
+							<ExtendedTooltip name="НастройкиПравДоступаПользователейПортПроксиРасширеннаяПодсказка" id="85"/>
+						</InputField>
+						<InputField name="НастройкиПравДоступаПользователейИмяПользователяПрокси" id="86">
+							<DataPath>Объект.НастройкиПравДоступаПользователей.ИмяПользователяПрокси</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="НастройкиПравДоступаПользователейИмяПользователяПроксиКонтекстноеМеню" id="87"/>
+							<ExtendedTooltip name="НастройкиПравДоступаПользователейИмяПользователяПроксиРасширеннаяПодсказка" id="88"/>
+						</InputField>
+						<InputField name="НастройкиПравДоступаПользователейПарольПрокси" id="89">
+							<DataPath>Объект.НастройкиПравДоступаПользователей.ПарольПрокси</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="НастройкиПравДоступаПользователейПарольПроксиКонтекстноеМеню" id="90"/>
+							<ExtendedTooltip name="НастройкиПравДоступаПользователейПарольПроксиРасширеннаяПодсказка" id="91"/>
+						</InputField>
+						<CheckBoxField name="НастройкиПравДоступаПользователейИспользоватьАутентификациюОСПрокси" id="92">
+							<DataPath>Объект.НастройкиПравДоступаПользователей.ИспользоватьАутентификациюОСПрокси</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="НастройкиПравДоступаПользователейИспользоватьАутентификациюОСПроксиКонтекстноеМеню" id="93"/>
+							<ExtendedTooltip name="НастройкиПравДоступаПользователейИспользоватьАутентификациюОСПроксиРасширеннаяПодсказка" id="94"/>
+						</CheckBoxField>
+						<InputField name="НастройкиПравДоступаПользователейОсновнойОС" id="98">
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="НастройкиПравДоступаПользователейОсновнойОСКонтекстноеМеню" id="99"/>
+							<ExtendedTooltip name="НастройкиПравДоступаПользователейОсновнойОСРасширеннаяПодсказка" id="100"/>
+						</InputField>
+						<InputField name="НастройкиПравДоступаПользователейАдресДляРассылки" id="104">
+							<DataPath>Объект.НастройкиПравДоступаПользователей.АдресДляРассылки</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="НастройкиПравДоступаПользователейАдресДляРассылкиКонтекстноеМеню" id="105"/>
+							<ExtendedTooltip name="НастройкиПравДоступаПользователейАдресДляРассылкиРасширеннаяПодсказка" id="106"/>
+						</InputField>
+					</ChildItems>
+				</Table>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="Комментарий" id="95">
+			<DataPath>Объект.Комментарий</DataPath>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<Height>2</Height>
+			<AutoMaxHeight>false</AutoMaxHeight>
+			<ContextMenu name="КомментарийКонтекстноеМеню" id="96"/>
+			<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="97"/>
+		</InputField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.ПараметрыПодключенияAPIИпотечныхБанков</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+</Form>

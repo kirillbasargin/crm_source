@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.6">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<ChildItems>
+		<InputField name="ИпотечныйБанк" id="16">
+			<DataPath>Запись.ИпотечныйБанк</DataPath>
+			<ContextMenu name="ИпотечныйБанкКонтекстноеМеню" id="17"/>
+			<ExtendedTooltip name="ИпотечныйБанкРасширеннаяПодсказка" id="18"/>
+		</InputField>
+		<InputField name="ПараметрExcel" id="1">
+			<DataPath>Запись.ПараметрExcel</DataPath>
+			<ContextMenu name="ПараметрExcelКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="ПараметрExcelРасширеннаяПодсказка" id="3"/>
+		</InputField>
+		<InputField name="ПараметрPDF" id="4">
+			<DataPath>Запись.ПараметрPDF</DataPath>
+			<ContextMenu name="ПараметрPDFКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="ПараметрPDFРасширеннаяПодсказка" id="6"/>
+		</InputField>
+		<InputField name="ExportValue" id="13">
+			<DataPath>Запись.ExportValue</DataPath>
+			<ContextMenu name="ExportValueКонтекстноеМеню" id="14"/>
+			<ExtendedTooltip name="ExportValueРасширеннаяПодсказка" id="15"/>
+		</InputField>
+		<InputField name="ПозицияС" id="7">
+			<DataPath>Запись.ПозицияС</DataPath>
+			<ContextMenu name="ПозицияСКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="ПозицияСРасширеннаяПодсказка" id="9"/>
+		</InputField>
+		<InputField name="ПозицияПО" id="10">
+			<DataPath>Запись.ПозицияПО</DataPath>
+			<ContextMenu name="ПозицияПОКонтекстноеМеню" id="11"/>
+			<ExtendedTooltip name="ПозицияПОРасширеннаяПодсказка" id="12"/>
+		</InputField>
+		<InputField name="ПозицияВСтрокеСлияния" id="22">
+			<DataPath>Запись.ПозицияВСтрокеСлияния</DataPath>
+			<ContextMenu name="ПозицияВСтрокеСлиянияКонтекстноеМеню" id="23"/>
+			<ExtendedTooltip name="ПозицияВСтрокеСлиянияРасширеннаяПодсказка" id="24"/>
+		</InputField>
+		<InputField name="ИпотечныйБанкНаименование" id="19">
+			<ContextMenu name="ИпотечныйБанкНаименованиеКонтекстноеМеню" id="20"/>
+			<ExtendedTooltip name="ИпотечныйБанкНаименованиеРасширеннаяПодсказка" id="21"/>
+		</InputField>
+		<InputField name="РазделительСтрокиСлияния" id="25">
+			<DataPath>Запись.РазделительСтрокиСлияния</DataPath>
+			<ContextMenu name="РазделительСтрокиСлиянияКонтекстноеМеню" id="26"/>
+			<ExtendedTooltip name="РазделительСтрокиСлиянияРасширеннаяПодсказка" id="27"/>
+		</InputField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Запись" id="1">
+			<Type>
+				<v8:Type>cfg:InformationRegisterRecordManager.МаппингПараметровСбербанк_PDF_EXCEL</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+</Form>

@@ -1,0 +1,430 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.6">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<ChildItems>
+		<Pages name="Страницы" id="133">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ExtendedTooltip name="СтраницыРасширеннаяПодсказка" id="134"/>
+			<ChildItems>
+				<Page name="Страница1" id="135">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Основные</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница1</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="Страница1РасширеннаяПодсказка" id="136"/>
+					<ChildItems>
+						<UsualGroup name="Группа1" id="103">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа1</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа1</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Vertical</Group>
+							<ChildrenAlign>ItemsLeftTitlesLeft</ChildrenAlign>
+							<Representation>StrongSeparation</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ThroughAlign>Use</ThroughAlign>
+							<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="104"/>
+							<ChildItems>
+								<InputField name="ДатаНачалаЗвонка" id="4">
+									<DataPath>Запись.ДатаНачалаЗвонка</DataPath>
+									<ContextMenu name="ДатаНачалаЗвонкаКонтекстноеМеню" id="5"/>
+									<ExtendedTooltip name="ДатаНачалаЗвонкаРасширеннаяПодсказка" id="6"/>
+								</InputField>
+								<InputField name="ДатаОкончанияЗвонка" id="64">
+									<DataPath>Запись.ДатаОкончанияЗвонка</DataPath>
+									<ContextMenu name="ДатаОкончанияЗвонкаКонтекстноеМеню" id="65"/>
+									<ExtendedTooltip name="ДатаОкончанияЗвонкаРасширеннаяПодсказка" id="66"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="Группа2" id="105">
+							<Group>Vertical</Group>
+							<ChildrenAlign>ItemsLeftTitlesLeft</ChildrenAlign>
+							<Representation>StrongSeparation</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ThroughAlign>Use</ThroughAlign>
+							<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="106"/>
+							<ChildItems>
+								<InputField name="ВызываемыйНомер" id="10">
+									<DataPath>Запись.ВызываемыйНомер</DataPath>
+									<ContextMenu name="ВызываемыйНомерКонтекстноеМеню" id="11"/>
+									<ExtendedTooltip name="ВызываемыйНомерРасширеннаяПодсказка" id="12"/>
+								</InputField>
+								<InputField name="ВызывающийНомер" id="7">
+									<DataPath>Запись.ВызывающийНомер</DataPath>
+									<ContextMenu name="ВызывающийНомерКонтекстноеМеню" id="8"/>
+									<ExtendedTooltip name="ВызывающийНомерРасширеннаяПодсказка" id="9"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="Группа3" id="107">
+							<Group>Vertical</Group>
+							<ChildrenAlign>ItemsLeftTitlesLeft</ChildrenAlign>
+							<Representation>StrongSeparation</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ThroughAlign>Use</ThroughAlign>
+							<ExtendedTooltip name="Группа3РасширеннаяПодсказка" id="108"/>
+							<ChildItems>
+								<InputField name="Контакт" id="13">
+									<DataPath>Запись.Контакт</DataPath>
+									<ContextMenu name="КонтактКонтекстноеМеню" id="14"/>
+									<ExtendedTooltip name="КонтактРасширеннаяПодсказка" id="15"/>
+								</InputField>
+								<InputField name="Ответственный" id="40">
+									<DataPath>Запись.Ответственный</DataPath>
+									<ContextMenu name="ОтветственныйКонтекстноеМеню" id="41"/>
+									<ExtendedTooltip name="ОтветственныйРасширеннаяПодсказка" id="42"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="Группа6" id="113">
+							<Group>Vertical</Group>
+							<ChildrenAlign>ItemsLeftTitlesLeft</ChildrenAlign>
+							<Representation>StrongSeparation</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ThroughAlign>Use</ThroughAlign>
+							<ExtendedTooltip name="Группа6РасширеннаяПодсказка" id="114"/>
+							<ChildItems>
+								<InputField name="ТипЗвонка" id="46">
+									<DataPath>Запись.ТипЗвонка</DataPath>
+									<ContextMenu name="ТипЗвонкаКонтекстноеМеню" id="47"/>
+									<ExtendedTooltip name="ТипЗвонкаРасширеннаяПодсказка" id="48"/>
+								</InputField>
+								<InputField name="ВидЗвонка" id="49">
+									<DataPath>Запись.ВидЗвонка</DataPath>
+									<ContextMenu name="ВидЗвонкаКонтекстноеМеню" id="50"/>
+									<ExtendedTooltip name="ВидЗвонкаРасширеннаяПодсказка" id="51"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="Группа7" id="115">
+							<Group>Vertical</Group>
+							<ChildrenAlign>ItemsLeftTitlesLeft</ChildrenAlign>
+							<Representation>StrongSeparation</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ThroughAlign>Use</ThroughAlign>
+							<ExtendedTooltip name="Группа7РасширеннаяПодсказка" id="116"/>
+							<ChildItems>
+								<InputField name="СостояниеЗвонка" id="16">
+									<DataPath>Запись.СостояниеЗвонка</DataPath>
+									<ContextMenu name="СостояниеЗвонкаКонтекстноеМеню" id="17"/>
+									<ExtendedTooltip name="СостояниеЗвонкаРасширеннаяПодсказка" id="18"/>
+								</InputField>
+								<InputField name="СтатусЗвонка" id="19">
+									<DataPath>Запись.СтатусЗвонка</DataPath>
+									<ContextMenu name="СтатусЗвонкаКонтекстноеМеню" id="20"/>
+									<ExtendedTooltip name="СтатусЗвонкаРасширеннаяПодсказка" id="21"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="Группа4" id="109">
+							<Group>Vertical</Group>
+							<ChildrenAlign>ItemsLeftTitlesLeft</ChildrenAlign>
+							<Representation>StrongSeparation</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ThroughAlign>Use</ThroughAlign>
+							<ExtendedTooltip name="Группа4РасширеннаяПодсказка" id="110"/>
+							<ChildItems>
+								<InputField name="ДатаНачалаРазговора" id="52">
+									<DataPath>Запись.ДатаНачалаРазговора</DataPath>
+									<ContextMenu name="ДатаНачалаРазговораКонтекстноеМеню" id="53"/>
+									<ExtendedTooltip name="ДатаНачалаРазговораРасширеннаяПодсказка" id="54"/>
+								</InputField>
+								<InputField name="ДлительностьРазговора" id="28">
+									<DataPath>Запись.ДлительностьРазговора</DataPath>
+									<ContextMenu name="ДлительностьРазговораКонтекстноеМеню" id="29"/>
+									<ExtendedTooltip name="ДлительностьРазговораРасширеннаяПодсказка" id="30"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="Группа5" id="111">
+							<Group>Vertical</Group>
+							<ChildrenAlign>ItemsLeftTitlesLeft</ChildrenAlign>
+							<Representation>StrongSeparation</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ThroughAlign>Use</ThroughAlign>
+							<ExtendedTooltip name="Группа5РасширеннаяПодсказка" id="112"/>
+							<ChildItems>
+								<InputField name="ДлительностьВызова" id="25">
+									<DataPath>Запись.ДлительностьВызова</DataPath>
+									<ContextMenu name="ДлительностьВызоваКонтекстноеМеню" id="26"/>
+									<ExtendedTooltip name="ДлительностьВызоваРасширеннаяПодсказка" id="27"/>
+								</InputField>
+								<InputField name="ДлительностьЗвонка" id="22">
+									<DataPath>Запись.ДлительностьЗвонка</DataPath>
+									<ContextMenu name="ДлительностьЗвонкаКонтекстноеМеню" id="23"/>
+									<ExtendedTooltip name="ДлительностьЗвонкаРасширеннаяПодсказка" id="24"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="Группа8" id="117">
+							<Group>Vertical</Group>
+							<ChildrenAlign>ItemsLeftTitlesLeft</ChildrenAlign>
+							<Representation>StrongSeparation</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ThroughAlign>Use</ThroughAlign>
+							<ExtendedTooltip name="Группа8РасширеннаяПодсказка" id="118"/>
+							<ChildItems>
+								<InputField name="ДатаПеренаправленияЗвонка" id="55">
+									<DataPath>Запись.ДатаПеренаправленияЗвонка</DataPath>
+									<ContextMenu name="ДатаПеренаправленияЗвонкаКонтекстноеМеню" id="56"/>
+									<ExtendedTooltip name="ДатаПеренаправленияЗвонкаРасширеннаяПодсказка" id="57"/>
+								</InputField>
+								<InputField name="ПеренаправленС" id="58">
+									<DataPath>Запись.ПеренаправленС</DataPath>
+									<ContextMenu name="ПеренаправленСКонтекстноеМеню" id="59"/>
+									<ExtendedTooltip name="ПеренаправленСРасширеннаяПодсказка" id="60"/>
+								</InputField>
+								<InputField name="ПеренаправленНа" id="61">
+									<DataPath>Запись.ПеренаправленНа</DataPath>
+									<ContextMenu name="ПеренаправленНаКонтекстноеМеню" id="62"/>
+									<ExtendedTooltip name="ПеренаправленНаРасширеннаяПодсказка" id="63"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="Группа12" id="125">
+							<Group>Vertical</Group>
+							<ChildrenAlign>ItemsLeftTitlesLeft</ChildrenAlign>
+							<Representation>StrongSeparation</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ThroughAlign>Use</ThroughAlign>
+							<ExtendedTooltip name="Группа12РасширеннаяПодсказка" id="126"/>
+							<ChildItems>
+								<InputField name="Запрос" id="43">
+									<DataPath>Запись.Запрос</DataPath>
+									<Visible>false</Visible>
+									<ContextMenu name="ЗапросКонтекстноеМеню" id="44"/>
+									<ExtendedTooltip name="ЗапросРасширеннаяПодсказка" id="45"/>
+								</InputField>
+								<InputField name="ЗаявкаИнициатор" id="88">
+									<DataPath>Запись.ЗаявкаИнициатор</DataPath>
+									<ContextMenu name="ЗаявкаИнициаторКонтекстноеМеню" id="89"/>
+									<ExtendedTooltip name="ЗаявкаИнициаторРасширеннаяПодсказка" id="90"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="Страница2" id="137">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дополнительные</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница1</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="Страница2РасширеннаяПодсказка" id="138"/>
+					<ChildItems>
+						<UsualGroup name="Группа9" id="119">
+							<Group>Vertical</Group>
+							<ChildrenAlign>ItemsLeftTitlesLeft</ChildrenAlign>
+							<Representation>StrongSeparation</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ThroughAlign>Use</ThroughAlign>
+							<ExtendedTooltip name="Группа9РасширеннаяПодсказка" id="120"/>
+							<ChildItems>
+								<InputField name="ID_Звонка" id="1">
+									<DataPath>Запись.ID_Звонка</DataPath>
+									<BackColor>style:ДобавленныйРеквизитФон</BackColor>
+									<BorderColor>style:МоиВариантыОтчетовЦвет</BorderColor>
+									<ContextMenu name="ID_ЗвонкаКонтекстноеМеню" id="2"/>
+									<ExtendedTooltip name="ID_ЗвонкаРасширеннаяПодсказка" id="3"/>
+								</InputField>
+								<InputField name="ID_Группы" id="67">
+									<DataPath>Запись.ID_Группы</DataPath>
+									<ContextMenu name="ID_ГруппыКонтекстноеМеню" id="68"/>
+									<ExtendedTooltip name="ID_ГруппыРасширеннаяПодсказка" id="69"/>
+								</InputField>
+								<InputField name="ID_Перенапраления" id="70">
+									<DataPath>Запись.ID_Перенапраление</DataPath>
+									<ContextMenu name="ID_ПеренапраленияКонтекстноеМеню" id="71"/>
+									<ExtendedTooltip name="ID_ПеренапраленияРасширеннаяПодсказка" id="72"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="Группа10" id="121">
+							<Group>Vertical</Group>
+							<ChildrenAlign>ItemsLeftTitlesLeft</ChildrenAlign>
+							<Representation>StrongSeparation</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ThroughAlign>Use</ThroughAlign>
+							<ExtendedTooltip name="Группа10РасширеннаяПодсказка" id="122"/>
+							<ChildItems>
+								<InputField name="UCID" id="73">
+									<DataPath>Запись.UCID</DataPath>
+									<ContextMenu name="UCIDКонтекстноеМеню" id="74"/>
+									<ExtendedTooltip name="UCIDРасширеннаяПодсказка" id="75"/>
+								</InputField>
+								<InputField name="UCID_Перенапраление" id="76">
+									<DataPath>Запись.UCID_Перенапраление</DataPath>
+									<ContextMenu name="UCID_ПеренапралениеКонтекстноеМеню" id="77"/>
+									<ExtendedTooltip name="UCID_ПеренапралениеРасширеннаяПодсказка" id="78"/>
+								</InputField>
+								<InputField name="CALLID" id="79">
+									<DataPath>Запись.CALLID</DataPath>
+									<ContextMenu name="CALLIDКонтекстноеМеню" id="80"/>
+									<ExtendedTooltip name="CALLIDРасширеннаяПодсказка" id="81"/>
+								</InputField>
+								<InputField name="CallId_Avaya" id="139">
+									<DataPath>Запись.CallId_Avaya</DataPath>
+									<Width>10</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ContextMenu name="CallId_AvayaКонтекстноеМеню" id="140"/>
+									<ExtendedTooltip name="CallId_AvayaРасширеннаяПодсказка" id="141"/>
+								</InputField>
+								<InputField name="First_CallId" id="142">
+									<DataPath>Запись.First_CallId</DataPath>
+									<Width>10</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ContextMenu name="First_CallIdКонтекстноеМеню" id="143"/>
+									<ExtendedTooltip name="First_CallIdРасширеннаяПодсказка" id="144"/>
+								</InputField>
+								<InputField name="Primary_CallId" id="145">
+									<DataPath>Запись.Primary_CallId</DataPath>
+									<Width>10</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ContextMenu name="Primary_CallIdКонтекстноеМеню" id="146"/>
+									<ExtendedTooltip name="Primary_CallIdРасширеннаяПодсказка" id="147"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="Группа11" id="123">
+							<Group>Vertical</Group>
+							<ChildrenAlign>ItemsLeftTitlesLeft</ChildrenAlign>
+							<Representation>StrongSeparation</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ThroughAlign>Use</ThroughAlign>
+							<ExtendedTooltip name="Группа11РасширеннаяПодсказка" id="124"/>
+							<ChildItems>
+								<InputField name="НомерЛинии" id="37">
+									<DataPath>Запись.НомерЛинии</DataPath>
+									<ContextMenu name="НомерЛинииКонтекстноеМеню" id="38"/>
+									<ExtendedTooltip name="НомерЛинииРасширеннаяПодсказка" id="39"/>
+								</InputField>
+								<InputField name="ПредставлениеНомераТелефона" id="31">
+									<DataPath>Запись.ПредставлениеНомераТелефона</DataPath>
+									<ContextMenu name="ПредставлениеНомераТелефонаКонтекстноеМеню" id="32"/>
+									<ExtendedTooltip name="ПредставлениеНомераТелефонаРасширеннаяПодсказка" id="33"/>
+								</InputField>
+								<InputField name="НомерТелефона" id="34">
+									<DataPath>Запись.НомерТелефона</DataPath>
+									<ContextMenu name="НомерТелефонаКонтекстноеМеню" id="35"/>
+									<ExtendedTooltip name="НомерТелефонаРасширеннаяПодсказка" id="36"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="Группа13" id="127">
+							<Group>Vertical</Group>
+							<ChildrenAlign>ItemsLeftTitlesLeft</ChildrenAlign>
+							<Representation>StrongSeparation</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ThroughAlign>Use</ThroughAlign>
+							<ExtendedTooltip name="Группа13РасширеннаяПодсказка" id="128"/>
+							<ChildItems>
+								<CheckBoxField name="ЭтоВнутреннийВызов" id="82">
+									<DataPath>Запись.ЭтоВнутреннийВызов</DataPath>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ЭтоВнутреннийВызовКонтекстноеМеню" id="83"/>
+									<ExtendedTooltip name="ЭтоВнутреннийВызовРасширеннаяПодсказка" id="84"/>
+								</CheckBoxField>
+								<CheckBoxField name="Направление" id="85">
+									<DataPath>Запись.Направление</DataPath>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="НаправлениеКонтекстноеМеню" id="86"/>
+									<ExtendedTooltip name="НаправлениеРасширеннаяПодсказка" id="87"/>
+								</CheckBoxField>
+								<CheckBoxField name="ЗагруженИзAvaya_CMS" id="91">
+									<DataPath>Запись.ЗагруженИзAvaya_CMS</DataPath>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ЗагруженИзAvaya_CMSКонтекстноеМеню" id="92"/>
+									<ExtendedTooltip name="ЗагруженИзAvaya_CMSРасширеннаяПодсказка" id="93"/>
+								</CheckBoxField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="Группа14" id="129">
+							<Group>Vertical</Group>
+							<ChildrenAlign>ItemsLeftTitlesLeft</ChildrenAlign>
+							<Representation>StrongSeparation</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ThroughAlign>Use</ThroughAlign>
+							<ExtendedTooltip name="Группа14РасширеннаяПодсказка" id="130"/>
+							<ChildItems>
+								<InputField name="ИдентификаторСессииТелефонии" id="94">
+									<DataPath>Запись.ИдентификаторСессииТелефонии</DataPath>
+									<ContextMenu name="ИдентификаторСессииТелефонииКонтекстноеМеню" id="95"/>
+									<ExtendedTooltip name="ИдентификаторСессииТелефонииРасширеннаяПодсказка" id="96"/>
+								</InputField>
+								<InputField name="ИдентификаторСеансаТелефонии" id="97">
+									<DataPath>Запись.ИдентификаторСеансаТелефонии</DataPath>
+									<ContextMenu name="ИдентификаторСеансаТелефонииКонтекстноеМеню" id="98"/>
+									<ExtendedTooltip name="ИдентификаторСеансаТелефонииРасширеннаяПодсказка" id="99"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="Группа15" id="131">
+							<HorizontalStretch>true</HorizontalStretch>
+							<Group>Vertical</Group>
+							<ChildrenAlign>ItemsLeftTitlesLeft</ChildrenAlign>
+							<Representation>StrongSeparation</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ThroughAlign>Use</ThroughAlign>
+							<ExtendedTooltip name="Группа15РасширеннаяПодсказка" id="132"/>
+							<ChildItems>
+								<InputField name="Комментарий" id="100">
+									<DataPath>Запись.Комментарий</DataPath>
+									<Width>61</Width>
+									<HorizontalStretch>true</HorizontalStretch>
+									<MultiLine>true</MultiLine>
+									<ContextMenu name="КомментарийКонтекстноеМеню" id="101"/>
+									<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="102"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Запись" id="1">
+			<Type>
+				<v8:Type>cfg:InformationRegisterRecordManager.ИсторияЗвонков</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+</Form>

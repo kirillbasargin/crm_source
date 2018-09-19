@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.6">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="Отчеты" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отчеты</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отчеты</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Representation>StrongSeparation</Representation>
+			<ExtendedTooltip name="ОтчетыРасширеннаяПодсказка" id="16"/>
+			<ChildItems>
+				<Button name="Шахматка" id="17">
+					<Type>Hyperlink</Type>
+					<CommandName>Form.Command.Шахматка</CommandName>
+					<ExtendedTooltip name="ШахматкаРасширеннаяПодсказка" id="18"/>
+				</Button>
+				<Button name="ПодборОН" id="19">
+					<Type>Hyperlink</Type>
+					<CommandName>Form.Command.ПодборОН</CommandName>
+					<ExtendedTooltip name="ПодборОНРасширеннаяПодсказка" id="20"/>
+				</Button>
+				<Button name="ОтчетОтчетВоронкаПродажОткрыть" id="21">
+					<Type>Hyperlink</Type>
+					<CommandName>Report.ОтчетВоронкаПродаж.StandardCommand.Open</CommandName>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Воронка продаж</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ОтчетОтчетВоронкаПродажОткрытьРасширеннаяПодсказка" id="22"/>
+				</Button>
+				<Button name="ОтчетОтчетПоДаннымCoMagicОткрыть" id="23">
+					<Type>Hyperlink</Type>
+					<CommandName>Report.ОтчетПоДаннымCoMagic.StandardCommand.Open</CommandName>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отчет по звонкам ГПТ + обращения CoMagic</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ОтчетОтчетПоДаннымCoMagicОткрытьРасширеннаяПодсказка" id="24"/>
+				</Button>
+				<Button name="ОтчетОтчетПоДаннымCoMagic_СделкиОткрыть" id="25">
+					<Type>Hyperlink</Type>
+					<CommandName>Report.ОтчетПоДаннымCoMagic_Сделки.StandardCommand.Open</CommandName>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отчет по сделкам + обращения CoMagic</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ОтчетОтчетПоДаннымCoMagic_СделкиОткрытьРасширеннаяПодсказка" id="26"/>
+				</Button>
+				<Button name="ОтчетОтчетПоОбращениямComagicОткрыть" id="31">
+					<Type>Hyperlink</Type>
+					<CommandName>Report.ОтчетПоОбращениямCoMagic.StandardCommand.Open</CommandName>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Обращения CoMagic + данные CRM</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ОтчетОтчетПоОбращениямComagicОткрытьРасширеннаяПодсказка" id="32"/>
+				</Button>
+				<Button name="ОтчетПоВзаимодействиям" id="29">
+					<Type>Hyperlink</Type>
+					<CommandName>Form.Command.ОтчетПоВзаимодействиям</CommandName>
+					<ExtendedTooltip name="ОтчетПоВзаимодействиямРасширеннаяПодсказка" id="30"/>
+				</Button>
+				<Button name="ОтчетПоИсточникамРекламы" id="27">
+					<Type>Hyperlink</Type>
+					<CommandName>Form.Command.ОтчетПоИсточникамРекламы</CommandName>
+					<ExtendedTooltip name="ОтчетПоИсточникамРекламыРасширеннаяПодсказка" id="28"/>
+				</Button>
+				<Button name="ОтчетПоЗаявкамНаЗвонок" id="33">
+					<Type>Hyperlink</Type>
+					<CommandName>Form.Command.ОтчетПоЗаявкамНаЗвонок</CommandName>
+					<ExtendedTooltip name="ОтчетПоЗаявкамНаЗвонокРасширеннаяПодсказка" id="34"/>
+				</Button>
+				<Button name="ОтчетОтчетПоСрокамПринятияРешенияОткрыть" id="35">
+					<Type>Hyperlink</Type>
+					<CommandName>Report.ОтчетПоСрокамПринятияРешения.StandardCommand.Open</CommandName>
+					<ExtendedTooltip name="ОтчетОтчетПоСрокамПринятияРешенияОткрытьРасширеннаяПодсказка" id="36"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.Отчетность</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ОтборПоОтветственному" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отображать только мои</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Шахматка" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шахматка</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шахматка</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Шахматка</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПодборОН" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подбор ОН</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подбор ОН</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПодборОН</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОтчетПоВзаимодействиям" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отчет по взаимодействиям</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шахматка</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОтчетПоВзаимодействиям</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОтчетПоИсточникамРекламы" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отчет по источникам рекламы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шахматка</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОтчетПоИсточникамРекламы</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОтчетПоЗаявкамНаЗвонок" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отчет по заявкам на звонок</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отчет по заявкам на звонок</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОтчетПоЗаявкамНаЗвонок</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

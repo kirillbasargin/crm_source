@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.6">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<Table name="СрокиБронированияОбъектовНедвижимости" id="1">
+			<UseAlternationRowColor>true</UseAlternationRowColor>
+			<DataPath>СрокиБронированияОбъектовНедвижимости</DataPath>
+			<RowPictureDataPath>СрокиБронированияОбъектовНедвижимости.DefaultPicture</RowPictureDataPath>
+			<AutoRefresh>false</AutoRefresh>
+			<AutoRefreshPeriod>60</AutoRefreshPeriod>
+			<Period>
+				<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+				<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+				<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+			</Period>
+			<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+			<RestoreCurrentRow>false</RestoreCurrentRow>
+			<TopLevelParent xsi:nil="true"/>
+			<ShowRoot>true</ShowRoot>
+			<AllowRootChoice>false</AllowRootChoice>
+			<UpdateOnDataChange>Auto</UpdateOnDataChange>
+			<ContextMenu name="СрокиБронированияОбъектовНедвижимостиКонтекстноеМеню" id="2"/>
+			<AutoCommandBar name="СрокиБронированияОбъектовНедвижимостиКоманднаяПанель" id="3"/>
+			<ExtendedTooltip name="СрокиБронированияОбъектовНедвижимостиРасширеннаяПодсказка" id="4"/>
+			<SearchStringAddition name="СрокиБронированияОбъектовНедвижимостиСтрокаПоиска" id="5">
+				<AdditionSource>
+					<Item>СрокиБронированияОбъектовНедвижимости</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СрокиБронированияОбъектовНедвижимостиСтрокаПоискаКонтекстноеМеню" id="6"/>
+				<ExtendedTooltip name="СрокиБронированияОбъектовНедвижимостиСтрокаПоискаРасширеннаяПодсказка" id="7"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СрокиБронированияОбъектовНедвижимостиСостояниеПросмотра" id="8">
+				<AdditionSource>
+					<Item>СрокиБронированияОбъектовНедвижимости</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СрокиБронированияОбъектовНедвижимостиСостояниеПросмотраКонтекстноеМеню" id="9"/>
+				<ExtendedTooltip name="СрокиБронированияОбъектовНедвижимостиСостояниеПросмотраРасширеннаяПодсказка" id="10"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СрокиБронированияОбъектовНедвижимостиУправлениеПоиском" id="11">
+				<AdditionSource>
+					<Item>СрокиБронированияОбъектовНедвижимости</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СрокиБронированияОбъектовНедвижимостиУправлениеПоискомКонтекстноеМеню" id="12"/>
+				<ExtendedTooltip name="СрокиБронированияОбъектовНедвижимостиУправлениеПоискомРасширеннаяПодсказка" id="13"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="Selection">СрокиБронированияОбъектовНедвижимостиВыбор</Event>
+			</Events>
+			<ChildItems>
+				<LabelField name="СрокиБронированияОбъектовНедвижимостиПериод" id="23">
+					<DataPath>СрокиБронированияОбъектовНедвижимости.Период</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата бронирования</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="СрокиБронированияОбъектовНедвижимостиПериодКонтекстноеМеню" id="24"/>
+					<ExtendedTooltip name="СрокиБронированияОбъектовНедвижимостиПериодРасширеннаяПодсказка" id="25"/>
+				</LabelField>
+				<LabelField name="СрокиБронированияОбъектовНедвижимостиДатаКонцаСрокаБронирования" id="14">
+					<DataPath>СрокиБронированияОбъектовНедвижимости.ДатаКонцаСрокаБронирования</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Конец срока бронирования</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="СрокиБронированияОбъектовНедвижимостиДатаКонцаСрокаБронированияКонтекстноеМеню" id="15"/>
+					<ExtendedTooltip name="СрокиБронированияОбъектовНедвижимостиДатаКонцаСрокаБронированияРасширеннаяПодсказка" id="16"/>
+				</LabelField>
+				<LabelField name="СрокиБронированияОбъектовНедвижимостиКлиент" id="17">
+					<DataPath>СрокиБронированияОбъектовНедвижимости.Клиент</DataPath>
+					<ContextMenu name="СрокиБронированияОбъектовНедвижимостиКлиентКонтекстноеМеню" id="18"/>
+					<ExtendedTooltip name="СрокиБронированияОбъектовНедвижимостиКлиентРасширеннаяПодсказка" id="19"/>
+				</LabelField>
+				<LabelField name="СрокиБронированияОбъектовНедвижимостиОтветственный" id="20">
+					<DataPath>СрокиБронированияОбъектовНедвижимости.Ответственный</DataPath>
+					<ContextMenu name="СрокиБронированияОбъектовНедвижимостиОтветственныйКонтекстноеМеню" id="21"/>
+					<ExtendedTooltip name="СрокиБронированияОбъектовНедвижимостиОтветственныйРасширеннаяПодсказка" id="22"/>
+				</LabelField>
+				<CheckBoxField name="СрокиБронированияОбъектовНедвижимостиДомКлик" id="26">
+					<DataPath>СрокиБронированияОбъектовНедвижимости.ДомКлик</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ДомКлик</v8:content>
+						</v8:item>
+					</Title>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="СрокиБронированияОбъектовНедвижимостиДомКликКонтекстноеМеню" id="27"/>
+					<ExtendedTooltip name="СрокиБронированияОбъектовНедвижимостиДомКликРасширеннаяПодсказка" id="28"/>
+				</CheckBoxField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="СрокиБронированияОбъектовНедвижимости" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сроки бронирования объектов недвижимости</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<UseAlways>
+				<Field>~СрокиБронированияОбъектовНедвижимости.Period</Field>
+				<Field>~СрокиБронированияОбъектовНедвижимости.ДлительностьСрокаБронирования</Field>
+				<Field>~СрокиБронированияОбъектовНедвижимости.ОбъектНедвижимости</Field>
+				<Field>СрокиБронированияОбъектовНедвижимости.ДатаКонцаСрокаБронирования</Field>
+				<Field>СрокиБронированияОбъектовНедвижимости.Клиент</Field>
+				<Field>СрокиБронированияОбъектовНедвижимости.Период</Field>
+				<Field>СрокиБронированияОбъектовНедвижимости.Регистратор</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>false</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ
+	МАКСИМУМ(ВложенныйЗапрос.ДатаКонцаСрокаБронирования) КАК ДатаКонцаСрокаБронирования,
+	ВложенныйЗапрос.Регистратор КАК Регистратор,
+	ВложенныйЗапрос.Период КАК Период,
+	ВложенныйЗапрос.Ответственный КАК Ответственный,
+	ВложенныйЗапрос.Клиент КАК Клиент,
+	ВложенныйЗапрос.ДомКлик КАК ДомКлик
+ИЗ
+	(ВЫБРАТЬ
+		СрокиБронированияОбъектовНедвижимостиСрезПоследних.ДатаКонцаСрокаБронирования КАК ДатаКонцаСрокаБронирования,
+		СрокиБронированияОбъектовНедвижимостиСрезПоследних.Регистратор КАК Регистратор,
+		СрокиБронированияОбъектовНедвижимостиСрезПоследних.Период КАК Период,
+		СрокиБронированияОбъектовНедвижимостиСрезПоследних.Регистратор.Ответственный КАК Ответственный,
+		СрокиБронированияОбъектовНедвижимостиСрезПоследних.Клиент КАК Клиент,
+		СрокиБронированияОбъектовНедвижимостиСрезПоследних.Регистратор.ДомКлик КАК ДомКлик
+	ИЗ
+		РегистрСведений.СрокиБронированияОбъектовНедвижимости.СрезПоследних(, ОбъектНедвижимости = &amp;ОбъектНедвижимостиВыделение) КАК СрокиБронированияОбъектовНедвижимостиСрезПоследних
+	
+	ОБЪЕДИНИТЬ ВСЕ
+	
+	ВЫБРАТЬ
+		ДАТАВРЕМЯ(1, 1, 1),
+		ОчередьБронированияОстатки.ДокументБронирования,
+		ОчередьБронированияОстатки.ДокументБронирования.Дата,
+		ОчередьБронированияОстатки.ДокументБронирования.Ответственный,
+		ОчередьБронированияОстатки.ДокументБронирования.Клиент,
+		ОчередьБронированияОстатки.ДокументБронирования.ДомКлик
+	ИЗ
+		РегистрНакопления.ОчередьБронирования.Остатки(, ОбъектНедвижимости = &amp;ОбъектНедвижимостиВыделение) КАК ОчередьБронированияОстатки) КАК ВложенныйЗапрос
+
+СГРУППИРОВАТЬ ПО
+	ВложенныйЗапрос.Регистратор,
+	ВложенныйЗапрос.Период,
+	ВложенныйЗапрос.Ответственный,
+	ВложенныйЗапрос.Клиент,
+	ВложенныйЗапрос.ДомКлик</QueryText>
+				<AutoSaveUserSettings>false</AutoSaveUserSettings>
+				<GetInvisibleFieldPresentations>false</GetInvisibleFieldPresentations>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>Период</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="ОбъектНедвижимости" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Объект недвижимости</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Parameters>
+		<Parameter name="ОбъектНедвижимости">
+			<Type>
+				<v8:Type>cfg:CatalogRef.ОбъектыНедвижимости</v8:Type>
+			</Type>
+		</Parameter>
+	</Parameters>
+</Form>

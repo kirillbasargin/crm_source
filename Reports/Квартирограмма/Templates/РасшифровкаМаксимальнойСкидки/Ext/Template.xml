@@ -1,0 +1,936 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>МаркетинговаяКомпания</dataPath>
+			<field>МаркетинговаяКомпания</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Скидка</dataPath>
+			<field>Скидка</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОбъектНедвижимости</dataPath>
+			<field>ОбъектНедвижимости</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Площадь</dataPath>
+			<field>Площадь</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЦенаКвМ</dataPath>
+			<field>ЦенаКвМ</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Цена кв М</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Стоимость</dataPath>
+			<field>Стоимость</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОбъектСтроительства</dataPath>
+			<field>ОбъектСтроительства</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Объект строительства</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ОбъектыСтроительства.Ссылка КАК Ссылка,
+	ОСПоВоеннойИпотеке.ПроверкаСвидетельства КАК ПроверкаСвидетельства
+ПОМЕСТИТЬ ВТ_ОС
+ИЗ
+	Справочник.ОбъектыСтроительства КАК ОбъектыСтроительства
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ОСПоВоеннойИпотеке КАК ОСПоВоеннойИпотеке
+		ПО ОбъектыСтроительства.Ссылка = ОСПоВоеннойИпотеке.ОбъектСтроительства
+ГДЕ
+	ВЫБОР
+			КОГДА &amp;Проект = НЕОПРЕДЕЛЕНО
+				ТОГДА ИСТИНА
+			ИНАЧЕ ОбъектыСтроительства.Проект В (&amp;Проект)
+		КОНЕЦ
+	И ВЫБОР
+			КОГДА &amp;Фаза = НЕОПРЕДЕЛЕНО
+				ТОГДА ИСТИНА
+			ИНАЧЕ ОбъектыСтроительства.Фаза В (&amp;Фаза)
+		КОНЕЦ
+	И ВЫБОР
+			КОГДА &amp;Отделка = НЕОПРЕДЕЛЕНО
+				ТОГДА ИСТИНА
+			ИНАЧЕ ОбъектыСтроительства.Отделка В (&amp;Отделка)
+		КОНЕЦ
+	И ВЫБОР
+			КОГДА &amp;Корпус = НЕОПРЕДЕЛЕНО
+				ТОГДА ИСТИНА
+			ИНАЧЕ ОбъектыСтроительства.Корпус В (&amp;Корпус)
+		КОНЕЦ
+	И ВЫБОР
+			КОГДА &amp;ПроектВидНедвижимости = НЕОПРЕДЕЛЕНО
+				ТОГДА ИСТИНА
+			ИНАЧЕ ОбъектыСтроительства.Проект.ВидНедвижимости = &amp;ПроектВидНедвижимости
+		КОНЕЦ
+	И ВЫБОР
+			КОГДА &amp;КоличествоСекций = НЕОПРЕДЕЛЕНО
+				ТОГДА ИСТИНА
+			ИНАЧЕ ВЫБОР
+					КОГДА &amp;КоличествоСекций = 0
+						ТОГДА ОбъектыСтроительства.КоличествоСекций = 1
+					ИНАЧЕ ОбъектыСтроительства.КоличествоСекций &gt;= 1
+				КОНЕЦ
+		КОНЕЦ
+	И ВЫБОР
+			КОГДА &amp;СрокСдачи = НЕОПРЕДЕЛЕНО
+				ТОГДА ИСТИНА
+			ИНАЧЕ ОбъектыСтроительства.СрокСдачи = &amp;СрокСдачи
+		КОНЕЦ
+	И ВЫБОР
+			КОГДА &amp;ВидМатериала = НЕОПРЕДЕЛЕНО
+				ТОГДА ИСТИНА
+			ИНАЧЕ ОбъектыСтроительства.ВидМатериала В (&amp;ВидМатериала)
+		КОНЕЦ
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	Квартирограмма.ОбъектНедвижимости КАК ОбъектНедвижимости,
+	Квартирограмма.МаксимальнаяСкидка КАК МаксимальнаяСкидка,
+	Квартирограмма.МаксимальнаяСкидкаССубсидией КАК МаксимальнаяСкидкаССубсидией,
+	ЕСТЬNULL(СтатусыОбъектовНедвижимостиСрезПоследних.Статус, ЗНАЧЕНИЕ(Перечисление.СтатусыОбъектовНедвижимости.БезСтатуса)) КАК Статус,
+	Квартирограмма.Стоимость КАК Стоимость,
+	Квартирограмма.Площадь КАК Площадь,
+	Квартирограмма.ЦенаОтделкиЗаМетр КАК ЦенаОтделкиЗаМетр
+ПОМЕСТИТЬ ВТ_ОН
+ИЗ
+	РегистрСведений.Квартирограмма КАК Квартирограмма
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ОС КАК ВТ_ОС
+		ПО Квартирограмма.ОбъектСтроительства = ВТ_ОС.Ссылка
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.СтатусыОбъектовНедвижимости.СрезПоследних(
+				&amp;Период,
+				ОбъектНедвижимости.Владелец В
+					(ВЫБРАТЬ
+						ВТ_ОС.Ссылка КАК Ссылка
+					ИЗ
+						ВТ_ОС КАК ВТ_ОС)) КАК СтатусыОбъектовНедвижимостиСрезПоследних
+		ПО Квартирограмма.ОбъектНедвижимости = СтатусыОбъектовНедвижимостиСрезПоследних.ОбъектНедвижимости
+ГДЕ
+	Квартирограмма.ОбъектСтроительства В
+			(ВЫБРАТЬ
+				ВТ_ОС.Ссылка КАК Ссылка
+			ИЗ
+				ВТ_ОС КАК ВТ_ОС)
+	И ВЫБОР
+			КОГДА &amp;КоличествоКомнат = НЕОПРЕДЕЛЕНО
+				ТОГДА ИСТИНА
+			ИНАЧЕ Квартирограмма.КоличествоКомнат В (&amp;КоличествоКомнат)
+		КОНЕЦ
+	И ВЫБОР
+			КОГДА &amp;Подъезд = НЕОПРЕДЕЛЕНО
+				ТОГДА ИСТИНА
+			ИНАЧЕ Квартирограмма.Подъезд = &amp;Подъезд
+		КОНЕЦ
+	И ВЫБОР
+			КОГДА &amp;ПлощадьБольшеИлиРавно = НЕОПРЕДЕЛЕНО
+				ТОГДА ИСТИНА
+			ИНАЧЕ ВЫБОР
+					КОГДА &amp;Площадь = НЕОПРЕДЕЛЕНО
+						ТОГДА ИСТИНА
+					ИНАЧЕ ВЫБОР
+							КОГДА &amp;ПлощадьБольшеИлиРавно
+								ТОГДА Квартирограмма.Площадь &gt;= &amp;Площадь
+							ИНАЧЕ Квартирограмма.Площадь &lt;= &amp;Площадь
+						КОНЕЦ
+				КОНЕЦ
+		КОНЕЦ
+	И ВЫБОР
+			КОГДА &amp;ГруппаПравообладателя = НЕОПРЕДЕЛЕНО
+				ТОГДА ИСТИНА
+			ИНАЧЕ Квартирограмма.ГруппаПравообладателя = &amp;ГруппаПравообладателя
+		КОНЕЦ
+	И ВЫБОР
+			КОГДА &amp;Собственник = НЕОПРЕДЕЛЕНО
+				ТОГДА ИСТИНА
+			ИНАЧЕ Квартирограмма.ОбъектНедвижимости.Собственник &lt;&gt; ЗНАЧЕНИЕ(Справочник.Организации.ПустаяСсылка)
+		КОНЕЦ
+	И ВЫБОР
+			КОГДА &amp;Услуга = НЕОПРЕДЕЛЕНО
+				ТОГДА ИСТИНА
+			ИНАЧЕ Квартирограмма.Услуга = &amp;Услуга
+		КОНЕЦ
+	И ВЫБОР
+			КОГДА &amp;ЦенаЗаМетр = НЕОПРЕДЕЛЕНО
+				ТОГДА ИСТИНА
+			ИНАЧЕ Квартирограмма.ЦенаЗаМетр &gt;= &amp;ЦенаЗаМетр
+		КОНЕЦ
+	И ВЫБОР
+			КОГДА &amp;НазначениеОбъектаНедвижимости = НЕОПРЕДЕЛЕНО
+				ТОГДА ИСТИНА
+			ИНАЧЕ Квартирограмма.ОбъектНедвижимости.НазначениеОбъектаНедвижимости В (&amp;НазначениеОбъектаНедвижимости)
+		КОНЕЦ
+	И ВЫБОР
+			КОГДА &amp;ВоеннаяИпотека = НЕОПРЕДЕЛЕНО
+				ТОГДА ИСТИНА
+			ИНАЧЕ ВЫБОР
+					КОГДА ВТ_ОС.ПроверкаСвидетельства ЕСТЬ NULL
+						ТОГДА ВЫБОР
+								КОГДА &amp;ВоеннаяИпотека
+									ТОГДА ЛОЖЬ
+								ИНАЧЕ ИСТИНА
+							КОНЕЦ
+					ИНАЧЕ ВЫБОР
+							КОГДА Квартирограмма.ОбъектНедвижимости.Собственник &lt;&gt; ЗНАЧЕНИЕ(Справочник.Организации.ПустаяСсылка)
+								ТОГДА ВТ_ОС.ПроверкаСвидетельства = &amp;ВоеннаяИпотека
+							ИНАЧЕ ВЫБОР
+									КОГДА &amp;ВоеннаяИпотека
+										ТОГДА ИСТИНА
+									ИНАЧЕ ЛОЖЬ
+								КОНЕЦ
+						КОНЕЦ
+				КОНЕЦ
+		КОНЕЦ
+	И ВЫБОР
+			КОГДА &amp;СтоимостьСНизу = НЕОПРЕДЕЛЕНО
+				ТОГДА ВЫБОР
+						КОГДА &amp;СтоимостьСВерху = НЕОПРЕДЕЛЕНО
+							ТОГДА ИСТИНА
+						ИНАЧЕ Квартирограмма.Стоимость - Квартирограмма.МаксимальнаяСкидка &lt;= &amp;СтоимостьСВерху
+					КОНЕЦ
+			ИНАЧЕ ВЫБОР
+					КОГДА &amp;СтоимостьСВерху = НЕОПРЕДЕЛЕНО
+						ТОГДА Квартирограмма.Стоимость - Квартирограмма.МаксимальнаяСкидка &gt;= &amp;СтоимостьСНизу
+					ИНАЧЕ Квартирограмма.Стоимость - Квартирограмма.МаксимальнаяСкидка МЕЖДУ &amp;СтоимостьСНизу И &amp;СтоимостьСВерху
+				КОНЕЦ
+		КОНЕЦ
+	И ВЫБОР
+			КОГДА &amp;ПервыйЭтаж = НЕОПРЕДЕЛЕНО
+				ТОГДА ИСТИНА
+			ИНАЧЕ Квартирограмма.Этаж &lt;&gt; Квартирограмма.ОбъектСтроительства.МинимальнаяЭтажность
+		КОНЕЦ
+	И ВЫБОР
+			КОГДА &amp;ПоследнийЭтаж = НЕОПРЕДЕЛЕНО
+				ТОГДА ИСТИНА
+			ИНАЧЕ Квартирограмма.Этаж &lt;&gt; Квартирограмма.ОбъектСтроительства.МаксимальнаяЭтажность
+		КОНЕЦ
+	И ВЫБОР
+			КОГДА &amp;ЭтажСНизу = НЕОПРЕДЕЛЕНО
+				ТОГДА ВЫБОР
+						КОГДА &amp;ЭтажСВерху = НЕОПРЕДЕЛЕНО
+							ТОГДА ИСТИНА
+						ИНАЧЕ Квартирограмма.Этаж &lt;= &amp;ЭтажСВерху
+					КОНЕЦ
+			ИНАЧЕ ВЫБОР
+					КОГДА &amp;ЭтажСВерху = НЕОПРЕДЕЛЕНО
+						ТОГДА Квартирограмма.Этаж &gt;= &amp;ЭтажСНизу
+					ИНАЧЕ Квартирограмма.Этаж МЕЖДУ &amp;ЭтажСНизу И &amp;ЭтажСВерху
+				КОНЕЦ
+		КОНЕЦ
+	И ВЫБОР
+			КОГДА &amp;ОтделкаОН = НЕОПРЕДЕЛЕНО
+				ТОГДА ИСТИНА
+			ИНАЧЕ ВЫБОР
+					КОГДА &amp;ОтделкаОН = "Без отделки"
+						ТОГДА Квартирограмма.ТипОтделки = ЗНАЧЕНИЕ(Справочник.ТипыОтделки.ПустаяСсылка)
+					ИНАЧЕ Квартирограмма.ТипОтделки &lt;&gt; ЗНАЧЕНИЕ(Справочник.ТипыОтделки.ПустаяСсылка)
+				КОНЕЦ
+		КОНЕЦ
+	И ВЫБОР
+			КОГДА СтатусыОбъектовНедвижимостиСрезПоследних.Статус ЕСТЬ NULL
+				ТОГДА ИСТИНА
+			ИНАЧЕ СтатусыОбъектовНедвижимостиСрезПоследних.Статус &lt;&gt; ЗНАЧЕНИЕ(Перечисление.СтатусыОбъектовНедвижимости.ПереданДольщику)
+					И СтатусыОбъектовНедвижимостиСрезПоследних.Статус &lt;&gt; ЗНАЧЕНИЕ(Перечисление.СтатусыОбъектовНедвижимости.Продан)
+					И СтатусыОбъектовНедвижимостиСрезПоследних.Статус &lt;&gt; ЗНАЧЕНИЕ(Перечисление.СтатусыОбъектовНедвижимости.Переуступка)
+					И СтатусыОбъектовНедвижимостиСрезПоследних.Статус &lt;&gt; ЗНАЧЕНИЕ(Перечисление.СтатусыОбъектовНедвижимости.ВОформлении)
+		КОНЕЦ
+	И ВЫБОР
+			КОГДА &amp;ВариантГПТ
+				ТОГДА Квартирограмма.ДатаСтартаПродаж &lt;= &amp;Период
+						И Квартирограмма.ДатаСтартаПродаж &lt;&gt; ДАТАВРЕМЯ(1, 1, 1)
+						И СтатусыОбъектовНедвижимостиСрезПоследних.Статус = ЗНАЧЕНИЕ(Перечисление.СтатусыОбъектовНедвижимости.Свободен)
+						И Квартирограмма.СтатусПула = ЗНАЧЕНИЕ(Перечисление.СтатусыПулов.Открытие)
+			ИНАЧЕ ИСТИНА
+		КОНЕЦ
+	И ВЫБОР
+			КОГДА &amp;ОбъектНедвижимости = НЕОПРЕДЕЛЕНО
+				ТОГДА ИСТИНА
+			ИНАЧЕ Квартирограмма.ОбъектНедвижимости В (&amp;ОбъектНедвижимости)
+		КОНЕЦ
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	СкидкиНаОбъектыНедвижимости.ОбъектНедвижимости КАК ОбъектНедвижимости,
+	ВЫБОР
+		КОГДА СкидкиНаОбъектыНедвижимости.МаркетинговаяКомпания = ЗНАЧЕНИЕ(Справочник.МаркетинговыеКомпании.ПустаяСсылка)
+			ТОГДА "Типовая скидка"
+		ИНАЧЕ СкидкиНаОбъектыНедвижимости.МаркетинговаяКомпания
+	КОНЕЦ КАК МаркетинговаяКомпания,
+	СкидкиНаОбъектыНедвижимости.Скидка КАК Скидка
+ПОМЕСТИТЬ ВТ_Итог
+ИЗ
+	РегистрСведений.СкидкиНаОбъектыНедвижимости КАК СкидкиНаОбъектыНедвижимости
+ГДЕ
+	ВЫБОР
+			КОГДА СкидкиНаОбъектыНедвижимости.ОбъектНедвижимости ЕСТЬ NULL
+				ТОГДА ИСТИНА
+			ИНАЧЕ СкидкиНаОбъектыНедвижимости.ОбъектНедвижимости В
+					(ВЫБРАТЬ
+						ВТ_ОН.ОбъектНедвижимости КАК ОбъектНедвижимости
+					ИЗ
+						ВТ_ОН КАК ВТ_ОН)
+		КОНЕЦ
+	И ВЫБОР
+			КОГДА &amp;МаркетинговаяКомпания = НЕОПРЕДЕЛЕНО
+				ТОГДА ИСТИНА
+			ИНАЧЕ ВЫБОР
+					КОГДА СкидкиНаОбъектыНедвижимости.МаркетинговаяКомпания ЕСТЬ NULL
+						ТОГДА ИСТИНА
+					ИНАЧЕ СкидкиНаОбъектыНедвижимости.МаркетинговаяКомпания = &amp;МаркетинговаяКомпания
+				КОНЕЦ
+		КОНЕЦ
+	И ВЫБОР
+			КОГДА СкидкиНаОбъектыНедвижимости.МаркетинговаяКомпания = ЗНАЧЕНИЕ(Справочник.МаркетинговыеКомпании.ПустаяСсылка)
+				ТОГДА ИСТИНА
+			ИНАЧЕ НЕ СкидкиНаОбъектыНедвижимости.МаркетинговаяКомпания.ПометкаУдаления
+		КОНЕЦ
+
+СГРУППИРОВАТЬ ПО
+	СкидкиНаОбъектыНедвижимости.ОбъектНедвижимости,
+	ВЫБОР
+		КОГДА СкидкиНаОбъектыНедвижимости.МаркетинговаяКомпания = ЗНАЧЕНИЕ(Справочник.МаркетинговыеКомпании.ПустаяСсылка)
+			ТОГДА "Типовая скидка"
+		ИНАЧЕ СкидкиНаОбъектыНедвижимости.МаркетинговаяКомпания
+	КОНЕЦ,
+	СкидкиНаОбъектыНедвижимости.Скидка
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ЕСТЬNULL(ВТ_Итог.ОбъектНедвижимости, ВТ_ОН.ОбъектНедвижимости) КАК ОбъектНедвижимости,
+	ЕСТЬNULL(ВТ_Итог.МаркетинговаяКомпания, ЗНАЧЕНИЕ(Справочник.МаркетинговыеКомпании.ПустаяСсылка)) КАК МаркетинговаяКомпания,
+	ЕСТЬNULL(ВТ_Итог.Скидка, ЗНАЧЕНИЕ(Справочник.ТипыСкидок.ПустаяСсылка)) КАК Скидка,
+	ВТ_ОН.ЦенаОтделкиЗаМетр КАК ЦенаКвМ,
+	ВТ_ОН.Площадь КАК Площадь,
+	ВТ_ОН.Стоимость КАК Стоимость,
+	ЕСТЬNULL(ВТ_Итог.ОбъектНедвижимости.Владелец, ВТ_ОН.ОбъектНедвижимости.Владелец) КАК ОбъектСтроительства
+ИЗ
+	ВТ_Итог КАК ВТ_Итог
+		ПОЛНОЕ СОЕДИНЕНИЕ ВТ_ОН КАК ВТ_ОН
+		ПО ВТ_Итог.ОбъектНедвижимости = ВТ_ОН.ОбъектНедвижимости</query>
+	</dataSet>
+	<calculatedField>
+		<dataPath>РазмерСкидки</dataPath>
+		<expression>ОтчетыCRMВызовСервера.РассчитатьСкидку(Стоимость, ЦенаКвМ, Площадь, Скидка)</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Размер скидки</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>14</v8:Digits>
+				<v8:FractionDigits>2</v8:FractionDigits>
+				<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>СтоимостьСУчетомСкидки</dataPath>
+		<expression>Стоимость - ОтчетыCRMВызовСервера.РассчитатьСкидку(Стоимость, ЦенаКвМ, Площадь, Скидка)</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Стоимость с учетом скидки</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>14</v8:Digits>
+				<v8:FractionDigits>2</v8:FractionDigits>
+				<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+	</calculatedField>
+	<parameter>
+		<name>Корпус</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Корпус</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.КорпусаОбъектовСтроительства</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Проект</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Проект</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Проекты</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Фаза</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Фаза</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Фазы</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>КоличествоКомнат</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Количество комнат</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>2</v8:Digits>
+				<v8:FractionDigits>0</v8:FractionDigits>
+				<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+		<value xsi:type="xs:decimal">0</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ОтделкаОН</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Отделка ОН</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+		<value xsi:type="xs:boolean">false</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>КоличествоСекций</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Количество секций</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>2</v8:Digits>
+				<v8:FractionDigits>0</v8:FractionDigits>
+				<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+		<value xsi:type="xs:decimal">0</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Подъезд</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Подъезд</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Подъезды</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ПроектВидНедвижимости</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Проект вид недвижимости</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.ВидыОбъектовНедвижимости</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ВидМатериала</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Вид материала</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:EnumRef.ВидыМатериалов</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Площадь</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Площадь</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>13</v8:Digits>
+				<v8:FractionDigits>3</v8:FractionDigits>
+				<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+		<value xsi:type="xs:decimal">0</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ПлощадьБольшеИлиРавно</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Площадь больше или равно</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+		<value xsi:type="xs:boolean">false</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>СрокСдачи</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Срок сдачи</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ГруппаПравообладателя</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Группа правообладателя</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.ГруппыПравообладателя</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Собственник</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Собственник</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Организации</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Услуга</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Услуга</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Услуги</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>НазначениеОбъектаНедвижимости</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Назначение объекта недвижимости</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.НазначениеОбъектовНедвижимости</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ЦенаЗаМетр</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Цена за метр</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>14</v8:Digits>
+				<v8:FractionDigits>2</v8:FractionDigits>
+				<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+		<value xsi:type="xs:decimal">0</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ВоеннаяИпотека</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Военная ипотека</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+		<value xsi:type="xs:boolean">false</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>СтоимостьСВерху</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Стоимость с верху</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>14</v8:Digits>
+				<v8:FractionDigits>2</v8:FractionDigits>
+				<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+		<value xsi:type="xs:decimal">0</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>СтоимостьСНизу</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Стоимость с низу</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>14</v8:Digits>
+				<v8:FractionDigits>2</v8:FractionDigits>
+				<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+		<value xsi:type="xs:decimal">0</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ПервыйЭтаж</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Первый этаж</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+		<value xsi:type="xs:boolean">false</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ПоследнийЭтаж</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Последний этаж</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+		<value xsi:type="xs:boolean">false</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ЭтажСВерху</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Этаж с верху</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>2</v8:Digits>
+				<v8:FractionDigits>0</v8:FractionDigits>
+				<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+		<value xsi:type="xs:decimal">0</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ЭтажСНизу</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Этаж с низу</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>2</v8:Digits>
+				<v8:FractionDigits>0</v8:FractionDigits>
+				<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+		<value xsi:type="xs:decimal">0</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Отделка</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Отделка</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+		<value xsi:type="xs:boolean">false</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>ТекущаяДата()</expression>
+	</parameter>
+	<parameter>
+		<name>ВариантГПТ</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Вариант ГПТ</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+		<value xsi:type="xs:boolean">true</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>МаркетинговаяКомпания</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Маркетинговая компания</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.МаркетинговыеКомпании</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ОбъектНедвижимости</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Объект недвижимости</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.ОбъектыНедвижимости</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ОбъектНедвижимости</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>МаркетинговаяКомпания</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>РазмерСкидки</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СтоимостьСУчетомСкидки</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>ОбъектНедвижимости</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Море</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Заголовок</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Расшифровка поля максимальной скидки</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьПараметрыДанных</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:name>Объект строительства</dcsset:name>
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>ОбъектСтроительства</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ОбъектНедвижимости</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+					<dcsset:item xsi:type="dcsset:StructureItemGroup">
+						<dcsset:groupItems>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>Скидка</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+						</dcsset:groupItems>
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						</dcsset:selection>
+						<dcsset:item xsi:type="dcsset:StructureItemGroup">
+							<dcsset:order>
+								<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+							</dcsset:order>
+							<dcsset:selection>
+								<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+							</dcsset:selection>
+						</dcsset:item>
+					</dcsset:item>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.6">
+	<Subsystem uuid="7849238a-4219-4f81-8521-eea3f0c4758e">
+		<Properties>
+			<Name>Мультикалькулятор</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Мультикалькулятор</v8:content>
+				</v8:item>
+			</Synonym>
+			<Comment/>
+			<IncludeHelpInContents>true</IncludeHelpInContents>
+			<IncludeInCommandInterface>false</IncludeInCommandInterface>
+			<Explanation/>
+			<Picture/>
+			<Content>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.ПараметрыПримененияСтавок_Значения</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.ПрограммыКредитования</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">ChartOfCharacteristicTypes.ПараметрыПримененияСтавок</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Document.УсловияПримененияСтавок</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Document.ВводУсловийИпотечногоКредитования</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Document.ВводКоэффициентаПлатежДоход</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Document.РасчетИпотеки</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Document.СтопФакторыБанков</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.ВидыОперацийСтопФакторы</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.ВидыДополнительныхРасходов</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.УсловияИпотечногоКредитования</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.МультикалькуляторГруппыПроектов</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.КоэффициентыПлатежДоход</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.СтопФакторыБанков</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.ИпотечныеСтавки</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.Мультикалькулятор</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.ГруппыПроектов</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.СхемыУсловийСтавки</xr:Item>
+			</Content>
+		</Properties>
+		<ChildObjects/>
+	</Subsystem>
+</MetaDataObject>

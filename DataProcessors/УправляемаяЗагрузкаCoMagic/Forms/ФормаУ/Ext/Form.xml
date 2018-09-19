@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.6">
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаВыполнитьЗагрузку" id="7">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ВыполнитьЗагрузку</CommandName>
+				<ExtendedTooltip name="ФормаВыполнитьЗагрузкуРасширеннаяПодсказка" id="15"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="ПериодНачало" id="1">
+			<DataPath>Объект.ПериодНачало</DataPath>
+			<ContextMenu name="ПериодНачалоКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="ПериодНачалоРасширеннаяПодсказка" id="16"/>
+		</InputField>
+		<InputField name="ПериодОкончание" id="3">
+			<DataPath>Объект.ПериодОкончание</DataPath>
+			<ContextMenu name="ПериодОкончаниеКонтекстноеМеню" id="4"/>
+			<ExtendedTooltip name="ПериодОкончаниеРасширеннаяПодсказка" id="17"/>
+		</InputField>
+		<InputField name="Сайт" id="5">
+			<DataPath>Объект.Сайт</DataPath>
+			<Visible>false</Visible>
+			<ContextMenu name="СайтКонтекстноеМеню" id="6"/>
+			<ExtendedTooltip name="СайтРасширеннаяПодсказка" id="18"/>
+		</InputField>
+		<Table name="Сайты" id="8">
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>Объект.Сайты</DataPath>
+			<SearchStringLocation>None</SearchStringLocation>
+			<ViewStatusLocation>None</ViewStatusLocation>
+			<SearchControlLocation>None</SearchControlLocation>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="СайтыКонтекстноеМеню" id="9"/>
+			<AutoCommandBar name="СайтыКоманднаяПанель" id="10"/>
+			<ExtendedTooltip name="СайтыРасширеннаяПодсказка" id="19"/>
+			<SearchStringAddition name="СайтыСтрокаПоиска" id="20">
+				<AdditionSource>
+					<Item>Сайты</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СайтыСтрокаПоискаКонтекстноеМеню" id="21"/>
+				<ExtendedTooltip name="СайтыСтрокаПоискаРасширеннаяПодсказка" id="22"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СайтыСостояниеПросмотра" id="23">
+				<AdditionSource>
+					<Item>Сайты</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СайтыСостояниеПросмотраКонтекстноеМеню" id="24"/>
+				<ExtendedTooltip name="СайтыСостояниеПросмотраРасширеннаяПодсказка" id="25"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СайтыУправлениеПоиском" id="26">
+				<AdditionSource>
+					<Item>Сайты</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СайтыУправлениеПоискомКонтекстноеМеню" id="27"/>
+				<ExtendedTooltip name="СайтыУправлениеПоискомРасширеннаяПодсказка" id="28"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="СайтыНомерСтроки" id="11">
+					<DataPath>Объект.Сайты.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="СайтыНомерСтрокиКонтекстноеМеню" id="12"/>
+					<ExtendedTooltip name="СайтыНомерСтрокиРасширеннаяПодсказка" id="29"/>
+				</LabelField>
+				<InputField name="СайтыСайт" id="13">
+					<DataPath>Объект.Сайты.Сайт</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="СайтыСайтКонтекстноеМеню" id="14"/>
+					<ExtendedTooltip name="СайтыСайтРасширеннаяПодсказка" id="30"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.УправляемаяЗагрузкаCoMagic</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="АдресМВТ" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес МВТ</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ВыполнитьЗагрузку" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполнить загрузку</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполнить загрузку</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.GenerateReport</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ВыполнитьЗагрузку</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

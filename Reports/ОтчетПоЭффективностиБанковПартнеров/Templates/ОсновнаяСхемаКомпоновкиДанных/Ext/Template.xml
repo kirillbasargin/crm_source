@@ -1,0 +1,867 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВРассмотрении</dataPath>
+			<field>ВРассмотрении</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Кол-во заявок на рас-нии в шт.</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Отказы</dataPath>
+			<field>Отказы</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отказано в шт.</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Банк</dataPath>
+			<field>Банк</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Банк</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СреднийСрокРассмотрения</dataPath>
+			<field>СреднийСрокРассмотрения</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Средний срок рассмотрения заявок в банке, дн.</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧЦ=15; ЧДЦ=1; ЧН=0</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Одобрения</dataPath>
+			<field>Одобрения</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Одобрено в шт.</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоПоданныхЗаявок</dataPath>
+			<field>КоличествоПоданныхЗаявок</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Кол-во направленных заявок на рассмотрение в банк, шт. </v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">8</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>РастягиватьПоГоризонтали</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПроцентОдобрения</dataPath>
+			<field>ПроцентОдобрения</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>% одобрения</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧЦ=15; ЧДЦ=; ЧН=0</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПроцентОтказа</dataPath>
+			<field>ПроцентОтказа</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>% отказов</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧЦ=15; ЧДЦ=; ЧН=0</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПроцентВРассмотрении</dataPath>
+			<field>ПроцентВРассмотрении</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>% на рассмотрении</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧЦ=15; ЧДЦ=; ЧН=0</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОтказыКлиентов</dataPath>
+			<field>ОтказыКлиентов</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отказы кл. от рассмотрения в банке. в шт. </v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПроцентОтказовКлиентов</dataPath>
+			<field>ПроцентОтказовКлиентов</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>% отказов клиента от рассмотрения</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧЦ=15; ЧН=0</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаСроковРассмотрения</dataPath>
+			<field>СуммаСроковРассмотрения</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма сроков рассмотрения</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоСроковРассмотрения</dataPath>
+			<field>КоличествоСроковРассмотрения</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество сроков рассмотрения</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	ИпотечныеЗаявкиВБанк.РекомендуемыйБанк КАК Банк,
+	КОЛИЧЕСТВО(ИпотечныеЗаявкиВБанк.Регистратор) КАК КоличествоПоданныхЗаявок
+ПОМЕСТИТЬ ВТ_ВсегоЗаявок
+ИЗ
+	РегистрСведений.ИпотечныеЗаявкиВБанк КАК ИпотечныеЗаявкиВБанк
+ГДЕ
+	ИпотечныеЗаявкиВБанк.Активность
+	И ИпотечныеЗаявкиВБанк.ДатаПодачиЗаявки МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+
+СГРУППИРОВАТЬ ПО
+	ИпотечныеЗаявкиВБанк.РекомендуемыйБанк
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ИпотечныеЗаявкиВБанк.РекомендуемыйБанк КАК РекомендуемыйБанк,
+	СРЕДНЕЕ(РАЗНОСТЬДАТ(ИпотечныеЗаявкиВБанк.ДатаПодачиЗаявки, ИпотечныеЗаявкиВБанк.ДатаРешенияБанка, ДЕНЬ)) КАК СреднийСрокРассмотрения
+ПОМЕСТИТЬ ВТ_СреднийСрокРассмотрения
+ИЗ
+	РегистрСведений.ИпотечныеЗаявкиВБанк КАК ИпотечныеЗаявкиВБанк
+ГДЕ
+	ИпотечныеЗаявкиВБанк.Активность
+	И ИпотечныеЗаявкиВБанк.ДатаПодачиЗаявки МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+	И НЕ ИпотечныеЗаявкиВБанк.ДатаРешенияБанка = ДАТАВРЕМЯ(1, 1, 1)
+	И РАЗНОСТЬДАТ(ИпотечныеЗаявкиВБанк.ДатаПодачиЗаявки, ИпотечныеЗаявкиВБанк.ДатаРешенияБанка, ДЕНЬ) &gt;= 0
+
+СГРУППИРОВАТЬ ПО
+	ИпотечныеЗаявкиВБанк.РекомендуемыйБанк
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ИпотечныеЗаявкиВБанк.РекомендуемыйБанк КАК РекомендуемыйБанк,
+	СУММА(РАЗНОСТЬДАТ(ИпотечныеЗаявкиВБанк.ДатаПодачиЗаявки, ИпотечныеЗаявкиВБанк.ДатаРешенияБанка, ДЕНЬ)) КАК СуммаСроковРассмотрения
+ПОМЕСТИТЬ ВТ_СуммаСроковРассмотрения
+ИЗ
+	РегистрСведений.ИпотечныеЗаявкиВБанк КАК ИпотечныеЗаявкиВБанк
+ГДЕ
+	ИпотечныеЗаявкиВБанк.Активность
+	И ИпотечныеЗаявкиВБанк.ДатаПодачиЗаявки МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+	И НЕ ИпотечныеЗаявкиВБанк.ДатаРешенияБанка = ДАТАВРЕМЯ(1, 1, 1)
+	И РАЗНОСТЬДАТ(ИпотечныеЗаявкиВБанк.ДатаПодачиЗаявки, ИпотечныеЗаявкиВБанк.ДатаРешенияБанка, ДЕНЬ) &gt;= 0
+
+СГРУППИРОВАТЬ ПО
+	ИпотечныеЗаявкиВБанк.РекомендуемыйБанк
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ИпотечныеЗаявкиВБанк.РекомендуемыйБанк КАК РекомендуемыйБанк,
+	КОЛИЧЕСТВО(РАЗНОСТЬДАТ(ИпотечныеЗаявкиВБанк.ДатаПодачиЗаявки, ИпотечныеЗаявкиВБанк.ДатаРешенияБанка, ДЕНЬ)) КАК КоличествоСроковРассмотрения
+ПОМЕСТИТЬ ВТ_КоличествоСроковРассмотрения
+ИЗ
+	РегистрСведений.ИпотечныеЗаявкиВБанк КАК ИпотечныеЗаявкиВБанк
+ГДЕ
+	ИпотечныеЗаявкиВБанк.Активность
+	И ИпотечныеЗаявкиВБанк.ДатаПодачиЗаявки МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+	И НЕ ИпотечныеЗаявкиВБанк.ДатаРешенияБанка = ДАТАВРЕМЯ(1, 1, 1)
+	И РАЗНОСТЬДАТ(ИпотечныеЗаявкиВБанк.ДатаПодачиЗаявки, ИпотечныеЗаявкиВБанк.ДатаРешенияБанка, ДЕНЬ) &gt;= 0
+
+СГРУППИРОВАТЬ ПО
+	ИпотечныеЗаявкиВБанк.РекомендуемыйБанк
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ИпотечныеЗаявкиВБанк.РекомендуемыйБанк КАК РекомендуемыйБанк,
+	КОЛИЧЕСТВО(ИпотечныеЗаявкиВБанк.Регистратор) КАК Одобрения
+ПОМЕСТИТЬ ВТ_Одобрения
+ИЗ
+	РегистрСведений.ИпотечныеЗаявкиВБанк КАК ИпотечныеЗаявкиВБанк
+ГДЕ
+	ИпотечныеЗаявкиВБанк.Активность
+	И ИпотечныеЗаявкиВБанк.ДатаПодачиЗаявки МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+	И ИпотечныеЗаявкиВБанк.РешениеБанка = ЗНАЧЕНИЕ(Справочник.РешенияБанков.ОдобрениеБанка)
+
+СГРУППИРОВАТЬ ПО
+	ИпотечныеЗаявкиВБанк.РекомендуемыйБанк
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ИпотечныеЗаявкиВБанк.РекомендуемыйБанк КАК РекомендуемыйБанк,
+	КОЛИЧЕСТВО(ИпотечныеЗаявкиВБанк.Регистратор) КАК Отказы
+ПОМЕСТИТЬ ВТ_Отказы
+ИЗ
+	РегистрСведений.ИпотечныеЗаявкиВБанк КАК ИпотечныеЗаявкиВБанк
+ГДЕ
+	ИпотечныеЗаявкиВБанк.Активность
+	И ИпотечныеЗаявкиВБанк.ДатаПодачиЗаявки МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+	И ИпотечныеЗаявкиВБанк.РешениеБанка = ЗНАЧЕНИЕ(Справочник.РешенияБанков.ОтказБанка)
+
+СГРУППИРОВАТЬ ПО
+	ИпотечныеЗаявкиВБанк.РекомендуемыйБанк
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ИпотечныеЗаявкиВБанк.РекомендуемыйБанк КАК РекомендуемыйБанк,
+	КОЛИЧЕСТВО(ИпотечныеЗаявкиВБанк.Регистратор) КАК ОтказыКлиентов
+ПОМЕСТИТЬ ВТ_ОтказыКлиентов
+ИЗ
+	РегистрСведений.ИпотечныеЗаявкиВБанк КАК ИпотечныеЗаявкиВБанк
+ГДЕ
+	ИпотечныеЗаявкиВБанк.Активность
+	И ИпотечныеЗаявкиВБанк.ДатаПодачиЗаявки МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+	И ИпотечныеЗаявкиВБанк.РешениеБанка = ЗНАЧЕНИЕ(Справочник.РешенияБанков.ОтказКлиентаОтРассмотрения)
+
+СГРУППИРОВАТЬ ПО
+	ИпотечныеЗаявкиВБанк.РекомендуемыйБанк
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ИпотечныеЗаявкиВБанк.РекомендуемыйБанк КАК РекомендуемыйБанк,
+	КОЛИЧЕСТВО(ИпотечныеЗаявкиВБанк.Регистратор) КАК ВРассмотрении
+ПОМЕСТИТЬ ВТ_ВРассмотрении
+ИЗ
+	РегистрСведений.ИпотечныеЗаявкиВБанк КАК ИпотечныеЗаявкиВБанк
+ГДЕ
+	ИпотечныеЗаявкиВБанк.Активность
+	И ИпотечныеЗаявкиВБанк.ДатаПодачиЗаявки МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+	И ИпотечныеЗаявкиВБанк.РешениеБанка = ЗНАЧЕНИЕ(Справочник.РешенияБанков.ПустаяСсылка)
+
+СГРУППИРОВАТЬ ПО
+	ИпотечныеЗаявкиВБанк.РекомендуемыйБанк
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_ВсегоЗаявок.Банк КАК Банк,
+	ВТ_ВсегоЗаявок.КоличествоПоданныхЗаявок КАК КоличествоПоданныхЗаявок,
+	ЕСТЬNULL(ВТ_СреднийСрокРассмотрения.СреднийСрокРассмотрения, 0) КАК СреднийСрокРассмотрения,
+	ЕСТЬNULL(ВТ_СуммаСроковРассмотрения.СуммаСроковРассмотрения, 0) КАК СуммаСроковРассмотрения,
+	ЕСТЬNULL(ВТ_КоличествоСроковРассмотрения.КоличествоСроковРассмотрения, 0) КАК КоличествоСроковРассмотрения,
+	ЕСТЬNULL(ВТ_Одобрения.Одобрения, 0) КАК Одобрения,
+	ВЫБОР
+		КОГДА ВТ_ВсегоЗаявок.КоличествоПоданныхЗаявок = 0
+			ТОГДА 0
+		ИНАЧЕ ЕСТЬNULL(ВТ_Одобрения.Одобрения, 0) / ВТ_ВсегоЗаявок.КоличествоПоданныхЗаявок
+	КОНЕЦ КАК ПроцентОдобрения,
+	ЕСТЬNULL(ВТ_Отказы.Отказы, 0) КАК Отказы,
+	ВЫБОР
+		КОГДА ВТ_ВсегоЗаявок.КоличествоПоданныхЗаявок = 0
+			ТОГДА 0
+		ИНАЧЕ ВТ_Отказы.Отказы / ВТ_ВсегоЗаявок.КоличествоПоданныхЗаявок
+	КОНЕЦ КАК ПроцентОтказа,
+	ЕСТЬNULL(ВТ_ОтказыКлиентов.ОтказыКлиентов, 0) КАК ОтказыКлиентов,
+	ВЫБОР
+		КОГДА ВТ_ВсегоЗаявок.КоличествоПоданныхЗаявок = 0
+			ТОГДА 0
+		ИНАЧЕ ВТ_ОтказыКлиентов.ОтказыКлиентов / ВТ_ВсегоЗаявок.КоличествоПоданныхЗаявок
+	КОНЕЦ КАК ПроцентОтказовКлиентов,
+	ЕСТЬNULL(ВТ_ВРассмотрении.ВРассмотрении, 0) КАК ВРассмотрении,
+	ВЫБОР
+		КОГДА ВТ_ВсегоЗаявок.КоличествоПоданныхЗаявок = 0
+			ТОГДА 0
+		ИНАЧЕ ВТ_ВРассмотрении.ВРассмотрении / ВТ_ВсегоЗаявок.КоличествоПоданныхЗаявок
+	КОНЕЦ КАК ПроцентВРассмотрении
+ИЗ
+	ВТ_ВсегоЗаявок КАК ВТ_ВсегоЗаявок
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_СреднийСрокРассмотрения КАК ВТ_СреднийСрокРассмотрения
+		ПО ВТ_ВсегоЗаявок.Банк = ВТ_СреднийСрокРассмотрения.РекомендуемыйБанк
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_СуммаСроковРассмотрения КАК ВТ_СуммаСроковРассмотрения
+		ПО ВТ_ВсегоЗаявок.Банк = ВТ_СуммаСроковРассмотрения.РекомендуемыйБанк
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_КоличествоСроковРассмотрения КАК ВТ_КоличествоСроковРассмотрения
+		ПО ВТ_ВсегоЗаявок.Банк = ВТ_КоличествоСроковРассмотрения.РекомендуемыйБанк
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_Одобрения КАК ВТ_Одобрения
+		ПО ВТ_ВсегоЗаявок.Банк = ВТ_Одобрения.РекомендуемыйБанк
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_Отказы КАК ВТ_Отказы
+		ПО ВТ_ВсегоЗаявок.Банк = ВТ_Отказы.РекомендуемыйБанк
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ОтказыКлиентов КАК ВТ_ОтказыКлиентов
+		ПО ВТ_ВсегоЗаявок.Банк = ВТ_ОтказыКлиентов.РекомендуемыйБанк
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ВРассмотрении КАК ВТ_ВРассмотрении
+		ПО ВТ_ВсегоЗаявок.Банк = ВТ_ВРассмотрении.РекомендуемыйБанк</query>
+	</dataSet>
+	<totalField>
+		<dataPath>ВРассмотрении</dataPath>
+		<expression>Сумма(ВРассмотрении)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоПоданныхЗаявок</dataPath>
+		<expression>Сумма(КоличествоПоданныхЗаявок)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Одобрения</dataPath>
+		<expression>Сумма(Одобрения)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Отказы</dataPath>
+		<expression>Сумма(Отказы)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПроцентВРассмотрении</dataPath>
+		<expression> Выбор когда Сумма(КоличествоПоданныхЗаявок) = 0 Тогда
+	0
+ Иначе 
+	Сумма(ВРассмотрении) / Сумма(КоличествоПоданныхЗаявок) 
+ Конец * 100</expression>
+		<group>Банк</group>
+		<group>ОбщийИтог</group>
+	</totalField>
+	<totalField>
+		<dataPath>ПроцентОдобрения</dataPath>
+		<expression> Выбор когда Сумма(КоличествоПоданныхЗаявок) = 0 Тогда
+	0
+ Иначе 
+	Сумма(Одобрения) / Сумма(КоличествоПоданныхЗаявок) 
+ Конец * 100</expression>
+		<group>Банк</group>
+		<group>ОбщийИтог</group>
+	</totalField>
+	<totalField>
+		<dataPath>ПроцентОтказа</dataPath>
+		<expression> Выбор когда Сумма(КоличествоПоданныхЗаявок) = 0 Тогда
+	0
+ Иначе 
+ Сумма(Отказы) / Сумма(КоличествоПоданныхЗаявок) 
+ Конец * 100</expression>
+		<group>Банк</group>
+		<group>ОбщийИтог</group>
+	</totalField>
+	<totalField>
+		<dataPath>СреднийСрокРассмотрения</dataPath>
+		<expression>(СреднийСрокРассмотрения)</expression>
+		<group>Банк</group>
+	</totalField>
+	<totalField>
+		<dataPath>ОтказыКлиентов</dataPath>
+		<expression>Сумма(ОтказыКлиентов)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПроцентОтказовКлиентов</dataPath>
+		<expression> Выбор когда Сумма(КоличествоПоданныхЗаявок) = 0 Тогда
+	0
+ Иначе 
+ Сумма(ОтказыКлиентов) / Сумма(КоличествоПоданныхЗаявок) 
+ Конец * 100</expression>
+		<group>Банк</group>
+		<group>ОбщийИтог</group>
+	</totalField>
+	<totalField>
+		<dataPath>СреднийСрокРассмотрения</dataPath>
+		<expression>выбор когда НЕ Сумма(КоличествоПоданныхЗаявок) = 0 тогда Сумма(СуммаСроковРассмотрения) / Сумма(КоличествоСроковРассмотрения) иначе 0 конец</expression>
+		<group>ОбщийИтог</group>
+	</totalField>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>Date</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>КонецПериода(&amp;Период.ДатаОкончания, "ДЕНЬ")</expression>
+	</parameter>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>Date</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаНачала</expression>
+	</parameter>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ДатаФормированияОтчета</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата формирования отчета</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+		<use>Always</use>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>ОтчетПоЭффективностиБанковПартнеров</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Отчет по эффективности банков-партнеров</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоПоданныхЗаявок</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СреднийСрокРассмотрения</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content> Рассмотрение</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Одобрения</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПроцентОдобрения</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Отказы</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПроцентОтказа</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ОтказыКлиентов</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПроцентОтказовКлиентов</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ВРассмотрении</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПроцентВРассмотрении</dcsset:field>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Рассмотрение</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Банк</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>cb26f39a-60c6-4a15-a672-7f649538ed76</dcsset:userSettingID>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">ThisMonth</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>aad4164b-ea6c-4d71-8527-dab761db0fa5</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ДатаФормированияОтчета</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardBeginningDate">
+						<v8:variant xsi:type="v8:StandardBeginningDateVariant">Custom</v8:variant>
+						<v8:date>0001-01-01T00:00:00</v8:date>
+					</dcscor:value>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:conditionalAppearance>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>ПроцентВРассмотрении</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>ПроцентОдобрения</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>ПроцентОтказа</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>Банк</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>ВРассмотрении</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>КоличествоПоданныхЗаявок</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>Одобрения</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>Отказы</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>СреднийСрокРассмотрения</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>ОтказыКлиентов</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>ПроцентОтказовКлиентов</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>РастягиватьПоГоризонтали</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+			</dcsset:conditionalAppearance>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">МакетБанки</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Заголовок</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>По всем видам недвижимости. По всем проектам за период</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьПараметрыДанных</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">Output</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Банк</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:conditionalAppearance>
+					<dcsset:item>
+						<dcsset:use>false</dcsset:use>
+						<dcsset:selection>
+							<dcsset:item>
+								<dcsset:field>Банк</dcsset:field>
+							</dcsset:item>
+							<dcsset:item>
+								<dcsset:field>ВРассмотрении</dcsset:field>
+							</dcsset:item>
+							<dcsset:item>
+								<dcsset:field>КоличествоПоданныхЗаявок</dcsset:field>
+							</dcsset:item>
+							<dcsset:item>
+								<dcsset:field>Отказы</dcsset:field>
+							</dcsset:item>
+							<dcsset:item>
+								<dcsset:field>Одобрения</dcsset:field>
+							</dcsset:item>
+							<dcsset:item>
+								<dcsset:field>ОтказыКлиентов</dcsset:field>
+							</dcsset:item>
+							<dcsset:item>
+								<dcsset:field>ПроцентВРассмотрении</dcsset:field>
+							</dcsset:item>
+							<dcsset:item>
+								<dcsset:field>ПроцентОдобрения</dcsset:field>
+							</dcsset:item>
+							<dcsset:item>
+								<dcsset:field>ПроцентОтказа</dcsset:field>
+							</dcsset:item>
+							<dcsset:item>
+								<dcsset:field>ПроцентОтказовКлиентов</dcsset:field>
+							</dcsset:item>
+							<dcsset:item>
+								<dcsset:field>СреднийСрокРассмотрения</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+						<dcsset:filter/>
+						<dcsset:appearance>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>ЦветФона</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Color">#FCD5B4</dcscor:value>
+							</dcscor:item>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>ЦветТекста</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Color">#000000</dcscor:value>
+							</dcscor:item>
+						</dcsset:appearance>
+						<dcsset:useInHierarchicalGroup>DontUse</dcsset:useInHierarchicalGroup>
+						<dcsset:useInOverall>DontUse</dcsset:useInOverall>
+						<dcsset:useInParameters>DontUse</dcsset:useInParameters>
+						<dcsset:useInFilter>DontUse</dcsset:useInFilter>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:use>false</dcsset:use>
+						<dcsset:selection>
+							<dcsset:item>
+								<dcsset:field>Банк</dcsset:field>
+							</dcsset:item>
+							<dcsset:item>
+								<dcsset:field>ВРассмотрении</dcsset:field>
+							</dcsset:item>
+							<dcsset:item>
+								<dcsset:field>КоличествоПоданныхЗаявок</dcsset:field>
+							</dcsset:item>
+							<dcsset:item>
+								<dcsset:field>Отказы</dcsset:field>
+							</dcsset:item>
+							<dcsset:item>
+								<dcsset:field>Одобрения</dcsset:field>
+							</dcsset:item>
+							<dcsset:item>
+								<dcsset:field>ОтказыКлиентов</dcsset:field>
+							</dcsset:item>
+							<dcsset:item>
+								<dcsset:field>ПроцентВРассмотрении</dcsset:field>
+							</dcsset:item>
+							<dcsset:item>
+								<dcsset:field>ПроцентОдобрения</dcsset:field>
+							</dcsset:item>
+							<dcsset:item>
+								<dcsset:field>ПроцентОтказа</dcsset:field>
+							</dcsset:item>
+							<dcsset:item>
+								<dcsset:field>ПроцентОтказовКлиентов</dcsset:field>
+							</dcsset:item>
+							<dcsset:item>
+								<dcsset:field>СреднийСрокРассмотрения</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+						<dcsset:filter/>
+						<dcsset:appearance>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>ЦветФона</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Color">#FFFFFF</dcscor:value>
+							</dcscor:item>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>ЦветТекста</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Color">#000000</dcscor:value>
+							</dcscor:item>
+						</dcsset:appearance>
+						<dcsset:useInHierarchicalGroup>DontUse</dcsset:useInHierarchicalGroup>
+						<dcsset:useInOverall>DontUse</dcsset:useInOverall>
+						<dcsset:useInParameters>DontUse</dcsset:useInParameters>
+						<dcsset:useInFilter>DontUse</dcsset:useInFilter>
+					</dcsset:item>
+				</dcsset:conditionalAppearance>
+			</dcsset:item>
+			<dcsset:item xsi:type="dcsset:StructureItemChart">
+				<dcsset:series>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Банк</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:series>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>КоличествоПоданныхЗаявок</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:outputParameters>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ТипДиаграммы</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:ChartType">Pie3D</dcscor:value>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ТипДиаграммы.ВидПодписей</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:ChartLabelType">SeriesPercent</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ТипДиаграммы.АвтоРаздвижениеСерий</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:AutoSeriesSeparation">All</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ТипДиаграммы.РасположениеЛегенды</dcscor:parameter>
+							<dcscor:value xsi:type="dcsset:DataCompositionChartLegendPlacement">Right</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:use>false</dcscor:use>
+							<dcscor:parameter>ТипДиаграммы.РасположениеРесурсов</dcscor:parameter>
+							<dcscor:value xsi:type="dcsset:DataCompositionResourcesPlacementInChart">Points</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:use>false</dcscor:use>
+							<dcscor:parameter>ТипДиаграммы.СоединениеЗначенийПоСериям</dcscor:parameter>
+							<dcscor:value xmlns:d8p1="http://v8.1c.ru/8.2/data/chart" xsi:type="d8p1:ChartValuesBySeriesConnectionType">EdgesConnection</dcscor:value>
+						</dcscor:item>
+					</dcscor:item>
+				</dcsset:outputParameters>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

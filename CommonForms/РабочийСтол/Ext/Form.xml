@@ -1,0 +1,2317 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.6">
+	<Height>19</Height>
+	<AutoTitle>false</AutoTitle>
+	<Group>Horizontal</Group>
+	<VerticalSpacing>Half</VerticalSpacing>
+	<CommandSet>
+		<ExcludedCommand>Abort</ExcludedCommand>
+		<ExcludedCommand>Cancel</ExcludedCommand>
+		<ExcludedCommand>Close</ExcludedCommand>
+		<ExcludedCommand>CustomizeForm</ExcludedCommand>
+		<ExcludedCommand>Help</ExcludedCommand>
+		<ExcludedCommand>Ignore</ExcludedCommand>
+		<ExcludedCommand>No</ExcludedCommand>
+		<ExcludedCommand>OK</ExcludedCommand>
+		<ExcludedCommand>RestoreValues</ExcludedCommand>
+		<ExcludedCommand>Retry</ExcludedCommand>
+		<ExcludedCommand>SaveValues</ExcludedCommand>
+		<ExcludedCommand>Yes</ExcludedCommand>
+	</CommandSet>
+	<ShowTitle>false</ShowTitle>
+	<ShowCloseButton>false</ShowCloseButton>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ОткрытьФормуРаботаСКлиентами" id="260">
+				<Type>CommandBarButton</Type>
+				<UserVisible>
+					<xr:Common>false</xr:Common>
+					<xr:Value name="Role.Администрирование">true</xr:Value>
+					<xr:Value name="Role.ИспользованиеРабочегоСтолаМенеджераОСС">true</xr:Value>
+					<xr:Value name="Role.ИспользованиеРабочегоСтолаМенеджераФилиала">true</xr:Value>
+					<xr:Value name="Role.МенеджерИпотечный">true</xr:Value>
+					<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+					<xr:Value name="Role.РедактированиеСрокаБронирования">true</xr:Value>
+					<xr:Value name="Role.МенеджерПоКонтролюКачества">true</xr:Value>
+				</UserVisible>
+				<Representation>PictureAndText</Representation>
+				<CommandName>DataProcessor.РаботаСКлиентом.StandardCommand.Open</CommandName>
+				<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+				<Picture>
+					<xr:Ref>CommonPicture.ВариантыОтчетовДоступныеВсемПользователям</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Работа с клиентами</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ОткрытьФормуРаботаСКлиентамиРасширеннаяПодсказка" id="261"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаЗадачи" id="3">
+			<UserVisible>
+				<xr:Common>false</xr:Common>
+				<xr:Value name="Role.Администрирование">true</xr:Value>
+				<xr:Value name="Role.ИспользованиеРабочегоСтолаМенеджераОСС">true</xr:Value>
+				<xr:Value name="Role.ИспользованиеРабочегоСтолаМенеджераФилиала">true</xr:Value>
+				<xr:Value name="Role.МенеджерИпотечный">true</xr:Value>
+				<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+				<xr:Value name="Role.РедактированиеСрокаБронирования">true</xr:Value>
+				<xr:Value name="Role.Юрист">true</xr:Value>
+				<xr:Value name="Role.МенеджерПоКонтролюКачества">true</xr:Value>
+			</UserVisible>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Задачи на сегодня</v8:content>
+				</v8:item>
+			</Title>
+			<TitleFont ref="style:NormalTextFont" height="16" kind="StyleItem"/>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ссылки на задачи</v8:content>
+				</v8:item>
+			</ToolTip>
+			<HorizontalStretch>false</HorizontalStretch>
+			<VerticalStretch>true</VerticalStretch>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ExtendedTooltip name="ГруппаЗадачиРасширеннаяПодсказка" id="4"/>
+			<ChildItems>
+				<UsualGroup name="Группа1" id="243">
+					<Group>Vertical</Group>
+					<Representation>StrongSeparation</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="244"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаТолькоЗадачи" id="233">
+							<UserVisible>
+								<xr:Common>false</xr:Common>
+								<xr:Value name="Role.Администрирование">true</xr:Value>
+								<xr:Value name="Role.ИспользованиеРабочегоСтолаМенеджераОСС">true</xr:Value>
+								<xr:Value name="Role.ИспользованиеРабочегоСтолаМенеджераФилиала">true</xr:Value>
+								<xr:Value name="Role.МенеджерИпотечный">true</xr:Value>
+								<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+								<xr:Value name="Role.РедактированиеСрокаБронирования">true</xr:Value>
+							</UserVisible>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаТолькоЗадачиРасширеннаяПодсказка" id="234"/>
+							<ChildItems>
+								<CheckBoxField name="ТолькоМоиЗадачи" id="19">
+									<DataPath>ТолькоМоиЗадачи</DataPath>
+									<TitleFont ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ТолькоМоиЗадачиКонтекстноеМеню" id="20"/>
+									<ExtendedTooltip name="ТолькоМоиЗадачиРасширеннаяПодсказка" id="21"/>
+									<Events>
+										<Event name="OnChange">ТолькоМоиЗадачиПриИзменении</Event>
+									</Events>
+								</CheckBoxField>
+								<LabelDecoration name="Декорация8" id="245">
+									<Width>5</Width>
+									<HorizontalStretch>true</HorizontalStretch>
+									<ContextMenu name="Декорация8КонтекстноеМеню" id="246"/>
+									<ExtendedTooltip name="Декорация8РасширеннаяПодсказка" id="247"/>
+								</LabelDecoration>
+								<Button name="ФормаОбновитьКоличество" id="190">
+									<Type>UsualButton</Type>
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+										<xr:Value name="Role.Администрирование">true</xr:Value>
+										<xr:Value name="Role.ИспользованиеРабочегоСтолаМенеджераОСС">true</xr:Value>
+										<xr:Value name="Role.ИспользованиеРабочегоСтолаМенеджераФилиала">true</xr:Value>
+										<xr:Value name="Role.МенеджерИпотечный">true</xr:Value>
+										<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+										<xr:Value name="Role.РедактированиеСрокаБронирования">true</xr:Value>
+									</UserVisible>
+									<CommandName>Form.Command.ОбновитьКоличество</CommandName>
+									<Shape>Oval</Shape>
+									<ExtendedTooltip name="ФормаОбновитьКоличествоРасширеннаяПодсказка" id="191"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаЗадачиИпотека" id="264">
+							<UserVisible>
+								<xr:Common>false</xr:Common>
+								<xr:Value name="Role.Администрирование">true</xr:Value>
+								<xr:Value name="Role.МенеджерИпотечный">true</xr:Value>
+								<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+							</UserVisible>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Задачи</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаЗадачиИпотекаРасширеннаяПодсказка" id="265"/>
+							<ChildItems>
+								<LabelDecoration name="Декорация9" id="266">
+									<Width>22</Width>
+									<Height>1</Height>
+									<TextColor>style:SpecialTextColor</TextColor>
+									<Font ref="style:NormalTextFont" faceName="Calibri" height="12" bold="false" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Согласование заявок на сделку</v8:content>
+										</v8:item>
+									</Title>
+									<Hyperlink>true</Hyperlink>
+									<BackColor>web:LavenderBlush</BackColor>
+									<ContextMenu name="Декорация9КонтекстноеМеню" id="267"/>
+									<ExtendedTooltip name="Декорация9РасширеннаяПодсказка" id="268"/>
+									<Events>
+										<Event name="Click">Декорация9Нажатие</Event>
+									</Events>
+								</LabelDecoration>
+								<LabelDecoration name="Декорация10" id="269">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>-</v8:content>
+										</v8:item>
+									</Title>
+									<HorizontalAlign>Right</HorizontalAlign>
+									<ContextMenu name="Декорация10КонтекстноеМеню" id="270"/>
+									<ExtendedTooltip name="Декорация10РасширеннаяПодсказка" id="271"/>
+								</LabelDecoration>
+								<LabelDecoration name="ДекорацияЗадачиКоличество" id="272">
+									<Width>4</Width>
+									<TextColor>style:SpecialTextColor</TextColor>
+									<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>0</v8:content>
+										</v8:item>
+									</Title>
+									<Hyperlink>true</Hyperlink>
+									<HorizontalAlign>Right</HorizontalAlign>
+									<ContextMenu name="ДекорацияЗадачиКоличествоКонтекстноеМеню" id="273"/>
+									<ExtendedTooltip name="ДекорацияЗадачиКоличествоРасширеннаяПодсказка" id="274"/>
+									<Events>
+										<Event name="Click">Декорация9Нажатие</Event>
+									</Events>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаСсылкиПоВзаимодействиям" id="5">
+							<UserVisible>
+								<xr:Common>false</xr:Common>
+								<xr:Value name="Role.Администрирование">true</xr:Value>
+								<xr:Value name="Role.ИспользованиеРабочегоСтолаМенеджераОСС">true</xr:Value>
+								<xr:Value name="Role.ИспользованиеРабочегоСтолаМенеджераФилиала">true</xr:Value>
+								<xr:Value name="Role.МенеджерИпотечный">true</xr:Value>
+								<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+								<xr:Value name="Role.РедактированиеСрокаБронирования">true</xr:Value>
+							</UserVisible>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Задачи на сегодня</v8:content>
+								</v8:item>
+							</Title>
+							<Width>30</Width>
+							<Group>Vertical</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<BackColor>style:CRM_ЦветФормы</BackColor>
+							<ExtendedTooltip name="ГруппаСсылкиПоВзаимодействиямРасширеннаяПодсказка" id="6"/>
+							<ChildItems>
+								<UsualGroup name="ГруппаЗапланированные" id="27">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Запланированные</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Запланированные на сегодня задачи</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Horizontal</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаЗапланированныеРасширеннаяПодсказка" id="28"/>
+									<ChildItems>
+										<LabelDecoration name="Задачи_ЗапланированоНаСегодня" id="16">
+											<Width>21</Width>
+											<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Запланировано</v8:content>
+												</v8:item>
+											</Title>
+											<Hyperlink>true</Hyperlink>
+											<ContextMenu name="Задачи_ЗапланированоНаСегодняКонтекстноеМеню" id="17"/>
+											<ExtendedTooltip name="Задачи_ЗапланированоНаСегодняРасширеннаяПодсказка" id="18"/>
+											<Events>
+												<Event name="Click">Задачи_ЗапланированоНаСегодняНажатие</Event>
+											</Events>
+										</LabelDecoration>
+										<LabelDecoration name="Задачи_ЗапланированоТире" id="51">
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>-</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="Задачи_ЗапланированоТиреКонтекстноеМеню" id="52"/>
+											<ExtendedTooltip name="Задачи_ЗапланированоТиреРасширеннаяПодсказка" id="53"/>
+										</LabelDecoration>
+										<LabelDecoration name="Задачи_ЗапланированоКоличество" id="34">
+											<Width>5</Width>
+											<SkipOnInput>true</SkipOnInput>
+											<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>0</v8:content>
+												</v8:item>
+											</Title>
+											<Hyperlink>true</Hyperlink>
+											<HorizontalAlign>Right</HorizontalAlign>
+											<ContextMenu name="Задачи_ЗапланированоКоличествоКонтекстноеМеню" id="35"/>
+											<ExtendedTooltip name="Задачи_ЗапланированоКоличествоРасширеннаяПодсказка" id="36"/>
+											<Events>
+												<Event name="Click">Задачи_ЗапланированоНаСегодняНажатие</Event>
+											</Events>
+										</LabelDecoration>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаЗавершенные" id="25">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Завершенные</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Завершенные сегодня задачи</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Horizontal</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаЗавершенныеРасширеннаяПодсказка" id="26"/>
+									<ChildItems>
+										<LabelDecoration name="Задачи_ЗавершенныеСегодня" id="13">
+											<Width>21</Width>
+											<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Завершенные</v8:content>
+												</v8:item>
+											</Title>
+											<Hyperlink>true</Hyperlink>
+											<ContextMenu name="Задачи_ЗавершенныеСегодняКонтекстноеМеню" id="14"/>
+											<ExtendedTooltip name="Задачи_ЗавершенныеСегодняРасширеннаяПодсказка" id="15"/>
+											<Events>
+												<Event name="Click">Задачи_ЗавершенныеСегодняНажатие</Event>
+											</Events>
+										</LabelDecoration>
+										<LabelDecoration name="Задачи_ЗавершенныеТире" id="48">
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>-</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="Задачи_ЗавершенныеТиреКонтекстноеМеню" id="49"/>
+											<ExtendedTooltip name="Задачи_ЗавершенныеТиреРасширеннаяПодсказка" id="50"/>
+										</LabelDecoration>
+										<LabelDecoration name="Задачи_ЗавершенныеКоличество" id="31">
+											<Width>5</Width>
+											<SkipOnInput>true</SkipOnInput>
+											<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>0</v8:content>
+												</v8:item>
+											</Title>
+											<Hyperlink>true</Hyperlink>
+											<HorizontalAlign>Right</HorizontalAlign>
+											<ContextMenu name="Задачи_ЗавершенныеКоличествоКонтекстноеМеню" id="32"/>
+											<ExtendedTooltip name="Задачи_ЗавершенныеКоличествоРасширеннаяПодсказка" id="33"/>
+											<Events>
+												<Event name="Click">Задачи_ЗавершенныеСегодняНажатие</Event>
+											</Events>
+										</LabelDecoration>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаПросроченные" id="29">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Просроченные</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Просроченные на сегодня задачи</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Horizontal</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаПросроченныеРасширеннаяПодсказка" id="30"/>
+									<ChildItems>
+										<LabelDecoration name="Задачи_Просроченные" id="22">
+											<Width>21</Width>
+											<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Просроченные</v8:content>
+												</v8:item>
+											</Title>
+											<Hyperlink>true</Hyperlink>
+											<ContextMenu name="Задачи_ПросроченныеКонтекстноеМеню" id="23"/>
+											<ExtendedTooltip name="Задачи_ПросроченныеРасширеннаяПодсказка" id="24"/>
+											<Events>
+												<Event name="Click">Задачи_ПросроченныеНажатие</Event>
+											</Events>
+										</LabelDecoration>
+										<LabelDecoration name="Задачи_ПросроченныеТире" id="54">
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>-</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="Задачи_ПросроченныеТиреКонтекстноеМеню" id="55"/>
+											<ExtendedTooltip name="Задачи_ПросроченныеТиреРасширеннаяПодсказка" id="56"/>
+										</LabelDecoration>
+										<LabelDecoration name="Задачи_ПросроченныеКоличество" id="37">
+											<Width>5</Width>
+											<SkipOnInput>true</SkipOnInput>
+											<TextColor>style:SpecialTextColor</TextColor>
+											<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>0</v8:content>
+												</v8:item>
+											</Title>
+											<Hyperlink>true</Hyperlink>
+											<HorizontalAlign>Right</HorizontalAlign>
+											<ContextMenu name="Задачи_ПросроченныеКоличествоКонтекстноеМеню" id="38"/>
+											<ExtendedTooltip name="Задачи_ПросроченныеКоличествоРасширеннаяПодсказка" id="39"/>
+											<Events>
+												<Event name="Click">Задачи_ПросроченныеНажатие</Event>
+											</Events>
+										</LabelDecoration>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаГПТ" id="40">
+							<UserVisible>
+								<xr:Common>false</xr:Common>
+								<xr:Value name="Role.Администрирование">true</xr:Value>
+								<xr:Value name="Role.ИспользованиеРабочегоСтолаМенеджераФилиала">true</xr:Value>
+								<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+								<xr:Value name="Role.РедактированиеСрокаБронирования">true</xr:Value>
+							</UserVisible>
+							<Width>30</Width>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаГПТРасширеннаяПодсказка" id="41"/>
+							<ChildItems>
+								<LabelDecoration name="ГПТ_Заявки" id="42">
+									<Width>21</Width>
+									<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Заявки от ГПТ</v8:content>
+										</v8:item>
+									</Title>
+									<Hyperlink>true</Hyperlink>
+									<ContextMenu name="ГПТ_ЗаявкиКонтекстноеМеню" id="43"/>
+									<ExtendedTooltip name="ГПТ_ЗаявкиРасширеннаяПодсказка" id="44"/>
+									<Events>
+										<Event name="Click">ГПТ_ЗаявкиНажатие</Event>
+									</Events>
+								</LabelDecoration>
+								<LabelDecoration name="ГПТ_Тире" id="57">
+									<Width>1</Width>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>-</v8:content>
+										</v8:item>
+									</Title>
+									<HorizontalAlign>Right</HorizontalAlign>
+									<ContextMenu name="ГПТ_ТиреКонтекстноеМеню" id="58"/>
+									<ExtendedTooltip name="ГПТ_ТиреРасширеннаяПодсказка" id="59"/>
+								</LabelDecoration>
+								<LabelDecoration name="ГПТ_Количество" id="45">
+									<Width>5</Width>
+									<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>0</v8:content>
+										</v8:item>
+									</Title>
+									<Hyperlink>true</Hyperlink>
+									<HorizontalAlign>Right</HorizontalAlign>
+									<ContextMenu name="ГПТ_КоличествоКонтекстноеМеню" id="46"/>
+									<ExtendedTooltip name="ГПТ_КоличествоРасширеннаяПодсказка" id="47"/>
+									<Events>
+										<Event name="Click">ГПТ_ЗаявкиНажатие</Event>
+									</Events>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаСделки" id="60">
+							<UserVisible>
+								<xr:Common>false</xr:Common>
+								<xr:Value name="Role.Администрирование">true</xr:Value>
+								<xr:Value name="Role.ИспользованиеРабочегоСтолаМенеджераОСС">false</xr:Value>
+								<xr:Value name="Role.ИспользованиеРабочегоСтолаМенеджераФилиала">true</xr:Value>
+								<xr:Value name="Role.МенеджерИпотечный">false</xr:Value>
+								<xr:Value name="Role.Отчетность">false</xr:Value>
+								<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+								<xr:Value name="Role.РедактированиеСрокаБронирования">true</xr:Value>
+								<xr:Value name="Role.Юрист">true</xr:Value>
+								<xr:Value name="Role.МенеджерПоКонтролюКачества">false</xr:Value>
+							</UserVisible>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Сделки</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа сделки</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Width>30</Width>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаСделкиРасширеннаяПодсказка" id="61"/>
+							<ChildItems>
+								<LabelDecoration name="Сделки_НаСогласовании" id="62">
+									<Width>21</Width>
+									<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Заявки на сделку</v8:content>
+										</v8:item>
+									</Title>
+									<Hyperlink>true</Hyperlink>
+									<ContextMenu name="Сделки_НаСогласованииКонтекстноеМеню" id="63"/>
+									<ExtendedTooltip name="Сделки_НаСогласованииРасширеннаяПодсказка" id="64"/>
+									<Events>
+										<Event name="Click">Сделки_НаСогласованииНажатие</Event>
+									</Events>
+								</LabelDecoration>
+								<LabelDecoration name="Сделки_Тире" id="65">
+									<Width>1</Width>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>-</v8:content>
+										</v8:item>
+									</Title>
+									<HorizontalAlign>Right</HorizontalAlign>
+									<ContextMenu name="Сделки_ТиреКонтекстноеМеню" id="66"/>
+									<ExtendedTooltip name="Сделки_ТиреРасширеннаяПодсказка" id="67"/>
+								</LabelDecoration>
+								<LabelDecoration name="Сделки_Количество" id="68">
+									<Width>5</Width>
+									<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>0</v8:content>
+										</v8:item>
+									</Title>
+									<Hyperlink>true</Hyperlink>
+									<HorizontalAlign>Right</HorizontalAlign>
+									<ContextMenu name="Сделки_КоличествоКонтекстноеМеню" id="69"/>
+									<ExtendedTooltip name="Сделки_КоличествоРасширеннаяПодсказка" id="70"/>
+									<Events>
+										<Event name="Click">Сделки_НаСогласованииНажатие</Event>
+									</Events>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаБронь" id="71">
+							<UserVisible>
+								<xr:Common>false</xr:Common>
+								<xr:Value name="Role.Администрирование">true</xr:Value>
+								<xr:Value name="Role.ИспользованиеРабочегоСтолаМенеджераОСС">false</xr:Value>
+								<xr:Value name="Role.ИспользованиеРабочегоСтолаМенеджераФилиала">true</xr:Value>
+								<xr:Value name="Role.МенеджерИпотечный">false</xr:Value>
+								<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+								<xr:Value name="Role.РедактированиеСрокаБронирования">true</xr:Value>
+								<xr:Value name="Role.Юрист">false</xr:Value>
+								<xr:Value name="Role.МенеджерПоКонтролюКачества">false</xr:Value>
+							</UserVisible>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Очереди бронирования</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа бронь</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Width>30</Width>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаБроньРасширеннаяПодсказка" id="72"/>
+							<ChildItems>
+								<LabelDecoration name="Бронь_ОчередьБронирования" id="73">
+									<Width>21</Width>
+									<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Очереди бронирования</v8:content>
+										</v8:item>
+									</Title>
+									<Hyperlink>true</Hyperlink>
+									<ContextMenu name="Бронь_ОчередьБронированияКонтекстноеМеню" id="74"/>
+									<ExtendedTooltip name="Бронь_ОчередьБронированияРасширеннаяПодсказка" id="75"/>
+									<Events>
+										<Event name="Click">Бронь_ОчередьБронированияНажатие</Event>
+									</Events>
+								</LabelDecoration>
+								<LabelDecoration name="Бронь_Тире" id="76">
+									<Width>1</Width>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>-</v8:content>
+										</v8:item>
+									</Title>
+									<HorizontalAlign>Right</HorizontalAlign>
+									<ContextMenu name="Бронь_ТиреКонтекстноеМеню" id="77"/>
+									<ExtendedTooltip name="Бронь_ТиреРасширеннаяПодсказка" id="78"/>
+								</LabelDecoration>
+								<LabelDecoration name="Бронь_Количество" id="79">
+									<Width>5</Width>
+									<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>0</v8:content>
+										</v8:item>
+									</Title>
+									<Hyperlink>true</Hyperlink>
+									<HorizontalAlign>Right</HorizontalAlign>
+									<ContextMenu name="Бронь_КоличествоКонтекстноеМеню" id="80"/>
+									<ExtendedTooltip name="Бронь_КоличествоРасширеннаяПодсказка" id="81"/>
+									<Events>
+										<Event name="Click">Бронь_ОчередьБронированияНажатие</Event>
+									</Events>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаЗаявкиНаВыводВПул" id="277">
+							<UserVisible>
+								<xr:Common>false</xr:Common>
+								<xr:Value name="Role.Администрирование">true</xr:Value>
+								<xr:Value name="Role.ИспользованиеРабочегоСтолаМенеджераФилиала">true</xr:Value>
+								<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+								<xr:Value name="Role.РедактированиеСрокаБронирования">true</xr:Value>
+							</UserVisible>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Заявки вывода в пул</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа бронь</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Width>30</Width>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаЗаявкиНаВыводВПулРасширеннаяПодсказка" id="278"/>
+							<ChildItems>
+								<LabelDecoration name="ВыводВПул_ЗаявкаНаВывод" id="279">
+									<Width>21</Width>
+									<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Заявки на вывод в пул</v8:content>
+										</v8:item>
+									</Title>
+									<Hyperlink>true</Hyperlink>
+									<ContextMenu name="ВыводВПул_ЗаявкаНаВыводКонтекстноеМеню" id="280"/>
+									<ExtendedTooltip name="ВыводВПул_ЗаявкаНаВыводРасширеннаяПодсказка" id="281"/>
+									<Events>
+										<Event name="Click">ВыводВПул_ЗаявкаНаВыводНажатие</Event>
+									</Events>
+								</LabelDecoration>
+								<LabelDecoration name="ВыводВПул_Тире" id="282">
+									<Width>1</Width>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>-</v8:content>
+										</v8:item>
+									</Title>
+									<HorizontalAlign>Right</HorizontalAlign>
+									<ContextMenu name="ВыводВПул_ТиреКонтекстноеМеню" id="283"/>
+									<ExtendedTooltip name="ВыводВПул_ТиреРасширеннаяПодсказка" id="284"/>
+								</LabelDecoration>
+								<LabelDecoration name="ВыводВПул_Количество" id="285">
+									<Width>5</Width>
+									<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>0</v8:content>
+										</v8:item>
+									</Title>
+									<Hyperlink>true</Hyperlink>
+									<HorizontalAlign>Right</HorizontalAlign>
+									<ContextMenu name="ВыводВПул_КоличествоКонтекстноеМеню" id="286"/>
+									<ExtendedTooltip name="ВыводВПул_КоличествоРасширеннаяПодсказка" id="287"/>
+									<Events>
+										<Event name="Click">ВыводВПул_ЗаявкаНаВыводНажатие</Event>
+									</Events>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаНаправленыНаКонсультацию" id="330">
+							<UserVisible>
+								<xr:Common>false</xr:Common>
+								<xr:Value name="Role.Администрирование">true</xr:Value>
+								<xr:Value name="Role.МенеджерИпотечный">true</xr:Value>
+								<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+							</UserVisible>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Направлены на консультацию</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа бронь</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Width>30</Width>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаНаправленыНаКонсультациюРасширеннаяПодсказка" id="331"/>
+							<ChildItems>
+								<LabelDecoration name="НаправленыНаКонсультацию_РасчетыИпотеки" id="332">
+									<Width>21</Width>
+									<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Направлены на консультацию</v8:content>
+										</v8:item>
+									</Title>
+									<Hyperlink>true</Hyperlink>
+									<ContextMenu name="НаправленыНаКонсультацию_РасчетыИпотекиКонтекстноеМеню" id="333"/>
+									<ExtendedTooltip name="НаправленыНаКонсультацию_РасчетыИпотекиРасширеннаяПодсказка" id="334"/>
+									<Events>
+										<Event name="Click">НаправленыНаКонсультацию_РасчетыИпотекиНажатие</Event>
+									</Events>
+								</LabelDecoration>
+								<LabelDecoration name="НаправленыНаКонсультацию_Тире" id="335">
+									<Width>1</Width>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>-</v8:content>
+										</v8:item>
+									</Title>
+									<HorizontalAlign>Right</HorizontalAlign>
+									<ContextMenu name="НаправленыНаКонсультацию_ТиреКонтекстноеМеню" id="336"/>
+									<ExtendedTooltip name="НаправленыНаКонсультацию_ТиреРасширеннаяПодсказка" id="337"/>
+								</LabelDecoration>
+								<LabelDecoration name="НаправленыНаКонсультацию_Количество" id="338">
+									<Width>5</Width>
+									<Font ref="style:NormalTextFont" faceName="Calibri" height="14" bold="true" kind="StyleItem"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>0</v8:content>
+										</v8:item>
+									</Title>
+									<Hyperlink>true</Hyperlink>
+									<HorizontalAlign>Right</HorizontalAlign>
+									<ContextMenu name="НаправленыНаКонсультацию_КоличествоКонтекстноеМеню" id="339"/>
+									<ExtendedTooltip name="НаправленыНаКонсультацию_КоличествоРасширеннаяПодсказка" id="340"/>
+									<Events>
+										<Event name="Click">НаправленыНаКонсультацию_РасчетыИпотекиНажатие</Event>
+									</Events>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаСписокОН" id="82">
+							<UserVisible>
+								<xr:Common>false</xr:Common>
+								<xr:Value name="Role.Администрирование">true</xr:Value>
+								<xr:Value name="Role.ИспользованиеРабочегоСтолаМенеджераФилиала">true</xr:Value>
+								<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+								<xr:Value name="Role.МенеджерПоКонтролюКачества">true</xr:Value>
+							</UserVisible>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Список ОН</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа список ОН</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Width>19</Width>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаСписокОНРасширеннаяПодсказка" id="83"/>
+							<ChildItems>
+								<LabelDecoration name="СписокОН_Список" id="84">
+									<Width>30</Width>
+									<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Список объектов недвижимости</v8:content>
+										</v8:item>
+									</Title>
+									<Hyperlink>true</Hyperlink>
+									<ContextMenu name="СписокОН_СписокКонтекстноеМеню" id="85"/>
+									<ExtendedTooltip name="СписокОН_СписокРасширеннаяПодсказка" id="86"/>
+									<Events>
+										<Event name="Click">СписокОН_СписокНажатие</Event>
+									</Events>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<LabelDecoration name="Декорация1" id="101">
+			<UserVisible>
+				<xr:Common>true</xr:Common>
+				<xr:Value name="Role.Администрирование">true</xr:Value>
+				<xr:Value name="Role.ИспользованиеРабочегоСтолаМенеджераОСС">true</xr:Value>
+				<xr:Value name="Role.ИспользованиеРабочегоСтолаМенеджераФилиала">true</xr:Value>
+				<xr:Value name="Role.МенеджерИпотечный">true</xr:Value>
+				<xr:Value name="Role.МенеджерФилиала">false</xr:Value>
+				<xr:Value name="Role.Отчетность">false</xr:Value>
+				<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+				<xr:Value name="Role.РедактированиеСрокаБронирования">true</xr:Value>
+				<xr:Value name="Role.МенеджерПоКонтролюКачества">false</xr:Value>
+			</UserVisible>
+			<Width>1</Width>
+			<Height>4</Height>
+			<VerticalStretch>true</VerticalStretch>
+			<ContextMenu name="Декорация1КонтекстноеМеню" id="102"/>
+			<ExtendedTooltip name="Декорация1РасширеннаяПодсказка" id="103"/>
+		</LabelDecoration>
+		<UsualGroup name="ГруппаСсылки" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа ссылки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа ссылки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<VerticalStretch>true</VerticalStretch>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаСсылкиРасширеннаяПодсказка" id="2"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаДокументы" id="7">
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+						<xr:Value name="Role.Администрирование">true</xr:Value>
+						<xr:Value name="Role.МенеджерИпотечный">true</xr:Value>
+						<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+					</UserVisible>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Документы</v8:content>
+						</v8:item>
+					</Title>
+					<TitleFont ref="style:NormalTextFont" height="16" kind="StyleItem"/>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа документы</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Width>24</Width>
+					<Group>Vertical</Group>
+					<Representation>StrongSeparation</Representation>
+					<ExtendedTooltip name="ГруппаДокументыРасширеннаяПодсказка" id="8"/>
+					<ChildItems>
+						<CheckBoxField name="ТолькоМоиДокументы" id="93">
+							<DataPath>ТолькоМоиДокументы</DataPath>
+							<Visible>false</Visible>
+							<UserVisible>
+								<xr:Common>true</xr:Common>
+								<xr:Value name="Role.Администрирование">true</xr:Value>
+								<xr:Value name="Role.МенеджерИпотечный">true</xr:Value>
+								<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+							</UserVisible>
+							<TitleFont ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ТолькоМоиДокументыКонтекстноеМеню" id="94"/>
+							<ExtendedTooltip name="ТолькоМоиДокументыРасширеннаяПодсказка" id="95"/>
+						</CheckBoxField>
+						<LabelDecoration name="Анкеты" id="98">
+							<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Анкеты</v8:content>
+								</v8:item>
+							</Title>
+							<Hyperlink>true</Hyperlink>
+							<ContextMenu name="АнкетыКонтекстноеМеню" id="99"/>
+							<ExtendedTooltip name="АнкетыРасширеннаяПодсказка" id="100"/>
+							<Events>
+								<Event name="Click">АнкетыНажатие</Event>
+							</Events>
+						</LabelDecoration>
+						<LabelDecoration name="ЗапросыНаОдобрениеОбъекта" id="104">
+							<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Запросы на одобрение объекта</v8:content>
+								</v8:item>
+							</Title>
+							<Hyperlink>true</Hyperlink>
+							<ContextMenu name="ЗапросыНаОдобрениеОбъектаКонтекстноеМеню" id="105"/>
+							<ExtendedTooltip name="ЗапросыНаОдобрениеОбъектаРасширеннаяПодсказка" id="106"/>
+							<Events>
+								<Event name="Click">ЗапросыНаОдобрениеОбъектаНажатие</Event>
+							</Events>
+						</LabelDecoration>
+						<LabelDecoration name="ИпотечныеЗаявки" id="107">
+							<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Ипотечные заявки</v8:content>
+								</v8:item>
+							</Title>
+							<Hyperlink>true</Hyperlink>
+							<ContextMenu name="ИпотечныеЗаявкиКонтекстноеМеню" id="108"/>
+							<ExtendedTooltip name="ИпотечныеЗаявкиРасширеннаяПодсказка" id="109"/>
+							<Events>
+								<Event name="Click">ИпотечныеЗаявкиНажатие</Event>
+							</Events>
+						</LabelDecoration>
+						<LabelDecoration name="РасчетыИпотеки" id="110">
+							<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Расчеты ипотеки</v8:content>
+								</v8:item>
+							</Title>
+							<Hyperlink>true</Hyperlink>
+							<ContextMenu name="РасчетыИпотекиКонтекстноеМеню" id="111"/>
+							<ExtendedTooltip name="РасчетыИпотекиРасширеннаяПодсказка" id="112"/>
+							<Events>
+								<Event name="Click">РасчетыИпотекиНажатие</Event>
+							</Events>
+						</LabelDecoration>
+					</ChildItems>
+				</UsualGroup>
+				<LabelDecoration name="Декорация4" id="131">
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+						<xr:Value name="Role.Администрирование">true</xr:Value>
+						<xr:Value name="Role.ИспользованиеРабочегоСтолаМенеджераОСС">true</xr:Value>
+						<xr:Value name="Role.ИспользованиеРабочегоСтолаМенеджераФилиала">true</xr:Value>
+						<xr:Value name="Role.МенеджерИпотечный">true</xr:Value>
+						<xr:Value name="Role.Отчетность">true</xr:Value>
+						<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+						<xr:Value name="Role.РедактированиеСрокаБронирования">true</xr:Value>
+						<xr:Value name="Role.МенеджерПоКонтролюКачества">false</xr:Value>
+					</UserVisible>
+					<Width>1</Width>
+					<Height>2</Height>
+					<VerticalStretch>true</VerticalStretch>
+					<ContextMenu name="Декорация4КонтекстноеМеню" id="132"/>
+					<ExtendedTooltip name="Декорация4РасширеннаяПодсказка" id="133"/>
+				</LabelDecoration>
+				<UsualGroup name="ГруппаОбработки" id="9">
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+						<xr:Value name="Role.Администрирование">true</xr:Value>
+						<xr:Value name="Role.ИспользованиеРабочегоСтолаМенеджераОСС">false</xr:Value>
+						<xr:Value name="Role.ИспользованиеРабочегоСтолаМенеджераФилиала">false</xr:Value>
+						<xr:Value name="Role.МенеджерИпотечный">true</xr:Value>
+						<xr:Value name="Role.ОбработкаЗаявокНаЗвонок_Администратор">true</xr:Value>
+						<xr:Value name="Role.Отчетность">false</xr:Value>
+						<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+						<xr:Value name="Role.РедактированиеСрокаБронирования">false</xr:Value>
+						<xr:Value name="Role.МенеджерПоКонтролюКачества">false</xr:Value>
+					</UserVisible>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Обработки</v8:content>
+						</v8:item>
+					</Title>
+					<TitleFont ref="style:NormalTextFont" height="16" kind="StyleItem"/>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Обработки</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Representation>StrongSeparation</Representation>
+					<ExtendedTooltip name="ГруппаОбработкиРасширеннаяПодсказка" id="10"/>
+					<ChildItems>
+						<LabelDecoration name="Декорация2" id="116">
+							<Width>1</Width>
+							<Height>1</Height>
+							<ContextMenu name="Декорация2КонтекстноеМеню" id="117"/>
+							<ExtendedTooltip name="Декорация2РасширеннаяПодсказка" id="118"/>
+						</LabelDecoration>
+						<Button name="КалькуляторВоеннойИпотеки" id="252">
+							<Type>Hyperlink</Type>
+							<CommandName>DataProcessor.КалькуляторВоеннойИпотеки.StandardCommand.Open</CommandName>
+							<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Калкулятор военной ипотеки</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="КалькуляторВоеннойИпотекиРасширеннаяПодсказка" id="253"/>
+						</Button>
+						<Button name="КредитныйКалькулятор" id="250">
+							<Type>Hyperlink</Type>
+							<CommandName>DataProcessor.ИпотечныйКалькулятор.StandardCommand.Open</CommandName>
+							<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Калькулятор по специальным программам</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="КредитныйКалькуляторРасширеннаяПодсказка" id="251"/>
+						</Button>
+						<Button name="Мультикалькулятор" id="248">
+							<Type>Hyperlink</Type>
+							<CommandName>DataProcessor.Мультикалькулятор.StandardCommand.Open</CommandName>
+							<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Мультикалькулятор</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="МультикалькуляторРасширеннаяПодсказка" id="249"/>
+						</Button>
+						<Button name="УправлениеРаспределениемЗаявок" id="297">
+							<Type>Hyperlink</Type>
+							<Visible>false</Visible>
+							<CommandName>Form.Command.УправлениеРаспределениемЗаявок</CommandName>
+							<TextColor>#1C55AE</TextColor>
+							<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+							<ExtendedTooltip name="УправлениеРаспределениемЗаявокРасширеннаяПодсказка" id="298"/>
+						</Button>
+						<Button name="ОбработкаУправлениеРаспределениемЗаявокОткрыть" id="307">
+							<Type>Hyperlink</Type>
+							<CommandName>DataProcessor.УправлениеРаспределениемЗаявок.StandardCommand.Open</CommandName>
+							<TextColor>#1C55AE</TextColor>
+							<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+							<ExtendedTooltip name="ОбработкаУправлениеРаспределениемЗаявокОткрытьРасширеннаяПодсказка" id="308"/>
+						</Button>
+					</ChildItems>
+				</UsualGroup>
+				<LabelDecoration name="Декорация5" id="134">
+					<UserVisible>
+						<xr:Common>true</xr:Common>
+						<xr:Value name="Role.Администрирование">true</xr:Value>
+						<xr:Value name="Role.ИспользованиеРабочегоСтолаМенеджераОСС">true</xr:Value>
+						<xr:Value name="Role.ИспользованиеРабочегоСтолаМенеджераФилиала">true</xr:Value>
+						<xr:Value name="Role.МенеджерИпотечный">true</xr:Value>
+						<xr:Value name="Role.Отчетность">false</xr:Value>
+						<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+						<xr:Value name="Role.РедактированиеСрокаБронирования">true</xr:Value>
+						<xr:Value name="Role.МенеджерПоКонтролюКачества">false</xr:Value>
+					</UserVisible>
+					<Width>1</Width>
+					<Height>2</Height>
+					<VerticalStretch>true</VerticalStretch>
+					<ContextMenu name="Декорация5КонтекстноеМеню" id="135"/>
+					<ExtendedTooltip name="Декорация5РасширеннаяПодсказка" id="136"/>
+				</LabelDecoration>
+				<UsualGroup name="ГруппаОтчеты" id="11">
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+						<xr:Value name="Role.Администрирование">true</xr:Value>
+						<xr:Value name="Role.ИспользованиеРабочегоСтолаМенеджераОСС">true</xr:Value>
+						<xr:Value name="Role.ИспользованиеРабочегоСтолаМенеджераФилиала">true</xr:Value>
+						<xr:Value name="Role.МенеджерИпотечный">true</xr:Value>
+						<xr:Value name="Role.ОбработкаЗаявокНаЗвонок_Администратор">true</xr:Value>
+						<xr:Value name="Role.Отчетность">true</xr:Value>
+						<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+						<xr:Value name="Role.РедактированиеСрокаБронирования">true</xr:Value>
+						<xr:Value name="Role.МенеджерПоКонтролюКачества">true</xr:Value>
+					</UserVisible>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отчеты</v8:content>
+						</v8:item>
+					</Title>
+					<TitleFont ref="style:NormalTextFont" height="16" kind="StyleItem"/>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отчеты</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<Representation>StrongSeparation</Representation>
+					<ExtendedTooltip name="ГруппаОтчетыРасширеннаяПодсказка" id="12"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаОтчетыЛево" id="155">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Отчеты лево</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаОтчетыЛевоРасширеннаяПодсказка" id="156"/>
+							<ChildItems>
+								<LabelDecoration name="Декорация3" id="122">
+									<Width>1</Width>
+									<Height>1</Height>
+									<ContextMenu name="Декорация3КонтекстноеМеню" id="123"/>
+									<ExtendedTooltip name="Декорация3РасширеннаяПодсказка" id="124"/>
+								</LabelDecoration>
+								<UsualGroup name="ГруппаИпотека" id="162">
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+										<xr:Value name="Role.Администрирование">true</xr:Value>
+										<xr:Value name="Role.МенеджерИпотечный">true</xr:Value>
+										<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+										<xr:Value name="Role.РедактированиеСрокаБронирования">false</xr:Value>
+										<xr:Value name="Role.Юрист">false</xr:Value>
+										<xr:Value name="Role.МенеджерПоКонтролюКачества">true</xr:Value>
+									</UserVisible>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа ипотека</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа ипотека</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Vertical</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаИпотекаРасширеннаяПодсказка" id="163"/>
+									<ChildItems>
+										<Button name="ОтчетИпотечныеЗаявки" id="254">
+											<Type>Hyperlink</Type>
+											<UserVisible>
+												<xr:Common>false</xr:Common>
+												<xr:Value name="Role.АдминистраторСистемы">true</xr:Value>
+												<xr:Value name="Role.Администрирование">true</xr:Value>
+												<xr:Value name="Role.МенеджерИпотечный">true</xr:Value>
+												<xr:Value name="Role.Отчетность">true</xr:Value>
+												<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+												<xr:Value name="Role.н_ОтчетностьИпотечныйМенеджер">true</xr:Value>
+											</UserVisible>
+											<CommandName>Report.ОтчетПоИпотечнымЗаявкам.StandardCommand.Open</CommandName>
+											<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Ипотечные заявки</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="ОтчетИпотечныеЗаявкиРасширеннаяПодсказка" id="255"/>
+										</Button>
+										<Button name="ОтчетИпотечныеРасчетыКлиентов" id="256">
+											<Type>Hyperlink</Type>
+											<UserVisible>
+												<xr:Common>false</xr:Common>
+												<xr:Value name="Role.АдминистраторСистемы">true</xr:Value>
+												<xr:Value name="Role.Администрирование">true</xr:Value>
+												<xr:Value name="Role.МенеджерИпотечный">true</xr:Value>
+												<xr:Value name="Role.Отчетность">true</xr:Value>
+												<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+												<xr:Value name="Role.н_ОтчетностьИпотечныйМенеджер">true</xr:Value>
+											</UserVisible>
+											<CommandName>Report.ОтчетПоИпотечнымРасчетамКлиентов.StandardCommand.Open</CommandName>
+											<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Ипотечные расчеты клиентам</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="ОтчетИпотечныеРасчетыКлиентовРасширеннаяПодсказка" id="257"/>
+										</Button>
+										<Button name="ОтчетОтчетПоИпотечнымКлиентамУпрощенныйОткрыть" id="275">
+											<Type>Hyperlink</Type>
+											<UserVisible>
+												<xr:Common>false</xr:Common>
+												<xr:Value name="Role.АдминистраторСистемы">true</xr:Value>
+												<xr:Value name="Role.Администрирование">true</xr:Value>
+												<xr:Value name="Role.МенеджерИпотечный">true</xr:Value>
+												<xr:Value name="Role.Отчетность">true</xr:Value>
+												<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+												<xr:Value name="Role.н_ОтчетностьИпотечныйМенеджер">true</xr:Value>
+											</UserVisible>
+											<CommandName>Report.ОтчетПоИпотечнымКлиентамУпрощенный.StandardCommand.Open</CommandName>
+											<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Ипотечные клиенты</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="ОтчетОтчетПоИпотечнымКлиентамУпрощенныйОткрытьРасширеннаяПодсказка" id="276"/>
+										</Button>
+										<Button name="ИпотечныеПоказателиСотрудники" id="347">
+											<Type>Hyperlink</Type>
+											<UserVisible>
+												<xr:Common>false</xr:Common>
+												<xr:Value name="Role.АдминистраторСистемы">true</xr:Value>
+												<xr:Value name="Role.Администрирование">true</xr:Value>
+												<xr:Value name="Role.МенеджерИпотечный">true</xr:Value>
+												<xr:Value name="Role.Отчетность">true</xr:Value>
+												<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+												<xr:Value name="Role.н_ОтчетностьИпотечныйМенеджер">true</xr:Value>
+											</UserVisible>
+											<CommandName>Form.Command.ИпотечныеПоказателиСотрудники</CommandName>
+											<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+											<ExtendedTooltip name="ИпотечныеПоказателиСотрудникиРасширеннаяПодсказка" id="348"/>
+										</Button>
+										<Button name="ИпотечныеПоказателиПроекты" id="349">
+											<Type>Hyperlink</Type>
+											<UserVisible>
+												<xr:Common>true</xr:Common>
+												<xr:Value name="Role.АдминистраторСистемы">true</xr:Value>
+												<xr:Value name="Role.Администрирование">true</xr:Value>
+												<xr:Value name="Role.МенеджерИпотечный">true</xr:Value>
+												<xr:Value name="Role.Отчетность">true</xr:Value>
+												<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+												<xr:Value name="Role.н_ОтчетностьИпотечныйМенеджер">true</xr:Value>
+											</UserVisible>
+											<CommandName>Form.Command.ИпотечныеПоказателиПроекты</CommandName>
+											<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+											<ExtendedTooltip name="ИпотечныеПоказателиПроектыРасширеннаяПодсказка" id="350"/>
+										</Button>
+										<Button name="ОтчетОтчетПоИпотечнымПоказателямОткрыть" id="341">
+											<Type>Hyperlink</Type>
+											<Visible>false</Visible>
+											<UserVisible>
+												<xr:Common>false</xr:Common>
+												<xr:Value name="Role.АдминистраторСистемы">true</xr:Value>
+												<xr:Value name="Role.Администрирование">true</xr:Value>
+												<xr:Value name="Role.МенеджерИпотечный">true</xr:Value>
+												<xr:Value name="Role.Отчетность">true</xr:Value>
+												<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+												<xr:Value name="Role.н_ОтчетностьИпотечныйМенеджер">true</xr:Value>
+											</UserVisible>
+											<CommandName>Report.ОтчетПоИпотечнымПоказателям.StandardCommand.Open</CommandName>
+											<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+											<ExtendedTooltip name="ОтчетОтчетПоИпотечнымПоказателямОткрытьРасширеннаяПодсказка" id="342"/>
+										</Button>
+										<Button name="ОтчетОтчетПоЭффективностиИпотечныхСпециалистовОткрыть" id="345">
+											<Type>Hyperlink</Type>
+											<UserVisible>
+												<xr:Common>false</xr:Common>
+												<xr:Value name="Role.Администрирование">true</xr:Value>
+												<xr:Value name="Role.АнкетированиеКлиентовИпотечныхБанков">true</xr:Value>
+												<xr:Value name="Role.МенеджерИпотечный">true</xr:Value>
+												<xr:Value name="Role.Отчетность">true</xr:Value>
+												<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+												<xr:Value name="Role.н_ОтчетностьИпотечныйМенеджер">true</xr:Value>
+											</UserVisible>
+											<CommandName>Report.ОтчетПоЭффективностиИпотечныхСпециалистов.StandardCommand.Open</CommandName>
+											<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+											<ExtendedTooltip name="ОтчетОтчетПоЭффективностиИпотечныхСпециалистовОткрытьРасширеннаяПодсказка" id="346"/>
+										</Button>
+										<Button name="ОтчетОтчетПоЭффективностиБанковПартнеровОткрыть" id="343">
+											<Type>Hyperlink</Type>
+											<UserVisible>
+												<xr:Common>false</xr:Common>
+												<xr:Value name="Role.АдминистраторСистемы">true</xr:Value>
+												<xr:Value name="Role.Администрирование">true</xr:Value>
+												<xr:Value name="Role.МенеджерИпотечный">true</xr:Value>
+												<xr:Value name="Role.Отчетность">true</xr:Value>
+												<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+												<xr:Value name="Role.н_ОтчетностьИпотечныйМенеджер">true</xr:Value>
+											</UserVisible>
+											<CommandName>Report.ОтчетПоЭффективностиБанковПартнеров.StandardCommand.Open</CommandName>
+											<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+											<ExtendedTooltip name="ОтчетОтчетПоЭффективностиБанковПартнеровОткрытьРасширеннаяПодсказка" id="344"/>
+										</Button>
+									</ChildItems>
+								</UsualGroup>
+								<Button name="Шахматка" id="227">
+									<Type>Hyperlink</Type>
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+										<xr:Value name="Role.Администрирование">true</xr:Value>
+										<xr:Value name="Role.ИспользованиеРабочегоСтолаМенеджераОСС">true</xr:Value>
+										<xr:Value name="Role.ИспользованиеРабочегоСтолаМенеджераФилиала">true</xr:Value>
+										<xr:Value name="Role.МенеджерИпотечный">false</xr:Value>
+										<xr:Value name="Role.Отчетность">true</xr:Value>
+										<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+										<xr:Value name="Role.РедактированиеСрокаБронирования">true</xr:Value>
+										<xr:Value name="Role.Юрист">false</xr:Value>
+										<xr:Value name="Role.МенеджерПоКонтролюКачества">true</xr:Value>
+									</UserVisible>
+									<CommandName>Report.Шахматка.StandardCommand.Open</CommandName>
+									<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Шахматка</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ШахматкаРасширеннаяПодсказка" id="228"/>
+								</Button>
+								<LabelDecoration name="ОтчетМенеджера" id="179">
+									<Visible>false</Visible>
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+										<xr:Value name="Role.Администрирование">true</xr:Value>
+										<xr:Value name="Role.ИспользованиеРабочегоСтолаМенеджераФилиала">false</xr:Value>
+										<xr:Value name="Role.МенеджерИпотечный">false</xr:Value>
+										<xr:Value name="Role.Отчетность">false</xr:Value>
+										<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+										<xr:Value name="Role.Юрист">true</xr:Value>
+										<xr:Value name="Role.МенеджерПоКонтролюКачества">true</xr:Value>
+									</UserVisible>
+									<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Отчет менеджера</v8:content>
+										</v8:item>
+									</Title>
+									<Hyperlink>true</Hyperlink>
+									<ContextMenu name="ОтчетМенеджераКонтекстноеМеню" id="180"/>
+									<ExtendedTooltip name="ОтчетМенеджераРасширеннаяПодсказка" id="181"/>
+									<Events>
+										<Event name="Click">ОтчетМенеджераНажатие</Event>
+									</Events>
+								</LabelDecoration>
+								<LabelDecoration name="ОтчетПодборКвартирСсылка" id="323">
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+										<xr:Value name="Role.Администрирование">true</xr:Value>
+										<xr:Value name="Role.ИспользованиеРабочегоСтолаМенеджераФилиала">true</xr:Value>
+										<xr:Value name="Role.МенеджерИпотечный">false</xr:Value>
+										<xr:Value name="Role.ОбработкаЗаявокНаЗвонок_Администратор">true</xr:Value>
+										<xr:Value name="Role.Отчетность">true</xr:Value>
+										<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+										<xr:Value name="Role.РедактированиеСрокаБронирования">true</xr:Value>
+										<xr:Value name="Role.Юрист">false</xr:Value>
+										<xr:Value name="Role.МенеджерПоКонтролюКачества">true</xr:Value>
+									</UserVisible>
+									<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Подбор квартир</v8:content>
+										</v8:item>
+									</Title>
+									<Hyperlink>true</Hyperlink>
+									<ContextMenu name="ОтчетПодборКвартирСсылкаКонтекстноеМеню" id="324"/>
+									<ExtendedTooltip name="ОтчетПодборКвартирСсылкаРасширеннаяПодсказка" id="325"/>
+									<Events>
+										<Event name="Click">ОтчетПодборКвартирСсылкаНажатие</Event>
+									</Events>
+								</LabelDecoration>
+								<Button name="ОтчетПодборКвартир" id="231">
+									<Type>Hyperlink</Type>
+									<Visible>false</Visible>
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+										<xr:Value name="Role.Администрирование">true</xr:Value>
+										<xr:Value name="Role.ИспользованиеРабочегоСтолаМенеджераОСС">false</xr:Value>
+										<xr:Value name="Role.ИспользованиеРабочегоСтолаМенеджераФилиала">true</xr:Value>
+										<xr:Value name="Role.МенеджерИпотечный">false</xr:Value>
+										<xr:Value name="Role.ОбработкаЗаявокНаЗвонок_Администратор">true</xr:Value>
+										<xr:Value name="Role.Отчетность">true</xr:Value>
+										<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+										<xr:Value name="Role.РедактированиеСрокаБронирования">true</xr:Value>
+										<xr:Value name="Role.Юрист">false</xr:Value>
+										<xr:Value name="Role.МенеджерПоКонтролюКачества">true</xr:Value>
+									</UserVisible>
+									<CommandName>Report.Квартирограмма.StandardCommand.Open</CommandName>
+									<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+									<ExtendedTooltip name="ОтчетПодборКвартирРасширеннаяПодсказка" id="232"/>
+								</Button>
+								<LabelDecoration name="ОтчетПодборЗУ" id="149">
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+										<xr:Value name="Role.Администрирование">true</xr:Value>
+										<xr:Value name="Role.ИспользованиеРабочегоСтолаМенеджераОСС">false</xr:Value>
+										<xr:Value name="Role.ИспользованиеРабочегоСтолаМенеджераФилиала">true</xr:Value>
+										<xr:Value name="Role.МенеджерИпотечный">false</xr:Value>
+										<xr:Value name="Role.ОбработкаЗаявокНаЗвонок_Администратор">true</xr:Value>
+										<xr:Value name="Role.Отчетность">false</xr:Value>
+										<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+										<xr:Value name="Role.РедактированиеСрокаБронирования">true</xr:Value>
+										<xr:Value name="Role.Юрист">false</xr:Value>
+										<xr:Value name="Role.МенеджерПоКонтролюКачества">true</xr:Value>
+									</UserVisible>
+									<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Подбор земельных участков</v8:content>
+										</v8:item>
+									</Title>
+									<Hyperlink>true</Hyperlink>
+									<ContextMenu name="ОтчетПодборЗУКонтекстноеМеню" id="150"/>
+									<ExtendedTooltip name="ОтчетПодборЗУРасширеннаяПодсказка" id="151"/>
+									<Events>
+										<Event name="Click">ОтчетПодборЗУНажатие</Event>
+									</Events>
+								</LabelDecoration>
+								<LabelDecoration name="ОтчетПодборМашиномест" id="317">
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+										<xr:Value name="Role.Администрирование">true</xr:Value>
+										<xr:Value name="Role.ИспользованиеРабочегоСтолаМенеджераОСС">false</xr:Value>
+										<xr:Value name="Role.МенеджерИпотечный">false</xr:Value>
+										<xr:Value name="Role.ОбработкаЗаявокНаЗвонок_Администратор">true</xr:Value>
+										<xr:Value name="Role.Отчетность">false</xr:Value>
+										<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+										<xr:Value name="Role.Юрист">false</xr:Value>
+									</UserVisible>
+									<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Подбор машиномест</v8:content>
+										</v8:item>
+									</Title>
+									<Hyperlink>true</Hyperlink>
+									<ContextMenu name="ОтчетПодборМашиноместКонтекстноеМеню" id="318"/>
+									<ExtendedTooltip name="ОтчетПодборМашиноместРасширеннаяПодсказка" id="319"/>
+									<Events>
+										<Event name="Click">ОтчетПодборМашиноместНажатие</Event>
+									</Events>
+								</LabelDecoration>
+								<LabelDecoration name="ОтчетПодборКладовых" id="320">
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+										<xr:Value name="Role.Администрирование">true</xr:Value>
+										<xr:Value name="Role.ИспользованиеРабочегоСтолаМенеджераОСС">false</xr:Value>
+										<xr:Value name="Role.МенеджерИпотечный">false</xr:Value>
+										<xr:Value name="Role.ОбработкаЗаявокНаЗвонок_Администратор">true</xr:Value>
+										<xr:Value name="Role.Отчетность">false</xr:Value>
+										<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+										<xr:Value name="Role.Юрист">false</xr:Value>
+									</UserVisible>
+									<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Подбор кладовых</v8:content>
+										</v8:item>
+									</Title>
+									<Hyperlink>true</Hyperlink>
+									<ContextMenu name="ОтчетПодборКладовыхКонтекстноеМеню" id="321"/>
+									<ExtendedTooltip name="ОтчетПодборКладовыхРасширеннаяПодсказка" id="322"/>
+									<Events>
+										<Event name="Click">ОтчетПодборКладовыхНажатие</Event>
+									</Events>
+								</LabelDecoration>
+								<LabelDecoration name="ОтчетПоЭффективностьМенеджера" id="164">
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+										<xr:Value name="Role.Администрирование">true</xr:Value>
+										<xr:Value name="Role.ИспользованиеРабочегоСтолаМенеджераОСС">false</xr:Value>
+										<xr:Value name="Role.ИспользованиеРабочегоСтолаМенеджераФилиала">true</xr:Value>
+										<xr:Value name="Role.МенеджерИпотечный">false</xr:Value>
+										<xr:Value name="Role.Отчетность">false</xr:Value>
+										<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+										<xr:Value name="Role.РедактированиеСрокаБронирования">true</xr:Value>
+										<xr:Value name="Role.Юрист">false</xr:Value>
+										<xr:Value name="Role.МенеджерПоКонтролюКачества">true</xr:Value>
+									</UserVisible>
+									<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Эффективность менеджера</v8:content>
+										</v8:item>
+									</Title>
+									<Hyperlink>true</Hyperlink>
+									<ContextMenu name="ОтчетПоЭффективностьМенеджераКонтекстноеМеню" id="165"/>
+									<ExtendedTooltip name="ОтчетПоЭффективностьМенеджераРасширеннаяПодсказка" id="166"/>
+									<Events>
+										<Event name="Click">ОтчетПоЭффективностьМенеджераНажатие</Event>
+									</Events>
+								</LabelDecoration>
+								<LabelDecoration name="ОтчетПоЭффективностьМенеджераЗУ" id="167">
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+										<xr:Value name="Role.Администрирование">true</xr:Value>
+										<xr:Value name="Role.ИспользованиеРабочегоСтолаМенеджераОСС">false</xr:Value>
+										<xr:Value name="Role.ИспользованиеРабочегоСтолаМенеджераФилиала">true</xr:Value>
+										<xr:Value name="Role.МенеджерИпотечный">false</xr:Value>
+										<xr:Value name="Role.Отчетность">false</xr:Value>
+										<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+										<xr:Value name="Role.РедактированиеСрокаБронирования">false</xr:Value>
+										<xr:Value name="Role.Юрист">false</xr:Value>
+										<xr:Value name="Role.МенеджерПоКонтролюКачества">true</xr:Value>
+									</UserVisible>
+									<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Эффективность менеджера (ОПО, ЗУ)</v8:content>
+										</v8:item>
+									</Title>
+									<Hyperlink>true</Hyperlink>
+									<ContextMenu name="ОтчетПоЭффективностьМенеджераЗУКонтекстноеМеню" id="168"/>
+									<ExtendedTooltip name="ОтчетПоЭффективностьМенеджераЗУРасширеннаяПодсказка" id="169"/>
+									<Events>
+										<Event name="Click">ОтчетПоЭффективностьМенеджераЗУНажатие</Event>
+									</Events>
+								</LabelDecoration>
+								<Button name="Календарь" id="229">
+									<Type>Hyperlink</Type>
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+										<xr:Value name="Role.Администрирование">true</xr:Value>
+										<xr:Value name="Role.ИспользованиеРабочегоСтолаМенеджераОСС">false</xr:Value>
+										<xr:Value name="Role.ИспользованиеРабочегоСтолаМенеджераФилиала">true</xr:Value>
+										<xr:Value name="Role.МенеджерИпотечный">false</xr:Value>
+										<xr:Value name="Role.Отчетность">false</xr:Value>
+										<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+										<xr:Value name="Role.РедактированиеСрокаБронирования">false</xr:Value>
+										<xr:Value name="Role.Юрист">false</xr:Value>
+										<xr:Value name="Role.МенеджерПоКонтролюКачества">true</xr:Value>
+									</UserVisible>
+									<CommandName>Report.ОтчетВзаимодействияВКалендаре.StandardCommand.Open</CommandName>
+									<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Календарь</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="КалендарьРасширеннаяПодсказка" id="230"/>
+								</Button>
+								<UsualGroup name="ГруппаОтчетность2" id="262">
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+										<xr:Value name="Role.Администрирование">true</xr:Value>
+										<xr:Value name="Role.ИспользованиеРабочегоСтолаМенеджераОСС">false</xr:Value>
+										<xr:Value name="Role.ИспользованиеРабочегоСтолаМенеджераФилиала">false</xr:Value>
+										<xr:Value name="Role.МенеджерИпотечный">false</xr:Value>
+										<xr:Value name="Role.Отчетность">true</xr:Value>
+										<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+										<xr:Value name="Role.РедактированиеСрокаБронирования">false</xr:Value>
+										<xr:Value name="Role.Юрист">false</xr:Value>
+										<xr:Value name="Role.МенеджерПоКонтролюКачества">true</xr:Value>
+									</UserVisible>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Отчетность</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа отчетность2</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Vertical</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаОтчетность2РасширеннаяПодсказка" id="263"/>
+									<ChildItems>
+										<Button name="ОтчетОтчетВоронкаПродажОткрыть" id="222">
+											<Type>Hyperlink</Type>
+											<CommandName>Report.ОтчетВоронкаПродаж.StandardCommand.Open</CommandName>
+											<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Воронка продаж</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="ОтчетОтчетВоронкаПродажОткрытьРасширеннаяПодсказка" id="223"/>
+										</Button>
+										<Button name="ОтчетОтчетПоДаннымCoMagicОткрыть" id="220">
+											<Type>Hyperlink</Type>
+											<CommandName>Report.ОтчетПоДаннымCoMagic.StandardCommand.Open</CommandName>
+											<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Звонки ГПТ и обращения CoMagic</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="ОтчетОтчетПоДаннымCoMagicОткрытьРасширеннаяПодсказка" id="221"/>
+										</Button>
+										<Button name="ОтчетОтчетПоДаннымCoMagic_СделкиОткрыть" id="218">
+											<Type>Hyperlink</Type>
+											<CommandName>Report.ОтчетПоДаннымCoMagic_Сделки.StandardCommand.Open</CommandName>
+											<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Сделки и обращения CoMagic</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="ОтчетОтчетПоДаннымCoMagic_СделкиОткрытьРасширеннаяПодсказка" id="219"/>
+										</Button>
+									</ChildItems>
+								</UsualGroup>
+								<Button name="ОтчетСтатистикаПоМенеджерамГПТОткрыть" id="326">
+									<Type>Hyperlink</Type>
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+										<xr:Value name="Role.АдминистраторСистемы">true</xr:Value>
+										<xr:Value name="Role.Администрирование">true</xr:Value>
+										<xr:Value name="Role.ОбработкаЗаявокНаЗвонок_Администратор">true</xr:Value>
+										<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+									</UserVisible>
+									<CommandName>Report.СтатистикаПоМенеджерамГПТ.StandardCommand.Open</CommandName>
+									<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+									<ExtendedTooltip name="ОтчетСтатистикаПоМенеджерамГПТОткрытьРасширеннаяПодсказка" id="327"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаОтчетыПравая" id="157">
+							<UserVisible>
+								<xr:Common>true</xr:Common>
+								<xr:Value name="Role.Администрирование">true</xr:Value>
+								<xr:Value name="Role.ИспользованиеРабочегоСтолаМенеджераОСС">true</xr:Value>
+								<xr:Value name="Role.ИспользованиеРабочегоСтолаМенеджераФилиала">true</xr:Value>
+								<xr:Value name="Role.МенеджерИпотечный">true</xr:Value>
+								<xr:Value name="Role.Отчетность">true</xr:Value>
+								<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+								<xr:Value name="Role.РедактированиеСрокаБронирования">true</xr:Value>
+								<xr:Value name="Role.Юрист">false</xr:Value>
+								<xr:Value name="Role.МенеджерПоКонтролюКачества">true</xr:Value>
+							</UserVisible>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Отчеты правая</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаОтчетыПраваяРасширеннаяПодсказка" id="158"/>
+							<ChildItems>
+								<LabelDecoration name="Декорация6" id="159">
+									<Width>1</Width>
+									<Height>1</Height>
+									<ContextMenu name="Декорация6КонтекстноеМеню" id="160"/>
+									<ExtendedTooltip name="Декорация6РасширеннаяПодсказка" id="161"/>
+								</LabelDecoration>
+								<LabelDecoration name="ОтчетПоСделкам" id="170">
+									<Visible>false</Visible>
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+										<xr:Value name="Role.Администрирование">true</xr:Value>
+										<xr:Value name="Role.ИспользованиеРабочегоСтолаМенеджераОСС">true</xr:Value>
+										<xr:Value name="Role.ИспользованиеРабочегоСтолаМенеджераФилиала">true</xr:Value>
+										<xr:Value name="Role.МенеджерИпотечный">false</xr:Value>
+										<xr:Value name="Role.Отчетность">true</xr:Value>
+										<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+										<xr:Value name="Role.РедактированиеСрокаБронирования">true</xr:Value>
+										<xr:Value name="Role.Юрист">false</xr:Value>
+										<xr:Value name="Role.МенеджерПоКонтролюКачества">true</xr:Value>
+									</UserVisible>
+									<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Сделки</v8:content>
+										</v8:item>
+									</Title>
+									<Hyperlink>true</Hyperlink>
+									<ContextMenu name="ОтчетПоСделкамКонтекстноеМеню" id="171"/>
+									<ExtendedTooltip name="ОтчетПоСделкамРасширеннаяПодсказка" id="172"/>
+									<Events>
+										<Event name="Click">ОтчетПоСделкамНажатие</Event>
+									</Events>
+								</LabelDecoration>
+								<Button name="ОтчетПоВзаимодействиям" id="235">
+									<Type>Hyperlink</Type>
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+										<xr:Value name="Role.Администрирование">true</xr:Value>
+										<xr:Value name="Role.ИспользованиеРабочегоСтолаМенеджераОСС">true</xr:Value>
+										<xr:Value name="Role.ИспользованиеРабочегоСтолаМенеджераФилиала">true</xr:Value>
+										<xr:Value name="Role.МенеджерИпотечный">true</xr:Value>
+										<xr:Value name="Role.ОбработкаЗаявокНаЗвонок_Администратор">true</xr:Value>
+										<xr:Value name="Role.Отчетность">true</xr:Value>
+										<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+										<xr:Value name="Role.РедактированиеСрокаБронирования">true</xr:Value>
+										<xr:Value name="Role.Юрист">false</xr:Value>
+										<xr:Value name="Role.МенеджерПоКонтролюКачества">true</xr:Value>
+									</UserVisible>
+									<CommandName>Report.ОтчетПоВзаимодействиям.StandardCommand.Open</CommandName>
+									<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Взаимодействия</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ОтчетПоВзаимодействиямРасширеннаяПодсказка" id="236"/>
+								</Button>
+								<Button name="ОтчетПоВзаимодействиямЗУ" id="237">
+									<Type>Hyperlink</Type>
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+										<xr:Value name="Role.Администрирование">true</xr:Value>
+										<xr:Value name="Role.ИспользованиеРабочегоСтолаМенеджераОСС">false</xr:Value>
+										<xr:Value name="Role.ИспользованиеРабочегоСтолаМенеджераФилиала">true</xr:Value>
+										<xr:Value name="Role.МенеджерИпотечный">false</xr:Value>
+										<xr:Value name="Role.Отчетность">true</xr:Value>
+										<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+										<xr:Value name="Role.РедактированиеСрокаБронирования">true</xr:Value>
+										<xr:Value name="Role.Юрист">false</xr:Value>
+										<xr:Value name="Role.МенеджерПоКонтролюКачества">true</xr:Value>
+									</UserVisible>
+									<CommandName>Report.ОтчетПоВзаимодействиямЗУ.StandardCommand.Open</CommandName>
+									<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Взаимодействия ЗУ</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ОтчетПоВзаимодействиямЗУРасширеннаяПодсказка" id="238"/>
+								</Button>
+								<Button name="ОтчетПоИсточникамРекламы" id="239">
+									<Type>Hyperlink</Type>
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+										<xr:Value name="Role.Администрирование">true</xr:Value>
+										<xr:Value name="Role.ИспользованиеРабочегоСтолаМенеджераОСС">false</xr:Value>
+										<xr:Value name="Role.ИспользованиеРабочегоСтолаМенеджераФилиала">true</xr:Value>
+										<xr:Value name="Role.МенеджерИпотечный">false</xr:Value>
+										<xr:Value name="Role.Отчетность">true</xr:Value>
+										<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+										<xr:Value name="Role.РедактированиеСрокаБронирования">true</xr:Value>
+										<xr:Value name="Role.Юрист">false</xr:Value>
+										<xr:Value name="Role.МенеджерПоКонтролюКачества">true</xr:Value>
+									</UserVisible>
+									<CommandName>Report.ОтчетПоИсточникамРекламы.StandardCommand.Open</CommandName>
+									<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Источники рекламы</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ОтчетПоИсточникамРекламыРасширеннаяПодсказка" id="240"/>
+								</Button>
+								<Button name="ОтчетПоВыданнымПодаркам" id="241">
+									<Type>Hyperlink</Type>
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+										<xr:Value name="Role.Администрирование">true</xr:Value>
+										<xr:Value name="Role.ИспользованиеРабочегоСтолаМенеджераОСС">true</xr:Value>
+										<xr:Value name="Role.ИспользованиеРабочегоСтолаМенеджераФилиала">true</xr:Value>
+										<xr:Value name="Role.МенеджерИпотечный">false</xr:Value>
+										<xr:Value name="Role.Отчетность">true</xr:Value>
+										<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+										<xr:Value name="Role.РедактированиеСрокаБронирования">true</xr:Value>
+										<xr:Value name="Role.Юрист">false</xr:Value>
+										<xr:Value name="Role.МенеджерПоКонтролюКачества">true</xr:Value>
+									</UserVisible>
+									<CommandName>Report.ОтчетПоВыданнымПодаркам.StandardCommand.Open</CommandName>
+									<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Выданные подарки</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ОтчетПоВыданнымПодаркамРасширеннаяПодсказка" id="242"/>
+								</Button>
+								<UsualGroup name="ГруппаОтчетность" id="192">
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+										<xr:Value name="Role.Администрирование">true</xr:Value>
+										<xr:Value name="Role.ИспользованиеРабочегоСтолаМенеджераОСС">false</xr:Value>
+										<xr:Value name="Role.ИспользованиеРабочегоСтолаМенеджераФилиала">false</xr:Value>
+										<xr:Value name="Role.МенеджерИпотечный">false</xr:Value>
+										<xr:Value name="Role.Отчетность">true</xr:Value>
+										<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+										<xr:Value name="Role.РедактированиеСрокаБронирования">false</xr:Value>
+										<xr:Value name="Role.Юрист">false</xr:Value>
+										<xr:Value name="Role.МенеджерПоКонтролюКачества">true</xr:Value>
+									</UserVisible>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Отчетность</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа отчетность</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Vertical</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаОтчетностьРасширеннаяПодсказка" id="193"/>
+									<ChildItems>
+										<Button name="ОтчетОтчетПоОбращениямCoMagicОткрыть" id="216">
+											<Type>Hyperlink</Type>
+											<CommandName>Report.ОтчетПоОбращениямCoMagic.StandardCommand.Open</CommandName>
+											<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Обращения CoMagic и данные CRM</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="ОтчетОтчетПоОбращениямCoMagicОткрытьРасширеннаяПодсказка" id="217"/>
+										</Button>
+										<Button name="ОтчетОтчетПоСрокамПринятияРешенияОткрыть" id="212">
+											<Type>Hyperlink</Type>
+											<CommandName>Report.ОтчетПоСрокамПринятияРешения.StandardCommand.Open</CommandName>
+											<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Сроки принятия решений</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="ОтчетОтчетПоСрокамПринятияРешенияОткрытьРасширеннаяПодсказка" id="213"/>
+										</Button>
+									</ChildItems>
+								</UsualGroup>
+								<Button name="ОтчетОтчетПоЗаявкамНаЗвонокОткрыть" id="214">
+									<Type>Hyperlink</Type>
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+										<xr:Value name="Role.Администрирование">true</xr:Value>
+										<xr:Value name="Role.ОбработкаЗаявокНаЗвонок_Администратор">true</xr:Value>
+										<xr:Value name="Role.Отчетность">true</xr:Value>
+										<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+										<xr:Value name="Role.МенеджерПоКонтролюКачества">true</xr:Value>
+									</UserVisible>
+									<CommandName>Report.ОтчетПоЗаявкамНаЗвонок.StandardCommand.Open</CommandName>
+									<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Заявки на звонок</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ОтчетОтчетПоЗаявкамНаЗвонокОткрытьРасширеннаяПодсказка" id="215"/>
+								</Button>
+								<Button name="ОтчетОтчетЕжедневнаяСтатистикаОткрыть" id="311">
+									<Type>Hyperlink</Type>
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+										<xr:Value name="Role.Администрирование">true</xr:Value>
+										<xr:Value name="Role.ОбработкаЗаявокНаЗвонок_Администратор">true</xr:Value>
+										<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+									</UserVisible>
+									<CommandName>Report.ОтчетЕжедневнаяСтатистика.StandardCommand.Open</CommandName>
+									<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+									<ExtendedTooltip name="ОтчетОтчетЕжедневнаяСтатистикаОткрытьРасширеннаяПодсказка" id="312"/>
+								</Button>
+								<Button name="ЭффективностьМенеджераГПТ" id="301">
+									<Type>Hyperlink</Type>
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+										<xr:Value name="Role.Администрирование">true</xr:Value>
+										<xr:Value name="Role.ОбработкаЗаявокНаЗвонок_Администратор">true</xr:Value>
+										<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+										<xr:Value name="Role.МенеджерПоКонтролюКачества">true</xr:Value>
+									</UserVisible>
+									<CommandName>Form.Command.ЭффективностьМенеджераГПТ</CommandName>
+									<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Эффективность менеджера ГПТ</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ЭффективностьМенеджераГПТРасширеннаяПодсказка" id="302"/>
+								</Button>
+								<Button name="ОтчетОтчетПоОтправленнымСМСОткрыть" id="309">
+									<Type>Hyperlink</Type>
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+										<xr:Value name="Role.Администрирование">true</xr:Value>
+										<xr:Value name="Role.ОбработкаЗаявокНаЗвонок_Администратор">true</xr:Value>
+										<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+									</UserVisible>
+									<CommandName>Report.ОтчетПоОтправленнымСМС.StandardCommand.Open</CommandName>
+									<TextColor>#1C55AE</TextColor>
+									<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+									<ExtendedTooltip name="ОтчетОтчетПоОтправленнымСМСОткрытьРасширеннаяПодсказка" id="310"/>
+								</Button>
+								<Button name="ОтчетДействующиеБрониОткрыть" id="328">
+									<Type>Hyperlink</Type>
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+										<xr:Value name="Role.Администрирование">true</xr:Value>
+										<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+										<xr:Value name="Role.РедактированиеСрокаБронирования">true</xr:Value>
+										<xr:Value name="Role.СозданиеСнятияСБронирования">true</xr:Value>
+										<xr:Value name="Role.н_Бронирование">true</xr:Value>
+										<xr:Value name="Role.н_БронированиеРасширенное">true</xr:Value>
+										<xr:Value name="Role.БронированиеДомКлик">true</xr:Value>
+									</UserVisible>
+									<CommandName>Report.ДействующиеБрони.StandardCommand.Open</CommandName>
+									<TextColor>#1C55AE</TextColor>
+									<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+									<ExtendedTooltip name="ОтчетДействующиеБрониОткрытьРасширеннаяПодсказка" id="329"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаСправочникиИНастройки" id="288">
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+						<xr:Value name="Role.Администрирование">true</xr:Value>
+						<xr:Value name="Role.ОбработкаЗаявокНаЗвонок_Администратор">true</xr:Value>
+						<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+					</UserVisible>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Справочники и настройки</v8:content>
+						</v8:item>
+					</Title>
+					<TitleFont ref="style:NormalTextFont" height="16" kind="StyleItem"/>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Обработки</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Representation>StrongSeparation</Representation>
+					<ExtendedTooltip name="ГруппаСправочникиИНастройкиРасширеннаяПодсказка" id="289"/>
+					<ChildItems>
+						<LabelDecoration name="Декорация12" id="290">
+							<Width>1</Width>
+							<Height>1</Height>
+							<ContextMenu name="Декорация12КонтекстноеМеню" id="291"/>
+							<ExtendedTooltip name="Декорация12РасширеннаяПодсказка" id="292"/>
+						</LabelDecoration>
+						<Button name="ШаблоныСМС" id="313">
+							<Type>Hyperlink</Type>
+							<UserVisible>
+								<xr:Common>false</xr:Common>
+								<xr:Value name="Role.Администрирование">true</xr:Value>
+								<xr:Value name="Role.ОбработкаЗаявокНаЗвонок_Администратор">true</xr:Value>
+								<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+							</UserVisible>
+							<CommandName>Form.Command.ШаблоныСМС</CommandName>
+							<TextColor>#1C55AE</TextColor>
+							<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+							<ExtendedTooltip name="ШаблоныСМСРасширеннаяПодсказка" id="314"/>
+						</Button>
+						<Button name="СпамНомера" id="315">
+							<Type>Hyperlink</Type>
+							<UserVisible>
+								<xr:Common>false</xr:Common>
+								<xr:Value name="Role.Администрирование">true</xr:Value>
+								<xr:Value name="Role.ОбработкаЗаявокНаЗвонок_Администратор">true</xr:Value>
+								<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+							</UserVisible>
+							<CommandName>Form.Command.СпамНомера</CommandName>
+							<TextColor>#1C55AE</TextColor>
+							<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+							<ExtendedTooltip name="СпамНомераРасширеннаяПодсказка" id="316"/>
+						</Button>
+						<Button name="НастройкиРаспределенияЗаявок" id="293">
+							<Type>Hyperlink</Type>
+							<CommandName>Form.Command.НастройкиРаспределенияЗаявок</CommandName>
+							<TextColor>#1C55AE</TextColor>
+							<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+							<ExtendedTooltip name="НастройкиРаспределенияЗаявокРасширеннаяПодсказка" id="294"/>
+						</Button>
+						<Button name="НастройкиТелефонии" id="295">
+							<Type>Hyperlink</Type>
+							<CommandName>Form.Command.НастройкиТелефонии</CommandName>
+							<TextColor>#1C55AE</TextColor>
+							<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+							<ExtendedTooltip name="НастройкиТелефонииРасширеннаяПодсказка" id="296"/>
+						</Button>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<LabelDecoration name="Декорация7" id="185">
+			<Width>1</Width>
+			<Height>1</Height>
+			<HorizontalStretch>true</HorizontalStretch>
+			<VerticalStretch>true</VerticalStretch>
+			<ContextMenu name="Декорация7КонтекстноеМеню" id="186"/>
+			<ExtendedTooltip name="Декорация7РасширеннаяПодсказка" id="187"/>
+		</LabelDecoration>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="ТолькоМоиЗадачи" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Только мои задачи</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ТолькоМоиДокументы" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Только мои документы</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="МенеджерОСС" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Менеджер ОСС</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="МенеджерФилиала" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Менеджер филиала</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ВсеОбъекты" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Все объекты</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="МенеджерСтарший" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Менеджер старший</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="МенеджерИпотечный" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Менеджер ипотечный</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Юрист" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Юрист</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Отчетность" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отчетность</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ТекущийПользователь" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текущий пользователь</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Пользователи</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ОбновитьКоличество" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить количество</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить количество задач</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Refresh</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ОбновитьКоличество</Action>
+			<Representation>Picture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="НастройкиРаспределенияЗаявок" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки распределения заявок</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки распределения заявок</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>НастройкиРаспределенияЗаявок</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="НастройкиТелефонии" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки телефонии</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки телефонии</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>НастройкиТелефонии</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="УправлениеРаспределениемЗаявок" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Управление распределением заявок</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Управление распределением заявок</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Use>
+				<xr:Common>true</xr:Common>
+				<xr:Value name="Role.ОбработкаЗаявокНаЗвонок_Администратор">true</xr:Value>
+			</Use>
+			<Action>УправлениеРаспределениемЗаявок</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ЭффективностьМенеджераГПТ" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Эффективность менеджера ГПТ</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Эффективность менеджера ГПТ</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЭффективностьМенеджераГПТ</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОтчетЕжедневнаяСтатистика" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отчет ежедневная статистика</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отчет ежедневная статистика</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОтчетЕжедневнаяСтатистика</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ШаблоныСМС" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шаблоны СМС</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки телефонии</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ШаблоныСМС</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="СпамНомера" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Спам номера</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки телефонии</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СпамНомера</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ИпотечныеПоказателиСотрудники" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ипотечные показатели - ответственные</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ипотечные показатели сотрудники</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ИпотечныеПоказателиСотрудники</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ИпотечныеПоказателиПроекты" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ипотечные показатели - проекты</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ипотечные показатели проекты</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ИпотечныеПоказателиПроекты</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

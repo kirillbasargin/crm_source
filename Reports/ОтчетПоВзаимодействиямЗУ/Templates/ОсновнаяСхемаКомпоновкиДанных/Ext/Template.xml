@@ -1,0 +1,481 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetUnion">
+		<name>НаборДанных2</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>АктивностьВзаимодействия</dataPath>
+			<field>АктивностьВзаимодействия</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Взаимодействие</dataPath>
+			<field>Взаимодействие</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаОтветственного</dataPath>
+			<field>ГруппаОтветственного</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Количество</dataPath>
+			<field>Количество</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Проект</dataPath>
+			<field>Проект</field>
+		</field>
+		<item xsi:type="DataSetQuery">
+			<name>ГПТ</name>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>АктивностьВзаимодействия</dataPath>
+				<field>АктивностьВзаимодействия</field>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Взаимодействие</dataPath>
+				<field>Взаимодействие</field>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ГруппаОтветственного</dataPath>
+				<field>ГруппаОтветственного</field>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Количество</dataPath>
+				<field>Количество</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Количество</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Проект</dataPath>
+				<field>Проект</field>
+			</field>
+			<dataSource>ИсточникДанных1</dataSource>
+			<query>ВЫБРАТЬ
+	Взаимодействия.Взаимодействие КАК Взаимодействие,
+	Взаимодействия.ГруппаОтветственного КАК ГруппаОтветственного,
+	Взаимодействия.АктивностьВзаимодействия КАК АктивностьВзаимодействия,
+	Взаимодействия.Проект КАК Проект,
+	1 КАК Количество
+{ВЫБРАТЬ
+	Взаимодействие.*,
+	ГруппаОтветственного.*,
+	АктивностьВзаимодействия.*,
+	Проект.*}
+ИЗ
+	РегистрСведений.Взаимодействия КАК Взаимодействия
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.Запрос КАК Запрос
+		ПО Взаимодействия.Предмет = Запрос.Ссылка
+ГДЕ
+	Взаимодействия.ДатаВзаимодействия МЕЖДУ &amp;ПериодНачало И &amp;ПериодКонец
+	И Взаимодействия.ГруппаОтветственного.Наименование = &amp;ГруппаГПТ
+	И Взаимодействия.АктивностьВзаимодействия В (ЗНАЧЕНИЕ(Перечисление.ТипАктивностиВзаимодействия.Первичное), ЗНАЧЕНИЕ(Перечисление.ТипАктивностиВзаимодействия.Вторичное))
+	И Взаимодействия.ТипВзаимодействия = ЗНАЧЕНИЕ(Перечисление.ТипыВзаимодействий.ТелефонныйЗвонок)
+	И Взаимодействия.Статус = ЗНАЧЕНИЕ(Перечисление.СтатусыВзаимодействий.Завершено)
+	//И Взаимодействия.ТипОбъектаНедвижимости = ЗНАЧЕНИЕ(Перечисление.ВидыОбъектовНедвижимости.ЗемельныйУчасток)
+	И Взаимодействия.Предмет.ТипОбъектаНедвижимости = ЗНАЧЕНИЕ(Перечисление.ВидыОбъектовНедвижимости.ЗемельныйУчасток)
+{ГДЕ
+	Взаимодействия.Взаимодействие.*,
+	Взаимодействия.ГруппаОтветственного.*,
+	Взаимодействия.АктивностьВзаимодействия.*,
+	Взаимодействия.Проект.*}</query>
+		</item>
+		<item xsi:type="DataSetQuery">
+			<name>ОПО</name>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>АктивностьВзаимодействия</dataPath>
+				<field>АктивностьВзаимодействия</field>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Взаимодействие</dataPath>
+				<field>Взаимодействие</field>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Количество</dataPath>
+				<field>Количество</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Количество</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ГруппаОтветственного</dataPath>
+				<field>ГруппаОтветственного</field>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Проект</dataPath>
+				<field>Проект</field>
+			</field>
+			<dataSource>ИсточникДанных1</dataSource>
+			<query>ВЫБРАТЬ
+	Взаимодействия.Взаимодействие КАК Взаимодействие,
+	Взаимодействия.ГруппаОтветственного КАК ГруппаОтветственного,
+	Взаимодействия.АктивностьВзаимодействия КАК АктивностьВзаимодействия,
+	Взаимодействия.Проект КАК Проект,
+	1 КАК Количество
+{ВЫБРАТЬ
+	Взаимодействие.*,
+	ГруппаОтветственного.*,
+	АктивностьВзаимодействия.*,
+	Проект.*}
+ИЗ
+	РегистрСведений.Взаимодействия КАК Взаимодействия
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.Запрос КАК Запрос
+		ПО Взаимодействия.Предмет = Запрос.Ссылка
+ГДЕ
+	Взаимодействия.ДатаВзаимодействия МЕЖДУ &amp;ПериодНачало И &amp;ПериодКонец
+	И Взаимодействия.ГруппаОтветственного.Наименование = &amp;ГруппаОПО
+	И Взаимодействия.АктивностьВзаимодействия В (ЗНАЧЕНИЕ(Перечисление.ТипАктивностиВзаимодействия.Первичное), ЗНАЧЕНИЕ(Перечисление.ТипАктивностиВзаимодействия.Вторичное))
+	И Взаимодействия.ТипВзаимодействия = ЗНАЧЕНИЕ(Перечисление.ТипыВзаимодействий.Встреча)
+	И Взаимодействия.Статус = ЗНАЧЕНИЕ(Перечисление.СтатусыВзаимодействий.Завершено)
+	//И Взаимодействия.ТипОбъектаНедвижимости = ЗНАЧЕНИЕ(Перечисление.ВидыОбъектовНедвижимости.ЗемельныйУчасток)
+	И Взаимодействия.Предмет.ТипОбъектаНедвижимости = ЗНАЧЕНИЕ(Перечисление.ВидыОбъектовНедвижимости.ЗемельныйУчасток)
+	
+{ГДЕ
+	Взаимодействия.Взаимодействие.*,
+	Взаимодействия.ГруппаОтветственного.*,
+	Взаимодействия.АктивностьВзаимодействия.*,
+	Взаимодействия.Проект.*}</query>
+		</item>
+		<item xsi:type="DataSetQuery">
+			<name>ЦО</name>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>АктивностьВзаимодействия</dataPath>
+				<field>АктивностьВзаимодействия</field>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Взаимодействие</dataPath>
+				<field>Взаимодействие</field>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Количество</dataPath>
+				<field>Количество</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Количество</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ГруппаОтветственного</dataPath>
+				<field>ГруппаОтветственного</field>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Проект</dataPath>
+				<field>Проект</field>
+			</field>
+			<dataSource>ИсточникДанных1</dataSource>
+			<query>ВЫБРАТЬ
+	Взаимодействия.Взаимодействие КАК Взаимодействие,
+	Взаимодействия.ГруппаОтветственного КАК ГруппаОтветственного,
+	Взаимодействия.АктивностьВзаимодействия КАК АктивностьВзаимодействия,
+	Взаимодействия.Проект КАК Проект,
+	1 КАК Количество
+{ВЫБРАТЬ
+	Взаимодействие.*,
+	ГруппаОтветственного.*,
+	АктивностьВзаимодействия.*,
+	Проект.*}
+ИЗ
+	РегистрСведений.Взаимодействия КАК Взаимодействия
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.Запрос КАК Запрос
+		ПО Взаимодействия.Предмет = Запрос.Ссылка
+ГДЕ
+	Взаимодействия.ДатаВзаимодействия МЕЖДУ &amp;ПериодНачало И &amp;ПериодКонец
+	И Взаимодействия.ГруппаОтветственного.Наименование = &amp;ГруппаЦО
+	И Взаимодействия.АктивностьВзаимодействия В (ЗНАЧЕНИЕ(Перечисление.ТипАктивностиВзаимодействия.Первичное), ЗНАЧЕНИЕ(Перечисление.ТипАктивностиВзаимодействия.Вторичное))
+	И Взаимодействия.ТипВзаимодействия = ЗНАЧЕНИЕ(Перечисление.ТипыВзаимодействий.Встреча)
+	И Взаимодействия.Статус = ЗНАЧЕНИЕ(Перечисление.СтатусыВзаимодействий.Завершено)
+	//И Взаимодействия.ТипОбъектаНедвижимости = ЗНАЧЕНИЕ(Перечисление.ВидыОбъектовНедвижимости.ЗемельныйУчасток)
+	И Взаимодействия.Предмет.ТипОбъектаНедвижимости = ЗНАЧЕНИЕ(Перечисление.ВидыОбъектовНедвижимости.ЗемельныйУчасток)
+{ГДЕ
+	Взаимодействия.Взаимодействие.*,
+	Взаимодействия.ГруппаОтветственного.*,
+	Взаимодействия.АктивностьВзаимодействия.*,
+	Взаимодействия.Проект.*}</query>
+		</item>
+	</dataSet>
+	<totalField>
+		<dataPath>Количество</dataPath>
+		<expression>Сумма(Количество)</expression>
+		<group>АктивностьВзаимодействия</group>
+		<group>ГруппаОтветственного</group>
+	</totalField>
+	<parameter>
+		<name>ПериодКонец</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период конец</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;СтандартныйПериод.ДатаОкончания</expression>
+	</parameter>
+	<parameter>
+		<name>ПериодНачало</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период начало</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;СтандартныйПериод.ДатаНачала</expression>
+	</parameter>
+	<parameter>
+		<name>СтандартныйПериод</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Стандартный период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ГруппаОПО</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Группа ОПО</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:string</v8:Type>
+			<v8:StringQualifiers>
+				<v8:Length>100</v8:Length>
+				<v8:AllowedLength>Variable</v8:AllowedLength>
+			</v8:StringQualifiers>
+		</valueType>
+		<value xsi:type="xs:string">Земля розница</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ГруппаЦО</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Группа ЦО</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:string</v8:Type>
+			<v8:StringQualifiers>
+				<v8:Length>100</v8:Length>
+				<v8:AllowedLength>Variable</v8:AllowedLength>
+			</v8:StringQualifiers>
+		</valueType>
+		<value xsi:type="xs:string">Центральный офис</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ГруппаГПТ</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Группа ГПТ</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:string</v8:Type>
+			<v8:StringQualifiers>
+				<v8:Length>100</v8:Length>
+				<v8:AllowedLength>Variable</v8:AllowedLength>
+			</v8:StringQualifiers>
+		</valueType>
+		<value xsi:type="xs:string">ГПТ</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>ОтчетПоВзаимодействиямЗУ</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Отчет по взаимодействиям ЗУ</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Количество</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content> </v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Проект</dcsset:left>
+					<dcsset:comparisonType>InList</dcsset:comparisonType>
+					<dcsset:right xsi:type="v8:ValueListType">
+						<v8:valueType/>
+						<v8:lastId xsi:type="xs:decimal">-1</v8:lastId>
+					</dcsset:right>
+					<dcsset:userSettingID>cea084c2-8a2e-4619-8a7b-3326d99783d0</dcsset:userSettingID>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>СтандартныйПериод</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">ThisMonth</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>b279b669-8360-42fc-b379-92184aeab649</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ГруппаОПО</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Земля розница</dcscor:value>
+					<dcsset:userSettingID>7ca8a65c-979b-4d90-a5c0-c4ac894c9070</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ГруппаЦО</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Центральный офис</dcscor:value>
+					<dcsset:userSettingID>8bf65a5d-8e13-4e8a-8069-5a4263ea1c92</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ГруппаГПТ</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ГПТ</dcscor:value>
+					<dcsset:userSettingID>ef4e4104-97e2-4cce-aa9e-579d98f6a06a</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Проект</dcsset:field>
+					<dcsset:orderType>Desc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">МакетОформленияКвартирограммыНовый</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ГоризонтальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Заголовок</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отчет по взаимодействиям ЗУ</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ВыводитьПараметрыДанных</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">Output</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemTable">
+				<dcsset:column>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ГруппаОтветственного</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>АктивностьВзаимодействия</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>ГруппаОтветственного</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>АктивностьВзаимодействия</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:column>
+				<dcsset:row>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Проект</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:row>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

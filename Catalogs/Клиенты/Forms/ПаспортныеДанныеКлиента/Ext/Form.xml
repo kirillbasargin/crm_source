@@ -1,0 +1,523 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.6">
+	<Width>54</Width>
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ДокументУдостоверяющийЛичность" id="58">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Документ, удостоверяющий личность</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Документ удостоверяющий личность</v8:content>
+				</v8:item>
+			</ToolTip>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Group>Vertical</Group>
+			<ExtendedTooltip name="ДокументУдостоверяющийЛичностьРасширеннаяПодсказка" id="59"/>
+			<ChildItems>
+				<InputField name="ВидДокумента" id="1">
+					<DataPath>ВидДокумента</DataPath>
+					<HorizontalStretch>true</HorizontalStretch>
+					<ContextMenu name="ВидДокументаКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="ВидДокументаРасширеннаяПодсказка" id="3"/>
+				</InputField>
+				<UsualGroup name="Группа1" id="60">
+					<HorizontalStretch>true</HorizontalStretch>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="61"/>
+					<ChildItems>
+						<InputField name="Серия" id="52">
+							<DataPath>Серия</DataPath>
+							<HorizontalStretch>true</HorizontalStretch>
+							<ContextMenu name="СерияКонтекстноеМеню" id="53"/>
+							<ExtendedTooltip name="СерияРасширеннаяПодсказка" id="54"/>
+						</InputField>
+						<InputField name="Номер" id="34">
+							<DataPath>Номер</DataPath>
+							<HorizontalStretch>true</HorizontalStretch>
+							<ContextMenu name="НомерКонтекстноеМеню" id="35"/>
+							<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="36"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<InputField name="КемВыдан" id="19">
+					<DataPath>КемВыдан</DataPath>
+					<Width>54</Width>
+					<HorizontalStretch>true</HorizontalStretch>
+					<MultiLine>true</MultiLine>
+					<ContextMenu name="КемВыданКонтекстноеМеню" id="20"/>
+					<ExtendedTooltip name="КемВыданРасширеннаяПодсказка" id="21"/>
+				</InputField>
+				<UsualGroup name="Группа2" id="62">
+					<HorizontalStretch>true</HorizontalStretch>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="63"/>
+					<ChildItems>
+						<InputField name="ДатаВыдачи" id="10">
+							<DataPath>ДатаВыдачи</DataPath>
+							<HorizontalStretch>true</HorizontalStretch>
+							<ContextMenu name="ДатаВыдачиКонтекстноеМеню" id="11"/>
+							<ExtendedTooltip name="ДатаВыдачиРасширеннаяПодсказка" id="12"/>
+						</InputField>
+						<InputField name="КодПодразделения" id="22">
+							<DataPath>КодПодразделения</DataPath>
+							<HorizontalStretch>true</HorizontalStretch>
+							<ContextMenu name="КодПодразделенияКонтекстноеМеню" id="23"/>
+							<ExtendedTooltip name="КодПодразделенияРасширеннаяПодсказка" id="24"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<InputField name="Фамилия" id="55">
+					<DataPath>Фамилия</DataPath>
+					<HorizontalStretch>true</HorizontalStretch>
+					<ContextMenu name="ФамилияКонтекстноеМеню" id="56"/>
+					<ExtendedTooltip name="ФамилияРасширеннаяПодсказка" id="57"/>
+				</InputField>
+				<InputField name="Имя" id="16">
+					<DataPath>Имя</DataPath>
+					<HorizontalStretch>true</HorizontalStretch>
+					<ContextMenu name="ИмяКонтекстноеМеню" id="17"/>
+					<ExtendedTooltip name="ИмяРасширеннаяПодсказка" id="18"/>
+				</InputField>
+				<InputField name="Отчество" id="46">
+					<DataPath>Отчество</DataPath>
+					<HorizontalStretch>true</HorizontalStretch>
+					<ContextMenu name="ОтчествоКонтекстноеМеню" id="47"/>
+					<ExtendedTooltip name="ОтчествоРасширеннаяПодсказка" id="48"/>
+				</InputField>
+				<UsualGroup name="Группа3" id="64">
+					<HorizontalStretch>true</HorizontalStretch>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="Группа3РасширеннаяПодсказка" id="65"/>
+					<ChildItems>
+						<InputField name="Пол" id="49">
+							<DataPath>Пол</DataPath>
+							<HorizontalStretch>true</HorizontalStretch>
+							<ContextMenu name="ПолКонтекстноеМеню" id="50"/>
+							<ExtendedTooltip name="ПолРасширеннаяПодсказка" id="51"/>
+						</InputField>
+						<InputField name="ДатаРождения" id="13">
+							<DataPath>ДатаРождения</DataPath>
+							<HorizontalStretch>true</HorizontalStretch>
+							<ContextMenu name="ДатаРожденияКонтекстноеМеню" id="14"/>
+							<ExtendedTooltip name="ДатаРожденияРасширеннаяПодсказка" id="15"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<InputField name="МестоРождения" id="31">
+					<DataPath>МестоРождения</DataPath>
+					<HorizontalStretch>true</HorizontalStretch>
+					<ContextMenu name="МестоРожденияКонтекстноеМеню" id="32"/>
+					<ExtendedTooltip name="МестоРожденияРасширеннаяПодсказка" id="33"/>
+				</InputField>
+				<InputField name="АдресПоПропискеКлиента" id="4">
+					<DataPath>АдресПоПропискеКлиента</DataPath>
+					<Width>54</Width>
+					<HorizontalStretch>true</HorizontalStretch>
+					<MultiLine>true</MultiLine>
+					<ContextMenu name="АдресПоПропискеКлиентаКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="АдресПоПропискеКлиентаРасширеннаяПодсказка" id="6"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ДанныеСвидетельстваОРождении" id="78">
+			<Visible>false</Visible>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Данные свидетельства о рождении</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<ExtendedTooltip name="ДанныеСвидетельстваОРожденииРасширеннаяПодсказка" id="79"/>
+			<ChildItems>
+				<UsualGroup name="Группа4" id="68">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дополнительные реквизиты для свидетельства</v8:content>
+						</v8:item>
+					</Title>
+					<HorizontalStretch>true</HorizontalStretch>
+					<Group>Horizontal</Group>
+					<ExtendedTooltip name="Группа4РасширеннаяПодсказка" id="69"/>
+					<ChildItems>
+						<InputField name="НомерАкта" id="37">
+							<DataPath>НомерАкта</DataPath>
+							<HorizontalStretch>true</HorizontalStretch>
+							<ContextMenu name="НомерАктаКонтекстноеМеню" id="38"/>
+							<ExtendedTooltip name="НомерАктаРасширеннаяПодсказка" id="39"/>
+						</InputField>
+						<InputField name="ДатаАкта" id="7">
+							<DataPath>ДатаАкта</DataPath>
+							<HorizontalStretch>true</HorizontalStretch>
+							<ContextMenu name="ДатаАктаКонтекстноеМеню" id="8"/>
+							<ExtendedTooltip name="ДатаАктаРасширеннаяПодсказка" id="9"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ДанныеМатери" id="70">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Данные матери</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Данные матери</v8:content>
+						</v8:item>
+					</ToolTip>
+					<HorizontalStretch>true</HorizontalStretch>
+					<Group>Vertical</Group>
+					<ExtendedTooltip name="ДанныеМатериРасширеннаяПодсказка" id="71"/>
+					<ChildItems>
+						<InputField name="МатьФИО" id="28">
+							<DataPath>МатьФИО</DataPath>
+							<HorizontalStretch>true</HorizontalStretch>
+							<ContextMenu name="МатьФИОКонтекстноеМеню" id="29"/>
+							<ExtendedTooltip name="МатьФИОРасширеннаяПодсказка" id="30"/>
+						</InputField>
+						<InputField name="МатьНациональность" id="25">
+							<DataPath>МатьНациональность</DataPath>
+							<HorizontalStretch>true</HorizontalStretch>
+							<ContextMenu name="МатьНациональностьКонтекстноеМеню" id="26"/>
+							<ExtendedTooltip name="МатьНациональностьРасширеннаяПодсказка" id="27"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ДанныеОтца" id="72">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Данные отца</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Данные отца</v8:content>
+						</v8:item>
+					</ToolTip>
+					<HorizontalStretch>true</HorizontalStretch>
+					<Group>Vertical</Group>
+					<ExtendedTooltip name="ДанныеОтцаРасширеннаяПодсказка" id="73"/>
+					<ChildItems>
+						<InputField name="ОтецФИО" id="43">
+							<DataPath>ОтецФИО</DataPath>
+							<HorizontalStretch>true</HorizontalStretch>
+							<ContextMenu name="ОтецФИОКонтекстноеМеню" id="44"/>
+							<ExtendedTooltip name="ОтецФИОРасширеннаяПодсказка" id="45"/>
+						</InputField>
+						<InputField name="ОтецНациональность" id="40">
+							<DataPath>ОтецНациональность</DataPath>
+							<HorizontalStretch>true</HorizontalStretch>
+							<ContextMenu name="ОтецНациональностьКонтекстноеМеню" id="41"/>
+							<ExtendedTooltip name="ОтецНациональностьРасширеннаяПодсказка" id="42"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="ВидДокумента" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид документа</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ВидыДокументовФизическихЛиц</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Серия" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Серия</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>14</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Номер" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>14</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="КемВыдан" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Кем выдан</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>200</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ДатаВыдачи" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата выдачи</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="КодПодразделения" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Код подразделения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>15</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Фамилия" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Фамилия</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>50</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Имя" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Имя</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>50</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Отчество" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отчество</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>50</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Пол" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пол</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.ПолФизическогоЛица</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ДатаРождения" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата рождения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="МестоРождения" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Место рождения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>150</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="АдресПоПропискеКлиента" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес по прописке клиента</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>500</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="НомерАкта" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер акта</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>15</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ДатаАкта" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата акта</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="МатьФИО" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Мать ФИО</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>200</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="МатьНациональность" id="18">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Мать национальность</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>200</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ОтецФИО" id="19">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отец ФИО</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>200</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ОтецНациональность" id="20">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отец национальность</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>200</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Parameters>
+		<Parameter name="ФизическоеЛицо">
+			<Type>
+				<v8:Type>cfg:CatalogRef.Клиенты</v8:Type>
+			</Type>
+			<KeyParameter>true</KeyParameter>
+		</Parameter>
+	</Parameters>
+</Form>

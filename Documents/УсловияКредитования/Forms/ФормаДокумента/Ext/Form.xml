@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.6">
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="BeforeWriteAtServer">ПередЗаписьюНаСервере</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="OnWriteAtServer">ПриЗаписиНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаШапка" id="28">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа шапка</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа шапка</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаШапкаРасширеннаяПодсказка" id="29"/>
+			<ChildItems>
+				<InputField name="Номер" id="1">
+					<DataPath>Объект.Number</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="НомерКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="3"/>
+				</InputField>
+				<InputField name="Дата" id="4">
+					<DataPath>Объект.Date</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДатаКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="6"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="Банк" id="7">
+			<DataPath>Объект.Банк</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoMarkIncomplete>true</AutoMarkIncomplete>
+			<ContextMenu name="БанкКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="БанкРасширеннаяПодсказка" id="9"/>
+			<Events>
+				<Event name="OnChange">БанкПриИзменении</Event>
+			</Events>
+		</InputField>
+		<UsualGroup name="ГруппаОсновная" id="30">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа основная</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа основная</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаОсновнаяРасширеннаяПодсказка" id="31"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаОсновнаяЛевая" id="32">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа основная левая</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа основная левая</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаОсновнаяЛеваяРасширеннаяПодсказка" id="33"/>
+					<ChildItems>
+						<InputField name="СтавкаБазовая" id="10">
+							<DataPath>Объект.СтавкаБазовая</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ClearButton>true</ClearButton>
+							<ContextMenu name="СтавкаБазоваяКонтекстноеМеню" id="11"/>
+							<ExtendedTooltip name="СтавкаБазоваяРасширеннаяПодсказка" id="12"/>
+						</InputField>
+						<InputField name="СтавкаГосподдержка" id="13">
+							<DataPath>Объект.СтавкаГосподдержка</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ClearButton>true</ClearButton>
+							<ContextMenu name="СтавкаГосподдержкаКонтекстноеМеню" id="14"/>
+							<ExtendedTooltip name="СтавкаГосподдержкаРасширеннаяПодсказка" id="15"/>
+						</InputField>
+						<InputField name="ПервоначальныйВзнос" id="16">
+							<DataPath>Объект.ПервоначальныйВзнос</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ClearButton>true</ClearButton>
+							<ContextMenu name="ПервоначальныйВзносКонтекстноеМеню" id="17"/>
+							<ExtendedTooltip name="ПервоначальныйВзносРасширеннаяПодсказка" id="18"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаОсновнаяПравая" id="34">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа основная левая</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа основная левая</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаОсновнаяПраваяРасширеннаяПодсказка" id="35"/>
+					<ChildItems>
+						<InputField name="СрокКредитования" id="19">
+							<DataPath>Объект.СрокКредитования</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ClearButton>true</ClearButton>
+							<ContextMenu name="СрокКредитованияКонтекстноеМеню" id="20"/>
+							<ExtendedTooltip name="СрокКредитованияРасширеннаяПодсказка" id="21"/>
+						</InputField>
+						<InputField name="ДополнительныеРасходы" id="22">
+							<DataPath>Объект.ДополнительныеРасходы</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ClearButton>true</ClearButton>
+							<ContextMenu name="ДополнительныеРасходыКонтекстноеМеню" id="23"/>
+							<ExtendedTooltip name="ДополнительныеРасходыРасширеннаяПодсказка" id="24"/>
+						</InputField>
+						<InputField name="ДосрочноеПогашение" id="25">
+							<DataPath>Объект.ДосрочноеПогашение</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ClearButton>true</ClearButton>
+							<ContextMenu name="ДосрочноеПогашениеКонтекстноеМеню" id="26"/>
+							<ExtendedTooltip name="ДосрочноеПогашениеРасширеннаяПодсказка" id="27"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="Проекты" id="39">
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>Объект.Проекты</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ПроектыКонтекстноеМеню" id="40"/>
+			<AutoCommandBar name="ПроектыКоманднаяПанель" id="41">
+				<Autofill>false</Autofill>
+				<ChildItems>
+					<Button name="ПроектыПодборПроектов" id="58">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ПодборПроектов</CommandName>
+						<ExtendedTooltip name="ПроектыПодборПроектовРасширеннаяПодсказка" id="59"/>
+					</Button>
+					<Button name="ПроектыУдалить" id="60">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Item.Проекты.StandardCommand.Delete</CommandName>
+						<ExtendedTooltip name="ПроектыУдалитьРасширеннаяПодсказка" id="61"/>
+					</Button>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="ПроектыРасширеннаяПодсказка" id="42"/>
+			<SearchStringAddition name="ПроектыСтрокаПоиска" id="43">
+				<AdditionSource>
+					<Item>Проекты</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ПроектыСтрокаПоискаКонтекстноеМеню" id="44"/>
+				<ExtendedTooltip name="ПроектыСтрокаПоискаРасширеннаяПодсказка" id="45"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ПроектыСостояниеПросмотра" id="46">
+				<AdditionSource>
+					<Item>Проекты</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ПроектыСостояниеПросмотраКонтекстноеМеню" id="47"/>
+				<ExtendedTooltip name="ПроектыСостояниеПросмотраРасширеннаяПодсказка" id="48"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ПроектыУправлениеПоиском" id="49">
+				<AdditionSource>
+					<Item>Проекты</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ПроектыУправлениеПоискомКонтекстноеМеню" id="50"/>
+				<ExtendedTooltip name="ПроектыУправлениеПоискомРасширеннаяПодсказка" id="51"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="ChoiceProcessing">ПроектыОбработкаВыбора</Event>
+			</Events>
+			<ChildItems>
+				<LabelField name="ПроектыНомерСтроки" id="52">
+					<DataPath>Объект.Проекты.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ПроектыНомерСтрокиКонтекстноеМеню" id="53"/>
+					<ExtendedTooltip name="ПроектыНомерСтрокиРасширеннаяПодсказка" id="54"/>
+				</LabelField>
+				<InputField name="ПроектыПроект" id="55">
+					<DataPath>Объект.Проекты.Проект</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ПроектыПроектКонтекстноеМеню" id="56"/>
+					<ExtendedTooltip name="ПроектыПроектРасширеннаяПодсказка" id="57"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.УсловияКредитования</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Объект.RegisterRecords</Field>
+			</UseAlways>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ПодборПроектов" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подбор</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подбор проектов</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.ShowData</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ПодборПроектов</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

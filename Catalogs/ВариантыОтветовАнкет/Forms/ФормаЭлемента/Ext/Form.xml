@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.6">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="BeforeWrite">ПередЗаписью</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="КодОткрытыйОтвет" id="7">
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="КодОткрытыйОтветExtendedTooltip" id="8"/>
+			<ChildItems>
+				<InputField name="Код" id="1">
+					<DataPath>Объект.Code</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КодКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="КодExtendedTooltip" id="9"/>
+				</InputField>
+				<CheckBoxField name="ТребуетОткрытогоОтвета" id="5">
+					<DataPath>Объект.ТребуетОткрытогоОтвета</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ТребуетОткрытогоОтветаКонтекстноеМеню" id="6"/>
+					<ExtendedTooltip name="ТребуетОткрытогоОтветаExtendedTooltip" id="10"/>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="Наименование" id="3">
+			<DataPath>Объект.Description</DataPath>
+			<DefaultItem>true</DefaultItem>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="НаименованиеКонтекстноеМеню" id="4"/>
+			<ExtendedTooltip name="НаименованиеExtendedTooltip" id="11"/>
+		</InputField>
+		<InputField name="Владелец" id="56">
+			<DataPath>Объект.Owner</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Владелец (не менять!)</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="ВладелецКонтекстноеМеню" id="57"/>
+			<ExtendedTooltip name="ВладелецРасширеннаяПодсказка" id="58"/>
+		</InputField>
+		<UsualGroup name="ГруппаПараметрыПечати" id="18">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Параметры печати</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа параметры печати</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Representation>StrongSeparation</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаПараметрыПечатиРасширеннаяПодсказка" id="19"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаПараметрыПечатиВнутр" id="20">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа параметры печати внутр</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа параметры печати внутр</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Width>72</Width>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаПараметрыПечатиВнутрРасширеннаяПодсказка" id="21"/>
+					<ChildItems>
+						<InputField name="ПрефиксПараметраПечати" id="22">
+							<DataPath>Объект.ПрефиксПараметраПечати</DataPath>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>10</MaxWidth>
+							<HorizontalStretch>false</HorizontalStretch>
+							<ContextMenu name="ПрефиксПараметраПечатиКонтекстноеМеню" id="23"/>
+							<ExtendedTooltip name="ПрефиксПараметраПечатиРасширеннаяПодсказка" id="24"/>
+						</InputField>
+						<LabelDecoration name="Декорация1" id="31">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>#</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="Декорация1КонтекстноеМеню" id="32"/>
+							<ExtendedTooltip name="Декорация1РасширеннаяПодсказка" id="33"/>
+						</LabelDecoration>
+						<InputField name="ПараметрПечати" id="12">
+							<DataPath>Объект.ПараметрПечати</DataPath>
+							<ContextMenu name="ПараметрПечатиКонтекстноеМеню" id="13"/>
+							<ExtendedTooltip name="ПараметрПечатиРасширеннаяПодсказка" id="14"/>
+							<Events>
+								<Event name="OnChange">ПараметрПечатиПриИзменении</Event>
+							</Events>
+						</InputField>
+						<LabelDecoration name="Декорация2" id="34">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>#</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="Декорация2КонтекстноеМеню" id="35"/>
+							<ExtendedTooltip name="Декорация2РасширеннаяПодсказка" id="36"/>
+						</LabelDecoration>
+						<InputField name="ПостфиксПараметраПечати" id="28">
+							<DataPath>Объект.СуффиксПараметраПечати</DataPath>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>10</MaxWidth>
+							<HorizontalStretch>false</HorizontalStretch>
+							<ContextMenu name="ПостфиксПараметраПечатиКонтекстноеМеню" id="29"/>
+							<ExtendedTooltip name="ПостфиксПараметраПечатиРасширеннаяПодсказка" id="30"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<CheckBoxField name="ИспользоватьСпецСимволДляЗамены" id="15">
+					<DataPath>Объект.ИспользоватьСпецСимволДляЗамены</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ИспользоватьСпецСимволДляЗаменыКонтекстноеМеню" id="16"/>
+					<ExtendedTooltip name="ИспользоватьСпецСимволДляЗаменыРасширеннаяПодсказка" id="17"/>
+				</CheckBoxField>
+				<Table name="ИпотечныеБанки" id="37">
+					<AutoInsertNewRow>true</AutoInsertNewRow>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<DataPath>Объект.ИпотечныеБанки</DataPath>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="ИпотечныеБанкиКонтекстноеМеню" id="38"/>
+					<AutoCommandBar name="ИпотечныеБанкиКоманднаяПанель" id="39"/>
+					<ExtendedTooltip name="ИпотечныеБанкиРасширеннаяПодсказка" id="40"/>
+					<SearchStringAddition name="ИпотечныеБанкиСтрокаПоиска" id="41">
+						<AdditionSource>
+							<Item>ИпотечныеБанки</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ИпотечныеБанкиСтрокаПоискаКонтекстноеМеню" id="42"/>
+						<ExtendedTooltip name="ИпотечныеБанкиСтрокаПоискаРасширеннаяПодсказка" id="43"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="ИпотечныеБанкиСостояниеПросмотра" id="44">
+						<AdditionSource>
+							<Item>ИпотечныеБанки</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ИпотечныеБанкиСостояниеПросмотраКонтекстноеМеню" id="45"/>
+						<ExtendedTooltip name="ИпотечныеБанкиСостояниеПросмотраРасширеннаяПодсказка" id="46"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="ИпотечныеБанкиУправлениеПоиском" id="47">
+						<AdditionSource>
+							<Item>ИпотечныеБанки</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="ИпотечныеБанкиУправлениеПоискомКонтекстноеМеню" id="48"/>
+						<ExtendedTooltip name="ИпотечныеБанкиУправлениеПоискомРасширеннаяПодсказка" id="49"/>
+					</SearchControlAddition>
+					<ChildItems>
+						<LabelField name="ИпотечныеБанкиНомерСтроки" id="50">
+							<DataPath>Объект.ИпотечныеБанки.LineNumber</DataPath>
+							<Visible>false</Visible>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ИпотечныеБанкиНомерСтрокиКонтекстноеМеню" id="51"/>
+							<ExtendedTooltip name="ИпотечныеБанкиНомерСтрокиРасширеннаяПодсказка" id="52"/>
+						</LabelField>
+						<InputField name="ИпотечныеБанкиИпотечныйБанк" id="53">
+							<DataPath>Объект.ИпотечныеБанки.ИпотечныйБанк</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ИпотечныеБанкиИпотечныйБанкКонтекстноеМеню" id="54"/>
+							<ExtendedTooltip name="ИпотечныеБанкиИпотечныйБанкРасширеннаяПодсказка" id="55"/>
+						</InputField>
+					</ChildItems>
+				</Table>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.ВариантыОтветовАнкет</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+</Form>

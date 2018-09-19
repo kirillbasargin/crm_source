@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.6">
+	<CommandSet>
+		<ExcludedCommand>Copy</ExcludedCommand>
+		<ExcludedCommand>Delete</ExcludedCommand>
+		<ExcludedCommand>SetDeletionMark</ExcludedCommand>
+		<ExcludedCommand>ShowInList</ExcludedCommand>
+	</CommandSet>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<ButtonGroup name="Параметры" id="77">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Параметры</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ПараметрыExtendedTooltip" id="252"/>
+				<ChildItems>
+					<Button name="ФормаОбщаяКомандаНастроитьПараметрыТранспортаСообщенийОбмена" id="74">
+						<Type>CommandBarButton</Type>
+						<Representation>PictureAndText</Representation>
+						<CommandName>CommonCommand.НастроитьПараметрыТранспортаСообщенийОбмена</CommandName>
+						<DataPath>Объект.Ref</DataPath>
+						<Picture>
+							<xr:Ref>CommonPicture.СинхронизацияДанныхНастройка</xr:Ref>
+							<xr:LoadTransparent>false</xr:LoadTransparent>
+						</Picture>
+						<ExtendedTooltip name="ФормаОбщаяКомандаНастроитьПараметрыТранспортаСообщенийОбменаExtendedTooltip" id="253"/>
+					</Button>
+					<Button name="ФормаОбщаяКомандаОткрытьПравилаКонвертацииОбъектов" id="71">
+						<Type>CommandBarButton</Type>
+						<OnlyInAllActions>false</OnlyInAllActions>
+						<CommandName>CommonCommand.ЗагрузитьПравилаКонвертацииОбъектов</CommandName>
+						<DataPath>Объект.Ref</DataPath>
+						<ExtendedTooltip name="ФормаОбщаяКомандаОткрытьПравилаКонвертацииОбъектовExtendedTooltip" id="254"/>
+					</Button>
+					<Button name="ФормаОбщаяКомандаОткрытьПравилаРегистрацииОбъектов" id="72">
+						<Type>CommandBarButton</Type>
+						<OnlyInAllActions>false</OnlyInAllActions>
+						<CommandName>CommonCommand.ЗагрузитьПравилаРегистрацииОбъектов</CommandName>
+						<DataPath>Объект.Ref</DataPath>
+						<ExtendedTooltip name="ФормаОбщаяКомандаОткрытьПравилаРегистрацииОбъектовExtendedTooltip" id="255"/>
+					</Button>
+					<Button name="ФормаОбщаяКомандаСоставОтправляемыхДанных" id="108">
+						<Type>CommandBarButton</Type>
+						<OnlyInAllActions>false</OnlyInAllActions>
+						<CommandName>CommonCommand.СоставОтправляемыхДанных</CommandName>
+						<DataPath>Объект.Ref</DataPath>
+						<ExtendedTooltip name="ФормаОбщаяКомандаСоставОтправляемыхДанныхExtendedTooltip" id="256"/>
+					</Button>
+					<Button name="ФормаОбщаяКомандаПолучитьНастройкиОбменаДаннымиДляВторойИнформационнойБазы" id="73">
+						<Type>CommandBarButton</Type>
+						<OnlyInAllActions>false</OnlyInAllActions>
+						<CommandName>CommonCommand.ПолучитьНастройкиСинхронизацииДляДругойПрограммы</CommandName>
+						<DataPath>Объект.Ref</DataPath>
+						<ExtendedTooltip name="ФормаОбщаяКомандаПолучитьНастройкиОбменаДаннымиДляВторойИнформационнойБазыExtendedTooltip" id="257"/>
+					</Button>
+				</ChildItems>
+			</ButtonGroup>
+			<Button name="ФормаОбщаяКомандаВыполнитьОбменДанными" id="75">
+				<Type>CommandBarButton</Type>
+				<OnlyInAllActions>false</OnlyInAllActions>
+				<CommandName>CommonCommand.Синхронизировать</CommandName>
+				<DataPath>Объект.Ref</DataPath>
+				<ExtendedTooltip name="ФормаОбщаяКомандаВыполнитьОбменДаннымиExtendedTooltip" id="258"/>
+			</Button>
+			<Button name="ФормаОбщаяКомандаВыполнитьОбменДаннымиИнтерактивно" id="76">
+				<Type>CommandBarButton</Type>
+				<OnlyInAllActions>false</OnlyInAllActions>
+				<CommandName>CommonCommand.СинхронизироватьСДополнительнымиПараметрами</CommandName>
+				<DataPath>Объект.Ref</DataPath>
+				<ExtendedTooltip name="ФормаОбщаяКомандаВыполнитьОбменДаннымиИнтерактивноExtendedTooltip" id="259"/>
+			</Button>
+			<ButtonGroup name="ФормаГруппа1" id="110">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Форма группа 1</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаГруппа1ExtendedTooltip" id="265"/>
+				<ChildItems>
+					<Button name="ФормаОбщаяКомандаУдалитьНастройкуСинхронизации" id="109">
+						<Type>CommandBarButton</Type>
+						<OnlyInAllActions>false</OnlyInAllActions>
+						<CommandName>CommonCommand.УдалитьНастройкуСинхронизации</CommandName>
+						<DataPath>Объект.Ref</DataPath>
+						<ExtendedTooltip name="ФормаОбщаяКомандаУдалитьНастройкуСинхронизацииExtendedTooltip" id="266"/>
+					</Button>
+				</ChildItems>
+			</ButtonGroup>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="AfterWrite">ПослеЗаписи</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="Наименование" id="3">
+			<DataPath>Объект.Description</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ContextMenu name="НаименованиеКонтекстноеМеню" id="4"/>
+			<ExtendedTooltip name="НаименованиеExtendedTooltip" id="267"/>
+		</InputField>
+		<Pages name="Настройки" id="22">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки</v8:content>
+				</v8:item>
+			</Title>
+			<ExtendedTooltip name="НастройкиExtendedTooltip" id="268"/>
+			<ChildItems>
+				<Page name="Служебные" id="78">
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+					</UserVisible>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Служебная информация</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СлужебныеExtendedTooltip" id="323"/>
+					<ChildItems>
+						<InputField name="Код" id="79">
+							<DataPath>Объект.Code</DataPath>
+							<ContextMenu name="КодКонтекстноеМеню" id="80"/>
+							<ExtendedTooltip name="КодExtendedTooltip" id="324"/>
+						</InputField>
+						<UsualGroup name="НомераСообщений" id="85">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Номера сообщений</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Representation>None</Representation>
+							<ExtendedTooltip name="НомераСообщенийExtendedTooltip" id="325"/>
+							<ChildItems>
+								<InputField name="НомерПринятого" id="81">
+									<DataPath>Объект.ReceivedNo</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Принятого</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="НомерПринятогоКонтекстноеМеню" id="82"/>
+									<ExtendedTooltip name="НомерПринятогоExtendedTooltip" id="326"/>
+								</InputField>
+								<InputField name="НомерОтправленного" id="83">
+									<DataPath>Объект.SentNo</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Отправленного</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="НомерОтправленногоКонтекстноеМеню" id="84"/>
+									<ExtendedTooltip name="НомерОтправленногоExtendedTooltip" id="327"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<InputField name="РежимВыгрузкиПриНеобходимости" id="353">
+							<DataPath>Объект.РежимВыгрузкиПриНеобходимости</DataPath>
+							<ContextMenu name="РежимВыгрузкиПриНеобходимостиКонтекстноеМеню" id="354"/>
+							<ExtendedTooltip name="РежимВыгрузкиПриНеобходимостиРасширеннаяПодсказка" id="355"/>
+						</InputField>
+					</ChildItems>
+				</Page>
+				<Page name="Отборы" id="328">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отборы</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отборы</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>HorizontalIfPossible</Group>
+					<ExtendedTooltip name="ОтборыРасширеннаяПодсказка" id="329"/>
+					<ChildItems>
+						<UsualGroup name="ПроектыУПН" id="330">
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Проекты УПН</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Vertical</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ПроектыУПНРасширеннаяПодсказка" id="331"/>
+							<ChildItems>
+								<InputField name="ОтветственныйДляСМС_УПН" id="356">
+									<DataPath>Объект.ОтветственныйДляСМС_УПН</DataPath>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<ContextMenu name="ОтветственныйДляСМС_УПНКонтекстноеМеню" id="357"/>
+									<ExtendedTooltip name="ОтветственныйДляСМС_УПНРасширеннаяПодсказка" id="358"/>
+								</InputField>
+								<Table name="ПроектыДляОбменаСУПН" id="334">
+									<AutoInsertNewRow>true</AutoInsertNewRow>
+									<EnableStartDrag>true</EnableStartDrag>
+									<EnableDrag>true</EnableDrag>
+									<DataPath>Объект.ПроектыДляОбменаСУПН</DataPath>
+									<RowFilter xsi:nil="true"/>
+									<ContextMenu name="ПроектыДляОбменаСУПНКонтекстноеМеню" id="335"/>
+									<AutoCommandBar name="ПроектыДляОбменаСУПНКоманднаяПанель" id="336"/>
+									<ExtendedTooltip name="ПроектыДляОбменаСУПНРасширеннаяПодсказка" id="337"/>
+									<SearchStringAddition name="ПроектыДляОбменаСУПНСтрокаПоиска" id="338">
+										<AdditionSource>
+											<Item>ПроектыДляОбменаСУПН</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ПроектыДляОбменаСУПНСтрокаПоискаКонтекстноеМеню" id="339"/>
+										<ExtendedTooltip name="ПроектыДляОбменаСУПНСтрокаПоискаРасширеннаяПодсказка" id="340"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="ПроектыДляОбменаСУПНСостояниеПросмотра" id="341">
+										<AdditionSource>
+											<Item>ПроектыДляОбменаСУПН</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ПроектыДляОбменаСУПНСостояниеПросмотраКонтекстноеМеню" id="342"/>
+										<ExtendedTooltip name="ПроектыДляОбменаСУПНСостояниеПросмотраРасширеннаяПодсказка" id="343"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="ПроектыДляОбменаСУПНУправлениеПоиском" id="344">
+										<AdditionSource>
+											<Item>ПроектыДляОбменаСУПН</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="ПроектыДляОбменаСУПНУправлениеПоискомКонтекстноеМеню" id="345"/>
+										<ExtendedTooltip name="ПроектыДляОбменаСУПНУправлениеПоискомРасширеннаяПодсказка" id="346"/>
+									</SearchControlAddition>
+									<ChildItems>
+										<LabelField name="ПроектыДляОбменаСУПННомерСтроки" id="347">
+											<DataPath>Объект.ПроектыДляОбменаСУПН.LineNumber</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ПроектыДляОбменаСУПННомерСтрокиКонтекстноеМеню" id="348"/>
+											<ExtendedTooltip name="ПроектыДляОбменаСУПННомерСтрокиРасширеннаяПодсказка" id="349"/>
+										</LabelField>
+										<InputField name="ПроектыДляОбменаСУПНПроект" id="350">
+											<DataPath>Объект.ПроектыДляОбменаСУПН.Проект</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ПроектыДляОбменаСУПНПроектКонтекстноеМеню" id="351"/>
+											<ExtendedTooltip name="ПроектыДляОбменаСУПНПроектРасширеннаяПодсказка" id="352"/>
+										</InputField>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:ExchangePlanObject.ОбменУПНNewCRM</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+	<CommandInterface>
+		<CommandBar>
+			<Item>
+				<Command>CommonCommand.НастроитьПараметрыТранспортаСообщенийОбмена</Command>
+				<Type>Auto</Type>
+				<CommandGroup>FormCommandBarImportant</CommandGroup>
+				<Index>2</Index>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>CommonCommand.Синхронизировать</Command>
+				<Type>Auto</Type>
+				<CommandGroup>FormCommandBarImportant</CommandGroup>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>CommonCommand.СинхронизироватьСДополнительнымиПараметрами</Command>
+				<Type>Auto</Type>
+				<CommandGroup>FormCommandBarImportant</CommandGroup>
+				<Index>1</Index>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+		</CommandBar>
+	</CommandInterface>
+</Form>

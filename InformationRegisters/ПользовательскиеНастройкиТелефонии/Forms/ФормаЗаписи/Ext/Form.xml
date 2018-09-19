@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.6">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<ChildItems>
+		<InputField name="Пользователь" id="1">
+			<DataPath>Запись.Пользователь</DataPath>
+			<ContextMenu name="ПользовательКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="ПользовательРасширеннаяПодсказка" id="3"/>
+		</InputField>
+		<CheckBoxField name="Использование" id="4">
+			<DataPath>Запись.Использование</DataPath>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="ИспользованиеКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="ИспользованиеРасширеннаяПодсказка" id="6"/>
+		</CheckBoxField>
+		<CheckBoxField name="ТелефонияВключена" id="7">
+			<DataPath>Запись.ТелефонияВключена</DataPath>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="ТелефонияВключенаКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="ТелефонияВключенаРасширеннаяПодсказка" id="9"/>
+		</CheckBoxField>
+		<CheckBoxField name="АктивироватьЛог" id="10">
+			<DataPath>Запись.АктивироватьЛог</DataPath>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="АктивироватьЛогКонтекстноеМеню" id="11"/>
+			<ExtendedTooltip name="АктивироватьЛогРасширеннаяПодсказка" id="12"/>
+		</CheckBoxField>
+		<InputField name="ТекущийНомерТелефона" id="13">
+			<DataPath>Запись.ТекущийНомерТелефона</DataPath>
+			<ContextMenu name="ТекущийНомерТелефонаКонтекстноеМеню" id="14"/>
+			<ExtendedTooltip name="ТекущийНомерТелефонаРасширеннаяПодсказка" id="15"/>
+		</InputField>
+		<InputField name="Логин" id="16">
+			<DataPath>Запись.Логин</DataPath>
+			<ContextMenu name="ЛогинКонтекстноеМеню" id="17"/>
+			<ExtendedTooltip name="ЛогинРасширеннаяПодсказка" id="18"/>
+		</InputField>
+		<CheckBoxField name="НеВыводитьВнутренниеЗвонки" id="19">
+			<DataPath>Запись.НеВыводитьВнутренниеЗвонки</DataPath>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="НеВыводитьВнутренниеЗвонкиКонтекстноеМеню" id="20"/>
+			<ExtendedTooltip name="НеВыводитьВнутренниеЗвонкиРасширеннаяПодсказка" id="21"/>
+		</CheckBoxField>
+		<InputField name="КаталогСохраненияЛоговТелефонии" id="22">
+			<DataPath>Запись.КаталогСохраненияЛоговТелефонии</DataPath>
+			<ContextMenu name="КаталогСохраненияЛоговТелефонииКонтекстноеМеню" id="23"/>
+			<ExtendedTooltip name="КаталогСохраненияЛоговТелефонииРасширеннаяПодсказка" id="24"/>
+		</InputField>
+		<InputField name="ДатаАктивации" id="25">
+			<DataPath>Запись.ДатаАктивации</DataPath>
+			<ContextMenu name="ДатаАктивацииКонтекстноеМеню" id="26"/>
+			<ExtendedTooltip name="ДатаАктивацииРасширеннаяПодсказка" id="27"/>
+		</InputField>
+		<CheckBoxField name="ПолучатьЗаявки" id="28">
+			<DataPath>1/0:dd81952b-5d55-46a2-bb3f-523bc5929d2c</DataPath>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="ПолучатьЗаявкиКонтекстноеМеню" id="29"/>
+			<ExtendedTooltip name="ПолучатьЗаявкиРасширеннаяПодсказка" id="30"/>
+		</CheckBoxField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Запись" id="1">
+			<Type>
+				<v8:Type>cfg:InformationRegisterRecordManager.ПользовательскиеНастройкиТелефонии</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+</Form>

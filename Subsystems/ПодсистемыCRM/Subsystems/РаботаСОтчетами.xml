@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.6">
+	<Subsystem uuid="af737398-bbbd-49e9-af88-e677ab0808be">
+		<Properties>
+			<Name>РаботаСОтчетами</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Работа с отчетами</v8:content>
+				</v8:item>
+			</Synonym>
+			<Comment/>
+			<IncludeHelpInContents>true</IncludeHelpInContents>
+			<IncludeInCommandInterface>true</IncludeInCommandInterface>
+			<Explanation/>
+			<Picture/>
+			<Content>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.Периодичность</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonForm.ФормаОтчетаCRM</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ОтчетыCRM</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ОтчетыCRMВызовСервера</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ОтчетыCRMКлиентСервер</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ОтчетыCRMПовтИсп</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.CRMОтчеты</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.CRMОтчетыВызовСервера</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.CRMОтчетыКлиент</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.CRMПовтИсп</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.CRMСервер</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonForm.ФормаВариантаОтчетаCRM</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.НастройкиВариантовОтчетовCRM</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.ВариантыДополнительныхОтчетов</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.СтрелкаВверхУзкая</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.СтрелкаВнизУзкая</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.РежимВыбораЭлементов</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.РежимВыбораГрупп</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.РежимВыбораГруппИЭлементов</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonForm.ФормаПредпросмотраОтчета</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.ОбщиеОбластиСтандартногоОтчета</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.ТегиОтчетов</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.РазвернутьОтборы</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.ОтчетРазвернуть</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.РежимРедактированияСпискаЭлементовАктивно</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.РежимРедактированияСпискаЭлементов</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.ПросмотрНедоступен</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.ПривязкаПолейОтчетовCRM</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonForm.ФормаБыстрыхНастроекОформления</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonPicture.Готово</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.CRMКлиент</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Report.ОтчетМенеджера</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Report.ЭффективностьМенеджера</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Report.ОтчетПоСверкеСертификатов</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Report.ЭффективностьМенеджера_ОПО_ЗУ</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Report.ЭффективностьМенеджера_ГПТ</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Report.ОтчетПоПервичнымЭкскурсиям</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Report.ОтчетЕжедневнаяСМС</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Report.ОтчетПоВзаимодействиям</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Report.ОтчетПоВзаимодействиямЗУ</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Report.СтатистикаПоМенеджерамГПТ</xr:Item>
+			</Content>
+		</Properties>
+		<ChildObjects/>
+	</Subsystem>
+</MetaDataObject>

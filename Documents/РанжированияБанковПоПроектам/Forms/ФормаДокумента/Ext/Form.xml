@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.6">
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ФормаПровестиИЗакрыть" id="35">
+				<Type>CommandBarButton</Type>
+				<Representation>Text</Representation>
+				<DefaultButton>true</DefaultButton>
+				<DefaultItem>true</DefaultItem>
+				<CommandName>Form.StandardCommand.PostAndClose</CommandName>
+				<ExtendedTooltip name="ФормаПровестиИЗакрытьРасширеннаяПодсказка" id="36"/>
+			</Button>
+			<Button name="ФормаЗаписать" id="37">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Write</CommandName>
+				<ExtendedTooltip name="ФормаЗаписатьРасширеннаяПодсказка" id="38"/>
+			</Button>
+			<Button name="ФормаПровести" id="39">
+				<Type>CommandBarButton</Type>
+				<Representation>Picture</Representation>
+				<CommandName>Form.StandardCommand.Post</CommandName>
+				<ExtendedTooltip name="ФормаПровестиРасширеннаяПодсказка" id="40"/>
+			</Button>
+			<Button name="ФормаОтменаПроведения" id="41">
+				<Type>CommandBarButton</Type>
+				<Representation>Picture</Representation>
+				<OnlyInAllActions>true</OnlyInAllActions>
+				<CommandName>Form.StandardCommand.UndoPosting</CommandName>
+				<ExtendedTooltip name="ФормаОтменаПроведенияРасширеннаяПодсказка" id="42"/>
+			</Button>
+			<Button name="ФормаЗакрыть" id="33">
+				<Type>CommandBarButton</Type>
+				<Representation>Picture</Representation>
+				<CommandName>Form.StandardCommand.Close</CommandName>
+				<ExtendedTooltip name="ФормаЗакрытьРасширеннаяПодсказка" id="34"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="BeforeWriteAtServer">ПередЗаписьюНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаШапка" id="29">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа шапка</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа шапка</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаШапкаРасширеннаяПодсказка" id="30"/>
+			<ChildItems>
+				<InputField name="Номер" id="1">
+					<DataPath>Объект.Number</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="НомерКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="3"/>
+				</InputField>
+				<InputField name="Дата" id="4">
+					<DataPath>Объект.Date</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДатаКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="6"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="Проект" id="7">
+			<DataPath>Объект.Проект</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ПроектКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="ПроектРасширеннаяПодсказка" id="9"/>
+		</InputField>
+		<Table name="РанжированиеБанков" id="10">
+			<Representation>List</Representation>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>Объект.РанжированиеБанков</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="РанжированиеБанковКонтекстноеМеню" id="11"/>
+			<AutoCommandBar name="РанжированиеБанковКоманднаяПанель" id="12">
+				<Autofill>false</Autofill>
+				<ChildItems>
+					<Button name="ПодборБанков" id="31">
+						<Type>CommandBarButton</Type>
+						<Representation>PictureAndText</Representation>
+						<CommandName>Form.Command.ПодборБанков</CommandName>
+						<Picture>
+							<xr:Ref>StdPicture.ShowData</xr:Ref>
+							<xr:LoadTransparent>true</xr:LoadTransparent>
+						</Picture>
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Подбор</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="ПодборБанковРасширеннаяПодсказка" id="32"/>
+					</Button>
+					<Button name="РанжированиеБанковУдалить" id="43">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Item.РанжированиеБанков.StandardCommand.Delete</CommandName>
+						<ExtendedTooltip name="РанжированиеБанковУдалитьРасширеннаяПодсказка" id="44"/>
+					</Button>
+					<Button name="РанжированиеБанковПереместитьВверх" id="45">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Item.РанжированиеБанков.StandardCommand.MoveUp</CommandName>
+						<ExtendedTooltip name="РанжированиеБанковПереместитьВверхРасширеннаяПодсказка" id="46"/>
+					</Button>
+					<Button name="РанжированиеБанковПереместитьВниз" id="47">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Item.РанжированиеБанков.StandardCommand.MoveDown</CommandName>
+						<ExtendedTooltip name="РанжированиеБанковПереместитьВнизРасширеннаяПодсказка" id="48"/>
+					</Button>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="РанжированиеБанковРасширеннаяПодсказка" id="13"/>
+			<SearchStringAddition name="РанжированиеБанковСтрокаПоиска" id="14">
+				<AdditionSource>
+					<Item>РанжированиеБанков</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="РанжированиеБанковСтрокаПоискаКонтекстноеМеню" id="15"/>
+				<ExtendedTooltip name="РанжированиеБанковСтрокаПоискаРасширеннаяПодсказка" id="16"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="РанжированиеБанковСостояниеПросмотра" id="17">
+				<AdditionSource>
+					<Item>РанжированиеБанков</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="РанжированиеБанковСостояниеПросмотраКонтекстноеМеню" id="18"/>
+				<ExtendedTooltip name="РанжированиеБанковСостояниеПросмотраРасширеннаяПодсказка" id="19"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="РанжированиеБанковУправлениеПоиском" id="20">
+				<AdditionSource>
+					<Item>РанжированиеБанков</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="РанжированиеБанковУправлениеПоискомКонтекстноеМеню" id="21"/>
+				<ExtendedTooltip name="РанжированиеБанковУправлениеПоискомРасширеннаяПодсказка" id="22"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="ChoiceProcessing">РанжированиеБанковОбработкаВыбора</Event>
+			</Events>
+			<ChildItems>
+				<LabelField name="РанжированиеБанковНомерСтроки" id="23">
+					<DataPath>Объект.РанжированиеБанков.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="РанжированиеБанковНомерСтрокиКонтекстноеМеню" id="24"/>
+					<ExtendedTooltip name="РанжированиеБанковНомерСтрокиРасширеннаяПодсказка" id="25"/>
+				</LabelField>
+				<InputField name="РанжированиеБанковБанк" id="26">
+					<DataPath>Объект.РанжированиеБанков.Банк</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="РанжированиеБанковБанкКонтекстноеМеню" id="27"/>
+					<ExtendedTooltip name="РанжированиеБанковБанкРасширеннаяПодсказка" id="28"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.РанжированияБанковПоПроектам</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Объект.RegisterRecords</Field>
+			</UseAlways>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ПодборБанков" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подбор банков</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подбор банков</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПодборБанков</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

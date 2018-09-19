@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.6">
+	<Subsystem uuid="4ae1e2b2-370c-4b31-9b65-7884ea6aa31f">
+		<Properties>
+			<Name>Запросы</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Запросы</v8:content>
+				</v8:item>
+			</Synonym>
+			<Comment/>
+			<IncludeHelpInContents>true</IncludeHelpInContents>
+			<IncludeInCommandInterface>false</IncludeInCommandInterface>
+			<Explanation/>
+			<Picture/>
+			<Content>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.ФакторыВыбораОН</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.Конкуренты</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.РасшифровкаИсточниковПриходаКлиента</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.ИсточникиПриходаКлиента</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.ПричиныСтатусовЗапроса</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.СтатусыЗапроса</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.СтадииЗапроса</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.ВозрастнаяГруппа</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.ЦельПокупки</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.Расположение</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.ФормыОплаты</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.ТриСтатуса</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Document.Запрос</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.ВидыМатериалов</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.Листинг</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.УчастникиЗапроса</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">EventSubscription.ЗаписатьВерсиюДокумента</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.СрокиСдачиОбъектовСтроительства</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.CRMПодпискиНаСобытияСервер</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.ПараметрыЗапроса</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.ПараметрыЗапроса</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.CRMУправлениеОбъектамиНедвижимостиСервер</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.РаботаСКлиентом</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.УточнениеРасшифровкиИсточниковПриходаКлиента</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.РабочийСтолМенеджера</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.ИзменениеСтатусаСтадииЗапроса</xr:Item>
+			</Content>
+		</Properties>
+		<ChildObjects/>
+	</Subsystem>
+</MetaDataObject>

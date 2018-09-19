@@ -1,0 +1,800 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.6">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Выберите пользователя</v8:content>
+		</v8:item>
+	</Title>
+	<Width>70</Width>
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoTitle>false</AutoTitle>
+	<CommandBarLocation>None</CommandBarLocation>
+	<CommandSet>
+		<ExcludedCommand>Close</ExcludedCommand>
+	</CommandSet>
+	<ShowCloseButton>false</ShowCloseButton>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<CheckBoxField name="АктивныеПользователи" id="104">
+			<DataPath>АктивныеПользователи</DataPath>
+			<TitleLocation>Right</TitleLocation>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="АктивныеПользователиКонтекстноеМеню" id="105"/>
+			<ExtendedTooltip name="АктивныеПользователиРасширеннаяПодсказка" id="106"/>
+			<Events>
+				<Event name="OnChange">АктивныеПользователиПриИзменении</Event>
+			</Events>
+		</CheckBoxField>
+		<UsualGroup name="СписокКомпоновщикНастроекПользовательскиеНастройки" id="102">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа пользовательских настроек</v8:content>
+				</v8:item>
+			</Title>
+			<VerticalStretch>false</VerticalStretch>
+			<Group>Vertical</Group>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="СписокКомпоновщикНастроекПользовательскиеНастройкиРасширеннаяПодсказка" id="103"/>
+		</UsualGroup>
+		<Table name="Пользователи" id="1">
+			<Representation>Tree</Representation>
+			<CommandBarLocation>None</CommandBarLocation>
+			<ChangeRowSet>false</ChangeRowSet>
+			<ChangeRowOrder>false</ChangeRowOrder>
+			<Height>5</Height>
+			<UseAlternationRowColor>true</UseAlternationRowColor>
+			<InitialTreeView>ExpandAllLevels</InitialTreeView>
+			<EnableStartDrag>true</EnableStartDrag>
+			<DataPath>Пользователи</DataPath>
+			<SearchStringLocation>Top</SearchStringLocation>
+			<AutoRefresh>false</AutoRefresh>
+			<AutoRefreshPeriod>60</AutoRefreshPeriod>
+			<Period>
+				<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+				<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+				<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+			</Period>
+			<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+			<RestoreCurrentRow>false</RestoreCurrentRow>
+			<TopLevelParent xsi:nil="true"/>
+			<ShowRoot>false</ShowRoot>
+			<AllowRootChoice>false</AllowRootChoice>
+			<UpdateOnDataChange>Auto</UpdateOnDataChange>
+			<UserSettingsGroup>СписокКомпоновщикНастроекПользовательскиеНастройки</UserSettingsGroup>
+			<ContextMenu name="ПользователиКонтекстноеМеню" id="2"/>
+			<AutoCommandBar name="ПользователиКоманднаяПанель" id="3"/>
+			<ExtendedTooltip name="ПользователиРасширеннаяПодсказка" id="4"/>
+			<SearchStringAddition name="ПользователиСтрокаПоиска" id="19">
+				<AdditionSource>
+					<Item>Пользователи</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ПользователиСтрокаПоискаКонтекстноеМеню" id="20"/>
+				<ExtendedTooltip name="ПользователиСтрокаПоискаРасширеннаяПодсказка" id="21"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ПользователиСостояниеПросмотра" id="22">
+				<AdditionSource>
+					<Item>Пользователи</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ПользователиСостояниеПросмотраКонтекстноеМеню" id="23"/>
+				<ExtendedTooltip name="ПользователиСостояниеПросмотраРасширеннаяПодсказка" id="24"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ПользователиУправлениеПоиском" id="25">
+				<AdditionSource>
+					<Item>Пользователи</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ПользователиУправлениеПоискомКонтекстноеМеню" id="26"/>
+				<ExtendedTooltip name="ПользователиУправлениеПоискомРасширеннаяПодсказка" id="27"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="Selection">ПользователиВыбор</Event>
+				<Event name="OnActivateRow">ПользователиПриАктивизацииСтроки</Event>
+				<Event name="OnGetDataAtServer">ПользователиПриПолученииДанныхНаСервере</Event>
+			</Events>
+			<ChildItems>
+				<LabelField name="ПользователиГруппа" id="85">
+					<DataPath>Пользователи.Группа</DataPath>
+					<ContextMenu name="ПользователиГруппаКонтекстноеМеню" id="86"/>
+					<ExtendedTooltip name="ПользователиГруппаРасширеннаяПодсказка" id="87"/>
+				</LabelField>
+				<LabelField name="ПользователиПользователь" id="5">
+					<DataPath>Пользователи.Пользователь</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сотрудник</v8:content>
+						</v8:item>
+					</Title>
+					<Width>30</Width>
+					<ContextMenu name="ПользователиПользовательКонтекстноеМеню" id="6"/>
+					<ExtendedTooltip name="ПользователиПользовательРасширеннаяПодсказка" id="7"/>
+				</LabelField>
+				<LabelField name="ПользователиПодгруппа" id="88">
+					<DataPath>Пользователи.Подгруппа</DataPath>
+					<ContextMenu name="ПользователиПодгруппаКонтекстноеМеню" id="89"/>
+					<ExtendedTooltip name="ПользователиПодгруппаРасширеннаяПодсказка" id="90"/>
+				</LabelField>
+				<LabelField name="ПользователиНомерТелефона" id="8">
+					<DataPath>Пользователи.НомерТелефона</DataPath>
+					<ContextMenu name="ПользователиНомерТелефонаКонтекстноеМеню" id="9"/>
+					<ExtendedTooltip name="ПользователиНомерТелефонаРасширеннаяПодсказка" id="10"/>
+				</LabelField>
+			</ChildItems>
+		</Table>
+		<UsualGroup name="ГруппаРезультат" id="35">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа результат</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа результат</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаРезультатРасширеннаяПодсказка" id="36"/>
+			<ChildItems>
+				<UsualGroup name="Группа1" id="83">
+					<Group>Horizontal</Group>
+					<HorizontalSpacing>Half</HorizontalSpacing>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="84"/>
+					<ChildItems>
+						<InputField name="НомерДляПереадресации" id="28">
+							<DataPath>НомерДляПереадресации</DataPath>
+							<DefaultItem>true</DefaultItem>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Номер телефона</v8:content>
+								</v8:item>
+							</Title>
+							<Width>12</Width>
+							<ClearButton>true</ClearButton>
+							<ContextMenu name="НомерДляПереадресацииКонтекстноеМеню" id="29"/>
+							<ExtendedTooltip name="НомерДляПереадресацииРасширеннаяПодсказка" id="30"/>
+							<Events>
+								<Event name="TextEditEnd">НомерДляПереадресацииОкончаниеВводаТекста</Event>
+							</Events>
+						</InputField>
+						<Button name="КомандаСтереть" id="81">
+							<Type>UsualButton</Type>
+							<Width>3</Width>
+							<Height>1</Height>
+							<CommandName>Form.Command.КомандаСтереть</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>С</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="КомандаСтеретьРасширеннаяПодсказка" id="82"/>
+						</Button>
+						<Button name="КнопкаОтобразитьКнопки" id="79">
+							<Type>UsualButton</Type>
+							<Representation>Picture</Representation>
+							<SkipOnInput>true</SkipOnInput>
+							<Width>3</Width>
+							<Height>1</Height>
+							<CommandName>Form.Command.КомандаОтобразитьКнопки</CommandName>
+							<Picture>
+								<xr:Abs>Picture.png</xr:Abs>
+								<xr:LoadTransparent>false</xr:LoadTransparent>
+							</Picture>
+							<ExtendedTooltip name="КнопкаОтобразитьКнопкиExtendedTooltip" id="80"/>
+						</Button>
+					</ChildItems>
+				</UsualGroup>
+				<Button name="ОК" id="31">
+					<Type>UsualButton</Type>
+					<DefaultButton>true</DefaultButton>
+					<CommandName>Form.Command.ОК</CommandName>
+					<ExtendedTooltip name="ОКРасширеннаяПодсказка" id="32"/>
+				</Button>
+				<Button name="Отмена" id="33">
+					<Type>UsualButton</Type>
+					<CommandName>Form.Command.Отмена</CommandName>
+					<ExtendedTooltip name="ОтменаРасширеннаяПодсказка" id="34"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаЦифрКнопок" id="37">
+			<Visible>false</Visible>
+			<EnableContentChange>true</EnableContentChange>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа цифр кнопок</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа цифр кнопок</v8:content>
+				</v8:item>
+			</ToolTip>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Group>Horizontal</Group>
+			<Representation>StrongSeparation</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаЦифрКнопокExtendedTooltip" id="38"/>
+			<ChildItems>
+				<LabelDecoration name="ГруппаЦифрКнопокСпейсер1" id="39">
+					<Width>27</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<SkipOnInput>true</SkipOnInput>
+					<ContextMenu name="ГруппаЦифрКнопокСпейсер1КонтекстноеМеню" id="40"/>
+					<ExtendedTooltip name="ГруппаЦифрКнопокСпейсер1ExtendedTooltip" id="41"/>
+				</LabelDecoration>
+				<UsualGroup name="ГруппаЦифрВложенная" id="42">
+					<EnableContentChange>true</EnableContentChange>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа цифр вложенная</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа цифр вложенная</v8:content>
+						</v8:item>
+					</ToolTip>
+					<HorizontalStretch>false</HorizontalStretch>
+					<VerticalStretch>false</VerticalStretch>
+					<Group>Vertical</Group>
+					<HorizontalSpacing>Half</HorizontalSpacing>
+					<VerticalSpacing>Half</VerticalSpacing>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаЦифрВложеннаяExtendedTooltip" id="43"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаЦифр1" id="44">
+							<EnableContentChange>true</EnableContentChange>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа цифр1</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа цифр1</v8:content>
+								</v8:item>
+							</ToolTip>
+							<HorizontalStretch>true</HorizontalStretch>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаЦифр1ExtendedTooltip" id="45"/>
+							<ChildItems>
+								<Button name="КнопкаЦ1" id="46">
+									<Type>UsualButton</Type>
+									<SkipOnInput>true</SkipOnInput>
+									<Width>4</Width>
+									<Height>1</Height>
+									<CommandName>Form.Command.Набрать_1</CommandName>
+									<ExtendedTooltip name="КнопкаЦ1ExtendedTooltip" id="47"/>
+								</Button>
+								<Button name="КнопкаЦ2" id="48">
+									<Type>UsualButton</Type>
+									<SkipOnInput>true</SkipOnInput>
+									<Width>4</Width>
+									<Height>1</Height>
+									<CommandName>Form.Command.Набрать_2</CommandName>
+									<ExtendedTooltip name="КнопкаЦ2ExtendedTooltip" id="49"/>
+								</Button>
+								<Button name="КнопкаЦ3" id="50">
+									<Type>UsualButton</Type>
+									<SkipOnInput>true</SkipOnInput>
+									<Width>4</Width>
+									<Height>1</Height>
+									<CommandName>Form.Command.Набрать_3</CommandName>
+									<ExtendedTooltip name="КнопкаЦ3ExtendedTooltip" id="51"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаЦифр2" id="52">
+							<EnableContentChange>true</EnableContentChange>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа цифр2</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа цифр2</v8:content>
+								</v8:item>
+							</ToolTip>
+							<HorizontalStretch>true</HorizontalStretch>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаЦифр2ExtendedTooltip" id="53"/>
+							<ChildItems>
+								<Button name="КнопкаЦ4" id="54">
+									<Type>UsualButton</Type>
+									<SkipOnInput>true</SkipOnInput>
+									<Width>4</Width>
+									<Height>1</Height>
+									<CommandName>Form.Command.Набрать_4</CommandName>
+									<ExtendedTooltip name="КнопкаЦ4ExtendedTooltip" id="55"/>
+								</Button>
+								<Button name="КнопкаЦ5" id="56">
+									<Type>UsualButton</Type>
+									<SkipOnInput>true</SkipOnInput>
+									<Width>4</Width>
+									<Height>1</Height>
+									<CommandName>Form.Command.Набрать_5</CommandName>
+									<ExtendedTooltip name="КнопкаЦ5ExtendedTooltip" id="57"/>
+								</Button>
+								<Button name="КнопкаЦ6" id="58">
+									<Type>UsualButton</Type>
+									<SkipOnInput>true</SkipOnInput>
+									<Width>4</Width>
+									<Height>1</Height>
+									<CommandName>Form.Command.Набрать_6</CommandName>
+									<ExtendedTooltip name="КнопкаЦ6ExtendedTooltip" id="59"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаЦифр3" id="60">
+							<EnableContentChange>true</EnableContentChange>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа цифр3</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа цифр3</v8:content>
+								</v8:item>
+							</ToolTip>
+							<HorizontalStretch>true</HorizontalStretch>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаЦифр3ExtendedTooltip" id="61"/>
+							<ChildItems>
+								<Button name="КнопкаЦ7" id="62">
+									<Type>UsualButton</Type>
+									<SkipOnInput>true</SkipOnInput>
+									<Width>4</Width>
+									<Height>1</Height>
+									<CommandName>Form.Command.Набрать_7</CommandName>
+									<ExtendedTooltip name="КнопкаЦ7ExtendedTooltip" id="63"/>
+								</Button>
+								<Button name="КнопкаЦ8" id="64">
+									<Type>UsualButton</Type>
+									<SkipOnInput>true</SkipOnInput>
+									<Width>4</Width>
+									<Height>1</Height>
+									<CommandName>Form.Command.Набрать_8</CommandName>
+									<ExtendedTooltip name="КнопкаЦ8ExtendedTooltip" id="65"/>
+								</Button>
+								<Button name="КнопкаЦ9" id="66">
+									<Type>UsualButton</Type>
+									<SkipOnInput>true</SkipOnInput>
+									<Width>4</Width>
+									<Height>1</Height>
+									<CommandName>Form.Command.Набрать_9</CommandName>
+									<ExtendedTooltip name="КнопкаЦ9ExtendedTooltip" id="67"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаЦифр4" id="68">
+							<EnableContentChange>true</EnableContentChange>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа цифр4</v8:content>
+								</v8:item>
+							</ToolTip>
+							<HorizontalStretch>true</HorizontalStretch>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаЦифр4ExtendedTooltip" id="69"/>
+							<ChildItems>
+								<Button name="КнопкаЗ" id="70">
+									<Type>UsualButton</Type>
+									<SkipOnInput>true</SkipOnInput>
+									<Width>4</Width>
+									<Height>1</Height>
+									<CommandName>Form.Command.Набрать_з</CommandName>
+									<ExtendedTooltip name="КнопкаЗExtendedTooltip" id="71"/>
+								</Button>
+								<Button name="КнопкаЦ0" id="72">
+									<Type>UsualButton</Type>
+									<SkipOnInput>true</SkipOnInput>
+									<Width>4</Width>
+									<Height>1</Height>
+									<CommandName>Form.Command.Набрать_0</CommandName>
+									<ExtendedTooltip name="КнопкаЦ0ExtendedTooltip" id="73"/>
+								</Button>
+								<Button name="КнопкаР" id="74">
+									<Type>UsualButton</Type>
+									<SkipOnInput>true</SkipOnInput>
+									<Width>4</Width>
+									<Height>1</Height>
+									<CommandName>Form.Command.Набрать_р</CommandName>
+									<ExtendedTooltip name="КнопкаРExtendedTooltip" id="75"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+				<LabelDecoration name="ГруппаЦифрКнопокСпейсер2" id="76">
+					<HorizontalStretch>true</HorizontalStretch>
+					<SkipOnInput>true</SkipOnInput>
+					<ContextMenu name="ГруппаЦифрКнопокСпейсер2КонтекстноеМеню" id="77"/>
+					<ExtendedTooltip name="ГруппаЦифрКнопокСпейсер2ExtendedTooltip" id="78"/>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="Группа2" id="94">
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="95"/>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="Пользователи" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пользователи</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<UseAlways>
+				<Field>~Пользователи.ИндексКартинки</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ РАЗРЕШЕННЫЕ РАЗЛИЧНЫЕ
+	МИНИМУМ(ЕСТЬNULL(ГруппыПользователейСостав.Ссылка.Родитель, "Без группы")) КАК Группа,
+	МИНИМУМ(ЕСТЬNULL(ГруппыПользователейСостав.Ссылка, "Без подгруппы")) КАК Подгруппа,
+	Пользователи.Ссылка КАК Пользователь,
+	МИНИМУМ(ПользовательскиеНастройкиТелефонии.ТекущийНомерТелефона) КАК НомерТелефона
+ПОМЕСТИТЬ ВТ_Таб
+ИЗ
+	РегистрСведений.ПользовательскиеНастройкиТелефонии КАК ПользовательскиеНастройкиТелефонии
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Справочник.Пользователи КАК Пользователи
+			ЛЕВОЕ СОЕДИНЕНИЕ Справочник.ГруппыПользователей.Состав КАК ГруппыПользователейСостав
+			ПО Пользователи.Ссылка = ГруппыПользователейСостав.Пользователь
+		ПО (Пользователи.Ссылка = ПользовательскиеНастройкиТелефонии.Пользователь)
+ГДЕ
+	НЕ ПользовательскиеНастройкиТелефонии.ТекущийНомерТелефона = ""
+
+СГРУППИРОВАТЬ ПО
+	Пользователи.Ссылка
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	//ВЫБОР
+	//	КОГДА ВТ_Таб.Группа = ЗНАЧЕНИЕ(Справочник.ГруппыПользователей.ПустаяСсылка)
+	//		ТОГДА "Без группы"
+	//	ИНАЧЕ ВТ_Таб.Группа
+	//КОНЕЦ КАК Группа,
+	//ВЫБОР
+	//	КОГДА ВТ_Таб.Подгруппа = ЗНАЧЕНИЕ(Справочник.ГруппыПользователей.ПустаяСсылка)
+	//		ТОГДА "Без подгруппы"
+	//	ИНАЧЕ ВТ_Таб.Подгруппа
+	//КОНЕЦ КАК Подгруппа,
+	ВТ_Таб.Группа,
+	ВТ_Таб.Подгруппа,	
+	ВТ_Таб.Пользователь КАК Пользователь,
+	ВТ_Таб.НомерТелефона КАК НомерТелефона
+ИЗ
+	ВТ_Таб КАК ВТ_Таб
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Справочник.Пользователи КАК Пользователи
+		ПО ВТ_Таб.Пользователь = Пользователи.Ссылка
+{ГДЕ
+	(ВЫБОР
+			КОГДА &amp;ТолькоАктивныеПользователи
+				ТОГДА ВТ_Таб.Пользователь В (&amp;АктивныеПользователи)
+			ИНАЧЕ ИСТИНА
+		КОНЕЦ)}</QueryText>
+				<MainTable>Catalog.Пользователи</MainTable>
+				<AutoSaveUserSettings>false</AutoSaveUserSettings>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>Группа</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>Подгруппа</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:item xsi:type="dcsset:StructureItemGroup">
+						<dcsset:groupItems>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>Группа</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+						</dcsset:groupItems>
+					</dcsset:item>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="НомерДляПереадресации" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер для переадресации</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>30</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="УправляемаяПередача" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Управляемая передача</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="АктивныеПользователи" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Активные пользователи</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ОК" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ОК</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ОК</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОК</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Отмена" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отмена</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отмена</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Отмена</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаСтереть" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>С</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Набрать номер</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.СтрелкаВлево</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаСтереть</Action>
+			<Representation>Picture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Набрать_0" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>0</v8:content>
+				</v8:item>
+			</Title>
+			<Action>КомандаОбработкаЦифровыхКнопок</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Набрать_1" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>1</v8:content>
+				</v8:item>
+			</Title>
+			<Action>КомандаОбработкаЦифровыхКнопок</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Набрать_2" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>2</v8:content>
+				</v8:item>
+			</Title>
+			<Action>КомандаОбработкаЦифровыхКнопок</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Набрать_3" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>3</v8:content>
+				</v8:item>
+			</Title>
+			<Action>КомандаОбработкаЦифровыхКнопок</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Набрать_4" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>4</v8:content>
+				</v8:item>
+			</Title>
+			<Action>КомандаОбработкаЦифровыхКнопок</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Набрать_5" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>5</v8:content>
+				</v8:item>
+			</Title>
+			<Action>КомандаОбработкаЦифровыхКнопок</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Набрать_6" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>6</v8:content>
+				</v8:item>
+			</Title>
+			<Action>КомандаОбработкаЦифровыхКнопок</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Набрать_7" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>7</v8:content>
+				</v8:item>
+			</Title>
+			<Action>КомандаОбработкаЦифровыхКнопок</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Набрать_8" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>8</v8:content>
+				</v8:item>
+			</Title>
+			<Action>КомандаОбработкаЦифровыхКнопок</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Набрать_9" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>9</v8:content>
+				</v8:item>
+			</Title>
+			<Action>КомандаОбработкаЦифровыхКнопок</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Набрать_з" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>*</v8:content>
+				</v8:item>
+			</Title>
+			<Action>КомандаОбработкаЦифровыхКнопок</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Набрать_р" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>#</v8:content>
+				</v8:item>
+			</Title>
+			<Action>КомандаОбработкаЦифровыхКнопок</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаОтобразитьКнопки" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда отобразить кнопки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показать/Скрыть цифровые кнопки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаОтобразитьКнопки</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

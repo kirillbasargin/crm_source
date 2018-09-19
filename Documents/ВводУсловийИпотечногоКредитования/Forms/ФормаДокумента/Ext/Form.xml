@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.6">
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="Группа3" id="51">
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа3РасширеннаяПодсказка" id="52"/>
+			<ChildItems>
+				<UsualGroup name="Группа1" id="47">
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="48"/>
+					<ChildItems>
+						<InputField name="Номер" id="1">
+							<DataPath>Объект.Number</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="НомерКонтекстноеМеню" id="2"/>
+							<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="3"/>
+						</InputField>
+						<InputField name="Дата" id="4">
+							<DataPath>Объект.Date</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ДатаКонтекстноеМеню" id="5"/>
+							<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="6"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="Группа2" id="49">
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="50"/>
+					<ChildItems>
+						<InputField name="Банк" id="7">
+							<DataPath>Объект.Банк</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<HorizontalStretch>false</HorizontalStretch>
+							<AutoMarkIncomplete>true</AutoMarkIncomplete>
+							<ContextMenu name="БанкКонтекстноеМеню" id="8"/>
+							<ExtendedTooltip name="БанкРасширеннаяПодсказка" id="9"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="ТЧ" id="13">
+			<Representation>List</Representation>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>Объект.ТЧ</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ТЧКонтекстноеМеню" id="14"/>
+			<AutoCommandBar name="ТЧКоманднаяПанель" id="15"/>
+			<ExtendedTooltip name="ТЧРасширеннаяПодсказка" id="16"/>
+			<SearchStringAddition name="ТЧСтрокаПоиска" id="17">
+				<AdditionSource>
+					<Item>ТЧ</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ТЧСтрокаПоискаКонтекстноеМеню" id="18"/>
+				<ExtendedTooltip name="ТЧСтрокаПоискаРасширеннаяПодсказка" id="19"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ТЧСостояниеПросмотра" id="20">
+				<AdditionSource>
+					<Item>ТЧ</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ТЧСостояниеПросмотраКонтекстноеМеню" id="21"/>
+				<ExtendedTooltip name="ТЧСостояниеПросмотраРасширеннаяПодсказка" id="22"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ТЧУправлениеПоиском" id="23">
+				<AdditionSource>
+					<Item>ТЧ</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ТЧУправлениеПоискомКонтекстноеМеню" id="24"/>
+				<ExtendedTooltip name="ТЧУправлениеПоискомРасширеннаяПодсказка" id="25"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="ТЧНомерСтроки" id="26">
+					<DataPath>Объект.ТЧ.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТЧНомерСтрокиКонтекстноеМеню" id="27"/>
+					<ExtendedTooltip name="ТЧНомерСтрокиРасширеннаяПодсказка" id="28"/>
+				</LabelField>
+				<InputField name="ТЧПроект" id="53">
+					<DataPath>Объект.ТЧ.Проект</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТЧПроектКонтекстноеМеню" id="54"/>
+					<ExtendedTooltip name="ТЧПроектРасширеннаяПодсказка" id="55"/>
+				</InputField>
+				<InputField name="ТЧПрограмма" id="29">
+					<DataPath>Объект.ТЧ.Программа</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ChoiceParameterLinks>
+						<xr:Link>
+							<xr:Name>Отбор.Владелец</xr:Name>
+							<xr:DataPath xsi:type="xs:string">Объект.Банк</xr:DataPath>
+							<xr:ValueChange>Clear</xr:ValueChange>
+						</xr:Link>
+					</ChoiceParameterLinks>
+					<ContextMenu name="ТЧПрограммаКонтекстноеМеню" id="30"/>
+					<ExtendedTooltip name="ТЧПрограммаРасширеннаяПодсказка" id="31"/>
+				</InputField>
+				<InputField name="ТЧТипОбъекта" id="32">
+					<DataPath>Объект.ТЧ.ТипОбъекта</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<DropListButton>true</DropListButton>
+					<ChoiceButton>false</ChoiceButton>
+					<ContextMenu name="ТЧТипОбъектаКонтекстноеМеню" id="33"/>
+					<ExtendedTooltip name="ТЧТипОбъектаРасширеннаяПодсказка" id="34"/>
+				</InputField>
+				<InputField name="ТЧДополнительныеРасходы" id="35">
+					<DataPath>Объект.ТЧ.ДополнительныеРасходы</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<MultiLine>true</MultiLine>
+					<ChoiceButton>true</ChoiceButton>
+					<IncompleteChoiceMode>OnActivate</IncompleteChoiceMode>
+					<ContextMenu name="ТЧДополнительныеРасходыКонтекстноеМеню" id="36"/>
+					<ExtendedTooltip name="ТЧДополнительныеРасходыРасширеннаяПодсказка" id="37"/>
+					<Events>
+						<Event name="StartChoice">ТЧДополнительныеРасходыНачалоВыбора</Event>
+						<Event name="ChoiceProcessing">ТЧДополнительныеРасходыОбработкаВыбора</Event>
+					</Events>
+				</InputField>
+				<InputField name="ТЧКомиссия" id="38">
+					<DataPath>Объект.ТЧ.Комиссия</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТЧКомиссияКонтекстноеМеню" id="39"/>
+					<ExtendedTooltip name="ТЧКомиссияРасширеннаяПодсказка" id="40"/>
+				</InputField>
+				<ColumnGroup name="ТЧГруппа1" id="56">
+					<ExtendedTooltip name="ТЧГруппа1РасширеннаяПодсказка" id="57"/>
+					<ChildItems>
+						<InputField name="ТЧМинимальныйРазмерКомиссии" id="41">
+							<DataPath>Объект.ТЧ.МинимальныйРазмерКомиссии</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ТЧМинимальныйРазмерКомиссииКонтекстноеМеню" id="42"/>
+							<ExtendedTooltip name="ТЧМинимальныйРазмерКомиссииРасширеннаяПодсказка" id="43"/>
+						</InputField>
+						<InputField name="ТЧМаксимальныйРазмерКомиссии" id="44">
+							<DataPath>Объект.ТЧ.МаксимальныйРазмерКомиссии</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ТЧМаксимальныйРазмерКомиссииКонтекстноеМеню" id="45"/>
+							<ExtendedTooltip name="ТЧМаксимальныйРазмерКомиссииРасширеннаяПодсказка" id="46"/>
+						</InputField>
+					</ChildItems>
+				</ColumnGroup>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.ВводУсловийИпотечногоКредитования</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Объект.RegisterRecords</Field>
+			</UseAlways>
+		</Attribute>
+	</Attributes>
+	<CommandInterface>
+		<NavigationPanel>
+			<Item>
+				<Command>InformationRegister.УсловияИпотечногоКредитования.StandardCommand.OpenByRecorder</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+			</Item>
+		</NavigationPanel>
+	</CommandInterface>
+</Form>

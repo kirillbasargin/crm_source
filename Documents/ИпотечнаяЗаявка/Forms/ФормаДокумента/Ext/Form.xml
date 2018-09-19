@@ -1,0 +1,1801 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.6">
+	<CommandSet>
+		<ExcludedCommand>Write</ExcludedCommand>
+	</CommandSet>
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Popup name="ЗаявкаНаКредит" id="187">
+				<UserVisible>
+					<xr:Common>false</xr:Common>
+					<xr:Value name="Role.Администрирование">true</xr:Value>
+					<xr:Value name="Role.МенеджерИпотечный">true</xr:Value>
+					<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+					<xr:Value name="Role.РаботаСИпотечнымиЗаявками_Администратор">true</xr:Value>
+					<xr:Value name="Role.РаботаСИпотечнымиЗаявками_Менеджер">true</xr:Value>
+				</UserVisible>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Отправить в банк</v8:content>
+					</v8:item>
+				</Title>
+				<ToolTip>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Заявка на кредит</v8:content>
+					</v8:item>
+				</ToolTip>
+				<Picture>
+					<xr:Ref>StdPicture.ActivateTask</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<ExtendedTooltip name="ЗаявкаНаКредитРасширеннаяПодсказка" id="188"/>
+				<ChildItems>
+					<Button name="ФормаОтправитьЗаявкуOnLine" id="257">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ОтправитьЗаявкуOnLine</CommandName>
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Отправить</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="ФормаОтправитьЗаявкуOnLineРасширеннаяПодсказка" id="258"/>
+					</Button>
+					<Button name="ФормаОтказ" id="259">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.Отказ</CommandName>
+						<ExtendedTooltip name="ФормаОтказРасширеннаяПодсказка" id="260"/>
+					</Button>
+					<Button name="ФормаОбновитьЗаявку" id="201">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ИзменитьЗаявку</CommandName>
+						<ExtendedTooltip name="ФормаОбновитьЗаявкуРасширеннаяПодсказка" id="202"/>
+					</Button>
+					<Button name="ФормаДобавитьДокуметнты" id="197">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ДобавитьДокуметнты</CommandName>
+						<ExtendedTooltip name="ФормаДобавитьДокуметнтыРасширеннаяПодсказка" id="198"/>
+					</Button>
+					<Button name="ФормаДобавитьКомментарии" id="199">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ДобавитьКомментарии</CommandName>
+						<ExtendedTooltip name="ФормаДобавитьКомментарииРасширеннаяПодсказка" id="200"/>
+					</Button>
+					<Button name="ФормаПолучиьДанныеОЗаявке" id="203">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ПолучитьДанныеОЗаявке</CommandName>
+						<ExtendedTooltip name="ФормаПолучиьДанныеОЗаявкеРасширеннаяПодсказка" id="204"/>
+					</Button>
+				</ChildItems>
+			</Popup>
+			<Popup name="ФормаГруппаТестироваине" id="261">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Администрирование</v8:content>
+					</v8:item>
+				</Title>
+				<ToolTip>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Форма группа тестироваине</v8:content>
+					</v8:item>
+				</ToolTip>
+				<ExtendedTooltip name="ФормаГруппаТестироваинеРасширеннаяПодсказка" id="262"/>
+				<ChildItems>
+					<Button name="ФормаАвторизация" id="189">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.Авторизация</CommandName>
+						<ExtendedTooltip name="ФормаАвторизацияРасширеннаяПодсказка" id="190"/>
+					</Button>
+					<Button name="ФормаРазлогиниться" id="277">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.Разлогиниться</CommandName>
+						<ExtendedTooltip name="ФормаРазлогинитьсяРасширеннаяПодсказка" id="278"/>
+					</Button>
+					<Button name="ФормаСоздатьЧерновик" id="91">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.СоздатьЧерновик</CommandName>
+						<ExtendedTooltip name="ФормаСоздатьЧерновикРасширеннаяПодсказка" id="92"/>
+					</Button>
+					<Button name="ФормаИзменитьСтатус" id="213">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ИзменитьСтатус</CommandName>
+						<ExtendedTooltip name="ФормаИзменитьСтатусРасширеннаяПодсказка" id="214"/>
+					</Button>
+					<Button name="ФормаДоступныеАгенты" id="224">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ДоступныеАгенты</CommandName>
+						<ExtendedTooltip name="ФормаДоступныеАгентыРасширеннаяПодсказка" id="225"/>
+					</Button>
+					<Button name="ФормаПолучитьОтделенияБанков" id="234">
+						<Type>CommandBarButton</Type>
+						<Visible>false</Visible>
+						<CommandName>Form.Command.ПолучитьОтделенияБанков</CommandName>
+						<ExtendedTooltip name="ФормаПолучитьОтделенияБанковРасширеннаяПодсказка" id="235"/>
+					</Button>
+					<Button name="ФормаПроверитьНастройкуПользователя" id="263">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ПроверитьНастройкуПользователя</CommandName>
+						<ExtendedTooltip name="ФормаПроверитьНастройкуПользователяРасширеннаяПодсказка" id="264"/>
+					</Button>
+				</ChildItems>
+			</Popup>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="BeforeWriteAtServer">ПередЗаписьюНаСервере</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="OnWriteAtServer">ПриЗаписиНаСервере</Event>
+		<Event name="FillCheckProcessingAtServer">ОбработкаПроверкиЗаполненияНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаФон" id="291">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа фон</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа фон</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<BackColor>style:CRM_ЦветФормы</BackColor>
+			<ExtendedTooltip name="ГруппаФонРасширеннаяПодсказка" id="292"/>
+			<ChildItems>
+				<UsualGroup name="Шапка" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Шапка</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ШапкаРасширеннаяПодсказка" id="2"/>
+					<ChildItems>
+						<InputField name="Номер" id="5">
+							<DataPath>Объект.Number</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="НомерКонтекстноеМеню" id="6"/>
+							<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="7"/>
+						</InputField>
+						<InputField name="Дата" id="8">
+							<DataPath>Объект.Date</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ДатаКонтекстноеМеню" id="9"/>
+							<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="10"/>
+						</InputField>
+						<InputField name="СостояниеЗаявки" id="268">
+							<DataPath>Объект.СостояниеЗаявки</DataPath>
+							<Visible>false</Visible>
+							<Width>10</Width>
+							<BackColor>style:FieldBackColor</BackColor>
+							<ContextMenu name="СостояниеЗаявкиКонтекстноеМеню" id="269"/>
+							<ExtendedTooltip name="СостояниеЗаявкиРасширеннаяПодсказка" id="270"/>
+							<Events>
+								<Event name="OnChange">СостояниеЗаявкиПриИзменении</Event>
+							</Events>
+						</InputField>
+						<InputField name="КонтактноеЛицо" id="14">
+							<DataPath>Объект.КонтактноеЛицо</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<CreateButton>false</CreateButton>
+							<ListChoiceMode>true</ListChoiceMode>
+							<ChooseType>false</ChooseType>
+							<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+							<ContextMenu name="КонтактноеЛицоКонтекстноеМеню" id="15"/>
+							<ExtendedTooltip name="КонтактноеЛицоРасширеннаяПодсказка" id="16"/>
+							<Events>
+								<Event name="OnChange">КонтактноеЛицоПриИзменении</Event>
+								<Event name="StartChoice">КонтактноеЛицоНачалоВыбора</Event>
+								<Event name="Clearing">КонтактноеЛицоОчистка</Event>
+								<Event name="ChoiceProcessing">КонтактноеЛицоОбработкаВыбора</Event>
+							</Events>
+						</InputField>
+						<InputField name="Ответственный" id="46">
+							<DataPath>Объект.Ответственный</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ОтветственныйКонтекстноеМеню" id="47"/>
+							<ExtendedTooltip name="ОтветственныйРасширеннаяПодсказка" id="48"/>
+						</InputField>
+						<InputField name="РасчетИпотеки" id="285">
+							<DataPath>Объект.РасчетИпотеки</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<ContextMenu name="РасчетИпотекиКонтекстноеМеню" id="286"/>
+							<ExtendedTooltip name="РасчетИпотекиРасширеннаяПодсказка" id="287"/>
+						</InputField>
+						<PictureDecoration name="КартинкаСостояние" id="293">
+							<Width>2</Width>
+							<Height>1</Height>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Картинка состояние</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="КартинкаСостояниеКонтекстноеМеню" id="294"/>
+							<ExtendedTooltip name="КартинкаСостояниеРасширеннаяПодсказка" id="295"/>
+						</PictureDecoration>
+					</ChildItems>
+				</UsualGroup>
+				<Pages name="Страницы" id="85">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страницы</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страницы</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="СтраницыРасширеннаяПодсказка" id="86"/>
+					<ChildItems>
+						<Page name="Основная" id="3">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Общее</v8:content>
+								</v8:item>
+							</Title>
+							<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Основная</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>HorizontalIfPossible</Group>
+							<BackColor>style:CRM_ЦветГруппыФормы</BackColor>
+							<ExtendedTooltip name="ОсновнаяРасширеннаяПодсказка" id="4"/>
+							<ChildItems>
+								<UsualGroup name="ГруппаОсновное" id="255">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа основное</v8:content>
+										</v8:item>
+									</Title>
+									<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа основное</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаОсновноеРасширеннаяПодсказка" id="256"/>
+									<ChildItems>
+										<InputField name="ДатаПодачиЗаявки" id="11">
+											<DataPath>Объект.ДатаПодачиЗаявки</DataPath>
+											<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ДатаПодачиЗаявкиКонтекстноеМеню" id="12"/>
+											<ExtendedTooltip name="ДатаПодачиЗаявкиРасширеннаяПодсказка" id="13"/>
+										</InputField>
+										<InputField name="ВидКредита" id="17">
+											<DataPath>Объект.ВидКредита</DataPath>
+											<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>60</Width>
+											<HorizontalStretch>false</HorizontalStretch>
+											<ContextMenu name="ВидКредитаКонтекстноеМеню" id="18"/>
+											<ExtendedTooltip name="ВидКредитаРасширеннаяПодсказка" id="19"/>
+										</InputField>
+										<UsualGroup name="ГруппаБанки" id="317">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа банки</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа банки</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаБанкиРасширеннаяПодсказка" id="318"/>
+											<ChildItems>
+												<InputField name="РекомендуемыйБанк" id="20">
+													<DataPath>Объект.РекомендуемыйБанк</DataPath>
+													<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>60</Width>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ContextMenu name="РекомендуемыйБанкКонтекстноеМеню" id="21"/>
+													<ExtendedTooltip name="РекомендуемыйБанкРасширеннаяПодсказка" id="22"/>
+													<Events>
+														<Event name="OnChange">РекомендуемыйБанкПриИзменении</Event>
+														<Event name="StartChoice">РекомендуемыйБанкНачалоВыбора</Event>
+													</Events>
+												</InputField>
+												<CheckBoxField name="СубсидированнаяСтавкаВТБ" id="319">
+													<DataPath>Объект.СубсидированнаяСтавкаВТБ</DataPath>
+													<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="СубсидированнаяСтавкаВТБКонтекстноеМеню" id="320"/>
+													<ExtendedTooltip name="СубсидированнаяСтавкаВТБРасширеннаяПодсказка" id="321"/>
+												</CheckBoxField>
+											</ChildItems>
+										</UsualGroup>
+										<InputField name="ОтделениеБанка" id="23">
+											<DataPath>Объект.ОтделениеБанка</DataPath>
+											<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>60</Width>
+											<HorizontalStretch>false</HorizontalStretch>
+											<ContextMenu name="ОтделениеБанкаКонтекстноеМеню" id="24"/>
+											<ExtendedTooltip name="ОтделениеБанкаРасширеннаяПодсказка" id="25"/>
+											<Events>
+												<Event name="OnChange">ОтделениеБанкаПриИзменении</Event>
+											</Events>
+										</InputField>
+										<InputField name="Проект" id="306">
+											<DataPath>Объект.Проект</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
+											<Width>60</Width>
+											<ContextMenu name="ПроектКонтекстноеМеню" id="307"/>
+											<ExtendedTooltip name="ПроектРасширеннаяПодсказка" id="308"/>
+										</InputField>
+										<InputField name="ВидОбъектаНедвижимости" id="55">
+											<DataPath>Объект.ВидОбъектаНедвижимости</DataPath>
+											<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>60</Width>
+											<ContextMenu name="ВидОбъектаНедвижимостиКонтекстноеМеню" id="56"/>
+											<ExtendedTooltip name="ВидОбъектаНедвижимостиРасширеннаяПодсказка" id="57"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаРешение" id="253">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Решение</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа решение</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Representation>StrongSeparation</Representation>
+									<ExtendedTooltip name="ГруппаРешениеРасширеннаяПодсказка" id="254"/>
+									<ChildItems>
+										<InputField name="ПредварительноеРешение" id="26">
+											<DataPath>Объект.ПредварительноеРешение</DataPath>
+											<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>55</Width>
+											<HorizontalStretch>false</HorizontalStretch>
+											<ContextMenu name="ПредварительноеРешениеКонтекстноеМеню" id="27"/>
+											<ExtendedTooltip name="ПредварительноеРешениеРасширеннаяПодсказка" id="28"/>
+										</InputField>
+										<InputField name="ДатаРешенияБанка" id="41">
+											<DataPath>Объект.ДатаРешенияБанка</DataPath>
+											<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ДатаРешенияБанкаКонтекстноеМеню" id="42"/>
+											<ExtendedTooltip name="ДатаРешенияБанкаРасширеннаяПодсказка" id="43"/>
+										</InputField>
+										<InputField name="РешениеБанка" id="38">
+											<DataPath>Объект.РешениеБанка</DataPath>
+											<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>55</Width>
+											<HorizontalStretch>false</HorizontalStretch>
+											<ContextMenu name="РешениеБанкаКонтекстноеМеню" id="39"/>
+											<ExtendedTooltip name="РешениеБанкаРасширеннаяПодсказка" id="40"/>
+											<Events>
+												<Event name="OnChange">РешениеБанкаПриИзменении</Event>
+											</Events>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаСтатус" id="242">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Статус</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа статус</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Representation>StrongSeparation</Representation>
+									<ExtendedTooltip name="ГруппаСтатусРасширеннаяПодсказка" id="243"/>
+									<ChildItems>
+										<InputField name="СтатусЗаявки" id="29">
+											<DataPath>Объект.СтатусЗаявки</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>57</Width>
+											<HorizontalStretch>false</HorizontalStretch>
+											<ContextMenu name="СтатусЗаявкиКонтекстноеМеню" id="30"/>
+											<ExtendedTooltip name="СтатусЗаявкиРасширеннаяПодсказка" id="31"/>
+											<Events>
+												<Event name="OnChange">СтатусЗаявкиПриИзменении</Event>
+											</Events>
+										</InputField>
+										<InputField name="ДатаУстановкиСтатуса" id="35">
+											<DataPath>Объект.ДатаУстановкиСтатуса</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ДатаУстановкиСтатусаКонтекстноеМеню" id="36"/>
+											<ExtendedTooltip name="ДатаУстановкиСтатусаРасширеннаяПодсказка" id="37"/>
+										</InputField>
+										<InputField name="КомментарийСтатуса" id="99">
+											<DataPath>Объект.КомментарийСтатуса</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
+											<Width>73</Width>
+											<Height>2</Height>
+											<HorizontalStretch>false</HorizontalStretch>
+											<VerticalStretch>true</VerticalStretch>
+											<ContextMenu name="КомментарийСтатусаКонтекстноеМеню" id="100"/>
+											<ExtendedTooltip name="КомментарийСтатусаРасширеннаяПодсказка" id="101"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+								<PictureDecoration name="Декорация1" id="93">
+									<VerticalStretch>true</VerticalStretch>
+									<ContextMenu name="Декорация1КонтекстноеМеню" id="94"/>
+									<ExtendedTooltip name="Декорация1РасширеннаяПодсказка" id="95"/>
+								</PictureDecoration>
+							</ChildItems>
+						</Page>
+						<Page name="Дополнительная" id="44">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Дополнительно</v8:content>
+								</v8:item>
+							</Title>
+							<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Дополнительная</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>HorizontalIfPossible</Group>
+							<BackColor>style:CRM_ЦветГруппыФормы</BackColor>
+							<ExtendedTooltip name="ДополнительнаяРасширеннаяПодсказка" id="45"/>
+							<ChildItems>
+								<UsualGroup name="Группа6" id="236">
+									<Group>Horizontal</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="Группа6РасширеннаяПодсказка" id="237"/>
+									<ChildItems>
+										<UsualGroup name="ГруппаДанныеПоКлиентуДляОтправки" id="238">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа данные по клиенту для отправки</v8:content>
+												</v8:item>
+											</Title>
+											<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа данные по клиенту для отправки</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаДанныеПоКлиентуДляОтправкиРасширеннаяПодсказка" id="239"/>
+											<ChildItems>
+												<UsualGroup name="Группа11" id="246">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Данные заявки</v8:content>
+														</v8:item>
+													</Title>
+													<Representation>StrongSeparation</Representation>
+													<ExtendedTooltip name="Группа11РасширеннаяПодсказка" id="247"/>
+													<ChildItems>
+														<UsualGroup name="Группа10" id="244">
+															<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
+															<Group>Horizontal</Group>
+															<Representation>None</Representation>
+															<ShowTitle>false</ShowTitle>
+															<ExtendedTooltip name="Группа10РасширеннаяПодсказка" id="245"/>
+															<ChildItems>
+																<InputField name="ID_Заявки" id="76">
+																	<DataPath>Объект.ID_Заявки</DataPath>
+																	<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
+																	<EditMode>EnterOnInput</EditMode>
+																	<Width>14</Width>
+																	<ContextMenu name="ID_ЗаявкиКонтекстноеМеню" id="77"/>
+																	<ExtendedTooltip name="ID_ЗаявкиРасширеннаяПодсказка" id="78"/>
+																</InputField>
+																<InputField name="ЗамещающийАгент" id="279">
+																	<DataPath>Объект.ЗамещающийАгент</DataPath>
+																	<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
+																	<Width>31</Width>
+																	<AutoMaxWidth>false</AutoMaxWidth>
+																	<HorizontalStretch>false</HorizontalStretch>
+																	<ContextMenu name="ЗамещающийАгентКонтекстноеМеню" id="280"/>
+																	<ExtendedTooltip name="ЗамещающийАгентРасширеннаяПодсказка" id="281"/>
+																</InputField>
+															</ChildItems>
+														</UsualGroup>
+														<UsualGroup name="Группа3" id="228">
+															<Visible>false</Visible>
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Полученные значения</v8:content>
+																</v8:item>
+															</Title>
+															<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
+															<Representation>None</Representation>
+															<ChildItemsWidth>Equal</ChildItemsWidth>
+															<ShowTitle>false</ShowTitle>
+															<ExtendedTooltip name="Группа3РасширеннаяПодсказка" id="229"/>
+															<ChildItems>
+																<InputField name="agent_id" id="218">
+																	<DataPath>Объект.agent_id</DataPath>
+																	<ReadOnly>true</ReadOnly>
+																	<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
+																	<Width>13</Width>
+																	<ContextMenu name="agent_idКонтекстноеМеню" id="219"/>
+																	<ExtendedTooltip name="agent_idРасширеннаяПодсказка" id="220"/>
+																</InputField>
+																<InputField name="partner_office_id" id="215">
+																	<DataPath>Объект.partner_office_id</DataPath>
+																	<ReadOnly>true</ReadOnly>
+																	<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
+																	<Width>13</Width>
+																	<ContextMenu name="partner_office_idКонтекстноеМеню" id="216"/>
+																	<ExtendedTooltip name="partner_office_idРасширеннаяПодсказка" id="217"/>
+																</InputField>
+															</ChildItems>
+														</UsualGroup>
+														<UsualGroup name="ГруппаДанныеКлиента" id="313">
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Данные клиента</v8:content>
+																</v8:item>
+															</Title>
+															<ToolTipRepresentation>None</ToolTipRepresentation>
+															<Group>Vertical</Group>
+															<ExtendedTooltip name="ГруппаДанныеКлиентаРасширеннаяПодсказка" id="314"/>
+															<ChildItems>
+																<InputField name="ФИОКлиента" id="181">
+																	<DataPath>Объект.ФИОКлиента</DataPath>
+																	<ReadOnly>true</ReadOnly>
+																	<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
+																	<Width>60</Width>
+																	<ContextMenu name="ФИОКлиентаКонтекстноеМеню" id="182"/>
+																	<ExtendedTooltip name="ФИОКлиентаРасширеннаяПодсказка" id="183"/>
+																</InputField>
+																<InputField name="ДатаРожденияКлиента" id="64">
+																	<DataPath>Объект.ДатаРожденияКлиента</DataPath>
+																	<ReadOnly>true</ReadOnly>
+																	<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
+																	<EditMode>EnterOnInput</EditMode>
+																	<ContextMenu name="ДатаРожденияКлиентаКонтекстноеМеню" id="65"/>
+																	<ExtendedTooltip name="ДатаРожденияКлиентаРасширеннаяПодсказка" id="66"/>
+																</InputField>
+																<InputField name="СерияНомерПаспорта" id="52">
+																	<DataPath>Объект.СерияНомерПаспорта</DataPath>
+																	<ReadOnly>true</ReadOnly>
+																	<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
+																	<EditMode>EnterOnInput</EditMode>
+																	<Width>60</Width>
+																	<ContextMenu name="СерияНомерПаспортаКонтекстноеМеню" id="53"/>
+																	<ExtendedTooltip name="СерияНомерПаспортаРасширеннаяПодсказка" id="54"/>
+																</InputField>
+																<InputField name="НомерТелефонаКлиента" id="178">
+																	<DataPath>Объект.НомерТелефонаКлиента</DataPath>
+																	<ReadOnly>true</ReadOnly>
+																	<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
+																	<Width>60</Width>
+																	<ContextMenu name="НомерТелефонаКлиентаКонтекстноеМеню" id="179"/>
+																	<ExtendedTooltip name="НомерТелефонаКлиентаРасширеннаяПодсказка" id="180"/>
+																</InputField>
+																<InputField name="EmailКлиента" id="175">
+																	<DataPath>Объект.EmailКлиента</DataPath>
+																	<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
+																	<Width>60</Width>
+																	<ContextMenu name="EmailКлиентаКонтекстноеМеню" id="176"/>
+																	<ExtendedTooltip name="EmailКлиентаРасширеннаяПодсказка" id="177"/>
+																</InputField>
+																<UsualGroup name="Группа2" id="315">
+																	<Title>
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>Адреса</v8:content>
+																		</v8:item>
+																	</Title>
+																	<ToolTipRepresentation>None</ToolTipRepresentation>
+																	<Group>Vertical</Group>
+																	<Representation>None</Representation>
+																	<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="316"/>
+																	<ChildItems>
+																		<InputField name="АдресФактическогоПроживания" id="67">
+																			<DataPath>Объект.АдресФактическогоПроживания</DataPath>
+																			<ReadOnly>true</ReadOnly>
+																			<Title>
+																				<v8:item>
+																					<v8:lang>ru</v8:lang>
+																					<v8:content>Фактического проживания</v8:content>
+																				</v8:item>
+																			</Title>
+																			<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
+																			<EditMode>EnterOnInput</EditMode>
+																			<Width>60</Width>
+																			<ContextMenu name="АдресФактическогоПроживанияКонтекстноеМеню" id="68"/>
+																			<ExtendedTooltip name="АдресФактическогоПроживанияРасширеннаяПодсказка" id="69"/>
+																		</InputField>
+																		<InputField name="АдресМестаРаботы" id="70">
+																			<DataPath>Объект.АдресМестаРаботы</DataPath>
+																			<Title>
+																				<v8:item>
+																					<v8:lang>ru</v8:lang>
+																					<v8:content>Места работы</v8:content>
+																				</v8:item>
+																			</Title>
+																			<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
+																			<EditMode>EnterOnInput</EditMode>
+																			<Width>60</Width>
+																			<ContextMenu name="АдресМестаРаботыКонтекстноеМеню" id="71"/>
+																			<ExtendedTooltip name="АдресМестаРаботыРасширеннаяПодсказка" id="72"/>
+																		</InputField>
+																	</ChildItems>
+																</UsualGroup>
+															</ChildItems>
+														</UsualGroup>
+														<UsualGroup name="Группа12" id="248">
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Рассмотрение сумм</v8:content>
+																</v8:item>
+															</Title>
+															<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
+															<Representation>None</Representation>
+															<ShowTitle>false</ShowTitle>
+															<ExtendedTooltip name="Группа12РасширеннаяПодсказка" id="249"/>
+															<ChildItems>
+																<InputField name="ПредполагаемаяСтоимостьОН" id="61">
+																	<DataPath>Объект.ПредполагаемаяСтоимостьОН</DataPath>
+																	<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
+																	<EditMode>EnterOnInput</EditMode>
+																	<Width>17</Width>
+																	<ContextMenu name="ПредполагаемаяСтоимостьОНКонтекстноеМеню" id="62"/>
+																	<ExtendedTooltip name="ПредполагаемаяСтоимостьОНРасширеннаяПодсказка" id="63"/>
+																</InputField>
+																<InputField name="СуммаКредитаВРублях" id="58">
+																	<DataPath>Объект.СуммаКредитаВРублях</DataPath>
+																	<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
+																	<EditMode>EnterOnInput</EditMode>
+																	<Width>17</Width>
+																	<ContextMenu name="СуммаКредитаВРубляхКонтекстноеМеню" id="59"/>
+																	<ExtendedTooltip name="СуммаКредитаВРубляхРасширеннаяПодсказка" id="60"/>
+																</InputField>
+																<InputField name="ОбодреннаяСуммаКредитаВРублях" id="210">
+																	<DataPath>Объект.sum_approved</DataPath>
+																	<ReadOnly>true</ReadOnly>
+																	<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
+																	<Width>17</Width>
+																	<ContextMenu name="ОбодреннаяСуммаКредитаВРубляхКонтекстноеМеню" id="211"/>
+																	<ExtendedTooltip name="ОбодреннаяСуммаКредитаВРубляхРасширеннаяПодсказка" id="212"/>
+																</InputField>
+																<InputField name="transactID" id="282">
+																	<DataPath>Объект.transactID</DataPath>
+																	<ReadOnly>true</ReadOnly>
+																	<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
+																	<Width>17</Width>
+																	<AutoMaxWidth>false</AutoMaxWidth>
+																	<HorizontalStretch>false</HorizontalStretch>
+																	<ContextMenu name="transactIDКонтекстноеМеню" id="283"/>
+																	<ExtendedTooltip name="transactIDРасширеннаяПодсказка" id="284"/>
+																</InputField>
+															</ChildItems>
+														</UsualGroup>
+														<UsualGroup name="Группа1" id="296">
+															<Representation>None</Representation>
+															<ShowTitle>false</ShowTitle>
+															<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="297"/>
+															<ChildItems>
+																<CheckBoxField name="Черновик" id="79">
+																	<DataPath>Объект.Черновик</DataPath>
+																	<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
+																	<TitleLocation>Right</TitleLocation>
+																	<EditMode>EnterOnInput</EditMode>
+																	<CheckBoxType>Auto</CheckBoxType>
+																	<ContextMenu name="ЧерновикКонтекстноеМеню" id="80"/>
+																	<ExtendedTooltip name="ЧерновикРасширеннаяПодсказка" id="81"/>
+																</CheckBoxField>
+																<CheckBoxField name="ТестоваяЗаявка" id="82">
+																	<DataPath>Объект.ТестоваяЗаявка</DataPath>
+																	<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
+																	<TitleLocation>Right</TitleLocation>
+																	<EditMode>EnterOnInput</EditMode>
+																	<CheckBoxType>Auto</CheckBoxType>
+																	<ContextMenu name="ТестоваяЗаявкаКонтекстноеМеню" id="83"/>
+																	<ExtendedTooltip name="ТестоваяЗаявкаРасширеннаяПодсказка" id="84"/>
+																</CheckBoxField>
+															</ChildItems>
+														</UsualGroup>
+														<InputField name="ЦИК" id="73">
+															<DataPath>Объект.ЦИК</DataPath>
+															<Visible>false</Visible>
+															<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
+															<EditMode>EnterOnInput</EditMode>
+															<ContextMenu name="ЦИККонтекстноеМеню" id="74"/>
+															<ExtendedTooltip name="ЦИКРасширеннаяПодсказка" id="75"/>
+														</InputField>
+														<PictureDecoration name="Декорация3" id="250">
+															<Visible>false</Visible>
+															<VerticalStretch>true</VerticalStretch>
+															<ContextMenu name="Декорация3КонтекстноеМеню" id="251"/>
+															<ExtendedTooltip name="Декорация3РасширеннаяПодсказка" id="252"/>
+														</PictureDecoration>
+													</ChildItems>
+												</UsualGroup>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="ГруппаСопутствующиеДанные" id="240">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа сопутствующие данные</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа сопутствующие данные</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<BackColor>style:CRM_ЦветГруппыФормы</BackColor>
+											<ExtendedTooltip name="ГруппаСопутствующиеДанныеРасширеннаяПодсказка" id="241"/>
+											<ChildItems>
+												<UsualGroup name="ГруппаПрикрепленныеФайлы" id="173">
+													<UserVisible>
+														<xr:Common>true</xr:Common>
+														<xr:Value name="Role.Администрирование">true</xr:Value>
+														<xr:Value name="Role.МенеджерИпотечный">true</xr:Value>
+														<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+														<xr:Value name="Role.РаботаСИпотечнымиЗаявками_Администратор">true</xr:Value>
+														<xr:Value name="Role.РаботаСИпотечнымиЗаявками_Менеджер">true</xr:Value>
+													</UserVisible>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Вложения</v8:content>
+														</v8:item>
+													</Title>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Группа прикрепленные файлы</v8:content>
+														</v8:item>
+													</ToolTip>
+													<Representation>StrongSeparation</Representation>
+													<ExtendedTooltip name="ГруппаПрикрепленныеФайлыРасширеннаяПодсказка" id="174"/>
+													<ChildItems>
+														<Table name="ПрикрепленныеФайлы" id="102">
+															<AutoInsertNewRow>true</AutoInsertNewRow>
+															<EnableStartDrag>true</EnableStartDrag>
+															<EnableDrag>true</EnableDrag>
+															<DataPath>Объект.ПрикрепленныеФайлы</DataPath>
+															<RowFilter xsi:nil="true"/>
+															<ContextMenu name="ПрикрепленныеФайлыКонтекстноеМеню" id="103"/>
+															<AutoCommandBar name="ПрикрепленныеФайлыКоманднаяПанель" id="104">
+																<Autofill>false</Autofill>
+																<ChildItems>
+																	<Button name="ПрикрепленныеФайлыкнДобавитьФайл" id="127">
+																		<Type>CommandBarButton</Type>
+																		<UserVisible>
+																			<xr:Common>false</xr:Common>
+																			<xr:Value name="Role.АдминистраторСистемы">true</xr:Value>
+																			<xr:Value name="Role.Администрирование">true</xr:Value>
+																			<xr:Value name="Role.МенеджерИпотечный">true</xr:Value>
+																			<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+																			<xr:Value name="Role.РаботаСИпотечнымиЗаявками_Администратор">true</xr:Value>
+																			<xr:Value name="Role.РаботаСИпотечнымиЗаявками_Менеджер">true</xr:Value>
+																		</UserVisible>
+																		<CommandName>Form.Command.кнДобавитьФайл</CommandName>
+																		<ExtendedTooltip name="ПрикрепленныеФайлыкнДобавитьФайлРасширеннаяПодсказка" id="128"/>
+																	</Button>
+																	<Button name="ПрикрепленныеФайлыкнОткрытьКарточкуФайла" id="169">
+																		<Type>CommandBarButton</Type>
+																		<UserVisible>
+																			<xr:Common>false</xr:Common>
+																			<xr:Value name="Role.АдминистраторСистемы">true</xr:Value>
+																			<xr:Value name="Role.Администрирование">true</xr:Value>
+																			<xr:Value name="Role.МенеджерИпотечный">true</xr:Value>
+																			<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+																			<xr:Value name="Role.РаботаСИпотечнымиЗаявками_Администратор">true</xr:Value>
+																			<xr:Value name="Role.РаботаСИпотечнымиЗаявками_Менеджер">true</xr:Value>
+																		</UserVisible>
+																		<CommandName>Form.Command.кнОткрытьКарточкуФайла</CommandName>
+																		<ExtendedTooltip name="ПрикрепленныеФайлыкнОткрытьКарточкуФайлаРасширеннаяПодсказка" id="170"/>
+																	</Button>
+																	<Button name="ПрикрепленныеФайлыкнУдалитьФайл" id="161">
+																		<Type>CommandBarButton</Type>
+																		<UserVisible>
+																			<xr:Common>false</xr:Common>
+																			<xr:Value name="Role.АдминистраторСистемы">true</xr:Value>
+																			<xr:Value name="Role.Администрирование">true</xr:Value>
+																			<xr:Value name="Role.МенеджерИпотечный">true</xr:Value>
+																			<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+																			<xr:Value name="Role.РаботаСИпотечнымиЗаявками_Администратор">true</xr:Value>
+																			<xr:Value name="Role.РаботаСИпотечнымиЗаявками_Менеджер">true</xr:Value>
+																		</UserVisible>
+																		<CommandName>Form.Command.кнУдалитьФайл</CommandName>
+																		<ExtendedTooltip name="ПрикрепленныеФайлыкнУдалитьФайлРасширеннаяПодсказка" id="162"/>
+																	</Button>
+																	<Button name="ПрикрепленныеФайлыкнПросмотрФайла" id="159">
+																		<Type>CommandBarButton</Type>
+																		<UserVisible>
+																			<xr:Common>false</xr:Common>
+																			<xr:Value name="Role.АдминистраторСистемы">true</xr:Value>
+																			<xr:Value name="Role.Администрирование">true</xr:Value>
+																			<xr:Value name="Role.МенеджерИпотечный">true</xr:Value>
+																			<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+																			<xr:Value name="Role.РаботаСИпотечнымиЗаявками_Администратор">true</xr:Value>
+																			<xr:Value name="Role.РаботаСИпотечнымиЗаявками_Менеджер">true</xr:Value>
+																		</UserVisible>
+																		<CommandName>Form.Command.кнПросмотрФайла</CommandName>
+																		<ExtendedTooltip name="ПрикрепленныеФайлыкнПросмотрФайлаРасширеннаяПодсказка" id="160"/>
+																	</Button>
+																	<Button name="ПрикрепленныеФайлыСкачатьФайл" id="226">
+																		<Type>CommandBarButton</Type>
+																		<UserVisible>
+																			<xr:Common>false</xr:Common>
+																			<xr:Value name="Role.АдминистраторСистемы">true</xr:Value>
+																			<xr:Value name="Role.Администрирование">true</xr:Value>
+																			<xr:Value name="Role.МенеджерИпотечный">true</xr:Value>
+																			<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+																			<xr:Value name="Role.РаботаСИпотечнымиЗаявками_Администратор">true</xr:Value>
+																			<xr:Value name="Role.РаботаСИпотечнымиЗаявками_Менеджер">true</xr:Value>
+																		</UserVisible>
+																		<CommandName>Form.Command.СкачатьФайл</CommandName>
+																		<ExtendedTooltip name="ПрикрепленныеФайлыСкачатьФайлРасширеннаяПодсказка" id="227"/>
+																	</Button>
+																	<Button name="ПрикрепленныеФайлыОбновитьФайлы" id="205">
+																		<Type>CommandBarButton</Type>
+																		<UserVisible>
+																			<xr:Common>false</xr:Common>
+																			<xr:Value name="Role.АдминистраторСистемы">true</xr:Value>
+																			<xr:Value name="Role.Администрирование">true</xr:Value>
+																			<xr:Value name="Role.МенеджерИпотечный">true</xr:Value>
+																			<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+																			<xr:Value name="Role.РаботаСИпотечнымиЗаявками_Администратор">true</xr:Value>
+																			<xr:Value name="Role.РаботаСИпотечнымиЗаявками_Менеджер">true</xr:Value>
+																		</UserVisible>
+																		<CommandName>Form.Command.ОбновитьФайлы</CommandName>
+																		<ExtendedTooltip name="ПрикрепленныеФайлыОбновитьФайлыРасширеннаяПодсказка" id="206"/>
+																	</Button>
+																</ChildItems>
+															</AutoCommandBar>
+															<ExtendedTooltip name="ПрикрепленныеФайлыРасширеннаяПодсказка" id="105"/>
+															<SearchStringAddition name="ПрикрепленныеФайлыСтрокаПоиска" id="106">
+																<AdditionSource>
+																	<Item>ПрикрепленныеФайлы</Item>
+																	<Type>SearchStringRepresentation</Type>
+																</AdditionSource>
+																<ContextMenu name="ПрикрепленныеФайлыСтрокаПоискаКонтекстноеМеню" id="107"/>
+																<ExtendedTooltip name="ПрикрепленныеФайлыСтрокаПоискаРасширеннаяПодсказка" id="108"/>
+															</SearchStringAddition>
+															<ViewStatusAddition name="ПрикрепленныеФайлыСостояниеПросмотра" id="109">
+																<AdditionSource>
+																	<Item>ПрикрепленныеФайлы</Item>
+																	<Type>ViewStatusRepresentation</Type>
+																</AdditionSource>
+																<ContextMenu name="ПрикрепленныеФайлыСостояниеПросмотраКонтекстноеМеню" id="110"/>
+																<ExtendedTooltip name="ПрикрепленныеФайлыСостояниеПросмотраРасширеннаяПодсказка" id="111"/>
+															</ViewStatusAddition>
+															<SearchControlAddition name="ПрикрепленныеФайлыУправлениеПоиском" id="112">
+																<AdditionSource>
+																	<Item>ПрикрепленныеФайлы</Item>
+																	<Type>SearchControl</Type>
+																</AdditionSource>
+																<ContextMenu name="ПрикрепленныеФайлыУправлениеПоискомКонтекстноеМеню" id="113"/>
+																<ExtendedTooltip name="ПрикрепленныеФайлыУправлениеПоискомРасширеннаяПодсказка" id="114"/>
+															</SearchControlAddition>
+															<Events>
+																<Event name="BeforeAddRow">ПрикрепленныеФайлыПередНачаломДобавления</Event>
+																<Event name="BeforeDeleteRow">ПрикрепленныеФайлыПередУдалением</Event>
+															</Events>
+															<ChildItems>
+																<LabelField name="ПрикрепленныеФайлыНомерСтроки" id="115">
+																	<DataPath>Объект.ПрикрепленныеФайлы.LineNumber</DataPath>
+																	<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
+																	<TitleBackColor>style:FormBackColor</TitleBackColor>
+																	<TitleLocation>None</TitleLocation>
+																	<EditMode>EnterOnInput</EditMode>
+																	<Width>2</Width>
+																	<HorizontalStretch>false</HorizontalStretch>
+																	<ContextMenu name="ПрикрепленныеФайлыНомерСтрокиКонтекстноеМеню" id="116"/>
+																	<ExtendedTooltip name="ПрикрепленныеФайлыНомерСтрокиРасширеннаяПодсказка" id="117"/>
+																</LabelField>
+																<CheckBoxField name="ПрикрепленныеФайлыОтправлять" id="194">
+																	<DataPath>Объект.ПрикрепленныеФайлы.Отправлять</DataPath>
+																	<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
+																	<TitleBackColor>style:FormBackColor</TitleBackColor>
+																	<EditMode>EnterOnInput</EditMode>
+																	<CheckBoxType>Auto</CheckBoxType>
+																	<ContextMenu name="ПрикрепленныеФайлыОтправлятьКонтекстноеМеню" id="195"/>
+																	<ExtendedTooltip name="ПрикрепленныеФайлыОтправлятьРасширеннаяПодсказка" id="196"/>
+																</CheckBoxField>
+																<ColumnGroup name="ПрикрепленныеФайлыГруппа" id="129">
+																	<Title>
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>Прикрепленные файлы группа</v8:content>
+																		</v8:item>
+																	</Title>
+																	<ToolTip>
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>Прикрепленные файлы группа</v8:content>
+																		</v8:item>
+																	</ToolTip>
+																	<Group>InCell</Group>
+																	<ExtendedTooltip name="ПрикрепленныеФайлыГруппаРасширеннаяПодсказка" id="130"/>
+																	<ChildItems>
+																		<PictureField name="ПрикрепленныеФайлыФайлИндексКартинки" id="131">
+																			<DataPath>Объект.ПрикрепленныеФайлы.Файл.ИндексКартинки</DataPath>
+																			<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
+																			<TitleBackColor>style:FormBackColor</TitleBackColor>
+																			<TitleLocation>None</TitleLocation>
+																			<EditMode>EnterOnInput</EditMode>
+																			<ValuesPicture>
+																				<xr:Ref>CommonPicture.КоллекцияПиктограммФайлов</xr:Ref>
+																				<xr:LoadTransparent>true</xr:LoadTransparent>
+																			</ValuesPicture>
+																			<ContextMenu name="ПрикрепленныеФайлыФайлИндексКартинкиКонтекстноеМеню" id="132"/>
+																			<ExtendedTooltip name="ПрикрепленныеФайлыФайлИндексКартинкиРасширеннаяПодсказка" id="133"/>
+																		</PictureField>
+																		<InputField name="ПрикрепленныеФайлыФайл" id="118">
+																			<DataPath>Объект.ПрикрепленныеФайлы.Файл</DataPath>
+																			<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
+																			<TitleBackColor>style:FormBackColor</TitleBackColor>
+																			<EditMode>EnterOnInput</EditMode>
+																			<ContextMenu name="ПрикрепленныеФайлыФайлКонтекстноеМеню" id="119"/>
+																			<ExtendedTooltip name="ПрикрепленныеФайлыФайлРасширеннаяПодсказка" id="120"/>
+																		</InputField>
+																	</ChildItems>
+																</ColumnGroup>
+																<LabelField name="ПрикрепленныеФайлыФайлДатаСоздания" id="153">
+																	<DataPath>1/0:6c44ed30-e251-4e75-aefd-b0412eb48964/0:300876f2-79ca-460a-9380-c41314b693a9/0:5b7b7dc3-dbef-4854-9395-30a3ae4d751c</DataPath>
+																	<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
+																	<TitleBackColor>style:FormBackColor</TitleBackColor>
+																	<EditMode>EnterOnInput</EditMode>
+																	<ContextMenu name="ПрикрепленныеФайлыФайлДатаСозданияКонтекстноеМеню" id="154"/>
+																	<ExtendedTooltip name="ПрикрепленныеФайлыФайлДатаСозданияРасширеннаяПодсказка" id="155"/>
+																</LabelField>
+																<LabelField name="ПрикрепленныеФайлыФайлТекущаяВерсияРазмер" id="271">
+																	<DataPath>1/0:6c44ed30-e251-4e75-aefd-b0412eb48964/0:300876f2-79ca-460a-9380-c41314b693a9/0:b923c78f-d074-41b4-b832-086686258f19</DataPath>
+																	<Title>
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>Размер</v8:content>
+																		</v8:item>
+																	</Title>
+																	<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
+																	<TitleBackColor>style:FormBackColor</TitleBackColor>
+																	<EditMode>EnterOnInput</EditMode>
+																	<ContextMenu name="ПрикрепленныеФайлыФайлТекущаяВерсияРазмерКонтекстноеМеню" id="272"/>
+																	<ExtendedTooltip name="ПрикрепленныеФайлыФайлТекущаяВерсияРазмерРасширеннаяПодсказка" id="273"/>
+																</LabelField>
+																<LabelField name="ПрикрепленныеФайлыФайлТекущаяВерсияРасширение" id="274">
+																	<DataPath>1/0:6c44ed30-e251-4e75-aefd-b0412eb48964/0:300876f2-79ca-460a-9380-c41314b693a9/0:8ff96413-6fdd-4b8d-a181-ea0d8633defc</DataPath>
+																	<Title>
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>Расширение</v8:content>
+																		</v8:item>
+																	</Title>
+																	<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
+																	<TitleBackColor>style:FormBackColor</TitleBackColor>
+																	<EditMode>EnterOnInput</EditMode>
+																	<ContextMenu name="ПрикрепленныеФайлыФайлТекущаяВерсияРасширениеКонтекстноеМеню" id="275"/>
+																	<ExtendedTooltip name="ПрикрепленныеФайлыФайлТекущаяВерсияРасширениеРасширеннаяПодсказка" id="276"/>
+																</LabelField>
+																<InputField name="ПрикрепленныеФайлыДатаОтправки" id="156">
+																	<DataPath>Объект.ПрикрепленныеФайлы.create_date</DataPath>
+																	<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
+																	<TitleBackColor>style:FormBackColor</TitleBackColor>
+																	<EditMode>EnterOnInput</EditMode>
+																	<ContextMenu name="ПрикрепленныеФайлыДатаОтправкиКонтекстноеМеню" id="157"/>
+																	<ExtendedTooltip name="ПрикрепленныеФайлыДатаОтправкиРасширеннаяПодсказка" id="158"/>
+																</InputField>
+																<InputField name="ПрикрепленныеФайлыPath" id="121">
+																	<DataPath>Объект.ПрикрепленныеФайлы.path</DataPath>
+																	<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
+																	<TitleBackColor>style:FormBackColor</TitleBackColor>
+																	<EditMode>EnterOnInput</EditMode>
+																	<ContextMenu name="ПрикрепленныеФайлыPathКонтекстноеМеню" id="122"/>
+																	<ExtendedTooltip name="ПрикрепленныеФайлыPathРасширеннаяПодсказка" id="123"/>
+																</InputField>
+																<InputField name="ПрикрепленныеФайлыID" id="124">
+																	<DataPath>Объект.ПрикрепленныеФайлы.id</DataPath>
+																	<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
+																	<TitleBackColor>style:FormBackColor</TitleBackColor>
+																	<EditMode>EnterOnInput</EditMode>
+																	<ContextMenu name="ПрикрепленныеФайлыIDКонтекстноеМеню" id="125"/>
+																	<ExtendedTooltip name="ПрикрепленныеФайлыIDРасширеннаяПодсказка" id="126"/>
+																</InputField>
+																<InputField name="ПрикрепленныеФайлыname" id="207">
+																	<DataPath>Объект.ПрикрепленныеФайлы.name</DataPath>
+																	<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
+																	<TitleBackColor>style:FormBackColor</TitleBackColor>
+																	<EditMode>EnterOnInput</EditMode>
+																	<ContextMenu name="ПрикрепленныеФайлыnameКонтекстноеМеню" id="208"/>
+																	<ExtendedTooltip name="ПрикрепленныеФайлыnameРасширеннаяПодсказка" id="209"/>
+																</InputField>
+															</ChildItems>
+														</Table>
+													</ChildItems>
+												</UsualGroup>
+												<UsualGroup name="ГруппаКомментарии" id="171">
+													<UserVisible>
+														<xr:Common>true</xr:Common>
+														<xr:Value name="Role.Администрирование">true</xr:Value>
+														<xr:Value name="Role.МенеджерИпотечный">true</xr:Value>
+														<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+														<xr:Value name="Role.РаботаСИпотечнымиЗаявками_Администратор">true</xr:Value>
+														<xr:Value name="Role.РаботаСИпотечнымиЗаявками_Менеджер">true</xr:Value>
+													</UserVisible>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Комментарии</v8:content>
+														</v8:item>
+													</Title>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Группа комментарии</v8:content>
+														</v8:item>
+													</ToolTip>
+													<Representation>StrongSeparation</Representation>
+													<ExtendedTooltip name="ГруппаКомментарииРасширеннаяПодсказка" id="172"/>
+													<ChildItems>
+														<Table name="КомментарииЗаявки" id="134">
+															<AutoInsertNewRow>true</AutoInsertNewRow>
+															<EnableStartDrag>true</EnableStartDrag>
+															<EnableDrag>true</EnableDrag>
+															<DataPath>Объект.КомментарииЗаявки</DataPath>
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Комментарии</v8:content>
+																</v8:item>
+															</Title>
+															<RowFilter xsi:nil="true"/>
+															<ContextMenu name="КомментарииЗаявкиКонтекстноеМеню" id="135"/>
+															<AutoCommandBar name="КомментарииЗаявкиКоманднаяПанель" id="136">
+																<ChildItems>
+																	<Button name="КомментарииЗаявкиДобавить" id="311">
+																		<Type>CommandBarButton</Type>
+																		<Visible>false</Visible>
+																		<UserVisible>
+																			<xr:Common>false</xr:Common>
+																			<xr:Value name="Role.АдминистраторСистемы">true</xr:Value>
+																			<xr:Value name="Role.Администрирование">true</xr:Value>
+																			<xr:Value name="Role.МенеджерИпотечный">true</xr:Value>
+																			<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+																			<xr:Value name="Role.РаботаСИпотечнымиЗаявками_Администратор">true</xr:Value>
+																			<xr:Value name="Role.РаботаСИпотечнымиЗаявками_Менеджер">true</xr:Value>
+																		</UserVisible>
+																		<CommandName>Form.Item.КомментарииЗаявки.StandardCommand.Add</CommandName>
+																		<ExtendedTooltip name="КомментарииЗаявкиДобавитьРасширеннаяПодсказка" id="312"/>
+																	</Button>
+																	<Button name="КомментарииЗаявкикнДобавитьСтрокиКомментария" id="309">
+																		<Type>CommandBarButton</Type>
+																		<UserVisible>
+																			<xr:Common>false</xr:Common>
+																			<xr:Value name="Role.АдминистраторСистемы">true</xr:Value>
+																			<xr:Value name="Role.Администрирование">true</xr:Value>
+																			<xr:Value name="Role.МенеджерИпотечный">true</xr:Value>
+																			<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+																			<xr:Value name="Role.РаботаСИпотечнымиЗаявками_Администратор">true</xr:Value>
+																			<xr:Value name="Role.РаботаСИпотечнымиЗаявками_Менеджер">true</xr:Value>
+																		</UserVisible>
+																		<CommandName>Form.Command.кнДобавитьСтрокиКомментария</CommandName>
+																		<ExtendedTooltip name="КомментарииЗаявкикнДобавитьСтрокиКомментарияРасширеннаяПодсказка" id="310"/>
+																	</Button>
+																</ChildItems>
+															</AutoCommandBar>
+															<ExtendedTooltip name="КомментарииЗаявкиРасширеннаяПодсказка" id="137"/>
+															<SearchStringAddition name="КомментарииЗаявкиСтрокаПоиска" id="138">
+																<AdditionSource>
+																	<Item>КомментарииЗаявки</Item>
+																	<Type>SearchStringRepresentation</Type>
+																</AdditionSource>
+																<ContextMenu name="КомментарииЗаявкиСтрокаПоискаКонтекстноеМеню" id="139"/>
+																<ExtendedTooltip name="КомментарииЗаявкиСтрокаПоискаРасширеннаяПодсказка" id="140"/>
+															</SearchStringAddition>
+															<ViewStatusAddition name="КомментарииЗаявкиСостояниеПросмотра" id="141">
+																<AdditionSource>
+																	<Item>КомментарииЗаявки</Item>
+																	<Type>ViewStatusRepresentation</Type>
+																</AdditionSource>
+																<ContextMenu name="КомментарииЗаявкиСостояниеПросмотраКонтекстноеМеню" id="142"/>
+																<ExtendedTooltip name="КомментарииЗаявкиСостояниеПросмотраРасширеннаяПодсказка" id="143"/>
+															</ViewStatusAddition>
+															<SearchControlAddition name="КомментарииЗаявкиУправлениеПоиском" id="144">
+																<AdditionSource>
+																	<Item>КомментарииЗаявки</Item>
+																	<Type>SearchControl</Type>
+																</AdditionSource>
+																<ContextMenu name="КомментарииЗаявкиУправлениеПоискомКонтекстноеМеню" id="145"/>
+																<ExtendedTooltip name="КомментарииЗаявкиУправлениеПоискомРасширеннаяПодсказка" id="146"/>
+															</SearchControlAddition>
+															<Events>
+																<Event name="BeforeAddRow">КомментарииЗаявкиПередНачаломДобавления</Event>
+															</Events>
+															<ChildItems>
+																<LabelField name="КомментарииЗаявкиНомерСтроки" id="147">
+																	<DataPath>Объект.КомментарииЗаявки.LineNumber</DataPath>
+																	<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
+																	<TitleBackColor>style:FormBackColor</TitleBackColor>
+																	<TitleLocation>None</TitleLocation>
+																	<EditMode>EnterOnInput</EditMode>
+																	<Width>2</Width>
+																	<HorizontalStretch>false</HorizontalStretch>
+																	<ContextMenu name="КомментарииЗаявкиНомерСтрокиКонтекстноеМеню" id="148"/>
+																	<ExtendedTooltip name="КомментарииЗаявкиНомерСтрокиРасширеннаяПодсказка" id="149"/>
+																</LabelField>
+																<CheckBoxField name="КомментарииЗаявкиОтправлять" id="191">
+																	<DataPath>Объект.КомментарииЗаявки.Отправлять</DataPath>
+																	<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
+																	<TitleBackColor>style:FormBackColor</TitleBackColor>
+																	<EditMode>EnterOnInput</EditMode>
+																	<CheckBoxType>Auto</CheckBoxType>
+																	<ContextMenu name="КомментарииЗаявкиОтправлятьКонтекстноеМеню" id="192"/>
+																	<ExtendedTooltip name="КомментарииЗаявкиОтправлятьРасширеннаяПодсказка" id="193"/>
+																</CheckBoxField>
+																<InputField name="КомментарииЗаявкиКомментарий" id="150">
+																	<DataPath>Объект.КомментарииЗаявки.Комментарий</DataPath>
+																	<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
+																	<TitleBackColor>style:FormBackColor</TitleBackColor>
+																	<EditMode>EnterOnInput</EditMode>
+																	<OpenButton>true</OpenButton>
+																	<ContextMenu name="КомментарииЗаявкиКомментарийКонтекстноеМеню" id="151"/>
+																	<ExtendedTooltip name="КомментарииЗаявкиКомментарийРасширеннаяПодсказка" id="152"/>
+																	<Events>
+																		<Event name="OnChange">КомментарииЗаявкиКомментарийПриИзменении</Event>
+																		<Event name="Opening">КомментарииЗаявкиКомментарийОткрытие</Event>
+																	</Events>
+																</InputField>
+																<InputField name="КомментарииЗаявкиДатаДобавления" id="163">
+																	<DataPath>Объект.КомментарииЗаявки.ДатаДобавления</DataPath>
+																	<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
+																	<TitleBackColor>style:FormBackColor</TitleBackColor>
+																	<EditMode>EnterOnInput</EditMode>
+																	<ContextMenu name="КомментарииЗаявкиДатаДобавленияКонтекстноеМеню" id="164"/>
+																	<ExtendedTooltip name="КомментарииЗаявкиДатаДобавленияРасширеннаяПодсказка" id="165"/>
+																</InputField>
+																<InputField name="КомментарииЗаявкиДатаОтправки" id="166">
+																	<DataPath>Объект.КомментарииЗаявки.ДатаОтправки</DataPath>
+																	<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
+																	<TitleBackColor>style:FormBackColor</TitleBackColor>
+																	<EditMode>EnterOnInput</EditMode>
+																	<ContextMenu name="КомментарииЗаявкиДатаОтправкиКонтекстноеМеню" id="167"/>
+																	<ExtendedTooltip name="КомментарииЗаявкиДатаОтправкиРасширеннаяПодсказка" id="168"/>
+																</InputField>
+																<InputField name="КомментарииЗаявкиID" id="184">
+																	<DataPath>Объект.КомментарииЗаявки.ID</DataPath>
+																	<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
+																	<TitleBackColor>style:FormBackColor</TitleBackColor>
+																	<EditMode>EnterOnInput</EditMode>
+																	<ContextMenu name="КомментарииЗаявкиIDКонтекстноеМеню" id="185"/>
+																	<ExtendedTooltip name="КомментарииЗаявкиIDРасширеннаяПодсказка" id="186"/>
+																</InputField>
+															</ChildItems>
+														</Table>
+													</ChildItems>
+												</UsualGroup>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+								<PictureDecoration name="Декорация2" id="96">
+									<Visible>false</Visible>
+									<VerticalStretch>true</VerticalStretch>
+									<ContextMenu name="Декорация2КонтекстноеМеню" id="97"/>
+									<ExtendedTooltip name="Декорация2РасширеннаяПодсказка" id="98"/>
+								</PictureDecoration>
+							</ChildItems>
+						</Page>
+					</ChildItems>
+				</Pages>
+				<UsualGroup name="ГруппаАвторОтветственный" id="298">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Автор и ответственный</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Автор ответственный</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаАвторОтветственныйРасширеннаяПодсказка" id="299"/>
+					<ChildItems>
+						<LabelField name="Автор" id="303">
+							<DataPath>Объект.Автор</DataPath>
+							<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
+							<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="АвторКонтекстноеМеню" id="304"/>
+							<ExtendedTooltip name="АвторРасширеннаяПодсказка" id="305"/>
+						</LabelField>
+					</ChildItems>
+				</UsualGroup>
+				<InputField name="Комментарий" id="221">
+					<DataPath>Объект.Комментарий</DataPath>
+					<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<Height>1</Height>
+					<AutoMaxHeight>false</AutoMaxHeight>
+					<MaxHeight>2</MaxHeight>
+					<HorizontalStretch>true</HorizontalStretch>
+					<VerticalStretch>false</VerticalStretch>
+					<MultiLine>true</MultiLine>
+					<ContextMenu name="КомментарийКонтекстноеМеню" id="222"/>
+					<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="223"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.ИпотечнаяЗаявка</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Объект.RegisterRecords</Field>
+			</UseAlways>
+		</Attribute>
+		<Attribute name="ДоступныеБанки" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Доступные банки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+			<Settings xsi:type="v8:TypeDescription">
+				<v8:Type>cfg:CatalogRef.Банки</v8:Type>
+			</Settings>
+		</Attribute>
+		<Attribute name="TGT" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>TGT</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>150</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ST" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ST</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>150</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Token" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Token</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>150</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="X_Auth_User" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>X_Auth_User</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>150</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПочтовыйАдресОтправителя" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Почтовый адрес отправителя</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>150</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ТолькоОтправкаПисем" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Только отправка писем</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="КонтактноеЛицо" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Клиент</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Клиенты</v8:Type>
+			</Type>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:use>false</dcsset:use>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>КомментарииЗаявки</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Объект.КомментарииЗаявки.ID</dcsset:left>
+						<dcsset:comparisonType>Filled</dcsset:comparisonType>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ТолькоПросмотр</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+	<Commands>
+		<Command name="СоздатьЧерновик" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать черновик</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать черновик</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СоздатьЧерновик</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="кнДобавитьФайл" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить файл</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить файл</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CreateListItem</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>кнДобавитьФайл</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="кнПросмотрФайла" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Просмотр файла</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Просмотр файла</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Find</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>кнПросмотрФайла</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="кнУдалитьФайл" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удалить файл</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удалить файл</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Delete</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>кнУдалитьФайл</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="кнОткрытьКарточкуФайла" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Редактировать файл</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть карточку файла</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Change</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>кнОткрытьКарточкуФайла</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Авторизация" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Авторизация</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Авторизация</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Авторизация</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ДобавитьДокуметнты" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить докуметнты</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить докуметнты</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ДобавитьДокуметнты</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ДобавитьКомментарии" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить комментарии</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить комментарии</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ДобавитьКомментарии</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ИзменитьСтатус" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Изменить статус</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Изменить статус</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ИзменитьСтатус</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ИзменитьЗаявку" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Изменить заявку</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Изменить заявку</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ИзменитьЗаявку</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПолучитьДанныеОЗаявке" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Получить данные заявки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Получить данные о заявке</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Shortcut>F5</Shortcut>
+			<Picture>
+				<xr:Ref>StdPicture.Refresh</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ПолучитьДанныеОЗаявке</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОбновитьФайлы" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить файлы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить файлы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Refresh</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ОбновитьФайлы</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ДоступныеАгенты" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Доступные агенты</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Доступные агенты</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ДоступныеАгенты</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="СкачатьФайл" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Скачать файл</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Скачать файл</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.SaveFile</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СкачатьФайл</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПолучитьОтделенияБанков" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Получить отделения банков</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Получить отделения банков</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПолучитьОтделенияБанков</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОтправитьЗаявкуOnLine" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отправить заявку</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отправить заявку on line</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОтправитьЗаявкуOnLine</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Отказ" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отказ клиента</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отказ</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Отказ</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПроверитьНастройкуПользователя" id="18">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проверить настройку пользователя</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проверить настройку пользователя</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПроверитьНастройкуПользователя</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Разлогиниться" id="19">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Разлогиниться</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Разлогиниться</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Разлогиниться</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="кнДобавитьСтрокиКомментария" id="20">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить комментарий</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить файл</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CreateListItem</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>кнДобавитьСтрокиКомментария</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+	<CommandInterface>
+		<NavigationPanel>
+			<Item>
+				<Command>InformationRegister.ИпотечныеЗаявкиВБанк.StandardCommand.OpenByRecorder</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+			</Item>
+		</NavigationPanel>
+	</CommandInterface>
+</Form>

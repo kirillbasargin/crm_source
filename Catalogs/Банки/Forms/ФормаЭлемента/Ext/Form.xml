@@ -1,0 +1,511 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.6">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаЗагрузитьОбновитьЛоготип" id="89">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ЗагрузитьОбновитьЛоготип</CommandName>
+				<ExtendedTooltip name="ФормаЗагрузитьОбновитьЛоготипРасширеннаяПодсказка" id="90"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="BeforeWrite">ПередЗаписью</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="BeforeWriteAtServer">ПередЗаписьюНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="Группа1" id="59">
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="60"/>
+			<ChildItems>
+				<InputField name="Наименование" id="1">
+					<DataPath>Объект.Description</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="НаименованиеКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="3"/>
+				</InputField>
+				<InputField name="СрокРешения" id="7">
+					<DataPath>Объект.СрокРешения</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="СрокРешенияКонтекстноеМеню" id="8"/>
+					<ExtendedTooltip name="СрокРешенияРасширеннаяПодсказка" id="9"/>
+				</InputField>
+				<CheckBoxField name="УчаствуетВАккредитации" id="4">
+					<DataPath>Объект.УчаствуетВАккредитации</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="УчаствуетВАккредитацииКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="УчаствуетВАккредитацииРасширеннаяПодсказка" id="6"/>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="ЛатинскоеНаименование" id="83">
+			<DataPath>Объект.ЛатинскоеНаименование</DataPath>
+			<ContextMenu name="ЛатинскоеНаименованиеКонтекстноеМеню" id="84"/>
+			<ExtendedTooltip name="ЛатинскоеНаименованиеРасширеннаяПодсказка" id="85"/>
+		</InputField>
+		<Pages name="Группа3" id="74">
+			<ExtendedTooltip name="Группа3РасширеннаяПодсказка" id="75"/>
+			<ChildItems>
+				<Page name="Группа4" id="76">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройка ипотеки</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="Группа4РасширеннаяПодсказка" id="77"/>
+					<ChildItems>
+						<Table name="ВидыКредита" id="25">
+							<Representation>List</Representation>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>Объект.ВидыКредита</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ВидыКредитаКонтекстноеМеню" id="26"/>
+							<AutoCommandBar name="ВидыКредитаКоманднаяПанель" id="27"/>
+							<ExtendedTooltip name="ВидыКредитаРасширеннаяПодсказка" id="28"/>
+							<SearchStringAddition name="ВидыКредитаСтрокаПоиска" id="29">
+								<AdditionSource>
+									<Item>ВидыКредита</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ВидыКредитаСтрокаПоискаКонтекстноеМеню" id="30"/>
+								<ExtendedTooltip name="ВидыКредитаСтрокаПоискаРасширеннаяПодсказка" id="31"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ВидыКредитаСостояниеПросмотра" id="32">
+								<AdditionSource>
+									<Item>ВидыКредита</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ВидыКредитаСостояниеПросмотраКонтекстноеМеню" id="33"/>
+								<ExtendedTooltip name="ВидыКредитаСостояниеПросмотраРасширеннаяПодсказка" id="34"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ВидыКредитаУправлениеПоиском" id="35">
+								<AdditionSource>
+									<Item>ВидыКредита</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ВидыКредитаУправлениеПоискомКонтекстноеМеню" id="36"/>
+								<ExtendedTooltip name="ВидыКредитаУправлениеПоискомРасширеннаяПодсказка" id="37"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="ВидыКредитаНомерСтроки" id="38">
+									<DataPath>Объект.ВидыКредита.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ВидыКредитаНомерСтрокиКонтекстноеМеню" id="39"/>
+									<ExtendedTooltip name="ВидыКредитаНомерСтрокиРасширеннаяПодсказка" id="40"/>
+								</LabelField>
+								<InputField name="ВидыКредитаВидКредита" id="41">
+									<DataPath>Объект.ВидыКредита.ВидКредита</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ВидыКредитаВидКредитаКонтекстноеМеню" id="42"/>
+									<ExtendedTooltip name="ВидыКредитаВидКредитаРасширеннаяПодсказка" id="43"/>
+								</InputField>
+								<InputField name="ВидыКредитаШагРасчетный" id="44">
+									<DataPath>Объект.ВидыКредита.ШагРасчетный</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ВидыКредитаШагРасчетныйКонтекстноеМеню" id="45"/>
+									<ExtendedTooltip name="ВидыКредитаШагРасчетныйРасширеннаяПодсказка" id="46"/>
+								</InputField>
+								<InputField name="ВидыКредитаКоэффициентПлатежаКДоходу" id="47">
+									<DataPath>Объект.ВидыКредита.КоэффициентПлатежаКДоходу</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ВидыКредитаКоэффициентПлатежаКДоходуКонтекстноеМеню" id="48"/>
+									<ExtendedTooltip name="ВидыКредитаКоэффициентПлатежаКДоходуРасширеннаяПодсказка" id="49"/>
+								</InputField>
+								<InputField name="ВидыКредитаШагКредитования" id="50">
+									<DataPath>Объект.ВидыКредита.ШагКредитования</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ВидыКредитаШагКредитованияКонтекстноеМеню" id="51"/>
+									<ExtendedTooltip name="ВидыКредитаШагКредитованияРасширеннаяПодсказка" id="52"/>
+								</InputField>
+								<InputField name="ВидыКредитаСкидка" id="53">
+									<DataPath>Объект.ВидыКредита.Скидка</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ВидыКредитаСкидкаКонтекстноеМеню" id="54"/>
+									<ExtendedTooltip name="ВидыКредитаСкидкаРасширеннаяПодсказка" id="55"/>
+								</InputField>
+								<CheckBoxField name="ВидыКредитаОсновной" id="56">
+									<DataPath>Объект.ВидыКредита.Основной</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ВидыКредитаОсновнойКонтекстноеМеню" id="57"/>
+									<ExtendedTooltip name="ВидыКредитаОсновнойРасширеннаяПодсказка" id="58"/>
+								</CheckBoxField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="Группа5" id="78">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Логотип</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="Группа5РасширеннаяПодсказка" id="79"/>
+					<ChildItems>
+						<PictureField name="АдресКартинки" id="86">
+							<DataPath>АдресКартинки</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Логотип банка</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Top</TitleLocation>
+							<ContextMenu name="АдресКартинкиКонтекстноеМеню" id="87"/>
+							<ExtendedTooltip name="АдресКартинкиРасширеннаяПодсказка" id="88"/>
+						</PictureField>
+					</ChildItems>
+				</Page>
+				<Page name="Группа7" id="96">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Расчет спец. программ</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="Группа7РасширеннаяПодсказка" id="97"/>
+					<ChildItems>
+						<Table name="МакетыРасчетаСпецПрограмм" id="98">
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>Объект.МакетыРасчетаСпецПрограмм</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="МакетыРасчетаСпецПрограммКонтекстноеМеню" id="99"/>
+							<AutoCommandBar name="МакетыРасчетаСпецПрограммКоманднаяПанель" id="100"/>
+							<ExtendedTooltip name="МакетыРасчетаСпецПрограммРасширеннаяПодсказка" id="101"/>
+							<SearchStringAddition name="МакетыРасчетаСпецПрограммСтрокаПоиска" id="102">
+								<AdditionSource>
+									<Item>МакетыРасчетаСпецПрограмм</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="МакетыРасчетаСпецПрограммСтрокаПоискаКонтекстноеМеню" id="103"/>
+								<ExtendedTooltip name="МакетыРасчетаСпецПрограммСтрокаПоискаРасширеннаяПодсказка" id="104"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="МакетыРасчетаСпецПрограммСостояниеПросмотра" id="105">
+								<AdditionSource>
+									<Item>МакетыРасчетаСпецПрограмм</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="МакетыРасчетаСпецПрограммСостояниеПросмотраКонтекстноеМеню" id="106"/>
+								<ExtendedTooltip name="МакетыРасчетаСпецПрограммСостояниеПросмотраРасширеннаяПодсказка" id="107"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="МакетыРасчетаСпецПрограммУправлениеПоиском" id="108">
+								<AdditionSource>
+									<Item>МакетыРасчетаСпецПрограмм</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="МакетыРасчетаСпецПрограммУправлениеПоискомКонтекстноеМеню" id="109"/>
+								<ExtendedTooltip name="МакетыРасчетаСпецПрограммУправлениеПоискомРасширеннаяПодсказка" id="110"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="МакетыРасчетаСпецПрограммНомерСтроки" id="111">
+									<DataPath>Объект.МакетыРасчетаСпецПрограмм.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="МакетыРасчетаСпецПрограммНомерСтрокиКонтекстноеМеню" id="112"/>
+									<ExtendedTooltip name="МакетыРасчетаСпецПрограммНомерСтрокиРасширеннаяПодсказка" id="113"/>
+								</LabelField>
+								<InputField name="МакетыРасчетаСпецПрограммСпецПрограмма" id="114">
+									<DataPath>Объект.МакетыРасчетаСпецПрограмм.СпецПрограмма</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="МакетыРасчетаСпецПрограммСпецПрограммаКонтекстноеМеню" id="115"/>
+									<ExtendedTooltip name="МакетыРасчетаСпецПрограммСпецПрограммаРасширеннаяПодсказка" id="116"/>
+								</InputField>
+								<InputField name="МакетыРасчетаСпецПрограммИмяМакетаСпецПрограммы" id="117">
+									<DataPath>Объект.МакетыРасчетаСпецПрограмм.ИмяМакетаСпецПрограммы</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ChoiceButton>true</ChoiceButton>
+									<OpenButton>true</OpenButton>
+									<ContextMenu name="МакетыРасчетаСпецПрограммИмяМакетаСпецПрограммыКонтекстноеМеню" id="118"/>
+									<ExtendedTooltip name="МакетыРасчетаСпецПрограммИмяМакетаСпецПрограммыРасширеннаяПодсказка" id="119"/>
+									<Events>
+										<Event name="StartChoice">МакетыРасчетаСпецПрограммИмяМакетаСпецПрограммыНачалоВыбора</Event>
+										<Event name="Opening">МакетыРасчетаСпецПрограммИмяМакетаСпецПрограммыОткрытие</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+		<UsualGroup name="Группа8" id="120">
+			<Visible>false</Visible>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа8РасширеннаяПодсказка" id="121"/>
+			<ChildItems>
+				<UsualGroup name="Группа6" id="91">
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="Группа6РасширеннаяПодсказка" id="92"/>
+					<ChildItems>
+						<InputField name="ИмяМакета" id="10">
+							<DataPath>Объект.ИмяМакета</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Имя макета расчета</v8:content>
+								</v8:item>
+							</Title>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<AutoMaxHeight>false</AutoMaxHeight>
+							<Wrap>false</Wrap>
+							<ChoiceButton>true</ChoiceButton>
+							<OpenButton>true</OpenButton>
+							<TextEdit>false</TextEdit>
+							<ContextMenu name="ИмяМакетаКонтекстноеМеню" id="11"/>
+							<ExtendedTooltip name="ИмяМакетаРасширеннаяПодсказка" id="12"/>
+							<Events>
+								<Event name="StartChoice">ИмяМакетаНачалоВыбора</Event>
+								<Event name="Opening">ИмяМакетаОткрытие</Event>
+							</Events>
+						</InputField>
+						<CheckBoxField name="ИпотечныеКаникулы" id="13">
+							<DataPath>Объект.ИпотечныеКаникулы</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<EditMode>EnterOnInput</EditMode>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ИпотечныеКаникулыКонтекстноеМеню" id="14"/>
+							<ExtendedTooltip name="ИпотечныеКаникулыРасширеннаяПодсказка" id="15"/>
+						</CheckBoxField>
+						<CheckBoxField name="ЛегкийСтартРайффайзенбанк" id="16">
+							<DataPath>Объект.ЛегкийСтартРайффайзенбанк</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<EditMode>EnterOnInput</EditMode>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ЛегкийСтартРайффайзенбанкКонтекстноеМеню" id="17"/>
+							<ExtendedTooltip name="ЛегкийСтартРайффайзенбанкРасширеннаяПодсказка" id="18"/>
+						</CheckBoxField>
+						<CheckBoxField name="СубсидированнаяСтавкаВТБ" id="93">
+							<DataPath>Объект.СубсидированнаяСтавкаВТБ</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="СубсидированнаяСтавкаВТБКонтекстноеМеню" id="94"/>
+							<ExtendedTooltip name="СубсидированнаяСтавкаВТБРасширеннаяПодсказка" id="95"/>
+						</CheckBoxField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="Группа2" id="61">
+					<Group>Horizontal</Group>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="62"/>
+					<ChildItems>
+						<CheckBoxField name="ИпотекаВТБ24СоСниженнойСтавкой" id="19">
+							<DataPath>Объект.ИпотекаВТБ24СоСниженнойСтавкой</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<EditMode>EnterOnInput</EditMode>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ИпотекаВТБ24СоСниженнойСтавкойКонтекстноеМеню" id="20"/>
+							<ExtendedTooltip name="ИпотекаВТБ24СоСниженнойСтавкойРасширеннаяПодсказка" id="21"/>
+						</CheckBoxField>
+						<InputField name="ИмяМакетаВТБ24СоСниженнойСтавкой" id="22">
+							<DataPath>Объект.ИмяМакетаВТБ24СоСниженнойСтавкой</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<Wrap>false</Wrap>
+							<ChoiceButton>true</ChoiceButton>
+							<OpenButton>true</OpenButton>
+							<ChooseType>false</ChooseType>
+							<TextEdit>false</TextEdit>
+							<ContextMenu name="ИмяМакетаВТБ24СоСниженнойСтавкойКонтекстноеМеню" id="23"/>
+							<ExtendedTooltip name="ИмяМакетаВТБ24СоСниженнойСтавкойРасширеннаяПодсказка" id="24"/>
+							<Events>
+								<Event name="StartChoice">ИмяМакетаВТБ24СоСниженнойСтавкойНачалоВыбора</Event>
+								<Event name="Opening">ИмяМакетаВТБ24СоСниженнойСтавкойОткрытие</Event>
+							</Events>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ДляАнкетирования" id="63">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Для анкетирования</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Для анкетирования</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Representation>StrongSeparation</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ДляАнкетированияРасширеннаяПодсказка" id="64"/>
+			<ChildItems>
+				<InputField name="ИмяМакетаАнкеты" id="65">
+					<DataPath>Объект.ИмяМакетаАнкеты</DataPath>
+					<ChoiceButton>true</ChoiceButton>
+					<ClearButton>true</ClearButton>
+					<OpenButton>true</OpenButton>
+					<ContextMenu name="ИмяМакетаАнкетыКонтекстноеМеню" id="66"/>
+					<ExtendedTooltip name="ИмяМакетаАнкетыРасширеннаяПодсказка" id="67"/>
+					<Events>
+						<Event name="StartChoice">ИмяМакетаАнкетыНачалоВыбора</Event>
+						<Event name="Opening">ИмяМакетаАнкетыОткрытие</Event>
+						<Event name="Clearing">ИмяМакетаАнкетыОчистка</Event>
+					</Events>
+				</InputField>
+				<InputField name="ПараметрыПодключения" id="68">
+					<DataPath>Объект.ПараметрыПодключения</DataPath>
+					<ContextMenu name="ПараметрыПодключенияКонтекстноеМеню" id="69"/>
+					<ExtendedTooltip name="ПараметрыПодключенияРасширеннаяПодсказка" id="70"/>
+				</InputField>
+				<InputField name="ИмяМакетаДопЛист" id="71">
+					<DataPath>Объект.ИмяМакетаДопЛист</DataPath>
+					<ChoiceButton>true</ChoiceButton>
+					<ClearButton>true</ClearButton>
+					<OpenButton>true</OpenButton>
+					<ContextMenu name="ИмяМакетаДопЛистКонтекстноеМеню" id="72"/>
+					<ExtendedTooltip name="ИмяМакетаДопЛистРасширеннаяПодсказка" id="73"/>
+					<Events>
+						<Event name="StartChoice">ИмяМакетаДопЛистНачалоВыбора</Event>
+						<Event name="Opening">ИмяМакетаДопЛистОткрытие</Event>
+						<Event name="Clearing">ИмяМакетаДопЛистОчистка</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.Банки</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<Columns>
+				<AdditionalColumns table="Объект.МакетыРасчетаСпецПрограмм">
+					<Column name="АдресМакетаРасчетаСпецПрограммы" id="1">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Адрес макета расчета спец. программы</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:string</v8:Type>
+							<v8:StringQualifiers>
+								<v8:Length>100</v8:Length>
+								<v8:AllowedLength>Variable</v8:AllowedLength>
+							</v8:StringQualifiers>
+						</Type>
+					</Column>
+				</AdditionalColumns>
+			</Columns>
+		</Attribute>
+		<Attribute name="АдресФайла" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес файла</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>100</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="АдресФайлаВТБ24СоСниженнойСтавкой" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес файла</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>100</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="АдресФайлаАнкеты" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес файла</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>100</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="АдресФайлаДоп" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес файла</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>100</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="АдресКартинки" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес картинки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ЗагрузитьОбновитьЛоготип" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить обновить логотип</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить обновить логотип</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ЗакончитьРедактированиеФайла</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ЗагрузитьОбновитьЛоготип</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

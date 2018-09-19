@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.6">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoCommandBar name="" id="-1"/>
+	<ChildItems>
+		<InputField name="Взаимодействие" id="1">
+			<DataPath>Запись.Взаимодействие</DataPath>
+			<ContextMenu name="ВзаимодействиеКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="ВзаимодействиеРасширеннаяПодсказка" id="3"/>
+		</InputField>
+		<InputField name="Номер" id="4">
+			<DataPath>Запись.Номер</DataPath>
+			<ContextMenu name="НомерКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="6"/>
+		</InputField>
+		<InputField name="ПериодВзаимодействия" id="7">
+			<DataPath>Запись.ПериодВзаимодействия</DataPath>
+			<ContextMenu name="ПериодВзаимодействияКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="ПериодВзаимодействияРасширеннаяПодсказка" id="9"/>
+		</InputField>
+		<InputField name="Ответственный" id="10">
+			<DataPath>Запись.Ответственный</DataPath>
+			<ContextMenu name="ОтветственныйКонтекстноеМеню" id="11"/>
+			<ExtendedTooltip name="ОтветственныйРасширеннаяПодсказка" id="12"/>
+		</InputField>
+		<InputField name="ГруппаОтветственного" id="13">
+			<DataPath>Запись.ГруппаОтветственного</DataPath>
+			<ContextMenu name="ГруппаОтветственногоКонтекстноеМеню" id="14"/>
+			<ExtendedTooltip name="ГруппаОтветственногоРасширеннаяПодсказка" id="15"/>
+		</InputField>
+		<InputField name="ТипВзаимодействия" id="16">
+			<DataPath>Запись.ТипВзаимодействия</DataPath>
+			<ContextMenu name="ТипВзаимодействияКонтекстноеМеню" id="17"/>
+			<ExtendedTooltip name="ТипВзаимодействияРасширеннаяПодсказка" id="18"/>
+		</InputField>
+		<InputField name="Предмет" id="19">
+			<DataPath>Запись.Предмет</DataPath>
+			<ContextMenu name="ПредметКонтекстноеМеню" id="20"/>
+			<ExtendedTooltip name="ПредметРасширеннаяПодсказка" id="21"/>
+		</InputField>
+		<InputField name="Проект" id="22">
+			<DataPath>Запись.Проект</DataPath>
+			<ContextMenu name="ПроектКонтекстноеМеню" id="23"/>
+			<ExtendedTooltip name="ПроектРасширеннаяПодсказка" id="24"/>
+		</InputField>
+		<InputField name="ДатаВзаимодействия" id="25">
+			<DataPath>Запись.ДатаВзаимодействия</DataPath>
+			<ContextMenu name="ДатаВзаимодействияКонтекстноеМеню" id="26"/>
+			<ExtendedTooltip name="ДатаВзаимодействияРасширеннаяПодсказка" id="27"/>
+		</InputField>
+		<InputField name="Статус" id="28">
+			<DataPath>Запись.Статус</DataPath>
+			<ContextMenu name="СтатусКонтекстноеМеню" id="29"/>
+			<ExtendedTooltip name="СтатусРасширеннаяПодсказка" id="30"/>
+		</InputField>
+		<InputField name="АктивностьВзаимодействия" id="31">
+			<DataPath>Запись.АктивностьВзаимодействия</DataPath>
+			<ContextMenu name="АктивностьВзаимодействияКонтекстноеМеню" id="32"/>
+			<ExtendedTooltip name="АктивностьВзаимодействияРасширеннаяПодсказка" id="33"/>
+		</InputField>
+		<InputField name="Контакт" id="34">
+			<DataPath>Запись.Контакт</DataPath>
+			<ContextMenu name="КонтактКонтекстноеМеню" id="35"/>
+			<ExtendedTooltip name="КонтактРасширеннаяПодсказка" id="36"/>
+		</InputField>
+		<InputField name="КонтактыСтрокой" id="37">
+			<DataPath>Запись.КонтактыСтрокой</DataPath>
+			<ContextMenu name="КонтактыСтрокойКонтекстноеМеню" id="38"/>
+			<ExtendedTooltip name="КонтактыСтрокойРасширеннаяПодсказка" id="39"/>
+		</InputField>
+		<InputField name="Офис" id="40">
+			<DataPath>Запись.Офис</DataPath>
+			<ContextMenu name="ОфисКонтекстноеМеню" id="41"/>
+			<ExtendedTooltip name="ОфисРасширеннаяПодсказка" id="42"/>
+		</InputField>
+		<InputField name="МестоПроведенияВстречи" id="43">
+			<DataPath>Запись.МестоПроведенияВстречи</DataPath>
+			<ContextMenu name="МестоПроведенияВстречиКонтекстноеМеню" id="44"/>
+			<ExtendedTooltip name="МестоПроведенияВстречиРасширеннаяПодсказка" id="45"/>
+		</InputField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Запись" id="1">
+			<Type>
+				<v8:Type>cfg:InformationRegisterRecordManager.Взаимодействия</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+</Form>

@@ -1,0 +1,4409 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.6">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Телефония</v8:content>
+		</v8:item>
+	</Title>
+	<Width>35</Width>
+	<AutoTitle>false</AutoTitle>
+	<VerticalSpacing>Half</VerticalSpacing>
+	<ChildItemsWidth>Equal</ChildItemsWidth>
+	<CommandBarLocation>None</CommandBarLocation>
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<CommandSet>
+		<ExcludedCommand>Cancel</ExcludedCommand>
+		<ExcludedCommand>Close</ExcludedCommand>
+		<ExcludedCommand>Help</ExcludedCommand>
+		<ExcludedCommand>Ignore</ExcludedCommand>
+		<ExcludedCommand>No</ExcludedCommand>
+		<ExcludedCommand>OK</ExcludedCommand>
+		<ExcludedCommand>RestoreValues</ExcludedCommand>
+		<ExcludedCommand>Retry</ExcludedCommand>
+		<ExcludedCommand>SaveValues</ExcludedCommand>
+		<ExcludedCommand>Yes</ExcludedCommand>
+	</CommandSet>
+	<ShowCloseButton>false</ShowCloseButton>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="ChoiceProcessing">ОбработкаВыбора</Event>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="ExternalEvent">ВнешнееСобытие</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="OnClose">ПриЗакрытии</Event>
+	</Events>
+	<ChildItems>
+		<CommandBar name="ГруппаМеню" id="104">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа меню</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа меню</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ExtendedTooltip name="ГруппаМенюExtendedTooltip" id="345"/>
+			<ChildItems>
+				<Popup name="ГруппаРегистрация" id="202">
+					<EnableContentChange>true</EnableContentChange>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>&lt;не указан&gt;</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Состояние телефонии</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Width>3</Width>
+					<Picture>
+						<xr:Ref>CommonPicture.Телефония_Отключена</xr:Ref>
+						<xr:LoadTransparent>false</xr:LoadTransparent>
+					</Picture>
+					<Representation>PictureAndText</Representation>
+					<ExtendedTooltip name="ГруппаРегистрацияExtendedTooltip" id="351"/>
+					<ChildItems>
+						<Button name="КнопкаПодключить" id="203">
+							<Type>CommandBarButton</Type>
+							<SkipOnInput>true</SkipOnInput>
+							<CommandName>Form.Command.КомандаПодключить</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Подключить</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="КнопкаПодключитьExtendedTooltip" id="352"/>
+						</Button>
+						<Button name="КнопкаОтключить" id="204">
+							<Type>CommandBarButton</Type>
+							<SkipOnInput>true</SkipOnInput>
+							<CommandName>Form.Command.КомандаОтключить</CommandName>
+							<ExtendedTooltip name="КнопкаОтключитьExtendedTooltip" id="353"/>
+						</Button>
+					</ChildItems>
+				</Popup>
+				<Button name="Настройки" id="105">
+					<Type>CommandBarButton</Type>
+					<Representation>PictureAndText</Representation>
+					<SkipOnInput>true</SkipOnInput>
+					<CommandName>Form.Command.КомандаНастройки</CommandName>
+					<ExtendedTooltip name="НастройкиExtendedTooltip" id="346"/>
+				</Button>
+				<Button name="ОПрограмме" id="332">
+					<Type>CommandBarButton</Type>
+					<Width>13</Width>
+					<CommandName>Form.Command.КомандаОПрограмме</CommandName>
+					<ExtendedTooltip name="ОПрограммеExtendedTooltip" id="348"/>
+				</Button>
+				<Button name="ЗаявкиНаЗвонокОбновитьФорму" id="1562">
+					<Type>CommandBarButton</Type>
+					<DefaultButton>true</DefaultButton>
+					<CommandName>Form.Command.ОбновитьФорму</CommandName>
+					<ExtendedTooltip name="ЗаявкиНаЗвонокОбновитьФормуРасширеннаяПодсказка" id="1563"/>
+				</Button>
+			</ChildItems>
+		</CommandBar>
+		<UsualGroup name="ГруппаЗаголовокТелефона" id="197">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа заголовок телефона</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа заголовок телефона</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаЗаголовокТелефонаExtendedTooltip" id="349"/>
+			<ChildItems>
+				<CommandBar name="ГруппаПанельРегистрации" id="201">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа панель регистрации</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа панель регистрации</v8:content>
+						</v8:item>
+					</ToolTip>
+					<HorizontalStretch>false</HorizontalStretch>
+					<VerticalStretch>false</VerticalStretch>
+					<ExtendedTooltip name="ГруппаПанельРегистрацииExtendedTooltip" id="350"/>
+				</CommandBar>
+				<LabelField name="Поле1" id="500">
+					<DataPath>НомерТелефона</DataPath>
+					<Visible>false</Visible>
+					<SkipOnInput>true</SkipOnInput>
+					<TitleLocation>None</TitleLocation>
+					<HorizontalAlign>Center</HorizontalAlign>
+					<VerticalAlign>Center</VerticalAlign>
+					<Font ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+					<ContextMenu name="Поле1КонтекстноеМеню" id="501"/>
+					<ExtendedTooltip name="Поле1РасширеннаяПодсказка" id="502"/>
+				</LabelField>
+				<LabelDecoration name="Декорация1" id="205">
+					<Visible>false</Visible>
+					<Width>3</Width>
+					<SkipOnInput>true</SkipOnInput>
+					<ContextMenu name="Декорация1КонтекстноеМеню" id="206"/>
+					<ExtendedTooltip name="Декорация1ExtendedTooltip" id="355"/>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаСервисныеФункцииВн" id="269">
+			<Visible>false</Visible>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа сервисные функции вн</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа сервисные функции вн</v8:content>
+				</v8:item>
+			</ToolTip>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Group>Horizontal</Group>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаСервисныеФункцииВнExtendedTooltip" id="356"/>
+			<ChildItems>
+				<LabelDecoration name="ГрСервФииСпейсер1" id="270">
+					<HorizontalStretch>true</HorizontalStretch>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content> </v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ГрСервФииСпейсер1КонтекстноеМеню" id="271"/>
+					<ExtendedTooltip name="ГрСервФииСпейсер1ExtendedTooltip" id="357"/>
+				</LabelDecoration>
+				<UsualGroup name="ГруппаСервисныеФункции" id="3">
+					<EnableContentChange>true</EnableContentChange>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа сервисные функции</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа сервисные функции</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Height>2</Height>
+					<HorizontalStretch>false</HorizontalStretch>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ChildItemsWidth>Equal</ChildItemsWidth>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаСервисныеФункцииExtendedTooltip" id="358"/>
+				</UsualGroup>
+				<LabelDecoration name="ГрСервФииСпейсер2" id="272">
+					<HorizontalStretch>true</HorizontalStretch>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content> </v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ГрСервФииСпейсер2КонтекстноеМеню" id="273"/>
+					<ExtendedTooltip name="ГрСервФииСпейсер2ExtendedTooltip" id="359"/>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаВерхТелефона" id="9">
+			<EnableContentChange>true</EnableContentChange>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа верх телефона</v8:content>
+				</v8:item>
+			</ToolTip>
+			<HorizontalStretch>true</HorizontalStretch>
+			<VerticalStretch>false</VerticalStretch>
+			<Group>Horizontal</Group>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаВерхТелефонаExtendedTooltip" id="360"/>
+			<ChildItems>
+				<Pages name="ГруппаЛиний" id="10">
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа линий</v8:content>
+						</v8:item>
+					</ToolTip>
+					<HorizontalStretch>true</HorizontalStretch>
+					<VerticalStretch>false</VerticalStretch>
+					<ExtendedTooltip name="ГруппаЛинийExtendedTooltip" id="361"/>
+					<Events>
+						<Event name="OnCurrentPageChange">ГруппаЛинийПриСменеСтраницы</Event>
+					</Events>
+					<ChildItems>
+						<Page name="Группа_Линия1" id="11">
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа линия1</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Picture>
+								<xr:Ref>CommonPicture.Телефония_СвободнаяЛиния</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
+							</Picture>
+							<ChildItemsWidth>Equal</ChildItemsWidth>
+							<BackColor>style:CRM_ЦветГруппыФормы</BackColor>
+							<ExtendedTooltip name="Группа_Линия1РасширеннаяПодсказка" id="362"/>
+							<ChildItems>
+								<UsualGroup name="ГруппаИнформацииЛинии1" id="12">
+									<EnableContentChange>true</EnableContentChange>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Состояние линии: свободно</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Horizontal</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаИнформацииЛинии1РасширеннаяПодсказка" id="363"/>
+									<ChildItems>
+										<LabelDecoration name="НадписьЛинииСпейсер1_1" id="13">
+											<HorizontalStretch>true</HorizontalStretch>
+											<SkipOnInput>true</SkipOnInput>
+											<ContextMenu name="НадписьЛинииСпейсер1_1КонтекстноеМеню" id="14"/>
+											<ExtendedTooltip name="НадписьЛинииСпейсер1_1РасширеннаяПодсказка" id="364"/>
+										</LabelDecoration>
+										<UsualGroup name="ГруппаНадписьЛинии1" id="327">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа надпись линии1</v8:content>
+												</v8:item>
+											</Title>
+											<HorizontalStretch>true</HorizontalStretch>
+											<Group>Vertical</Group>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаНадписьЛинии1РасширеннаяПодсказка" id="365"/>
+											<ChildItems>
+												<LabelDecoration name="СостояниеЗвонка_Линия1" id="15">
+													<HorizontalStretch>true</HorizontalStretch>
+													<SkipOnInput>true</SkipOnInput>
+													<Font ref="style:NormalTextFont" height="9" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Свободная линия</v8:content>
+														</v8:item>
+													</Title>
+													<HorizontalAlign>Center</HorizontalAlign>
+													<ContextMenu name="СостояниеЗвонка_Линия1КонтекстноеМеню" id="16"/>
+													<ExtendedTooltip name="СостояниеЗвонка_Линия1РасширеннаяПодсказка" id="366"/>
+													<Events>
+														<Event name="Click">СостояниеЗвонка_Линия1Нажатие</Event>
+													</Events>
+												</LabelDecoration>
+												<LabelDecoration name="НомерТелефона_Линия1" id="328">
+													<HorizontalStretch>true</HorizontalStretch>
+													<Font ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+													<Hyperlink>true</Hyperlink>
+													<HorizontalAlign>Center</HorizontalAlign>
+													<ContextMenu name="НомерТелефона_Линия1КонтекстноеМеню" id="329">
+														<ChildItems>
+															<Button name="НомерТелефона_Линия1_КонтекстСкопировать" id="1323">
+																<Type>CommandBarButton</Type>
+																<CommandName>Form.Command.НомерТелефона_Линия1_КонтекстСкопировать</CommandName>
+																<Title>
+																	<v8:item>
+																		<v8:lang>ru</v8:lang>
+																		<v8:content>Скопировать номер</v8:content>
+																	</v8:item>
+																</Title>
+																<ExtendedTooltip name="НомерТелефона_Линия1_КонтекстСкопироватьРасширеннаяПодсказка" id="1324"/>
+															</Button>
+														</ChildItems>
+													</ContextMenu>
+													<ExtendedTooltip name="НомерТелефона_Линия1РасширеннаяПодсказка" id="367"/>
+													<Events>
+														<Event name="Click">НомерТелефона_Линия1Нажатие</Event>
+													</Events>
+												</LabelDecoration>
+												<UsualGroup name="ГруппаКартинкаКонтакт_Линия1" id="1295">
+													<Visible>false</Visible>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Группа картинка контакт линия1</v8:content>
+														</v8:item>
+													</Title>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Группа картинка контакт линия1</v8:content>
+														</v8:item>
+													</ToolTip>
+													<HorizontalStretch>true</HorizontalStretch>
+													<GroupHorizontalAlign>Center</GroupHorizontalAlign>
+													<HorizontalSpacing>None</HorizontalSpacing>
+													<HorizontalAlign>Center</HorizontalAlign>
+													<Representation>None</Representation>
+													<ShowTitle>false</ShowTitle>
+													<ExtendedTooltip name="ГруппаКартинкаКонтакт_Линия1РасширеннаяПодсказка" id="1296"/>
+													<ChildItems>
+														<PictureDecoration name="КартинкаКонтакт_Линия1" id="1297">
+															<Width>2</Width>
+															<Height>1</Height>
+															<ContextMenu name="КартинкаКонтакт_Линия1КонтекстноеМеню" id="1298"/>
+															<ExtendedTooltip name="КартинкаКонтакт_Линия1РасширеннаяПодсказка" id="1299"/>
+															<Events>
+																<Event name="Click">КартинкаКонтакт_Линия1Нажатие</Event>
+															</Events>
+														</PictureDecoration>
+														<LabelDecoration name="Контакт_Линия1" id="330">
+															<Hyperlink>true</Hyperlink>
+															<HorizontalAlign>Center</HorizontalAlign>
+															<ContextMenu name="Контакт_Линия1КонтекстноеМеню" id="331"/>
+															<ExtendedTooltip name="Контакт_Линия1РасширеннаяПодсказка" id="368"/>
+															<Events>
+																<Event name="Click">Контакт_Линия1Нажатие</Event>
+															</Events>
+														</LabelDecoration>
+													</ChildItems>
+												</UsualGroup>
+												<UsualGroup name="ГруппаДлительностьРазговора_Линия1" id="1271">
+													<Visible>false</Visible>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Группа длительность разговора линия1</v8:content>
+														</v8:item>
+													</Title>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Группа длительность разговора линия1</v8:content>
+														</v8:item>
+													</ToolTip>
+													<GroupVerticalAlign>Center</GroupVerticalAlign>
+													<Group>Horizontal</Group>
+													<HorizontalAlign>Center</HorizontalAlign>
+													<Representation>None</Representation>
+													<ShowTitle>false</ShowTitle>
+													<ExtendedTooltip name="ГруппаДлительностьРазговора_Линия1РасширеннаяПодсказка" id="1272"/>
+													<ChildItems>
+														<LabelField name="ДлительностьРазговораСтрока_Линия1" id="1282">
+															<DataPath>ДлительностьРазговораСтрока_Линия1</DataPath>
+															<TitleLocation>None</TitleLocation>
+															<HorizontalAlign>Center</HorizontalAlign>
+															<GroupHorizontalAlign>Center</GroupHorizontalAlign>
+															<HorizontalStretch>true</HorizontalStretch>
+															<ContextMenu name="ДлительностьРазговораСтрока_Линия1КонтекстноеМеню" id="1283"/>
+															<ExtendedTooltip name="ДлительностьРазговораСтрока_Линия1РасширеннаяПодсказка" id="1284"/>
+														</LabelField>
+													</ChildItems>
+												</UsualGroup>
+											</ChildItems>
+										</UsualGroup>
+										<LabelDecoration name="НадписьЛинииСпейсер1_2" id="17">
+											<HorizontalStretch>true</HorizontalStretch>
+											<SkipOnInput>true</SkipOnInput>
+											<HorizontalAlign>Center</HorizontalAlign>
+											<ContextMenu name="НадписьЛинииСпейсер1_2КонтекстноеМеню" id="18"/>
+											<ExtendedTooltip name="НадписьЛинииСпейсер1_2РасширеннаяПодсказка" id="369"/>
+										</LabelDecoration>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаКнопокЛинии1" id="19">
+									<EnableContentChange>true</EnableContentChange>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа кнопок линии1</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа кнопок линии1</v8:content>
+										</v8:item>
+									</ToolTip>
+									<HorizontalStretch>true</HorizontalStretch>
+									<Group>Horizontal</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаКнопокЛинии1ExtendedTooltip" id="370"/>
+									<ChildItems>
+										<LabelDecoration name="ГруппаКнопокСпейсер1_1" id="20">
+											<Width>1</Width>
+											<HorizontalStretch>true</HorizontalStretch>
+											<VerticalStretch>false</VerticalStretch>
+											<SkipOnInput>true</SkipOnInput>
+											<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+											<HorizontalAlign>Center</HorizontalAlign>
+											<ContextMenu name="ГруппаКнопокСпейсер1_1КонтекстноеМеню" id="21"/>
+											<ExtendedTooltip name="ГруппаКнопокСпейсер1_1РасширеннаяПодсказка" id="371"/>
+										</LabelDecoration>
+										<UsualGroup name="ГруппаКнопкиУправления1" id="1196">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа кнопки управления1</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа кнопки управления1</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>Horizontal</Group>
+											<HorizontalSpacing>Half</HorizontalSpacing>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаКнопкиУправления1РасширеннаяПодсказка" id="1197"/>
+											<ChildItems>
+												<LabelDecoration name="ГруппаКнопокСпейсер1_5" id="1198">
+													<Width>1</Width>
+													<HorizontalStretch>true</HorizontalStretch>
+													<VerticalStretch>false</VerticalStretch>
+													<SkipOnInput>true</SkipOnInput>
+													<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+													<HorizontalAlign>Center</HorizontalAlign>
+													<ContextMenu name="ГруппаКнопокСпейсер1_5КонтекстноеМеню" id="1199"/>
+													<ExtendedTooltip name="ГруппаКнопокСпейсер1_5РасширеннаяПодсказка" id="1200"/>
+												</LabelDecoration>
+												<Button name="ОтветитьНаЗвонок1" id="1325">
+													<Type>UsualButton</Type>
+													<Width>4</Width>
+													<Height>1</Height>
+													<CommandName>Form.Command.ОтветитьНаЗвонок</CommandName>
+													<BackColor>#53D068</BackColor>
+													<Shape>Usual</Shape>
+													<ExtendedTooltip name="ОтветитьНаЗвонок1РасширеннаяПодсказка" id="1326"/>
+												</Button>
+												<Button name="ПеревестиЗвонокСОжиданием1" id="1201">
+													<Type>UsualButton</Type>
+													<Width>4</Width>
+													<Height>1</Height>
+													<CommandName>Form.Command.ПеревестиЗвонокСОжиданием</CommandName>
+													<BackColor>#53D068</BackColor>
+													<Shape>Usual</Shape>
+													<ExtendedTooltip name="ПеревестиЗвонокСОжиданием1РасширеннаяПодсказка" id="1202"/>
+												</Button>
+												<Button name="ПередатьЗвонок1" id="1205">
+													<Type>UsualButton</Type>
+													<Visible>false</Visible>
+													<Width>4</Width>
+													<Height>1</Height>
+													<CommandName>Form.Command.ПередатьЗвонок</CommandName>
+													<Shape>Usual</Shape>
+													<ExtendedTooltip name="ПередатьЗвонок1РасширеннаяПодсказка" id="1206"/>
+												</Button>
+												<Button name="УправляемаяПередачаЗвонка1" id="1207">
+													<Type>UsualButton</Type>
+													<Visible>false</Visible>
+													<Width>4</Width>
+													<Height>1</Height>
+													<CommandName>Form.Command.УправляемаяПередачаЗвонка</CommandName>
+													<Shape>Usual</Shape>
+													<ExtendedTooltip name="УправляемаяПередачаЗвонка1РасширеннаяПодсказка" id="1208"/>
+												</Button>
+												<Button name="УправляемуюПередачуВыполнить1" id="1209">
+													<Type>UsualButton</Type>
+													<Width>4</Width>
+													<Height>1</Height>
+													<CommandName>Form.Command.УправляемуюПередачуВыполнить</CommandName>
+													<Shape>Usual</Shape>
+													<ExtendedTooltip name="УправляемуюПередачуВыполнить1РасширеннаяПодсказка" id="1210"/>
+												</Button>
+												<Button name="ПеревестиЗвонокБезОжидания1" id="1203">
+													<Type>UsualButton</Type>
+													<Visible>false</Visible>
+													<Width>4</Width>
+													<Height>1</Height>
+													<CommandName>Form.Command.ПеревестиЗвонокБезОжидания</CommandName>
+													<Shape>Usual</Shape>
+													<ExtendedTooltip name="ПеревестиЗвонокБезОжидания1РасширеннаяПодсказка" id="1204"/>
+												</Button>
+												<Button name="УправляемуюПередачуПрервать1" id="1211">
+													<Type>UsualButton</Type>
+													<Visible>false</Visible>
+													<Width>4</Width>
+													<Height>1</Height>
+													<CommandName>Form.Command.УправляемуюПередачуПрервать</CommandName>
+													<Shape>Usual</Shape>
+													<ExtendedTooltip name="УправляемуюПередачуПрервать1РасширеннаяПодсказка" id="1212"/>
+												</Button>
+												<Button name="УдержаниеЗвонка1" id="1337">
+													<Type>UsualButton</Type>
+													<Width>4</Width>
+													<Height>1</Height>
+													<CommandName>Form.Command.УдержаниеЗвонка</CommandName>
+													<BackColor>#0CC7AF</BackColor>
+													<Shape>Usual</Shape>
+													<ExtendedTooltip name="УдержаниеЗвонка1РасширеннаяПодсказка" id="1338"/>
+												</Button>
+												<Button name="ОтклонитьЗвонок1" id="1331">
+													<Type>UsualButton</Type>
+													<Width>4</Width>
+													<Height>1</Height>
+													<CommandName>Form.Command.ОтклонитьЗвонок</CommandName>
+													<BackColor>#DD524F</BackColor>
+													<Shape>Usual</Shape>
+													<ExtendedTooltip name="ОтклонитьЗвонок1РасширеннаяПодсказка" id="1332"/>
+												</Button>
+												<Button name="ОбновитьСосоянияЛиний1" id="1215">
+													<Type>UsualButton</Type>
+													<Width>4</Width>
+													<Height>1</Height>
+													<CommandName>Form.Command.ОбновитьСосоянияЛиний</CommandName>
+													<Shape>Usual</Shape>
+													<ExtendedTooltip name="ОбновитьСосоянияЛиний1РасширеннаяПодсказка" id="1216"/>
+												</Button>
+												<LabelDecoration name="ГруппаКнопокСпейсер1_6" id="1217">
+													<Width>1</Width>
+													<HorizontalStretch>true</HorizontalStretch>
+													<VerticalStretch>false</VerticalStretch>
+													<SkipOnInput>true</SkipOnInput>
+													<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+													<HorizontalAlign>Center</HorizontalAlign>
+													<ContextMenu name="ГруппаКнопокСпейсер1_6КонтекстноеМеню" id="1218"/>
+													<ExtendedTooltip name="ГруппаКнопокСпейсер1_6РасширеннаяПодсказка" id="1219"/>
+												</LabelDecoration>
+											</ChildItems>
+										</UsualGroup>
+										<LabelDecoration name="ГруппаКнопокСпейсер1_2" id="25">
+											<Width>1</Width>
+											<HorizontalStretch>true</HorizontalStretch>
+											<VerticalStretch>false</VerticalStretch>
+											<SkipOnInput>true</SkipOnInput>
+											<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+											<HorizontalAlign>Center</HorizontalAlign>
+											<ContextMenu name="ГруппаКнопокСпейсер1_2КонтекстноеМеню" id="26"/>
+											<ExtendedTooltip name="ГруппаКнопокСпейсер1_2РасширеннаяПодсказка" id="377"/>
+										</LabelDecoration>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</Page>
+						<Page name="Группа_Линия2" id="953">
+							<Visible>false</Visible>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа линия2</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Picture>
+								<xr:Ref>CommonPicture.Телефония_СвободнаяЛиния</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
+							</Picture>
+							<ChildItemsWidth>Equal</ChildItemsWidth>
+							<BackColor>style:CRM_ЦветГруппыФормы</BackColor>
+							<ExtendedTooltip name="Группа_Линия2РасширеннаяПодсказка" id="954"/>
+							<ChildItems>
+								<UsualGroup name="ГруппаИнформацииЛинии2" id="955">
+									<EnableContentChange>true</EnableContentChange>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа информации линии1</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа информации линии1</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Horizontal</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаИнформацииЛинии2РасширеннаяПодсказка" id="956"/>
+									<ChildItems>
+										<LabelDecoration name="НадписьЛинииСпейсер2_1" id="957">
+											<HorizontalStretch>true</HorizontalStretch>
+											<SkipOnInput>true</SkipOnInput>
+											<ContextMenu name="НадписьЛинииСпейсер2_1КонтекстноеМеню" id="958"/>
+											<ExtendedTooltip name="НадписьЛинииСпейсер2_1РасширеннаяПодсказка" id="959"/>
+										</LabelDecoration>
+										<UsualGroup name="ГруппаНадписьЛинии2" id="960">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа надпись линии</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа надпись линии</v8:content>
+												</v8:item>
+											</ToolTip>
+											<HorizontalStretch>true</HorizontalStretch>
+											<Group>Vertical</Group>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаНадписьЛинии2РасширеннаяПодсказка" id="961"/>
+											<ChildItems>
+												<LabelDecoration name="СостояниеЗвонка_Линия2" id="1123">
+													<HorizontalStretch>true</HorizontalStretch>
+													<SkipOnInput>true</SkipOnInput>
+													<Font ref="style:NormalTextFont" height="9" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Свободная линия</v8:content>
+														</v8:item>
+													</Title>
+													<HorizontalAlign>Center</HorizontalAlign>
+													<ContextMenu name="СостояниеЗвонка_Линия2КонтекстноеМеню" id="1124"/>
+													<ExtendedTooltip name="СостояниеЗвонка_Линия2РасширеннаяПодсказка" id="1125"/>
+													<Events>
+														<Event name="Click">СостояниеЗвонка_Линия1Нажатие</Event>
+													</Events>
+												</LabelDecoration>
+												<LabelDecoration name="НомерТелефона_Линия2" id="1126">
+													<HorizontalStretch>true</HorizontalStretch>
+													<Font ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+													<Hyperlink>true</Hyperlink>
+													<HorizontalAlign>Center</HorizontalAlign>
+													<ContextMenu name="НомерТелефона_Линия2КонтекстноеМеню" id="1127"/>
+													<ExtendedTooltip name="НомерТелефона_Линия2РасширеннаяПодсказка" id="1128"/>
+													<Events>
+														<Event name="Click">НомерТелефона_Линия1Нажатие</Event>
+													</Events>
+												</LabelDecoration>
+												<UsualGroup name="ГруппаКартинкаКонтакт_Линия2" id="1300">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Группа картинка контакт линия1</v8:content>
+														</v8:item>
+													</Title>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Группа картинка контакт линия1</v8:content>
+														</v8:item>
+													</ToolTip>
+													<HorizontalStretch>true</HorizontalStretch>
+													<GroupHorizontalAlign>Center</GroupHorizontalAlign>
+													<HorizontalSpacing>None</HorizontalSpacing>
+													<HorizontalAlign>Center</HorizontalAlign>
+													<Representation>None</Representation>
+													<ShowTitle>false</ShowTitle>
+													<ExtendedTooltip name="ГруппаКартинкаКонтакт_Линия2РасширеннаяПодсказка" id="1301"/>
+													<ChildItems>
+														<PictureDecoration name="КартинкаКонтакт_Линия2" id="1302">
+															<Width>2</Width>
+															<Height>1</Height>
+															<ContextMenu name="КартинкаКонтакт_Линия2КонтекстноеМеню" id="1303"/>
+															<ExtendedTooltip name="КартинкаКонтакт_Линия2РасширеннаяПодсказка" id="1304"/>
+															<Events>
+																<Event name="Click">КартинкаКонтакт_Линия1Нажатие</Event>
+															</Events>
+														</PictureDecoration>
+														<LabelDecoration name="Контакт_Линия2" id="1305">
+															<Hyperlink>true</Hyperlink>
+															<HorizontalAlign>Center</HorizontalAlign>
+															<ContextMenu name="Контакт_Линия2КонтекстноеМеню" id="1306"/>
+															<ExtendedTooltip name="Контакт_Линия2РасширеннаяПодсказка" id="1307"/>
+															<Events>
+																<Event name="Click">Контакт_Линия1Нажатие</Event>
+															</Events>
+														</LabelDecoration>
+													</ChildItems>
+												</UsualGroup>
+												<UsualGroup name="ГруппаДлительностьРазговора_Линия2" id="1285">
+													<Visible>false</Visible>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Группа длительность разговора линия2</v8:content>
+														</v8:item>
+													</Title>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Группа длительность разговора линия1</v8:content>
+														</v8:item>
+													</ToolTip>
+													<GroupVerticalAlign>Center</GroupVerticalAlign>
+													<Group>Horizontal</Group>
+													<HorizontalAlign>Center</HorizontalAlign>
+													<Representation>None</Representation>
+													<ShowTitle>false</ShowTitle>
+													<ExtendedTooltip name="ГруппаДлительностьРазговора_Линия2РасширеннаяПодсказка" id="1286"/>
+													<ChildItems>
+														<LabelField name="ДлительностьРазговораСтрока_Линия2" id="1287">
+															<DataPath>ДлительностьРазговораСтрока_Линия2</DataPath>
+															<TitleLocation>None</TitleLocation>
+															<HorizontalAlign>Center</HorizontalAlign>
+															<GroupHorizontalAlign>Center</GroupHorizontalAlign>
+															<HorizontalStretch>true</HorizontalStretch>
+															<ContextMenu name="ДлительностьРазговораСтрока_Линия2КонтекстноеМеню" id="1288"/>
+															<ExtendedTooltip name="ДлительностьРазговораСтрока_Линия2РасширеннаяПодсказка" id="1289"/>
+														</LabelField>
+													</ChildItems>
+												</UsualGroup>
+											</ChildItems>
+										</UsualGroup>
+										<LabelDecoration name="НадписьЛинииСпейсер2_2" id="971">
+											<HorizontalStretch>true</HorizontalStretch>
+											<SkipOnInput>true</SkipOnInput>
+											<HorizontalAlign>Center</HorizontalAlign>
+											<ContextMenu name="НадписьЛинииСпейсер2_2КонтекстноеМеню" id="972"/>
+											<ExtendedTooltip name="НадписьЛинииСпейсер2_2РасширеннаяПодсказка" id="973"/>
+										</LabelDecoration>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаКнопокЛинии2" id="974">
+									<EnableContentChange>true</EnableContentChange>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа кнопок линии1</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа кнопок линии1</v8:content>
+										</v8:item>
+									</ToolTip>
+									<HorizontalStretch>true</HorizontalStretch>
+									<Group>Horizontal</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаКнопокЛинии2РасширеннаяПодсказка" id="975"/>
+									<ChildItems>
+										<LabelDecoration name="ГруппаКнопокСпейсер2_1" id="976">
+											<Width>1</Width>
+											<HorizontalStretch>true</HorizontalStretch>
+											<VerticalStretch>false</VerticalStretch>
+											<SkipOnInput>true</SkipOnInput>
+											<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+											<HorizontalAlign>Center</HorizontalAlign>
+											<ContextMenu name="ГруппаКнопокСпейсер2_1КонтекстноеМеню" id="977"/>
+											<ExtendedTooltip name="ГруппаКнопокСпейсер2_1РасширеннаяПодсказка" id="978"/>
+										</LabelDecoration>
+										<UsualGroup name="ГруппаКнопкиУправления2" id="1220">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа кнопки управления1</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа кнопки управления1</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>Horizontal</Group>
+											<HorizontalSpacing>Half</HorizontalSpacing>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаКнопкиУправления2РасширеннаяПодсказка" id="1221"/>
+											<ChildItems>
+												<LabelDecoration name="ГруппаКнопокСпейсер1_7" id="1222">
+													<Width>1</Width>
+													<HorizontalStretch>true</HorizontalStretch>
+													<VerticalStretch>false</VerticalStretch>
+													<SkipOnInput>true</SkipOnInput>
+													<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+													<HorizontalAlign>Center</HorizontalAlign>
+													<ContextMenu name="ГруппаКнопокСпейсер1_7КонтекстноеМеню" id="1223"/>
+													<ExtendedTooltip name="ГруппаКнопокСпейсер1_7РасширеннаяПодсказка" id="1224"/>
+												</LabelDecoration>
+												<Button name="ОтветитьНаЗвонок2" id="1327">
+													<Type>UsualButton</Type>
+													<Width>4</Width>
+													<Height>1</Height>
+													<CommandName>Form.Command.ОтветитьНаЗвонок</CommandName>
+													<BackColor>#53D068</BackColor>
+													<ExtendedTooltip name="ОтветитьНаЗвонок2РасширеннаяПодсказка" id="1328"/>
+												</Button>
+												<Button name="ПеревестиЗвонокСОжиданием2" id="1225">
+													<Type>UsualButton</Type>
+													<Width>4</Width>
+													<Height>1</Height>
+													<CommandName>Form.Command.ПеревестиЗвонокСОжиданием</CommandName>
+													<BackColor>#53D068</BackColor>
+													<ExtendedTooltip name="ПеревестиЗвонокСОжиданием2РасширеннаяПодсказка" id="1226"/>
+												</Button>
+												<Button name="ПередатьЗвонок2" id="1229">
+													<Type>UsualButton</Type>
+													<Visible>false</Visible>
+													<Width>4</Width>
+													<Height>1</Height>
+													<CommandName>Form.Command.ПередатьЗвонок</CommandName>
+													<ExtendedTooltip name="ПередатьЗвонок2РасширеннаяПодсказка" id="1230"/>
+												</Button>
+												<Button name="УправляемаяПередачаЗвонка2" id="1231">
+													<Type>UsualButton</Type>
+													<Visible>false</Visible>
+													<Width>4</Width>
+													<Height>1</Height>
+													<CommandName>Form.Command.УправляемаяПередачаЗвонка</CommandName>
+													<ExtendedTooltip name="УправляемаяПередачаЗвонка2РасширеннаяПодсказка" id="1232"/>
+												</Button>
+												<Button name="УправляемуюПередачуВыполнить2" id="1233">
+													<Type>UsualButton</Type>
+													<Width>4</Width>
+													<Height>1</Height>
+													<CommandName>Form.Command.УправляемуюПередачуВыполнить</CommandName>
+													<ExtendedTooltip name="УправляемуюПередачуВыполнить2РасширеннаяПодсказка" id="1234"/>
+												</Button>
+												<Button name="ПеревестиЗвонокБезОжидания2" id="1227">
+													<Type>UsualButton</Type>
+													<Visible>false</Visible>
+													<Width>4</Width>
+													<Height>1</Height>
+													<CommandName>Form.Command.ПеревестиЗвонокБезОжидания</CommandName>
+													<ExtendedTooltip name="ПеревестиЗвонокБезОжидания2РасширеннаяПодсказка" id="1228"/>
+												</Button>
+												<Button name="УправляемуюПередачуПрервать2" id="1235">
+													<Type>UsualButton</Type>
+													<Visible>false</Visible>
+													<Width>4</Width>
+													<Height>1</Height>
+													<CommandName>Form.Command.УправляемуюПередачуПрервать</CommandName>
+													<ExtendedTooltip name="УправляемуюПередачуПрервать2РасширеннаяПодсказка" id="1236"/>
+												</Button>
+												<Button name="УдержаниеЗвонка2" id="1339">
+													<Type>UsualButton</Type>
+													<Width>4</Width>
+													<Height>1</Height>
+													<CommandName>Form.Command.УдержаниеЗвонка</CommandName>
+													<BackColor>#0CC7AF</BackColor>
+													<ExtendedTooltip name="УдержаниеЗвонка2РасширеннаяПодсказка" id="1340"/>
+												</Button>
+												<Button name="ОтклонитьЗвонок2" id="1333">
+													<Type>UsualButton</Type>
+													<Width>4</Width>
+													<Height>1</Height>
+													<CommandName>Form.Command.ОтклонитьЗвонок</CommandName>
+													<BackColor>#DD524F</BackColor>
+													<ExtendedTooltip name="ОтклонитьЗвонок2РасширеннаяПодсказка" id="1334"/>
+												</Button>
+												<Button name="ОбновитьСосоянияЛиний2" id="1239">
+													<Type>UsualButton</Type>
+													<Width>4</Width>
+													<Height>1</Height>
+													<CommandName>Form.Command.ОбновитьСосоянияЛиний</CommandName>
+													<ExtendedTooltip name="ОбновитьСосоянияЛиний2РасширеннаяПодсказка" id="1240"/>
+												</Button>
+												<LabelDecoration name="ГруппаКнопокСпейсер1_8" id="1241">
+													<Width>1</Width>
+													<HorizontalStretch>true</HorizontalStretch>
+													<VerticalStretch>false</VerticalStretch>
+													<SkipOnInput>true</SkipOnInput>
+													<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+													<HorizontalAlign>Center</HorizontalAlign>
+													<ContextMenu name="ГруппаКнопокСпейсер1_8КонтекстноеМеню" id="1242"/>
+													<ExtendedTooltip name="ГруппаКнопокСпейсер1_8РасширеннаяПодсказка" id="1243"/>
+												</LabelDecoration>
+											</ChildItems>
+										</UsualGroup>
+										<LabelDecoration name="ГруппаКнопокСпейсер2_2" id="987">
+											<Width>1</Width>
+											<HorizontalStretch>true</HorizontalStretch>
+											<VerticalStretch>false</VerticalStretch>
+											<SkipOnInput>true</SkipOnInput>
+											<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+											<HorizontalAlign>Center</HorizontalAlign>
+											<ContextMenu name="ГруппаКнопокСпейсер2_2КонтекстноеМеню" id="988"/>
+											<ExtendedTooltip name="ГруппаКнопокСпейсер2_2РасширеннаяПодсказка" id="989"/>
+										</LabelDecoration>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</Page>
+						<Page name="Группа_Линия3" id="990">
+							<Visible>false</Visible>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа линия3</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Picture>
+								<xr:Ref>CommonPicture.Телефония_СвободнаяЛиния</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
+							</Picture>
+							<ChildItemsWidth>Equal</ChildItemsWidth>
+							<BackColor>style:CRM_ЦветГруппыФормы</BackColor>
+							<ExtendedTooltip name="Группа_Линия3РасширеннаяПодсказка" id="991"/>
+							<ChildItems>
+								<UsualGroup name="ГруппаИнформацииЛинии3" id="992">
+									<EnableContentChange>true</EnableContentChange>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа информации линии1</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа информации линии1</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Horizontal</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаИнформацииЛинии3РасширеннаяПодсказка" id="993"/>
+									<ChildItems>
+										<LabelDecoration name="НадписьЛинииСпейсер3_1" id="994">
+											<HorizontalStretch>true</HorizontalStretch>
+											<SkipOnInput>true</SkipOnInput>
+											<ContextMenu name="НадписьЛинииСпейсер3_1КонтекстноеМеню" id="995"/>
+											<ExtendedTooltip name="НадписьЛинииСпейсер3_1РасширеннаяПодсказка" id="996"/>
+										</LabelDecoration>
+										<UsualGroup name="ГруппаНадписьЛинии3" id="997">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа надпись линии</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа надпись линии</v8:content>
+												</v8:item>
+											</ToolTip>
+											<HorizontalStretch>true</HorizontalStretch>
+											<Group>Vertical</Group>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаНадписьЛинии3РасширеннаяПодсказка" id="998"/>
+											<ChildItems>
+												<LabelDecoration name="СостояниеЗвонка_Линия3" id="1132">
+													<HorizontalStretch>true</HorizontalStretch>
+													<SkipOnInput>true</SkipOnInput>
+													<Font ref="style:NormalTextFont" height="9" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Свободная линия</v8:content>
+														</v8:item>
+													</Title>
+													<HorizontalAlign>Center</HorizontalAlign>
+													<ContextMenu name="СостояниеЗвонка_Линия3КонтекстноеМеню" id="1133"/>
+													<ExtendedTooltip name="СостояниеЗвонка_Линия3РасширеннаяПодсказка" id="1134"/>
+													<Events>
+														<Event name="Click">СостояниеЗвонка_Линия1Нажатие</Event>
+													</Events>
+												</LabelDecoration>
+												<LabelDecoration name="НомерТелефона_Линия3" id="1135">
+													<HorizontalStretch>true</HorizontalStretch>
+													<Font ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+													<Hyperlink>true</Hyperlink>
+													<HorizontalAlign>Center</HorizontalAlign>
+													<ContextMenu name="НомерТелефона_Линия3КонтекстноеМеню" id="1136"/>
+													<ExtendedTooltip name="НомерТелефона_Линия3РасширеннаяПодсказка" id="1137"/>
+													<Events>
+														<Event name="Click">НомерТелефона_Линия1Нажатие</Event>
+													</Events>
+												</LabelDecoration>
+												<UsualGroup name="ГруппаКартинкаКонтакт_Линия3" id="1308">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Группа картинка контакт линия1</v8:content>
+														</v8:item>
+													</Title>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Группа картинка контакт линия1</v8:content>
+														</v8:item>
+													</ToolTip>
+													<HorizontalStretch>true</HorizontalStretch>
+													<GroupHorizontalAlign>Center</GroupHorizontalAlign>
+													<HorizontalSpacing>None</HorizontalSpacing>
+													<HorizontalAlign>Center</HorizontalAlign>
+													<Representation>None</Representation>
+													<ShowTitle>false</ShowTitle>
+													<ExtendedTooltip name="ГруппаКартинкаКонтакт_Линия3РасширеннаяПодсказка" id="1309"/>
+													<ChildItems>
+														<PictureDecoration name="КартинкаКонтакт_Линия3" id="1310">
+															<Width>2</Width>
+															<Height>1</Height>
+															<ContextMenu name="КартинкаКонтакт_Линия3КонтекстноеМеню" id="1311"/>
+															<ExtendedTooltip name="КартинкаКонтакт_Линия3РасширеннаяПодсказка" id="1312"/>
+															<Events>
+																<Event name="Click">КартинкаКонтакт_Линия1Нажатие</Event>
+															</Events>
+														</PictureDecoration>
+														<LabelDecoration name="Контакт_Линия3" id="1313">
+															<Hyperlink>true</Hyperlink>
+															<HorizontalAlign>Center</HorizontalAlign>
+															<ContextMenu name="Контакт_Линия3КонтекстноеМеню" id="1314"/>
+															<ExtendedTooltip name="Контакт_Линия3РасширеннаяПодсказка" id="1315"/>
+															<Events>
+																<Event name="Click">Контакт_Линия1Нажатие</Event>
+															</Events>
+														</LabelDecoration>
+													</ChildItems>
+												</UsualGroup>
+												<UsualGroup name="ГруппаДлительностьРазговора_Линия3" id="1290">
+													<Visible>false</Visible>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Группа длительность разговора линия3</v8:content>
+														</v8:item>
+													</Title>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Группа длительность разговора линия1</v8:content>
+														</v8:item>
+													</ToolTip>
+													<GroupVerticalAlign>Center</GroupVerticalAlign>
+													<Group>Horizontal</Group>
+													<HorizontalAlign>Center</HorizontalAlign>
+													<Representation>None</Representation>
+													<ShowTitle>false</ShowTitle>
+													<ExtendedTooltip name="ГруппаДлительностьРазговора_Линия3РасширеннаяПодсказка" id="1291"/>
+													<ChildItems>
+														<LabelField name="ДлительностьРазговораСтрока_Линия3" id="1292">
+															<DataPath>ДлительностьРазговораСтрока_Линия3</DataPath>
+															<TitleLocation>None</TitleLocation>
+															<HorizontalAlign>Center</HorizontalAlign>
+															<GroupHorizontalAlign>Center</GroupHorizontalAlign>
+															<HorizontalStretch>true</HorizontalStretch>
+															<ContextMenu name="ДлительностьРазговораСтрока_Линия3КонтекстноеМеню" id="1293"/>
+															<ExtendedTooltip name="ДлительностьРазговораСтрока_Линия3РасширеннаяПодсказка" id="1294"/>
+														</LabelField>
+													</ChildItems>
+												</UsualGroup>
+											</ChildItems>
+										</UsualGroup>
+										<LabelDecoration name="НадписьЛинииСпейсер3_2" id="1008">
+											<HorizontalStretch>true</HorizontalStretch>
+											<SkipOnInput>true</SkipOnInput>
+											<HorizontalAlign>Center</HorizontalAlign>
+											<ContextMenu name="НадписьЛинииСпейсер3_2КонтекстноеМеню" id="1009"/>
+											<ExtendedTooltip name="НадписьЛинииСпейсер3_2РасширеннаяПодсказка" id="1010"/>
+										</LabelDecoration>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаКнопокЛинии3" id="1011">
+									<EnableContentChange>true</EnableContentChange>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа кнопок линии1</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа кнопок линии1</v8:content>
+										</v8:item>
+									</ToolTip>
+									<HorizontalStretch>true</HorizontalStretch>
+									<Group>Horizontal</Group>
+									<HorizontalSpacing>None</HorizontalSpacing>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаКнопокЛинии3РасширеннаяПодсказка" id="1012"/>
+									<ChildItems>
+										<LabelDecoration name="ГруппаКнопокСпейсер3_1" id="1013">
+											<Width>1</Width>
+											<HorizontalStretch>true</HorizontalStretch>
+											<VerticalStretch>false</VerticalStretch>
+											<SkipOnInput>true</SkipOnInput>
+											<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+											<HorizontalAlign>Center</HorizontalAlign>
+											<ContextMenu name="ГруппаКнопокСпейсер3_1КонтекстноеМеню" id="1014"/>
+											<ExtendedTooltip name="ГруппаКнопокСпейсер3_1РасширеннаяПодсказка" id="1015"/>
+										</LabelDecoration>
+										<UsualGroup name="ГруппаКнопкиУправления3" id="1244">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа кнопки управления1</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа кнопки управления1</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>Horizontal</Group>
+											<HorizontalSpacing>Half</HorizontalSpacing>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаКнопкиУправления3РасширеннаяПодсказка" id="1245"/>
+											<ChildItems>
+												<LabelDecoration name="ГруппаКнопокСпейсер1_9" id="1246">
+													<Width>1</Width>
+													<HorizontalStretch>true</HorizontalStretch>
+													<VerticalStretch>false</VerticalStretch>
+													<SkipOnInput>true</SkipOnInput>
+													<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+													<HorizontalAlign>Center</HorizontalAlign>
+													<ContextMenu name="ГруппаКнопокСпейсер1_9КонтекстноеМеню" id="1247"/>
+													<ExtendedTooltip name="ГруппаКнопокСпейсер1_9РасширеннаяПодсказка" id="1248"/>
+												</LabelDecoration>
+												<Button name="ОтветитьНаЗвонок3" id="1329">
+													<Type>UsualButton</Type>
+													<Width>4</Width>
+													<Height>1</Height>
+													<CommandName>Form.Command.ОтветитьНаЗвонок</CommandName>
+													<BackColor>#53D068</BackColor>
+													<BorderColor>style:FormBackColor</BorderColor>
+													<ExtendedTooltip name="ОтветитьНаЗвонок3РасширеннаяПодсказка" id="1330"/>
+												</Button>
+												<Button name="ПеревестиЗвонокСОжиданием3" id="1249">
+													<Type>UsualButton</Type>
+													<Width>4</Width>
+													<Height>1</Height>
+													<CommandName>Form.Command.ПеревестиЗвонокСОжиданием</CommandName>
+													<BackColor>#53D068</BackColor>
+													<BorderColor>style:FormBackColor</BorderColor>
+													<ExtendedTooltip name="ПеревестиЗвонокСОжиданием3РасширеннаяПодсказка" id="1250"/>
+												</Button>
+												<Button name="ПередатьЗвонок3" id="1253">
+													<Type>UsualButton</Type>
+													<Visible>false</Visible>
+													<Width>4</Width>
+													<Height>1</Height>
+													<CommandName>Form.Command.ПередатьЗвонок</CommandName>
+													<BorderColor>style:FormBackColor</BorderColor>
+													<ExtendedTooltip name="ПередатьЗвонок3РасширеннаяПодсказка" id="1254"/>
+												</Button>
+												<Button name="УправляемаяПередачаЗвонка3" id="1255">
+													<Type>UsualButton</Type>
+													<Visible>false</Visible>
+													<Width>4</Width>
+													<Height>1</Height>
+													<CommandName>Form.Command.УправляемаяПередачаЗвонка</CommandName>
+													<BorderColor>style:FormBackColor</BorderColor>
+													<ExtendedTooltip name="УправляемаяПередачаЗвонка3РасширеннаяПодсказка" id="1256"/>
+												</Button>
+												<Button name="УправляемуюПередачуВыполнить3" id="1257">
+													<Type>UsualButton</Type>
+													<Width>4</Width>
+													<Height>1</Height>
+													<CommandName>Form.Command.УправляемуюПередачуВыполнить</CommandName>
+													<BorderColor>style:FormBackColor</BorderColor>
+													<ExtendedTooltip name="УправляемуюПередачуВыполнить3РасширеннаяПодсказка" id="1258"/>
+												</Button>
+												<Button name="ПеревестиЗвонокБезОжидания3" id="1251">
+													<Type>UsualButton</Type>
+													<Visible>false</Visible>
+													<Width>4</Width>
+													<Height>1</Height>
+													<CommandName>Form.Command.ПеревестиЗвонокБезОжидания</CommandName>
+													<BorderColor>style:FormBackColor</BorderColor>
+													<ExtendedTooltip name="ПеревестиЗвонокБезОжидания3РасширеннаяПодсказка" id="1252"/>
+												</Button>
+												<Button name="УправляемуюПередачуПрервать3" id="1259">
+													<Type>UsualButton</Type>
+													<Visible>false</Visible>
+													<Width>4</Width>
+													<Height>1</Height>
+													<CommandName>Form.Command.УправляемуюПередачуПрервать</CommandName>
+													<BorderColor>style:FormBackColor</BorderColor>
+													<ExtendedTooltip name="УправляемуюПередачуПрервать3РасширеннаяПодсказка" id="1260"/>
+												</Button>
+												<Button name="УдержаниеЗвонка3" id="1341">
+													<Type>UsualButton</Type>
+													<Width>4</Width>
+													<Height>1</Height>
+													<CommandName>Form.Command.УдержаниеЗвонка</CommandName>
+													<BackColor>#0CC7AF</BackColor>
+													<BorderColor>style:FormBackColor</BorderColor>
+													<ExtendedTooltip name="УдержаниеЗвонка3РасширеннаяПодсказка" id="1342"/>
+												</Button>
+												<Button name="ОтклонитьЗвонок3" id="1335">
+													<Type>UsualButton</Type>
+													<Width>4</Width>
+													<Height>1</Height>
+													<CommandName>Form.Command.ОтклонитьЗвонок</CommandName>
+													<BackColor>#DD524F</BackColor>
+													<BorderColor>style:FormBackColor</BorderColor>
+													<ExtendedTooltip name="ОтклонитьЗвонок3РасширеннаяПодсказка" id="1336"/>
+												</Button>
+												<Button name="ОбновитьСосоянияЛиний3" id="1263">
+													<Type>UsualButton</Type>
+													<Width>4</Width>
+													<Height>1</Height>
+													<CommandName>Form.Command.ОбновитьСосоянияЛиний</CommandName>
+													<BorderColor>style:FormBackColor</BorderColor>
+													<ExtendedTooltip name="ОбновитьСосоянияЛиний3РасширеннаяПодсказка" id="1264"/>
+												</Button>
+												<LabelDecoration name="ГруппаКнопокСпейсер1_10" id="1265">
+													<Width>1</Width>
+													<HorizontalStretch>true</HorizontalStretch>
+													<VerticalStretch>false</VerticalStretch>
+													<SkipOnInput>true</SkipOnInput>
+													<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+													<HorizontalAlign>Center</HorizontalAlign>
+													<ContextMenu name="ГруппаКнопокСпейсер1_10КонтекстноеМеню" id="1266"/>
+													<ExtendedTooltip name="ГруппаКнопокСпейсер1_10РасширеннаяПодсказка" id="1267"/>
+												</LabelDecoration>
+											</ChildItems>
+										</UsualGroup>
+										<LabelDecoration name="ГруппаКнопокСпейсер3_2" id="1024">
+											<Width>1</Width>
+											<HorizontalStretch>true</HorizontalStretch>
+											<VerticalStretch>false</VerticalStretch>
+											<SkipOnInput>true</SkipOnInput>
+											<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+											<HorizontalAlign>Center</HorizontalAlign>
+											<ContextMenu name="ГруппаКнопокСпейсер3_2КонтекстноеМеню" id="1025"/>
+											<ExtendedTooltip name="ГруппаКнопокСпейсер3_2РасширеннаяПодсказка" id="1026"/>
+										</LabelDecoration>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</Page>
+					</ChildItems>
+				</Pages>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаКнопкиУправления" id="1145">
+			<Visible>false</Visible>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа кнопки управления</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа кнопки управления</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаКнопкиУправленияРасширеннаяПодсказка" id="1146"/>
+			<ChildItems>
+				<LabelDecoration name="ГруппаКнопокСпейсер1_3" id="1147">
+					<Width>1</Width>
+					<HorizontalStretch>true</HorizontalStretch>
+					<VerticalStretch>false</VerticalStretch>
+					<SkipOnInput>true</SkipOnInput>
+					<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+					<HorizontalAlign>Center</HorizontalAlign>
+					<ContextMenu name="ГруппаКнопокСпейсер1_3КонтекстноеМеню" id="1148"/>
+					<ExtendedTooltip name="ГруппаКнопокСпейсер1_3РасширеннаяПодсказка" id="1149"/>
+				</LabelDecoration>
+				<Button name="ПеревестиЗвонокСОжиданием" id="1155">
+					<Type>UsualButton</Type>
+					<Width>3</Width>
+					<Height>1</Height>
+					<CommandName>Form.Command.ПеревестиЗвонокСОжиданием</CommandName>
+					<ExtendedTooltip name="ПеревестиЗвонокСОжиданиемРасширеннаяПодсказка" id="1156"/>
+				</Button>
+				<Button name="ПеревестиЗвонокБезОжидания" id="1157">
+					<Type>UsualButton</Type>
+					<Visible>false</Visible>
+					<CommandName>Form.Command.ПеревестиЗвонокБезОжидания</CommandName>
+					<ExtendedTooltip name="ПеревестиЗвонокБезОжиданияРасширеннаяПодсказка" id="1158"/>
+				</Button>
+				<Button name="ПередатьЗвонок" id="1027">
+					<Type>UsualButton</Type>
+					<Visible>false</Visible>
+					<Width>3</Width>
+					<Height>1</Height>
+					<CommandName>Form.Command.ПередатьЗвонок</CommandName>
+					<ExtendedTooltip name="ПередатьЗвонокРасширеннаяПодсказка" id="1028"/>
+				</Button>
+				<Button name="УправляемаяПередачаЗвонка" id="1029">
+					<Type>UsualButton</Type>
+					<Visible>false</Visible>
+					<Width>3</Width>
+					<Height>1</Height>
+					<CommandName>Form.Command.УправляемаяПередачаЗвонка</CommandName>
+					<ExtendedTooltip name="УправляемаяПередачаЗвонкаРасширеннаяПодсказка" id="1030"/>
+				</Button>
+				<Button name="УправляемуюПередачуВыполнить" id="1031">
+					<Type>UsualButton</Type>
+					<Width>3</Width>
+					<Height>1</Height>
+					<CommandName>Form.Command.УправляемуюПередачуВыполнить</CommandName>
+					<ExtendedTooltip name="УправляемуюПередачуВыполнитьРасширеннаяПодсказка" id="1032"/>
+				</Button>
+				<Button name="УправляемуюПередачуПрервать" id="1033">
+					<Type>UsualButton</Type>
+					<Width>3</Width>
+					<Height>1</Height>
+					<CommandName>Form.Command.УправляемуюПередачуПрервать</CommandName>
+					<ExtendedTooltip name="УправляемуюПередачуПрерватьРасширеннаяПодсказка" id="1034"/>
+				</Button>
+				<Button name="ЗавершитьТекущиеЗвонки" id="1153">
+					<Type>UsualButton</Type>
+					<CommandName>Form.Command.ОтклонитьЗвонок</CommandName>
+					<ExtendedTooltip name="ЗавершитьТекущиеЗвонкиРасширеннаяПодсказка" id="1154"/>
+				</Button>
+				<Button name="ОбновитьСосоянияЛиний" id="1141">
+					<Type>UsualButton</Type>
+					<CommandName>Form.Command.ОбновитьСосоянияЛиний</CommandName>
+					<ExtendedTooltip name="ОбновитьСосоянияЛинийРасширеннаяПодсказка" id="1142"/>
+				</Button>
+				<LabelDecoration name="ГруппаКнопокСпейсер1_4" id="1150">
+					<Width>1</Width>
+					<HorizontalStretch>true</HorizontalStretch>
+					<VerticalStretch>false</VerticalStretch>
+					<SkipOnInput>true</SkipOnInput>
+					<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+					<HorizontalAlign>Center</HorizontalAlign>
+					<ContextMenu name="ГруппаКнопокСпейсер1_4КонтекстноеМеню" id="1151"/>
+					<ExtendedTooltip name="ГруппаКнопокСпейсер1_4РасширеннаяПодсказка" id="1152"/>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаЦифрКнопок" id="36">
+			<Visible>false</Visible>
+			<EnableContentChange>true</EnableContentChange>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа цифр кнопок</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа цифр кнопок</v8:content>
+				</v8:item>
+			</ToolTip>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Group>Horizontal</Group>
+			<Representation>StrongSeparation</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаЦифрКнопокExtendedTooltip" id="381"/>
+			<ChildItems>
+				<LabelDecoration name="ГруппаЦифрКнопокСпейсер1" id="37">
+					<HorizontalStretch>true</HorizontalStretch>
+					<SkipOnInput>true</SkipOnInput>
+					<ContextMenu name="ГруппаЦифрКнопокСпейсер1КонтекстноеМеню" id="38"/>
+					<ExtendedTooltip name="ГруппаЦифрКнопокСпейсер1ExtendedTooltip" id="382"/>
+				</LabelDecoration>
+				<UsualGroup name="ГруппаЦифрВложенная" id="39">
+					<EnableContentChange>true</EnableContentChange>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа цифр вложенная</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа цифр вложенная</v8:content>
+						</v8:item>
+					</ToolTip>
+					<HorizontalStretch>false</HorizontalStretch>
+					<VerticalStretch>false</VerticalStretch>
+					<Group>Vertical</Group>
+					<HorizontalSpacing>Half</HorizontalSpacing>
+					<VerticalSpacing>Half</VerticalSpacing>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаЦифрВложеннаяExtendedTooltip" id="383"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаЦифр1" id="40">
+							<EnableContentChange>true</EnableContentChange>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа цифр1</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа цифр1</v8:content>
+								</v8:item>
+							</ToolTip>
+							<HorizontalStretch>true</HorizontalStretch>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаЦифр1ExtendedTooltip" id="384"/>
+							<ChildItems>
+								<Button name="КнопкаЦ1" id="41">
+									<Type>UsualButton</Type>
+									<SkipOnInput>true</SkipOnInput>
+									<Width>4</Width>
+									<Height>1</Height>
+									<CommandName>Form.Command.Набрать_1</CommandName>
+									<ExtendedTooltip name="КнопкаЦ1ExtendedTooltip" id="385"/>
+								</Button>
+								<Button name="КнопкаЦ2" id="42">
+									<Type>UsualButton</Type>
+									<SkipOnInput>true</SkipOnInput>
+									<Width>4</Width>
+									<Height>1</Height>
+									<CommandName>Form.Command.Набрать_2</CommandName>
+									<ExtendedTooltip name="КнопкаЦ2ExtendedTooltip" id="386"/>
+								</Button>
+								<Button name="КнопкаЦ3" id="43">
+									<Type>UsualButton</Type>
+									<SkipOnInput>true</SkipOnInput>
+									<Width>4</Width>
+									<Height>1</Height>
+									<CommandName>Form.Command.Набрать_3</CommandName>
+									<ExtendedTooltip name="КнопкаЦ3ExtendedTooltip" id="387"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаЦифр2" id="44">
+							<EnableContentChange>true</EnableContentChange>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа цифр2</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа цифр2</v8:content>
+								</v8:item>
+							</ToolTip>
+							<HorizontalStretch>true</HorizontalStretch>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаЦифр2ExtendedTooltip" id="388"/>
+							<ChildItems>
+								<Button name="КнопкаЦ4" id="46">
+									<Type>UsualButton</Type>
+									<SkipOnInput>true</SkipOnInput>
+									<Width>4</Width>
+									<Height>1</Height>
+									<CommandName>Form.Command.Набрать_4</CommandName>
+									<ExtendedTooltip name="КнопкаЦ4ExtendedTooltip" id="389"/>
+								</Button>
+								<Button name="КнопкаЦ5" id="47">
+									<Type>UsualButton</Type>
+									<SkipOnInput>true</SkipOnInput>
+									<Width>4</Width>
+									<Height>1</Height>
+									<CommandName>Form.Command.Набрать_5</CommandName>
+									<ExtendedTooltip name="КнопкаЦ5ExtendedTooltip" id="390"/>
+								</Button>
+								<Button name="КнопкаЦ6" id="48">
+									<Type>UsualButton</Type>
+									<SkipOnInput>true</SkipOnInput>
+									<Width>4</Width>
+									<Height>1</Height>
+									<CommandName>Form.Command.Набрать_6</CommandName>
+									<ExtendedTooltip name="КнопкаЦ6ExtendedTooltip" id="391"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаЦифр3" id="45">
+							<EnableContentChange>true</EnableContentChange>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа цифр3</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа цифр3</v8:content>
+								</v8:item>
+							</ToolTip>
+							<HorizontalStretch>true</HorizontalStretch>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаЦифр3ExtendedTooltip" id="392"/>
+							<ChildItems>
+								<Button name="КнопкаЦ7" id="49">
+									<Type>UsualButton</Type>
+									<SkipOnInput>true</SkipOnInput>
+									<Width>4</Width>
+									<Height>1</Height>
+									<CommandName>Form.Command.Набрать_7</CommandName>
+									<ExtendedTooltip name="КнопкаЦ7ExtendedTooltip" id="393"/>
+								</Button>
+								<Button name="КнопкаЦ8" id="50">
+									<Type>UsualButton</Type>
+									<SkipOnInput>true</SkipOnInput>
+									<Width>4</Width>
+									<Height>1</Height>
+									<CommandName>Form.Command.Набрать_8</CommandName>
+									<ExtendedTooltip name="КнопкаЦ8ExtendedTooltip" id="394"/>
+								</Button>
+								<Button name="КнопкаЦ9" id="51">
+									<Type>UsualButton</Type>
+									<SkipOnInput>true</SkipOnInput>
+									<Width>4</Width>
+									<Height>1</Height>
+									<CommandName>Form.Command.Набрать_9</CommandName>
+									<ExtendedTooltip name="КнопкаЦ9ExtendedTooltip" id="395"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаЦифр4" id="52">
+							<EnableContentChange>true</EnableContentChange>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа цифр4</v8:content>
+								</v8:item>
+							</ToolTip>
+							<HorizontalStretch>true</HorizontalStretch>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаЦифр4ExtendedTooltip" id="396"/>
+							<ChildItems>
+								<Button name="КнопкаЗ" id="53">
+									<Type>UsualButton</Type>
+									<SkipOnInput>true</SkipOnInput>
+									<Width>4</Width>
+									<Height>1</Height>
+									<CommandName>Form.Command.Набрать_з</CommandName>
+									<ExtendedTooltip name="КнопкаЗExtendedTooltip" id="397"/>
+								</Button>
+								<Button name="КнопкаЦ0" id="54">
+									<Type>UsualButton</Type>
+									<SkipOnInput>true</SkipOnInput>
+									<Width>4</Width>
+									<Height>1</Height>
+									<CommandName>Form.Command.Набрать_0</CommandName>
+									<ExtendedTooltip name="КнопкаЦ0ExtendedTooltip" id="398"/>
+								</Button>
+								<Button name="КнопкаР" id="55">
+									<Type>UsualButton</Type>
+									<SkipOnInput>true</SkipOnInput>
+									<Width>4</Width>
+									<Height>1</Height>
+									<CommandName>Form.Command.Набрать_р</CommandName>
+									<ExtendedTooltip name="КнопкаРExtendedTooltip" id="399"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+				<LabelDecoration name="ГруппаЦифрКнопокСпейсер2" id="56">
+					<HorizontalStretch>true</HorizontalStretch>
+					<SkipOnInput>true</SkipOnInput>
+					<ContextMenu name="ГруппаЦифрКнопокСпейсер2КонтекстноеМеню" id="57"/>
+					<ExtendedTooltip name="ГруппаЦифрКнопокСпейсер2ExtendedTooltip" id="400"/>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаВводаНомера" id="31">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ввод номера</v8:content>
+				</v8:item>
+			</Title>
+			<TitleFont ref="style:NormalTextFont" height="9" kind="StyleItem"/>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ввод номера</v8:content>
+				</v8:item>
+			</ToolTip>
+			<HorizontalStretch>true</HorizontalStretch>
+			<VerticalStretch>false</VerticalStretch>
+			<GroupHorizontalAlign>Center</GroupHorizontalAlign>
+			<Group>Horizontal</Group>
+			<ChildrenAlign>None</ChildrenAlign>
+			<HorizontalSpacing>Half</HorizontalSpacing>
+			<Collapsed>true</Collapsed>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаВводаНомераExtendedTooltip" id="401"/>
+			<ChildItems>
+				<PictureDecoration name="Декорация2" id="1120">
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<Height>1</Height>
+					<AutoMaxHeight>false</AutoMaxHeight>
+					<HorizontalStretch>true</HorizontalStretch>
+					<ContextMenu name="Декорация2КонтекстноеМеню" id="1121"/>
+					<ExtendedTooltip name="Декорация2РасширеннаяПодсказка" id="1122"/>
+				</PictureDecoration>
+				<Button name="КнопкаОтобразитьКнопки" id="32">
+					<Type>UsualButton</Type>
+					<Representation>Picture</Representation>
+					<SkipOnInput>true</SkipOnInput>
+					<Width>3</Width>
+					<Height>1</Height>
+					<CommandName>Form.Command.КомандаОтобразитьКнопки</CommandName>
+					<Picture>
+						<xr:Abs>Picture.png</xr:Abs>
+						<xr:LoadTransparent>false</xr:LoadTransparent>
+					</Picture>
+					<ExtendedTooltip name="КнопкаОтобразитьКнопкиExtendedTooltip" id="402"/>
+				</Button>
+				<InputField name="ПолеВводаНомера" id="33">
+					<DataPath>НабранныйНомерТел</DataPath>
+					<SkipOnInput>false</SkipOnInput>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номер</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>Left</TitleLocation>
+					<Height>1</Height>
+					<HorizontalStretch>true</HorizontalStretch>
+					<VerticalStretch>true</VerticalStretch>
+					<ChoiceButton>true</ChoiceButton>
+					<ClearButton>true</ClearButton>
+					<EditTextUpdate>OnValueChange</EditTextUpdate>
+					<ContextMenu name="ПолеВводаНомераКонтекстноеМеню" id="34"/>
+					<ExtendedTooltip name="ПолеВводаНомераExtendedTooltip" id="403"/>
+					<Events>
+						<Event name="StartChoice">ПолеВводаНомераНачалоВыбора</Event>
+						<Event name="Clearing">ПолеВводаНомераОчистка</Event>
+					</Events>
+				</InputField>
+				<Button name="КомандаСтереть" id="1143">
+					<Type>UsualButton</Type>
+					<Width>3</Width>
+					<Height>1</Height>
+					<CommandName>Form.Command.КомандаСтереть</CommandName>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>С</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="КомандаСтеретьРасширеннаяПодсказка" id="1144"/>
+				</Button>
+				<Button name="КнопкаДозвон" id="35">
+					<Type>UsualButton</Type>
+					<Representation>Picture</Representation>
+					<SkipOnInput>false</SkipOnInput>
+					<DefaultItem>true</DefaultItem>
+					<Width>3</Width>
+					<Height>1</Height>
+					<CommandName>Form.Command.КомандаДозвон</CommandName>
+					<Picture>
+						<xr:Abs>Picture.png</xr:Abs>
+						<xr:LoadTransparent>false</xr:LoadTransparent>
+					</Picture>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дозвон</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="КнопкаДозвонExtendedTooltip" id="404"/>
+				</Button>
+				<PictureDecoration name="Декорация3" id="1531">
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<Height>1</Height>
+					<AutoMaxHeight>false</AutoMaxHeight>
+					<HorizontalStretch>true</HorizontalStretch>
+					<ContextMenu name="Декорация3КонтекстноеМеню" id="1532"/>
+					<ExtendedTooltip name="Декорация3РасширеннаяПодсказка" id="1533"/>
+				</PictureDecoration>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаНизТелефона" id="58">
+			<EnableContentChange>true</EnableContentChange>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа низ телефона</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаНизТелефонаExtendedTooltip" id="405"/>
+			<ChildItems>
+				<Pages name="ГруппаСтраницыТелефонии" id="59">
+					<EnableContentChange>true</EnableContentChange>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа страницы телефонии</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа страницы телефонии</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ГруппаСтраницыТелефонииРасширеннаяПодсказка" id="406"/>
+					<ChildItems>
+						<Page name="СтраницаСотрудники" id="307">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Сотрудники</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Страница сотрудники</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ExtendedTooltip name="СтраницаСотрудникиExtendedTooltip" id="423"/>
+						</Page>
+						<Page name="СтраницаМоёИзбранное" id="277">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Избранное</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Моя адресная книга</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ExtendedTooltip name="СтраницаМоёИзбранноеExtendedTooltip" id="439"/>
+						</Page>
+						<Page name="СтраницаМоиЗвонки" id="60">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Звонки</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Мои звонки</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ScrollOnCompress>true</ScrollOnCompress>
+							<ExtendedTooltip name="СтраницаМоиЗвонкиExtendedTooltip" id="459"/>
+							<ChildItems>
+								<Table name="Звонки" id="1035">
+									<RowSelectionMode>Row</RowSelectionMode>
+									<InitialListView>Beginning</InitialListView>
+									<Output>Enable</Output>
+									<DataPath>Звонки</DataPath>
+									<RowPictureDataPath>Звонки.ИндексКартинки</RowPictureDataPath>
+									<RowsPicture>
+										<xr:Ref>CommonPicture.Телефония_Коллекция</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</RowsPicture>
+									<CommandSet>
+										<ExcludedCommand>CancelSearch</ExcludedCommand>
+										<ExcludedCommand>Change</ExcludedCommand>
+										<ExcludedCommand>Choose</ExcludedCommand>
+										<ExcludedCommand>Copy</ExcludedCommand>
+										<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+										<ExcludedCommand>Create</ExcludedCommand>
+										<ExcludedCommand>Delete</ExcludedCommand>
+										<ExcludedCommand>Find</ExcludedCommand>
+										<ExcludedCommand>LoadDynamicListSettings</ExcludedCommand>
+										<ExcludedCommand>SaveDynamicListSettings</ExcludedCommand>
+										<ExcludedCommand>SearchHistory</ExcludedCommand>
+										<ExcludedCommand>ShowMultipleSelection</ExcludedCommand>
+									</CommandSet>
+									<SearchStringLocation>CommandBar</SearchStringLocation>
+									<AutoRefresh>false</AutoRefresh>
+									<AutoRefreshPeriod>60</AutoRefreshPeriod>
+									<Period>
+										<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+										<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+										<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+									</Period>
+									<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+									<RestoreCurrentRow>true</RestoreCurrentRow>
+									<TopLevelParent xsi:nil="true"/>
+									<ShowRoot>true</ShowRoot>
+									<AllowRootChoice>false</AllowRootChoice>
+									<UpdateOnDataChange>Auto</UpdateOnDataChange>
+									<ContextMenu name="ЗвонкиКонтекстноеМеню" id="1036">
+										<Autofill>false</Autofill>
+										<ChildItems>
+											<Button name="ЗвонкиКонтекстноеМенюКомандаПерейтиВРаботуСКлиентом" id="1318">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.КомандаПерейтиВРаботуСКлиентом</CommandName>
+												<ExtendedTooltip name="ЗвонкиКонтекстноеМенюКомандаПерейтиВРаботуСКлиентомРасширеннаяПодсказка" id="1319"/>
+											</Button>
+											<Button name="ЗвонкиКонтекстноеМенюКнопкаОтправитьSMS" id="1354">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.ОтправитьSMS</CommandName>
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Отправить SMS</v8:content>
+													</v8:item>
+												</Title>
+												<ExtendedTooltip name="ЗвонкиКонтекстноеМенюКнопкаОтправитьSMSРасширеннаяПодсказка" id="1355"/>
+											</Button>
+											<Button name="ЗвонкиКонтекстноеМенюКнопкаСоздатьЗаявкуНаЗвонок" id="1356">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.СоздатьЗаявкуНаЗвонок</CommandName>
+												<ExtendedTooltip name="ЗвонкиКонтекстноеМенюКнопкаСоздатьЗаявкуНаЗвонокРасширеннаяПодсказка" id="1357"/>
+											</Button>
+											<Button name="ЗвонкиКонтекстноеМенюСкопироватьНомер" id="1358">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.СкопироватьНомер</CommandName>
+												<ExtendedTooltip name="ЗвонкиКонтекстноеМенюСкопироватьНомерРасширеннаяПодсказка" id="1359"/>
+											</Button>
+										</ChildItems>
+									</ContextMenu>
+									<AutoCommandBar name="ЗвонкиКоманднаяПанель" id="1037">
+										<ChildItems>
+											<Button name="ЗвонкиКонтекстноеМенюКнопкаСоздатьЗаявкуНаЗвонок1" id="1552">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.СоздатьЗаявкуНаЗвонок</CommandName>
+												<ExtendedTooltip name="ЗвонкиКонтекстноеМенюКнопкаСоздатьЗаявкуНаЗвонок1РасширеннаяПодсказка" id="1553"/>
+											</Button>
+											<Button name="ЗвонкиКонтекстноеМенюКомандаПерейтиВРаботуСКлиентом1" id="1548">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.КомандаПерейтиВРаботуСКлиентом</CommandName>
+												<ExtendedTooltip name="ЗвонкиКонтекстноеМенюКомандаПерейтиВРаботуСКлиентом1РасширеннаяПодсказка" id="1549"/>
+											</Button>
+											<Button name="ЗвонкиКонтекстноеМенюКнопкаОтправитьSMS1" id="1550">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.ОтправитьSMS</CommandName>
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Отправить SMS</v8:content>
+													</v8:item>
+												</Title>
+												<ExtendedTooltip name="ЗвонкиКонтекстноеМенюКнопкаОтправитьSMS1РасширеннаяПодсказка" id="1551"/>
+											</Button>
+											<Button name="ЗвонкиКонтекстноеМенюСкопироватьНомер1" id="1554">
+												<Type>CommandBarButton</Type>
+												<Visible>false</Visible>
+												<CommandName>Form.Command.СкопироватьНомер</CommandName>
+												<ExtendedTooltip name="ЗвонкиКонтекстноеМенюСкопироватьНомер1РасширеннаяПодсказка" id="1555"/>
+											</Button>
+										</ChildItems>
+									</AutoCommandBar>
+									<ExtendedTooltip name="ЗвонкиРасширеннаяПодсказка" id="1038"/>
+									<SearchStringAddition name="ЗвонкиСтрокаПоиска" id="1039">
+										<AdditionSource>
+											<Item>Звонки</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ЗвонкиСтрокаПоискаКонтекстноеМеню" id="1040"/>
+										<ExtendedTooltip name="ЗвонкиСтрокаПоискаРасширеннаяПодсказка" id="1041"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="ЗвонкиСостояниеПросмотра" id="1042">
+										<AdditionSource>
+											<Item>Звонки</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ЗвонкиСостояниеПросмотраКонтекстноеМеню" id="1043"/>
+										<ExtendedTooltip name="ЗвонкиСостояниеПросмотраРасширеннаяПодсказка" id="1044"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="ЗвонкиУправлениеПоиском" id="1045">
+										<AdditionSource>
+											<Item>Звонки</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="ЗвонкиУправлениеПоискомКонтекстноеМеню" id="1046"/>
+										<ExtendedTooltip name="ЗвонкиУправлениеПоискомРасширеннаяПодсказка" id="1047"/>
+									</SearchControlAddition>
+									<Events>
+										<Event name="Selection">ЗвонкиВыбор</Event>
+										<Event name="BeforeDeleteRow">ЗвонкиПередУдалением</Event>
+										<Event name="OnUpdateUserSettingSetAtServer">ЗвонкиПриОбновленииСоставаПользовательскихНастроекНаСервере</Event>
+									</Events>
+									<ChildItems>
+										<ColumnGroup name="ЗвонкиГруппаКарточка" id="1316">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Звонки группа карточка</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Звонки группа карточка</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Width>4</Width>
+											<HorizontalStretch>false</HorizontalStretch>
+											<ExtendedTooltip name="ЗвонкиГруппаКарточкаРасширеннаяПодсказка" id="1317"/>
+											<ChildItems>
+												<LabelField name="ЗвонкиНомерТелефона" id="1096">
+													<DataPath>Звонки.НомерТелефона</DataPath>
+													<Font ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+													<ContextMenu name="ЗвонкиНомерТелефонаКонтекстноеМеню" id="1097">
+														<Autofill>false</Autofill>
+													</ContextMenu>
+													<ExtendedTooltip name="ЗвонкиНомерТелефонаРасширеннаяПодсказка" id="1098"/>
+												</LabelField>
+												<LabelField name="ЗвонкиДатаНачалаЗвонка" id="1060">
+													<DataPath>Звонки.ДатаНачалаЗвонка</DataPath>
+													<ContextMenu name="ЗвонкиДатаНачалаЗвонкаКонтекстноеМеню" id="1061"/>
+													<ExtendedTooltip name="ЗвонкиДатаНачалаЗвонкаРасширеннаяПодсказка" id="1062"/>
+												</LabelField>
+											</ChildItems>
+										</ColumnGroup>
+										<ColumnGroup name="ЗвонкиГруппа1" id="1343">
+											<ExtendedTooltip name="ЗвонкиГруппа1РасширеннаяПодсказка" id="1344"/>
+											<ChildItems>
+												<LabelField name="ЗвонкиКонтакт" id="1090">
+													<DataPath>Звонки.Контакт</DataPath>
+													<Font ref="style:NormalTextFont" bold="false" italic="true" underline="false" strikeout="false" kind="StyleItem"/>
+													<ContextMenu name="ЗвонкиКонтактКонтекстноеМеню" id="1091"/>
+													<ExtendedTooltip name="ЗвонкиКонтактРасширеннаяПодсказка" id="1092"/>
+												</LabelField>
+												<LabelField name="ЗвонкиСтатусЗвонка" id="1114">
+													<DataPath>Звонки.СтатусЗвонка</DataPath>
+													<ContextMenu name="ЗвонкиСтатусЗвонкаКонтекстноеМеню" id="1115"/>
+													<ExtendedTooltip name="ЗвонкиСтатусЗвонкаРасширеннаяПодсказка" id="1116"/>
+												</LabelField>
+												<LabelField name="ЗвонкиСостояниеЗвонка" id="1111">
+													<DataPath>Звонки.СостояниеЗвонка</DataPath>
+													<Visible>false</Visible>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Состояние</v8:content>
+														</v8:item>
+													</Title>
+													<Font ref="style:NormalTextFont" bold="false" italic="true" underline="false" strikeout="false" kind="StyleItem"/>
+													<ContextMenu name="ЗвонкиСостояниеЗвонкаКонтекстноеМеню" id="1112"/>
+													<ExtendedTooltip name="ЗвонкиСостояниеЗвонкаРасширеннаяПодсказка" id="1113"/>
+												</LabelField>
+											</ChildItems>
+										</ColumnGroup>
+										<LabelField name="ЗвонкиДатаНачалаРазговора" id="1063">
+											<DataPath>Звонки.ДатаНачалаРазговора</DataPath>
+											<Visible>false</Visible>
+											<ContextMenu name="ЗвонкиДатаНачалаРазговораКонтекстноеМеню" id="1064"/>
+											<ExtendedTooltip name="ЗвонкиДатаНачалаРазговораРасширеннаяПодсказка" id="1065"/>
+										</LabelField>
+										<LabelField name="ЗвонкиДатаОкончанияЗвонка" id="1066">
+											<DataPath>Звонки.ДатаОкончанияЗвонка</DataPath>
+											<Visible>false</Visible>
+											<ContextMenu name="ЗвонкиДатаОкончанияЗвонкаКонтекстноеМеню" id="1067"/>
+											<ExtendedTooltip name="ЗвонкиДатаОкончанияЗвонкаРасширеннаяПодсказка" id="1068"/>
+										</LabelField>
+										<LabelField name="ЗвонкиДлительностьВызова" id="1072">
+											<DataPath>Звонки.ДлительностьВызова</DataPath>
+											<Visible>false</Visible>
+											<ContextMenu name="ЗвонкиДлительностьВызоваКонтекстноеМеню" id="1073"/>
+											<ExtendedTooltip name="ЗвонкиДлительностьВызоваРасширеннаяПодсказка" id="1074"/>
+										</LabelField>
+										<LabelField name="ЗвонкиДлительностьЗвонка" id="1075">
+											<DataPath>Звонки.ДлительностьЗвонка</DataPath>
+											<Visible>false</Visible>
+											<ContextMenu name="ЗвонкиДлительностьЗвонкаКонтекстноеМеню" id="1076"/>
+											<ExtendedTooltip name="ЗвонкиДлительностьЗвонкаРасширеннаяПодсказка" id="1077"/>
+										</LabelField>
+										<LabelField name="ЗвонкиДлительностьРазговора" id="1078">
+											<DataPath>Звонки.ДлительностьРазговора</DataPath>
+											<Visible>false</Visible>
+											<ContextMenu name="ЗвонкиДлительностьРазговораКонтекстноеМеню" id="1079"/>
+											<ExtendedTooltip name="ЗвонкиДлительностьРазговораРасширеннаяПодсказка" id="1080"/>
+										</LabelField>
+										<CheckBoxField name="ЗвонкиНаправление" id="1093">
+											<DataPath>Звонки.Направление</DataPath>
+											<Visible>false</Visible>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="ЗвонкиНаправлениеКонтекстноеМеню" id="1094"/>
+											<ExtendedTooltip name="ЗвонкиНаправлениеРасширеннаяПодсказка" id="1095"/>
+										</CheckBoxField>
+										<LabelField name="ЗвонкиПеренаправленНа" id="1102">
+											<DataPath>Звонки.ПеренаправленНа</DataPath>
+											<Visible>false</Visible>
+											<ContextMenu name="ЗвонкиПеренаправленНаКонтекстноеМеню" id="1103"/>
+											<ExtendedTooltip name="ЗвонкиПеренаправленНаРасширеннаяПодсказка" id="1104"/>
+										</LabelField>
+										<LabelField name="ЗвонкиПеренаправленС" id="1105">
+											<DataPath>Звонки.ПеренаправленС</DataPath>
+											<Visible>false</Visible>
+											<ContextMenu name="ЗвонкиПеренаправленСКонтекстноеМеню" id="1106"/>
+											<ExtendedTooltip name="ЗвонкиПеренаправленСРасширеннаяПодсказка" id="1107"/>
+										</LabelField>
+										<LabelField name="ЗвонкиПредставлениеНомераТелефона" id="1108">
+											<DataPath>Звонки.ПредставлениеНомераТелефона</DataPath>
+											<Visible>false</Visible>
+											<ContextMenu name="ЗвонкиПредставлениеНомераТелефонаКонтекстноеМеню" id="1109"/>
+											<ExtendedTooltip name="ЗвонкиПредставлениеНомераТелефонаРасширеннаяПодсказка" id="1110"/>
+										</LabelField>
+										<LabelField name="ЗвонкиВидЗвонка" id="1051">
+											<DataPath>Звонки.ВидЗвонка</DataPath>
+											<Visible>false</Visible>
+											<ContextMenu name="ЗвонкиВидЗвонкаКонтекстноеМеню" id="1052"/>
+											<ExtendedTooltip name="ЗвонкиВидЗвонкаРасширеннаяПодсказка" id="1053"/>
+										</LabelField>
+										<LabelField name="ЗвонкиТипЗвонка" id="1117">
+											<DataPath>Звонки.ТипЗвонка</DataPath>
+											<Visible>false</Visible>
+											<ContextMenu name="ЗвонкиТипЗвонкаКонтекстноеМеню" id="1118"/>
+											<ExtendedTooltip name="ЗвонкиТипЗвонкаРасширеннаяПодсказка" id="1119"/>
+										</LabelField>
+										<LabelField name="ЗвонкиВызываемыйНомер" id="1345">
+											<DataPath>Звонки.ВызываемыйНомер</DataPath>
+											<Visible>false</Visible>
+											<ContextMenu name="ЗвонкиВызываемыйНомерКонтекстноеМеню" id="1346"/>
+											<ExtendedTooltip name="ЗвонкиВызываемыйНомерРасширеннаяПодсказка" id="1347"/>
+										</LabelField>
+										<LabelField name="ЗвонкиВызывающийНомер" id="1348">
+											<DataPath>Звонки.ВызывающийНомер</DataPath>
+											<Visible>false</Visible>
+											<ContextMenu name="ЗвонкиВызывающийНомерКонтекстноеМеню" id="1349"/>
+											<ExtendedTooltip name="ЗвонкиВызывающийНомерРасширеннаяПодсказка" id="1350"/>
+										</LabelField>
+										<LabelField name="ЗвонкиЗаявкаИнициатор" id="1351">
+											<DataPath>Звонки.ЗаявкаИнициатор</DataPath>
+											<Visible>false</Visible>
+											<ContextMenu name="ЗвонкиЗаявкаИнициаторКонтекстноеМеню" id="1352"/>
+											<ExtendedTooltip name="ЗвонкиЗаявкаИнициаторРасширеннаяПодсказка" id="1353"/>
+										</LabelField>
+										<LabelField name="ЗвонкиID_Звонка" id="1320">
+											<DataPath>Звонки.ID_Звонка</DataPath>
+											<Visible>false</Visible>
+											<ContextMenu name="ЗвонкиID_ЗвонкаКонтекстноеМеню" id="1321"/>
+											<ExtendedTooltip name="ЗвонкиID_ЗвонкаРасширеннаяПодсказка" id="1322"/>
+										</LabelField>
+										<LabelField name="ЗвонкиЗапрос" id="1081">
+											<DataPath>Звонки.Запрос</DataPath>
+											<Visible>false</Visible>
+											<ContextMenu name="ЗвонкиЗапросКонтекстноеМеню" id="1082"/>
+											<ExtendedTooltip name="ЗвонкиЗапросРасширеннаяПодсказка" id="1083"/>
+										</LabelField>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</Page>
+						<Page name="СтраницаМоиЗаявки" id="503">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Заявки</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Мои звонки</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ExtendedTooltip name="СтраницаМоиЗаявкиРасширеннаяПодсказка" id="504"/>
+							<ChildItems>
+								<Table name="ЗаявкиНаЗвонок" id="1360">
+									<Representation>Tree</Representation>
+									<SelectionMode>SingleRow</SelectionMode>
+									<UseAlternationRowColor>true</UseAlternationRowColor>
+									<InitialTreeView>ExpandAllLevels</InitialTreeView>
+									<DataPath>ЗаявкиНаЗвонок</DataPath>
+									<RowPictureDataPath>ЗаявкиНаЗвонок.DefaultPicture</RowPictureDataPath>
+									<Font ref="style:NormalTextFont" height="9" kind="StyleItem"/>
+									<CommandSet>
+										<ExcludedCommand>CancelSearch</ExcludedCommand>
+										<ExcludedCommand>Change</ExcludedCommand>
+										<ExcludedCommand>Choose</ExcludedCommand>
+										<ExcludedCommand>Copy</ExcludedCommand>
+										<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+										<ExcludedCommand>Create</ExcludedCommand>
+										<ExcludedCommand>Delete</ExcludedCommand>
+										<ExcludedCommand>Find</ExcludedCommand>
+										<ExcludedCommand>LoadDynamicListSettings</ExcludedCommand>
+										<ExcludedCommand>Post</ExcludedCommand>
+										<ExcludedCommand>SaveDynamicListSettings</ExcludedCommand>
+										<ExcludedCommand>SearchHistory</ExcludedCommand>
+										<ExcludedCommand>SetDateInterval</ExcludedCommand>
+										<ExcludedCommand>SetDeletionMark</ExcludedCommand>
+										<ExcludedCommand>UndoPosting</ExcludedCommand>
+									</CommandSet>
+									<ToolTipRepresentation>Balloon</ToolTipRepresentation>
+									<AutoRefresh>false</AutoRefresh>
+									<AutoRefreshPeriod>60</AutoRefreshPeriod>
+									<Period>
+										<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+										<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+										<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+									</Period>
+									<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+									<RestoreCurrentRow>true</RestoreCurrentRow>
+									<TopLevelParent xsi:nil="true"/>
+									<ShowRoot>true</ShowRoot>
+									<AllowRootChoice>false</AllowRootChoice>
+									<UpdateOnDataChange>Auto</UpdateOnDataChange>
+									<ContextMenu name="ЗаявкиНаЗвонокКонтекстноеМеню" id="1361">
+										<Autofill>false</Autofill>
+										<ChildItems>
+											<Button name="ЗвонкиКонтекстноеМенюКомандаПерейтиВРаботуСКлиентом_ЗаявкиНаЗвонок" id="1495">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.КомандаПерейтиВРаботуСКлиентом_ЗаявкиНаЗвонок</CommandName>
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Найти клиента</v8:content>
+													</v8:item>
+												</Title>
+												<ExtendedTooltip name="ЗвонкиКонтекстноеМенюКомандаПерейтиВРаботуСКлиентом_ЗаявкиНаЗвонокРасширеннаяПодсказка" id="1496"/>
+											</Button>
+											<Button name="ЗаявкиНаЗвонокКонтекстноеМенюКомандаПозвонитьПоЗаявкеНаЗвонок" id="1500">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.КомандаПозвонитьПоЗаявкеНаЗвонок</CommandName>
+												<ExtendedTooltip name="ЗаявкиНаЗвонокКонтекстноеМенюКомандаПозвонитьПоЗаявкеНаЗвонокРасширеннаяПодсказка" id="1501"/>
+											</Button>
+											<Button name="ЗаявкиНаЗвонокКонтекстноеМенюКомандаПеренестиВзаимодействие" id="1514">
+												<Type>CommandBarButton</Type>
+												<Visible>false</Visible>
+												<CommandName>Form.Command.КомандаПеренестиВзаимодействие</CommandName>
+												<ExtendedTooltip name="ЗаявкиНаЗвонокКонтекстноеМенюКомандаПеренестиВзаимодействиеРасширеннаяПодсказка" id="1515"/>
+											</Button>
+											<Button name="ЗаявкиНаЗвонокКонтекстноеМенюКомандаОтменитьВзаимодействиеПоЗаявкеНаЗвонок" id="1502">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.КомандаОтменитьВзаимодействиеПоЗаявкеНаЗвонок</CommandName>
+												<ExtendedTooltip name="ЗаявкиНаЗвонокКонтекстноеМенюКомандаОтменитьВзаимодействиеПоЗаявкеНаЗвонокРасширеннаяПодсказка" id="1503"/>
+											</Button>
+											<Button name="ЗаявкиНаЗвонокКонтекстноеМенюКомандаУстановитьСтатусВРаботе" id="1516">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.КомандаУстановитьСтатусВРаботе</CommandName>
+												<ExtendedTooltip name="ЗаявкиНаЗвонокКонтекстноеМенюКомандаУстановитьСтатусВРаботеРасширеннаяПодсказка" id="1517"/>
+											</Button>
+											<Button name="ЗаявкиНаЗвонокКонтекстноеМенюКомандаУстановитьСтатусОбработано" id="1518">
+												<Type>CommandBarButton</Type>
+												<Visible>false</Visible>
+												<CommandName>Form.Command.КомандаУстановитьСтатусОбработано</CommandName>
+												<ExtendedTooltip name="ЗаявкиНаЗвонокКонтекстноеМенюКомандаУстановитьСтатусОбработаноРасширеннаяПодсказка" id="1519"/>
+											</Button>
+											<Button name="ЗаявкиНаЗвонокКонтекстноеМенюКомандаУстановитьПлановоеВремя" id="1520">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.КомандаУстановитьПлановоеВремя</CommandName>
+												<ExtendedTooltip name="ЗаявкиНаЗвонокКонтекстноеМенюКомандаУстановитьПлановоеВремяРасширеннаяПодсказка" id="1521"/>
+											</Button>
+										</ChildItems>
+									</ContextMenu>
+									<AutoCommandBar name="ЗаявкиНаЗвонокКоманднаяПанель" id="1362">
+										<ChildItems>
+											<Button name="ЗаявкиНаЗвонокСоздатьЗаявку" id="1493">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.СоздатьЗаявку</CommandName>
+												<ExtendedTooltip name="ЗаявкиНаЗвонокСоздатьЗаявкуРасширеннаяПодсказка" id="1494"/>
+											</Button>
+											<Button name="ЗвонкиКонтекстноеМенюКомандаПерейтиВРаботуСКлиентом_ЗаявкиНаЗвонок1" id="1534">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.КомандаПерейтиВРаботуСКлиентом_ЗаявкиНаЗвонок</CommandName>
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Найти клиента</v8:content>
+													</v8:item>
+												</Title>
+												<ExtendedTooltip name="ЗвонкиКонтекстноеМенюКомандаПерейтиВРаботуСКлиентом_ЗаявкиНаЗвонок1РасширеннаяПодсказка" id="1535"/>
+											</Button>
+											<Button name="ЗаявкиНаЗвонокКонтекстноеМенюКомандаПозвонитьПоЗаявкеНаЗвонок1" id="1536">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.КомандаПозвонитьПоЗаявкеНаЗвонок</CommandName>
+												<ExtendedTooltip name="ЗаявкиНаЗвонокКонтекстноеМенюКомандаПозвонитьПоЗаявкеНаЗвонок1РасширеннаяПодсказка" id="1537"/>
+											</Button>
+											<Button name="ЗаявкиНаЗвонокКонтекстноеМенюКомандаПеренестиВзаимодействие1" id="1538">
+												<Type>CommandBarButton</Type>
+												<Visible>false</Visible>
+												<CommandName>Form.Command.КомандаПеренестиВзаимодействие</CommandName>
+												<ExtendedTooltip name="ЗаявкиНаЗвонокКонтекстноеМенюКомандаПеренестиВзаимодействие1РасширеннаяПодсказка" id="1539"/>
+											</Button>
+											<Button name="ЗаявкиНаЗвонокКонтекстноеМенюКомандаОтменитьВзаимодействиеПоЗаявкеНаЗвонок1" id="1540">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.КомандаОтменитьВзаимодействиеПоЗаявкеНаЗвонок</CommandName>
+												<ExtendedTooltip name="ЗаявкиНаЗвонокКонтекстноеМенюКомандаОтменитьВзаимодействиеПоЗаявкеНаЗвонок1РасширеннаяПодсказка" id="1541"/>
+											</Button>
+											<Button name="ЗаявкиНаЗвонокКонтекстноеМенюКомандаУстановитьСтатусВРаботе1" id="1542">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.КомандаУстановитьСтатусВРаботе</CommandName>
+												<ExtendedTooltip name="ЗаявкиНаЗвонокКонтекстноеМенюКомандаУстановитьСтатусВРаботе1РасширеннаяПодсказка" id="1543"/>
+											</Button>
+											<Button name="ЗаявкиНаЗвонокКонтекстноеМенюКомандаУстановитьСтатусОбработано1" id="1544">
+												<Type>CommandBarButton</Type>
+												<Visible>false</Visible>
+												<CommandName>Form.Command.КомандаУстановитьСтатусОбработано</CommandName>
+												<ExtendedTooltip name="ЗаявкиНаЗвонокКонтекстноеМенюКомандаУстановитьСтатусОбработано1РасширеннаяПодсказка" id="1545"/>
+											</Button>
+											<Button name="ЗаявкиНаЗвонокКонтекстноеМенюКомандаУстановитьПлановоеВремя1" id="1546">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.КомандаУстановитьПлановоеВремя</CommandName>
+												<ExtendedTooltip name="ЗаявкиНаЗвонокКонтекстноеМенюКомандаУстановитьПлановоеВремя1РасширеннаяПодсказка" id="1547"/>
+											</Button>
+											<Button name="ЗаявкиНаЗвонокОткрытьУправлениеРаспределениемЗаявок" id="1556">
+												<Type>CommandBarButton</Type>
+												<OnlyInAllActions>false</OnlyInAllActions>
+												<CommandName>Form.Command.ОткрытьУправлениеРаспределениемЗаявок</CommandName>
+												<ExtendedTooltip name="ЗаявкиНаЗвонокОткрытьУправлениеРаспределениемЗаявокРасширеннаяПодсказка" id="1557"/>
+											</Button>
+											<Button name="ЗаявкиНаЗвонокОтчетПоВзаимодействиям" id="1558">
+												<Type>CommandBarButton</Type>
+												<OnlyInAllActions>false</OnlyInAllActions>
+												<CommandName>Form.Command.ОтчетПоВзаимодействиям</CommandName>
+												<ExtendedTooltip name="ЗаявкиНаЗвонокОтчетПоВзаимодействиямРасширеннаяПодсказка" id="1559"/>
+											</Button>
+											<Button name="ЗаявкиНаЗвонокОтчетПоЭффективностиМенеджетраГПТ" id="1560">
+												<Type>CommandBarButton</Type>
+												<OnlyInAllActions>false</OnlyInAllActions>
+												<CommandName>Form.Command.ОтчетПоЭффективностиМенеджетраГПТ</CommandName>
+												<ExtendedTooltip name="ЗаявкиНаЗвонокОтчетПоЭффективностиМенеджетраГПТРасширеннаяПодсказка" id="1561"/>
+											</Button>
+										</ChildItems>
+									</AutoCommandBar>
+									<ExtendedTooltip name="ЗаявкиНаЗвонокРасширеннаяПодсказка" id="1363"/>
+									<SearchStringAddition name="ЗаявкиНаЗвонокСтрокаПоиска" id="1364">
+										<AdditionSource>
+											<Item>ЗаявкиНаЗвонок</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ЗаявкиНаЗвонокСтрокаПоискаКонтекстноеМеню" id="1365"/>
+										<ExtendedTooltip name="ЗаявкиНаЗвонокСтрокаПоискаРасширеннаяПодсказка" id="1366"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="ЗаявкиНаЗвонокСостояниеПросмотра" id="1367">
+										<AdditionSource>
+											<Item>ЗаявкиНаЗвонок</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ЗаявкиНаЗвонокСостояниеПросмотраКонтекстноеМеню" id="1368"/>
+										<ExtendedTooltip name="ЗаявкиНаЗвонокСостояниеПросмотраРасширеннаяПодсказка" id="1369"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="ЗаявкиНаЗвонокУправлениеПоиском" id="1370">
+										<AdditionSource>
+											<Item>ЗаявкиНаЗвонок</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="ЗаявкиНаЗвонокУправлениеПоискомКонтекстноеМеню" id="1371"/>
+										<ExtendedTooltip name="ЗаявкиНаЗвонокУправлениеПоискомРасширеннаяПодсказка" id="1372"/>
+									</SearchControlAddition>
+									<Events>
+										<Event name="OnLoadUserSettingsAtServer">ЗаявкиНаЗвонокПриЗагрузкеПользовательскихНастроекНаСервере</Event>
+										<Event name="OnActivateRow">ЗаявкиНаЗвонокПриАктивизацииСтроки</Event>
+										<Event name="OnGetDataAtServer">ЗаявкиНаЗвонокПриПолученииДанныхНаСервере</Event>
+									</Events>
+									<ChildItems>
+										<ColumnGroup name="ЗаявкиНаЗвонокГруппа1" id="1504">
+											<ExtendedTooltip name="ЗаявкиНаЗвонокГруппа1РасширеннаяПодсказка" id="1505"/>
+										</ColumnGroup>
+										<ColumnGroup name="ЗаявкиНаЗвонокГруппа2" id="1506">
+											<ExtendedTooltip name="ЗаявкиНаЗвонокГруппа2РасширеннаяПодсказка" id="1507"/>
+										</ColumnGroup>
+										<ColumnGroup name="ЗаявкиНаЗвонокГруппа3" id="1508">
+											<ExtendedTooltip name="ЗаявкиНаЗвонокГруппа3РасширеннаяПодсказка" id="1509"/>
+										</ColumnGroup>
+										<ColumnGroup name="ЗаявкиНаЗвонокГруппа4" id="1510">
+											<ExtendedTooltip name="ЗаявкиНаЗвонокГруппа4РасширеннаяПодсказка" id="1511"/>
+										</ColumnGroup>
+										<ColumnGroup name="ЗаявкиНаЗвонокГруппа5" id="1512">
+											<ExtendedTooltip name="ЗаявкиНаЗвонокГруппа5РасширеннаяПодсказка" id="1513"/>
+										</ColumnGroup>
+										<LabelField name="ЗаявкиНаЗвонокПолеДополнительнойГруппировки" id="1528">
+											<DataPath>ЗаявкиНаЗвонок.ПолеДополнительнойГруппировки</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Приоритет/статус</v8:content>
+												</v8:item>
+											</Title>
+											<TitleLocation>Left</TitleLocation>
+											<Width>2</Width>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<MaxWidth>2</MaxWidth>
+											<Font ref="style:NormalTextFont" height="9" kind="StyleItem"/>
+											<ContextMenu name="ЗаявкиНаЗвонокПолеДополнительнойГруппировкиКонтекстноеМеню" id="1529"/>
+											<ExtendedTooltip name="ЗаявкиНаЗвонокПолеДополнительнойГруппировкиРасширеннаяПодсказка" id="1530"/>
+										</LabelField>
+										<LabelField name="ЗаявкиНаЗвонокreqData" id="1379">
+											<DataPath>ЗаявкиНаЗвонок.reqData</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Дата</v8:content>
+												</v8:item>
+											</Title>
+											<Width>11</Width>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<MaxWidth>11</MaxWidth>
+											<Font ref="style:NormalTextFont" height="9" kind="StyleItem"/>
+											<ContextMenu name="ЗаявкиНаЗвонокreqDataКонтекстноеМеню" id="1380"/>
+											<ExtendedTooltip name="ЗаявкиНаЗвонокreqDataРасширеннаяПодсказка" id="1381"/>
+										</LabelField>
+										<LabelField name="ЗаявкиНаЗвонокreqContact" id="1376">
+											<DataPath>ЗаявкиНаЗвонок.reqContact</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Номер</v8:content>
+												</v8:item>
+											</Title>
+											<Width>11</Width>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<MaxWidth>11</MaxWidth>
+											<Font ref="style:NormalTextFont" height="9" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+											<ContextMenu name="ЗаявкиНаЗвонокreqContactКонтекстноеМеню" id="1377"/>
+											<ExtendedTooltip name="ЗаявкиНаЗвонокreqContactРасширеннаяПодсказка" id="1378">
+												<TitleHeight>8</TitleHeight>
+											</ExtendedTooltip>
+										</LabelField>
+										<LabelField name="ЗаявкиНаЗвонокКонтакт" id="1427">
+											<DataPath>ЗаявкиНаЗвонок.Контакт</DataPath>
+											<Width>7</Width>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<MaxWidth>7</MaxWidth>
+											<Font ref="style:NormalTextFont" height="9" bold="false" italic="true" underline="false" strikeout="false" kind="StyleItem"/>
+											<ContextMenu name="ЗаявкиНаЗвонокКонтактКонтекстноеМеню" id="1428"/>
+											<ExtendedTooltip name="ЗаявкиНаЗвонокКонтактРасширеннаяПодсказка" id="1429"/>
+										</LabelField>
+										<LabelField name="ЗаявкиНаЗвонокПроект" id="1454">
+											<DataPath>ЗаявкиНаЗвонок.Проект</DataPath>
+											<Width>8</Width>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<MaxWidth>8</MaxWidth>
+											<Font ref="style:NormalTextFont" height="9" bold="false" italic="true" underline="false" strikeout="false" kind="StyleItem"/>
+											<ContextMenu name="ЗаявкиНаЗвонокПроектКонтекстноеМеню" id="1455"/>
+											<ExtendedTooltip name="ЗаявкиНаЗвонокПроектРасширеннаяПодсказка" id="1456"/>
+										</LabelField>
+										<LabelField name="ЗаявкиНаЗвонокПриоритет" id="1448">
+											<DataPath>ЗаявкиНаЗвонок.Приоритет</DataPath>
+											<Visible>false</Visible>
+											<Width>2</Width>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<HorizontalStretch>false</HorizontalStretch>
+											<Font ref="style:NormalTextFont" height="9" bold="false" italic="true" underline="false" strikeout="false" kind="StyleItem"/>
+											<ContextMenu name="ЗаявкиНаЗвонокПриоритетКонтекстноеМеню" id="1449"/>
+											<ExtendedTooltip name="ЗаявкиНаЗвонокПриоритетРасширеннаяПодсказка" id="1450"/>
+										</LabelField>
+										<LabelField name="ЗаявкиНаЗвонокТипВзаимодействия" id="1475">
+											<DataPath>ЗаявкиНаЗвонок.ТипВзаимодействия</DataPath>
+											<Visible>false</Visible>
+											<Font ref="style:NormalTextFont" height="9" bold="false" italic="true" underline="false" strikeout="false" kind="StyleItem"/>
+											<ContextMenu name="ЗаявкиНаЗвонокТипВзаимодействияКонтекстноеМеню" id="1476"/>
+											<ExtendedTooltip name="ЗаявкиНаЗвонокТипВзаимодействияРасширеннаяПодсказка" id="1477"/>
+										</LabelField>
+										<LabelField name="ЗаявкиНаЗвонокВзаимодействие" id="1403">
+											<DataPath>ЗаявкиНаЗвонок.Взаимодействие</DataPath>
+											<Visible>false</Visible>
+											<Font ref="style:NormalTextFont" height="9" bold="false" italic="true" underline="false" strikeout="false" kind="StyleItem"/>
+											<ContextMenu name="ЗаявкиНаЗвонокВзаимодействиеКонтекстноеМеню" id="1404"/>
+											<ExtendedTooltip name="ЗаявкиНаЗвонокВзаимодействиеРасширеннаяПодсказка" id="1405"/>
+										</LabelField>
+										<LabelField name="ЗаявкиНаЗвонокВидЗаявкиНаЗвонок" id="1406">
+											<DataPath>ЗаявкиНаЗвонок.ВидЗаявкиНаЗвонок</DataPath>
+											<Visible>false</Visible>
+											<Font ref="style:NormalTextFont" height="9" kind="StyleItem"/>
+											<ContextMenu name="ЗаявкиНаЗвонокВидЗаявкиНаЗвонокКонтекстноеМеню" id="1407"/>
+											<ExtendedTooltip name="ЗаявкиНаЗвонокВидЗаявкиНаЗвонокРасширеннаяПодсказка" id="1408"/>
+										</LabelField>
+										<LabelField name="ЗаявкиНаЗвонокПлановоеВремя" id="1436">
+											<DataPath>ЗаявкиНаЗвонок.ПлановоеВремя</DataPath>
+											<Width>5</Width>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<MaxWidth>5</MaxWidth>
+											<Format>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>ДЛФ=T</v8:content>
+												</v8:item>
+											</Format>
+											<Font ref="style:NormalTextFont" height="9" kind="StyleItem"/>
+											<ContextMenu name="ЗаявкиНаЗвонокПлановоеВремяКонтекстноеМеню" id="1437"/>
+											<ExtendedTooltip name="ЗаявкиНаЗвонокПлановоеВремяРасширеннаяПодсказка" id="1438"/>
+										</LabelField>
+										<LabelField name="ЗаявкиНаЗвонокКомментарий" id="1424">
+											<DataPath>ЗаявкиНаЗвонок.Комментарий</DataPath>
+											<Visible>false</Visible>
+											<ToolTipRepresentation>Balloon</ToolTipRepresentation>
+											<Height>1</Height>
+											<VerticalStretch>false</VerticalStretch>
+											<Font ref="style:NormalTextFont" height="9" kind="StyleItem"/>
+											<ContextMenu name="ЗаявкиНаЗвонокКомментарийКонтекстноеМеню" id="1425"/>
+											<ExtendedTooltip name="ЗаявкиНаЗвонокКомментарийРасширеннаяПодсказка" id="1426"/>
+										</LabelField>
+										<LabelField name="ЗаявкиНаЗвонокСтатус" id="1469">
+											<DataPath>ЗаявкиНаЗвонок.Статус</DataPath>
+											<Visible>false</Visible>
+											<Font ref="style:NormalTextFont" height="9" kind="StyleItem"/>
+											<ContextMenu name="ЗаявкиНаЗвонокСтатусКонтекстноеМеню" id="1470"/>
+											<ExtendedTooltip name="ЗаявкиНаЗвонокСтатусРасширеннаяПодсказка" id="1471"/>
+										</LabelField>
+										<LabelField name="ЗаявкиНаЗвонокreqEmail" id="1382">
+											<DataPath>ЗаявкиНаЗвонок.reqEmail</DataPath>
+											<Visible>false</Visible>
+											<Font ref="style:NormalTextFont" height="9" kind="StyleItem"/>
+											<ContextMenu name="ЗаявкиНаЗвонокreqEmailКонтекстноеМеню" id="1383"/>
+											<ExtendedTooltip name="ЗаявкиНаЗвонокreqEmailРасширеннаяПодсказка" id="1384"/>
+										</LabelField>
+										<LabelField name="ЗаявкиНаЗвонокreqID" id="1385">
+											<DataPath>ЗаявкиНаЗвонок.reqID</DataPath>
+											<Visible>false</Visible>
+											<Font ref="style:NormalTextFont" height="9" kind="StyleItem"/>
+											<ContextMenu name="ЗаявкиНаЗвонокreqIDКонтекстноеМеню" id="1386"/>
+											<ExtendedTooltip name="ЗаявкиНаЗвонокreqIDРасширеннаяПодсказка" id="1387"/>
+										</LabelField>
+										<LabelField name="ЗаявкиНаЗвонокreqStatus" id="1388">
+											<DataPath>ЗаявкиНаЗвонок.reqStatus</DataPath>
+											<Visible>false</Visible>
+											<Font ref="style:NormalTextFont" height="9" kind="StyleItem"/>
+											<ContextMenu name="ЗаявкиНаЗвонокreqStatusКонтекстноеМеню" id="1389"/>
+											<ExtendedTooltip name="ЗаявкиНаЗвонокreqStatusРасширеннаяПодсказка" id="1390"/>
+										</LabelField>
+										<LabelField name="ЗаявкиНаЗвонокreqText" id="1391">
+											<DataPath>ЗаявкиНаЗвонок.reqText</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Комментарий</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTipRepresentation>Balloon</ToolTipRepresentation>
+											<Height>1</Height>
+											<VerticalStretch>false</VerticalStretch>
+											<Font ref="style:NormalTextFont" height="9" kind="StyleItem"/>
+											<ContextMenu name="ЗаявкиНаЗвонокreqTextКонтекстноеМеню" id="1392"/>
+											<ExtendedTooltip name="ЗаявкиНаЗвонокreqTextРасширеннаяПодсказка" id="1393"/>
+										</LabelField>
+										<LabelField name="ЗаявкиНаЗвонокreqType" id="1394">
+											<DataPath>ЗаявкиНаЗвонок.reqType</DataPath>
+											<Visible>false</Visible>
+											<Font ref="style:NormalTextFont" height="9" kind="StyleItem"/>
+											<ContextMenu name="ЗаявкиНаЗвонокreqTypeКонтекстноеМеню" id="1395"/>
+											<ExtendedTooltip name="ЗаявкиНаЗвонокreqTypeРасширеннаяПодсказка" id="1396"/>
+										</LabelField>
+										<LabelField name="ЗаявкиНаЗвонокUCID" id="1397">
+											<DataPath>ЗаявкиНаЗвонок.UCID</DataPath>
+											<Visible>false</Visible>
+											<Font ref="style:NormalTextFont" height="9" kind="StyleItem"/>
+											<ContextMenu name="ЗаявкиНаЗвонокUCIDКонтекстноеМеню" id="1398"/>
+											<ExtendedTooltip name="ЗаявкиНаЗвонокUCIDРасширеннаяПодсказка" id="1399"/>
+										</LabelField>
+										<LabelField name="ЗаявкиНаЗвонокАвтор" id="1400">
+											<DataPath>ЗаявкиНаЗвонок.Автор</DataPath>
+											<Visible>false</Visible>
+											<Font ref="style:NormalTextFont" height="9" kind="StyleItem"/>
+											<ContextMenu name="ЗаявкиНаЗвонокАвторКонтекстноеМеню" id="1401"/>
+											<ExtendedTooltip name="ЗаявкиНаЗвонокАвторРасширеннаяПодсказка" id="1402"/>
+										</LabelField>
+										<LabelField name="ЗаявкиНаЗвонокВидНедвижимости" id="1409">
+											<DataPath>ЗаявкиНаЗвонок.ВидНедвижимости</DataPath>
+											<Visible>false</Visible>
+											<Font ref="style:NormalTextFont" height="9" kind="StyleItem"/>
+											<ContextMenu name="ЗаявкиНаЗвонокВидНедвижимостиКонтекстноеМеню" id="1410"/>
+											<ExtendedTooltip name="ЗаявкиНаЗвонокВидНедвижимостиРасширеннаяПодсказка" id="1411"/>
+										</LabelField>
+										<LabelField name="ЗаявкиНаЗвонокГруппаРаспределения" id="1412">
+											<DataPath>ЗаявкиНаЗвонок.ГруппаРаспределения</DataPath>
+											<Visible>false</Visible>
+											<Font ref="style:NormalTextFont" height="9" kind="StyleItem"/>
+											<ContextMenu name="ЗаявкиНаЗвонокГруппаРаспределенияКонтекстноеМеню" id="1413"/>
+											<ExtendedTooltip name="ЗаявкиНаЗвонокГруппаРаспределенияРасширеннаяПодсказка" id="1414"/>
+										</LabelField>
+										<LabelField name="ЗаявкиНаЗвонокДата" id="1415">
+											<DataPath>ЗаявкиНаЗвонок.Дата</DataPath>
+											<Visible>false</Visible>
+											<Font ref="style:NormalTextFont" height="9" kind="StyleItem"/>
+											<ContextMenu name="ЗаявкиНаЗвонокДатаКонтекстноеМеню" id="1416"/>
+											<ExtendedTooltip name="ЗаявкиНаЗвонокДатаРасширеннаяПодсказка" id="1417"/>
+										</LabelField>
+										<LabelField name="ЗаявкиНаЗвонокДатаПоследнейЗагрузки" id="1418">
+											<DataPath>ЗаявкиНаЗвонок.ДатаПоследнейЗагрузки</DataPath>
+											<Visible>false</Visible>
+											<Font ref="style:NormalTextFont" height="9" kind="StyleItem"/>
+											<ContextMenu name="ЗаявкиНаЗвонокДатаПоследнейЗагрузкиКонтекстноеМеню" id="1419"/>
+											<ExtendedTooltip name="ЗаявкиНаЗвонокДатаПоследнейЗагрузкиРасширеннаяПодсказка" id="1420"/>
+										</LabelField>
+										<LabelField name="ЗаявкиНаЗвонокДатаРаспределения" id="1421">
+											<DataPath>ЗаявкиНаЗвонок.ДатаРаспределения</DataPath>
+											<Visible>false</Visible>
+											<Font ref="style:NormalTextFont" height="9" kind="StyleItem"/>
+											<ContextMenu name="ЗаявкиНаЗвонокДатаРаспределенияКонтекстноеМеню" id="1422"/>
+											<ExtendedTooltip name="ЗаявкиНаЗвонокДатаРаспределенияРасширеннаяПодсказка" id="1423"/>
+										</LabelField>
+										<LabelField name="ЗаявкиНаЗвонокНомер" id="1430">
+											<DataPath>ЗаявкиНаЗвонок.Номер</DataPath>
+											<Visible>false</Visible>
+											<Font ref="style:NormalTextFont" height="9" kind="StyleItem"/>
+											<ContextMenu name="ЗаявкиНаЗвонокНомерКонтекстноеМеню" id="1431"/>
+											<ExtendedTooltip name="ЗаявкиНаЗвонокНомерРасширеннаяПодсказка" id="1432"/>
+										</LabelField>
+										<LabelField name="ЗаявкиНаЗвонокОтветственный" id="1433">
+											<DataPath>ЗаявкиНаЗвонок.Ответственный</DataPath>
+											<Visible>false</Visible>
+											<Font ref="style:NormalTextFont" height="9" kind="StyleItem"/>
+											<ContextMenu name="ЗаявкиНаЗвонокОтветственныйКонтекстноеМеню" id="1434"/>
+											<ExtendedTooltip name="ЗаявкиНаЗвонокОтветственныйРасширеннаяПодсказка" id="1435"/>
+										</LabelField>
+										<CheckBoxField name="ЗаявкиНаЗвонокПометкаУдаления" id="1439">
+											<DataPath>ЗаявкиНаЗвонок.ПометкаУдаления</DataPath>
+											<Visible>false</Visible>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="ЗаявкиНаЗвонокПометкаУдаленияКонтекстноеМеню" id="1440"/>
+											<ExtendedTooltip name="ЗаявкиНаЗвонокПометкаУдаленияРасширеннаяПодсказка" id="1441"/>
+										</CheckBoxField>
+										<LabelField name="ЗаявкиНаЗвонокПопытокДозвониться" id="1442">
+											<DataPath>ЗаявкиНаЗвонок.ПопытокДозвониться</DataPath>
+											<Font ref="style:NormalTextFont" height="9" kind="StyleItem"/>
+											<ContextMenu name="ЗаявкиНаЗвонокПопытокДозвонитьсяКонтекстноеМеню" id="1443"/>
+											<ExtendedTooltip name="ЗаявкиНаЗвонокПопытокДозвонитьсяРасширеннаяПодсказка" id="1444"/>
+										</LabelField>
+										<LabelField name="ЗаявкиНаЗвонокПредметВзаимодействия" id="1445">
+											<DataPath>ЗаявкиНаЗвонок.ПредметВзаимодействия</DataPath>
+											<Visible>false</Visible>
+											<Font ref="style:NormalTextFont" height="9" kind="StyleItem"/>
+											<ContextMenu name="ЗаявкиНаЗвонокПредметВзаимодействияКонтекстноеМеню" id="1446"/>
+											<ExtendedTooltip name="ЗаявкиНаЗвонокПредметВзаимодействияРасширеннаяПодсказка" id="1447"/>
+										</LabelField>
+										<CheckBoxField name="ЗаявкиНаЗвонокПроведен" id="1451">
+											<DataPath>ЗаявкиНаЗвонок.Проведен</DataPath>
+											<Visible>false</Visible>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="ЗаявкиНаЗвонокПроведенКонтекстноеМеню" id="1452"/>
+											<ExtendedTooltip name="ЗаявкиНаЗвонокПроведенРасширеннаяПодсказка" id="1453"/>
+										</CheckBoxField>
+										<CheckBoxField name="ЗаявкиНаЗвонокРассмотрено" id="1457">
+											<DataPath>ЗаявкиНаЗвонок.Рассмотрено</DataPath>
+											<Visible>false</Visible>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="ЗаявкиНаЗвонокРассмотреноКонтекстноеМеню" id="1458"/>
+											<ExtendedTooltip name="ЗаявкиНаЗвонокРассмотреноРасширеннаяПодсказка" id="1459"/>
+										</CheckBoxField>
+										<LabelField name="ЗаявкиНаЗвонокРассмотретьПосле" id="1460">
+											<DataPath>ЗаявкиНаЗвонок.РассмотретьПосле</DataPath>
+											<Visible>false</Visible>
+											<Font ref="style:NormalTextFont" height="9" kind="StyleItem"/>
+											<ContextMenu name="ЗаявкиНаЗвонокРассмотретьПослеКонтекстноеМеню" id="1461"/>
+											<ExtendedTooltip name="ЗаявкиНаЗвонокРассмотретьПослеРасширеннаяПодсказка" id="1462"/>
+										</LabelField>
+										<LabelField name="ЗаявкиНаЗвонокСайт" id="1463">
+											<DataPath>ЗаявкиНаЗвонок.Сайт</DataPath>
+											<Visible>false</Visible>
+											<Font ref="style:NormalTextFont" height="9" kind="StyleItem"/>
+											<ContextMenu name="ЗаявкиНаЗвонокСайтКонтекстноеМеню" id="1464"/>
+											<ExtendedTooltip name="ЗаявкиНаЗвонокСайтРасширеннаяПодсказка" id="1465"/>
+										</LabelField>
+										<LabelField name="ЗаявкиНаЗвонокСсылка" id="1466">
+											<DataPath>ЗаявкиНаЗвонок.Ссылка</DataPath>
+											<Visible>false</Visible>
+											<Font ref="style:NormalTextFont" height="9" kind="StyleItem"/>
+											<ContextMenu name="ЗаявкиНаЗвонокСсылкаКонтекстноеМеню" id="1467"/>
+											<ExtendedTooltip name="ЗаявкиНаЗвонокСсылкаРасширеннаяПодсказка" id="1468"/>
+										</LabelField>
+										<LabelField name="ЗаявкиНаЗвонокТема" id="1472">
+											<DataPath>ЗаявкиНаЗвонок.Тема</DataPath>
+											<Visible>false</Visible>
+											<Font ref="style:NormalTextFont" height="9" kind="StyleItem"/>
+											<ContextMenu name="ЗаявкиНаЗвонокТемаКонтекстноеМеню" id="1473"/>
+											<ExtendedTooltip name="ЗаявкиНаЗвонокТемаРасширеннаяПодсказка" id="1474"/>
+										</LabelField>
+										<LabelField name="ЗаявкиНаЗвонокТипВызова" id="1478">
+											<DataPath>ЗаявкиНаЗвонок.ТипВызова</DataPath>
+											<Visible>false</Visible>
+											<Font ref="style:NormalTextFont" height="9" kind="StyleItem"/>
+											<ContextMenu name="ЗаявкиНаЗвонокТипВызоваКонтекстноеМеню" id="1479"/>
+											<ExtendedTooltip name="ЗаявкиНаЗвонокТипВызоваРасширеннаяПодсказка" id="1480"/>
+										</LabelField>
+										<LabelField name="ЗаявкиНаЗвонокТипПоступленияЗаявки" id="1481">
+											<DataPath>ЗаявкиНаЗвонок.ТипПоступленияЗаявки</DataPath>
+											<Visible>false</Visible>
+											<Font ref="style:NormalTextFont" height="9" kind="StyleItem"/>
+											<ContextMenu name="ЗаявкиНаЗвонокТипПоступленияЗаявкиКонтекстноеМеню" id="1482"/>
+											<ExtendedTooltip name="ЗаявкиНаЗвонокТипПоступленияЗаявкиРасширеннаяПодсказка" id="1483"/>
+										</LabelField>
+										<LabelField name="ЗаявкиНаЗвонокЭтапРаботы" id="1484">
+											<DataPath>ЗаявкиНаЗвонок.ЭтапРаботы</DataPath>
+											<Visible>false</Visible>
+											<Font ref="style:NormalTextFont" height="9" kind="StyleItem"/>
+											<ContextMenu name="ЗаявкиНаЗвонокЭтапРаботыКонтекстноеМеню" id="1485"/>
+											<ExtendedTooltip name="ЗаявкиНаЗвонокЭтапРаботыРасширеннаяПодсказка" id="1486"/>
+										</LabelField>
+										<CheckBoxField name="ЗаявкиНаЗвонокЭтоТестоваяЗаявка" id="1487">
+											<DataPath>ЗаявкиНаЗвонок.ЭтоТестоваяЗаявка</DataPath>
+											<Visible>false</Visible>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="ЗаявкиНаЗвонокЭтоТестоваяЗаявкаКонтекстноеМеню" id="1488"/>
+											<ExtendedTooltip name="ЗаявкиНаЗвонокЭтоТестоваяЗаявкаРасширеннаяПодсказка" id="1489"/>
+										</CheckBoxField>
+										<LabelField name="ЗаявкиНаЗвонокID" id="1497">
+											<DataPath>ЗаявкиНаЗвонок.ID</DataPath>
+											<Visible>false</Visible>
+											<Font ref="style:NormalTextFont" height="9" kind="StyleItem"/>
+											<ContextMenu name="ЗаявкиНаЗвонокIDКонтекстноеМеню" id="1498"/>
+											<ExtendedTooltip name="ЗаявкиНаЗвонокIDРасширеннаяПодсказка" id="1499"/>
+										</LabelField>
+										<LabelField name="ЗаявкиНаЗвонокСтандартнаяКартинка" id="1490">
+											<DataPath>ЗаявкиНаЗвонок.DefaultPicture</DataPath>
+											<Visible>false</Visible>
+											<ContextMenu name="ЗаявкиНаЗвонокСтандартнаяКартинкаКонтекстноеМеню" id="1491"/>
+											<ExtendedTooltip name="ЗаявкиНаЗвонокСтандартнаяКартинкаРасширеннаяПодсказка" id="1492"/>
+										</LabelField>
+										<LabelField name="ЗаявкиНаЗвонокСтатусПланированияВстречи" id="1522">
+											<DataPath>ЗаявкиНаЗвонок.СтатусПланированияВстречи</DataPath>
+											<Visible>false</Visible>
+											<Font ref="style:NormalTextFont" height="9" kind="StyleItem"/>
+											<ContextMenu name="ЗаявкиНаЗвонокСтатусПланированияВстречиКонтекстноеМеню" id="1523"/>
+											<ExtendedTooltip name="ЗаявкиНаЗвонокСтатусПланированияВстречиРасширеннаяПодсказка" id="1524"/>
+										</LabelField>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</Page>
+						<Page name="СтраницаКлиенты" id="796">
+							<Visible>false</Visible>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Клиенты</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Мои звонки</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ExtendedTooltip name="СтраницаКлиентыРасширеннаяПодсказка" id="797"/>
+						</Page>
+					</ChildItems>
+				</Pages>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.Телефония</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="НабранныйНомерТел" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Набранный номер тел</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="НомерТелефона_Линия1" id="28">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер телефона линия1</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Звонки" id="29">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Звонки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<UseAlways>
+				<Field>Звонки.ID_Звонка</Field>
+				<Field>Звонки.ВызываемыйНомер</Field>
+				<Field>Звонки.ВызывающийНомер</Field>
+				<Field>Звонки.ДатаНачалаЗвонка</Field>
+				<Field>Звонки.Запрос</Field>
+				<Field>Звонки.ЗаявкаИнициатор</Field>
+				<Field>Звонки.Контакт</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ
+	РегистрСведенийИсторияЗвонков.ID_Звонка КАК ID_Звонка,
+	РегистрСведенийИсторияЗвонков.ДатаНачалаЗвонка КАК ДатаНачалаЗвонка,
+	РегистрСведенийИсторияЗвонков.ВызывающийНомер КАК ВызывающийНомер,
+	РегистрСведенийИсторияЗвонков.ВызываемыйНомер КАК ВызываемыйНомер,
+	ВЫБОР
+		КОГДА РегистрСведенийИсторияЗвонков.Контакт = НЕОПРЕДЕЛЕНО
+			ТОГДА "Неопределено"
+		ИНАЧЕ РегистрСведенийИсторияЗвонков.Контакт
+	КОНЕЦ КАК Контакт,
+	РегистрСведенийИсторияЗвонков.СостояниеЗвонка КАК СостояниеЗвонка,
+	РегистрСведенийИсторияЗвонков.СтатусЗвонка КАК СтатусЗвонка,
+	РегистрСведенийИсторияЗвонков.ДлительностьЗвонка КАК ДлительностьЗвонка,
+	РегистрСведенийИсторияЗвонков.ДлительностьВызова КАК ДлительностьВызова,
+	РегистрСведенийИсторияЗвонков.ДлительностьРазговора КАК ДлительностьРазговора,
+	РегистрСведенийИсторияЗвонков.ПредставлениеНомераТелефона КАК ПредставлениеНомераТелефона,
+	РегистрСведенийИсторияЗвонков.НомерТелефона КАК НомерТелефона,
+	РегистрСведенийИсторияЗвонков.Ответственный КАК Ответственный,
+	РегистрСведенийИсторияЗвонков.Запрос КАК Запрос,
+	РегистрСведенийИсторияЗвонков.ТипЗвонка КАК ТипЗвонка,
+	РегистрСведенийИсторияЗвонков.ВидЗвонка КАК ВидЗвонка,
+	РегистрСведенийИсторияЗвонков.ДатаНачалаРазговора КАК ДатаНачалаРазговора,
+	РегистрСведенийИсторияЗвонков.ДатаПеренаправленияЗвонка КАК ДатаПеренаправленияЗвонка,
+	РегистрСведенийИсторияЗвонков.ПеренаправленС КАК ПеренаправленС,
+	РегистрСведенийИсторияЗвонков.ПеренаправленНа КАК ПеренаправленНа,
+	РегистрСведенийИсторияЗвонков.ДатаОкончанияЗвонка КАК ДатаОкончанияЗвонка,
+	РегистрСведенийИсторияЗвонков.ЭтоВнутреннийВызов КАК ЭтоВнутреннийВызов,
+	РегистрСведенийИсторияЗвонков.Направление КАК Направление,
+	РегистрСведенийИсторияЗвонков.ЗаявкаИнициатор КАК ЗаявкаИнициатор,
+	ВЫБОР
+		КОГДА РегистрСведенийИсторияЗвонков.Направление
+				И НЕ РегистрСведенийИсторияЗвонков.ДатаНачалаРазговора = ДАТАВРЕМЯ(1, 1, 1)
+			ТОГДА 0
+		КОГДА РегистрСведенийИсторияЗвонков.Направление
+				И РегистрСведенийИсторияЗвонков.ДатаНачалаРазговора = ДАТАВРЕМЯ(1, 1, 1)
+			ТОГДА 1
+		КОГДА НЕ РегистрСведенийИсторияЗвонков.Направление
+				И НЕ РегистрСведенийИсторияЗвонков.ДатаНачалаРазговора = ДАТАВРЕМЯ(1, 1, 1)
+			ТОГДА 2
+		КОГДА НЕ РегистрСведенийИсторияЗвонков.Направление
+				И РегистрСведенийИсторияЗвонков.ДатаНачалаРазговора = ДАТАВРЕМЯ(1, 1, 1)
+			ТОГДА 3
+	КОНЕЦ КАК ИндексКартинки,
+	ЕСТЬNULL(ПредметыПапкиВзаимодействий.Рассмотрено, ЛОЖЬ) КАК Рассмотрено,
+	ЕСТЬNULL(ПредметыПапкиВзаимодействий.Взаимодействие.Отменено, ЛОЖЬ) КАК Отменено
+ИЗ
+	РегистрСведений.ИсторияЗвонков КАК РегистрСведенийИсторияЗвонков
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ПредметыПапкиВзаимодействий КАК ПредметыПапкиВзаимодействий
+		ПО РегистрСведенийИсторияЗвонков.Запрос = ПредметыПапкиВзаимодействий.Предмет
+ГДЕ
+	ВЫБОР
+			КОГДА &amp;НеВыводитьВнутренниеЗвонки
+				ТОГДА НЕ РегистрСведенийИсторияЗвонков.ЭтоВнутреннийВызов
+			ИНАЧЕ ИСТИНА
+		КОНЕЦ
+{ГДЕ
+	(РегистрСведенийИсторияЗвонков.Ответственный = &amp;Ответственный)}</QueryText>
+				<MainTable>InformationRegister.ИсторияЗвонков</MainTable>
+				<AutoSaveUserSettings>false</AutoSaveUserSettings>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemGroup">
+							<dcsset:groupType>AndGroup</dcsset:groupType>
+							<dcsset:item xsi:type="dcsset:FilterItemComparison">
+								<dcsset:left xsi:type="dcscor:Field">ДатаНачалаЗвонка</dcsset:left>
+								<dcsset:comparisonType>GreaterOrEqual</dcsset:comparisonType>
+								<dcsset:right xsi:type="v8:StandardBeginningDate">
+									<v8:variant xsi:type="v8:StandardBeginningDateVariant">BeginningOfThisDay</v8:variant>
+								</dcsset:right>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:FilterItemComparison">
+								<dcsset:left xsi:type="dcscor:Field">ДатаНачалаЗвонка</dcsset:left>
+								<dcsset:comparisonType>LessOrEqual</dcsset:comparisonType>
+								<dcsset:right xsi:type="v8:StandardBeginningDate">
+									<v8:variant xsi:type="v8:StandardBeginningDateVariant">BeginningOfNextDay</v8:variant>
+								</dcsset:right>
+							</dcsset:item>
+							<dcsset:viewMode>Normal</dcsset:viewMode>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:use>false</dcsset:use>
+							<dcsset:left xsi:type="dcscor:Field">ЭтоВнутреннийВызов</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+							<dcsset:userSettingPresentation xsi:type="xs:string">Не выводить внутренние звонки</dcsset:userSettingPresentation>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>ДатаНачалаЗвонка</dcsset:field>
+							<dcsset:orderType>Desc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:item>
+							<dcsset:use>false</dcsset:use>
+							<dcsset:selection/>
+							<dcsset:filter>
+								<dcsset:item xsi:type="dcsset:FilterItemGroup">
+									<dcsset:groupType>OrGroup</dcsset:groupType>
+									<dcsset:item xsi:type="dcsset:FilterItemComparison">
+										<dcsset:left xsi:type="dcscor:Field">СтатусЗвонка</dcsset:left>
+										<dcsset:comparisonType>NotFilled</dcsset:comparisonType>
+									</dcsset:item>
+									<dcsset:item xsi:type="dcsset:FilterItemGroup">
+										<dcsset:groupType>AndGroup</dcsset:groupType>
+										<dcsset:item xsi:type="dcsset:FilterItemComparison">
+											<dcsset:left xsi:type="dcscor:Field">СтатусЗвонка</dcsset:left>
+											<dcsset:comparisonType>Equal</dcsset:comparisonType>
+											<dcsset:right xsi:type="dcscor:DesignTimeValue">Справочник.СтатусыЗвонков.ПредпродажноеОбслуживание</dcsset:right>
+										</dcsset:item>
+										<dcsset:item xsi:type="dcsset:FilterItemComparison">
+											<dcsset:left xsi:type="dcscor:Field">Отменено</dcsset:left>
+											<dcsset:comparisonType>Equal</dcsset:comparisonType>
+											<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+										</dcsset:item>
+										<dcsset:item xsi:type="dcsset:FilterItemComparison">
+											<dcsset:left xsi:type="dcscor:Field">Рассмотрено</dcsset:left>
+											<dcsset:comparisonType>Equal</dcsset:comparisonType>
+											<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+										</dcsset:item>
+									</dcsset:item>
+								</dcsset:item>
+							</dcsset:filter>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>ЦветФона</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Color">#FFCC94</dcscor:value>
+								</dcscor:item>
+							</dcsset:appearance>
+							<dcsset:userSettingID>7629e14a-de01-407f-a074-5a920cf70cf8</dcsset:userSettingID>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="Клиенты" id="31">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Клиенты</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>false</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<MainTable>InformationRegister.КлиентыКонтактнаяИнформация</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="СостояниеЗвонка_Линия1" id="32">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Состояние звонка линия1</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Контакт_Линия1" id="33">
+			<Type>
+				<v8:Type>cfg:CatalogRef.Пользователи</v8:Type>
+				<v8:Type>cfg:CatalogRef.Клиенты</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Контакт_Линия2" id="34">
+			<Type>
+				<v8:Type>cfg:CatalogRef.Пользователи</v8:Type>
+				<v8:Type>cfg:CatalogRef.Клиенты</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Контакт_Линия3" id="35">
+			<Type>
+				<v8:Type>cfg:CatalogRef.Пользователи</v8:Type>
+				<v8:Type>cfg:CatalogRef.Клиенты</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="НомерТелефона_Линия2" id="36">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="НомерТелефона_Линия3" id="37">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СостояниеЗвонка_Линия2" id="38">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СостояниеЗвонка_Линия3" id="39">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="НомерТелефона" id="40">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер телефона</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>30</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ВыборАдресатаПеревода" id="41">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбор адресата перевода</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ВидЗвонка_Линия1" id="42">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид звонка линия1</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.ВидыЗвонков</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ВидЗвонка_Линия2" id="43">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид звонка линия1</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.ВидыЗвонков</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ВидЗвонка_Линия3" id="44">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид звонка линия1</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.ВидыЗвонков</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="КоличествоЗвонков" id="45">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество звонков</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="КоличествоЗаявок" id="46">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество заявок</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ДлительностьРазговора_Линия1" id="47">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Длительность разговора линия1</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ДлительностьРазговораСтрока_Линия1" id="48">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Длительность разговора линия1</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>8</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ДлительностьРазговора_Линия2" id="49">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Длительность разговора линия1</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ДлительностьРазговораСтрока_Линия2" id="50">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Длительность разговора линия1</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>8</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ДлительностьРазговора_Линия3" id="51">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Длительность разговора линия1</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ДлительностьРазговораСтрока_Линия3" id="52">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Длительность разговора линия1</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>8</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="МаксимумЛиний" id="53">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Максимум линий</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="CallId_Avaya_Линия1" id="54">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>CallId_Avaya линия1</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>20</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="CallId_Avaya_Линия2" id="55">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>CallId_Avaya линия2</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>20</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="CallId_Avaya_Линия3" id="56">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>CallId_Avaya линия3</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>20</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ЗаявкиНаЗвонок" id="57">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заявки на звонок</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<UseAlways>
+				<Field>~ЗаявкиНаЗвонок.ПолеГруппировки</Field>
+				<Field>ЗаявкиНаЗвонок.ID</Field>
+				<Field>ЗаявкиНаЗвонок.reqContact</Field>
+				<Field>ЗаявкиНаЗвонок.reqData</Field>
+				<Field>ЗаявкиНаЗвонок.reqText</Field>
+				<Field>ЗаявкиНаЗвонок.Взаимодействие</Field>
+				<Field>ЗаявкиНаЗвонок.ВидЗаявкиНаЗвонок</Field>
+				<Field>ЗаявкиНаЗвонок.Контакт</Field>
+				<Field>ЗаявкиНаЗвонок.Ответственный</Field>
+				<Field>ЗаявкиНаЗвонок.ПлановоеВремя</Field>
+				<Field>ЗаявкиНаЗвонок.ПолеДополнительнойГруппировки</Field>
+				<Field>ЗаявкиНаЗвонок.ПопытокДозвониться</Field>
+				<Field>ЗаявкиНаЗвонок.Приоритет</Field>
+				<Field>ЗаявкиНаЗвонок.Ссылка</Field>
+				<Field>ЗаявкиНаЗвонок.Статус</Field>
+				<Field>ЗаявкиНаЗвонок.СтатусПланированияВстречи</Field>
+				<Field>ЗаявкиНаЗвонок.ТипВзаимодействия</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ДокументЗаявкаНаЗвонок.Ссылка КАК Ссылка,
+	ДокументЗаявкаНаЗвонок.ПометкаУдаления КАК ПометкаУдаления,
+	ДокументЗаявкаНаЗвонок.Номер КАК Номер,
+	ДокументЗаявкаНаЗвонок.Дата КАК Дата,
+	ДокументЗаявкаНаЗвонок.Проведен КАК Проведен,
+	ДокументЗаявкаНаЗвонок.ID КАК ID,
+	ДокументЗаявкаНаЗвонок.reqData КАК reqData,
+	ДокументЗаявкаНаЗвонок.reqContact КАК reqContact,
+	ДокументЗаявкаНаЗвонок.Контакт КАК Контакт,
+	ДокументЗаявкаНаЗвонок.reqEmail КАК reqEmail,
+	ДокументЗаявкаНаЗвонок.Сайт КАК Сайт,
+	ДокументЗаявкаНаЗвонок.Проект КАК Проект,
+	ДокументЗаявкаНаЗвонок.ВидНедвижимости КАК ВидНедвижимости,
+	ДокументЗаявкаНаЗвонок.Статус КАК Статус,
+	ДокументЗаявкаНаЗвонок.ВидЗаявкиНаЗвонок КАК ВидЗаявкиНаЗвонок,
+	ДокументЗаявкаНаЗвонок.ТипВызова КАК ТипВызова,
+	ДокументЗаявкаНаЗвонок.ГруппаРаспределения КАК ГруппаРаспределения,
+	ДокументЗаявкаНаЗвонок.ТипПоступленияЗаявки КАК ТипПоступленияЗаявки,
+	ДокументЗаявкаНаЗвонок.ДатаПоследнейЗагрузки КАК ДатаПоследнейЗагрузки,
+	ДокументЗаявкаНаЗвонок.ДатаРаспределения КАК ДатаРаспределения,
+	ДокументЗаявкаНаЗвонок.ЭтапРаботы КАК ЭтапРаботы,
+	ДокументЗаявкаНаЗвонок.ПопытокДозвониться КАК ПопытокДозвониться,
+	ДокументЗаявкаНаЗвонок.ПлановоеВремя КАК ПлановоеВремя,
+	ДокументЗаявкаНаЗвонок.Приоритет КАК Приоритет,
+	ДокументЗаявкаНаЗвонок.ЭтоТестоваяЗаявка КАК ЭтоТестоваяЗаявка,
+	ДокументЗаявкаНаЗвонок.reqText КАК reqText,
+	ДокументЗаявкаНаЗвонок.reqStatus КАК reqStatus,
+	ДокументЗаявкаНаЗвонок.reqType КАК reqType,
+	ДокументЗаявкаНаЗвонок.reqID КАК reqID,
+	ДокументЗаявкаНаЗвонок.UCID КАК UCID,
+	ДокументЗаявкаНаЗвонок.ПредметВзаимодействия КАК ПредметВзаимодействия,
+	ДокументЗаявкаНаЗвонок.Взаимодействие КАК Взаимодействие,
+	ДокументЗаявкаНаЗвонок.Тема КАК Тема,
+	ДокументЗаявкаНаЗвонок.Автор КАК Автор,
+	ДокументЗаявкаНаЗвонок.Ответственный КАК Ответственный,
+	ДокументЗаявкаНаЗвонок.Комментарий КАК Комментарий,
+	ДокументЗаявкаНаЗвонок.МоментВремени КАК МоментВремени,
+	ЕСТЬNULL(ПредметыПапкиВзаимодействий.Рассмотрено, ЛОЖЬ) КАК Рассмотрено,
+	ЕСТЬNULL(ПредметыПапкиВзаимодействий.РассмотретьПосле, ДАТАВРЕМЯ(1, 1, 1)) КАК РассмотретьПосле,
+	ВЫБОР
+		КОГДА ДокументЗаявкаНаЗвонок.Взаимодействие ССЫЛКА Документ.Встреча
+			ТОГДА ЗНАЧЕНИЕ(Перечисление.ТипыВзаимодействий.Встреча)
+		КОГДА ДокументЗаявкаНаЗвонок.Взаимодействие ССЫЛКА Документ.ТелефонныйЗвонок
+			ТОГДА ЗНАЧЕНИЕ(Перечисление.ТипыВзаимодействий.ТелефонныйЗвонок)
+		ИНАЧЕ ЗНАЧЕНИЕ(Перечисление.ТипыВзаимодействий.ПустаяСсылка)
+	КОНЕЦ КАК ТипВзаимодействия,
+	ДокументЗаявкаНаЗвонок.СтатусПланированияВстречи КАК СтатусПланированияВстречи,
+	ДокументЗаявкаНаЗвонок.ПолеДополнительнойГруппировки КАК ПолеДополнительнойГруппировки
+ИЗ
+	Документ.ЗаявкаНаЗвонок КАК ДокументЗаявкаНаЗвонок
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ПредметыПапкиВзаимодействий КАК ПредметыПапкиВзаимодействий
+		ПО ДокументЗаявкаНаЗвонок.Взаимодействие = ПредметыПапкиВзаимодействий.Взаимодействие
+{ГДЕ
+	(ДокументЗаявкаНаЗвонок.Ответственный = &amp;Ответственный)}</QueryText>
+				<MainTable>Document.ЗаявкаНаЗвонок</MainTable>
+				<AutoSaveUserSettings>false</AutoSaveUserSettings>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">ПометкаУдаления</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemGroup">
+							<dcsset:groupType>AndGroup</dcsset:groupType>
+							<dcsset:item xsi:type="dcsset:FilterItemComparison">
+								<dcsset:left xsi:type="dcscor:Field">ДатаРаспределения</dcsset:left>
+								<dcsset:comparisonType>GreaterOrEqual</dcsset:comparisonType>
+								<dcsset:right xsi:type="v8:StandardBeginningDate">
+									<v8:variant xsi:type="v8:StandardBeginningDateVariant">BeginningOfThisDay</v8:variant>
+								</dcsset:right>
+								<dcsset:userSettingID>dd5a76f8-f94a-436c-a271-a23c1abf65d4</dcsset:userSettingID>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:FilterItemComparison">
+								<dcsset:left xsi:type="dcscor:Field">ДатаРаспределения</dcsset:left>
+								<dcsset:comparisonType>LessOrEqual</dcsset:comparisonType>
+								<dcsset:right xsi:type="v8:StandardBeginningDate">
+									<v8:variant xsi:type="v8:StandardBeginningDateVariant">BeginningOfNextDay</v8:variant>
+								</dcsset:right>
+								<dcsset:userSettingID>fbaf2528-a378-4a7f-b911-f0da45b3fb03</dcsset:userSettingID>
+							</dcsset:item>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">ЭтоТестоваяЗаявка</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:use>false</dcsset:use>
+							<dcsset:left xsi:type="dcscor:Field">Статус</dcsset:left>
+							<dcsset:comparisonType>InList</dcsset:comparisonType>
+							<dcsset:right xsi:type="v8:ValueListType">
+								<v8:valueType/>
+								<v8:lastId xsi:type="xs:decimal">-1</v8:lastId>
+							</dcsset:right>
+							<dcsset:userSettingID>e6ce5e2e-1aac-47e6-9c30-5df1c34f21d9</dcsset:userSettingID>
+							<dcsset:userSettingPresentation xsi:type="xs:string">Статусы</dcsset:userSettingPresentation>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:use>false</dcsset:use>
+							<dcsset:left xsi:type="dcscor:Field">Приоритет</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:userSettingID>a29bbb42-eafb-44c8-93e2-ca3c8a3a025c</dcsset:userSettingID>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:use>false</dcsset:use>
+							<dcsset:left xsi:type="dcscor:Field">Контакт</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:userSettingID>c9b11d89-6592-4e5f-83fd-249abb77969b</dcsset:userSettingID>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>ПолеДополнительнойГруппировки</dcsset:field>
+							<dcsset:orderType>Desc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>reqData</dcsset:field>
+							<dcsset:orderType>Desc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>Приоритет</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>СтатусПланированияВстречи</dcsset:field>
+							<dcsset:orderType>Desc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:item>
+							<dcsset:use>false</dcsset:use>
+							<dcsset:selection/>
+							<dcsset:filter>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">ТипВзаимодействия</dcsset:left>
+									<dcsset:comparisonType>Equal</dcsset:comparisonType>
+									<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.ТипыВзаимодействий.Встреча</dcsset:right>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">Взаимодействие.Отменено</dcsset:left>
+									<dcsset:comparisonType>Equal</dcsset:comparisonType>
+									<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">Статус</dcsset:left>
+									<dcsset:comparisonType>Equal</dcsset:comparisonType>
+									<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.СтатусЗаявкиCallBack.Обработано</dcsset:right>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">Рассмотрено</dcsset:left>
+									<dcsset:comparisonType>Equal</dcsset:comparisonType>
+									<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">РассмотретьПосле</dcsset:left>
+									<dcsset:comparisonType>Less</dcsset:comparisonType>
+									<dcsset:right xsi:type="v8:StandardBeginningDate">
+										<v8:variant xsi:type="v8:StandardBeginningDateVariant">BeginningOfThisDay</v8:variant>
+									</dcsset:right>
+								</dcsset:item>
+							</dcsset:filter>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>ЦветФона</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Color">#FFB5A1</dcscor:value>
+								</dcscor:item>
+							</dcsset:appearance>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:selection/>
+							<dcsset:filter>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">Статус</dcsset:left>
+									<dcsset:comparisonType>Equal</dcsset:comparisonType>
+									<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.СтатусЗаявкиCallBack.Обработано</dcsset:right>
+								</dcsset:item>
+							</dcsset:filter>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>ЦветФона</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Color">#CCFFCC</dcscor:value>
+								</dcscor:item>
+							</dcsset:appearance>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:use>false</dcsset:use>
+							<dcsset:selection/>
+							<dcsset:filter>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">Статус</dcsset:left>
+									<dcsset:comparisonType>Equal</dcsset:comparisonType>
+									<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.СтатусЗаявкиCallBack.НеДозвон</dcsset:right>
+								</dcsset:item>
+							</dcsset:filter>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>ЦветФона</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Color">#53D068</dcscor:value>
+								</dcscor:item>
+							</dcsset:appearance>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:selection/>
+							<dcsset:filter>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">Статус</dcsset:left>
+									<dcsset:comparisonType>Equal</dcsset:comparisonType>
+									<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.СтатусЗаявкиCallBack.Отменено</dcsset:right>
+								</dcsset:item>
+							</dcsset:filter>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>ЦветФона</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Color">#C0C0C0</dcscor:value>
+								</dcscor:item>
+							</dcsset:appearance>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:use>false</dcsset:use>
+							<dcsset:selection/>
+							<dcsset:filter>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">Статус</dcsset:left>
+									<dcsset:comparisonType>Equal</dcsset:comparisonType>
+									<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.СтатусЗаявкиCallBack.НеОбработано</dcsset:right>
+								</dcsset:item>
+							</dcsset:filter>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>ЦветФона</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Color">#FFCC99</dcscor:value>
+								</dcscor:item>
+							</dcsset:appearance>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:item xsi:type="dcsset:StructureItemGroup">
+						<dcsset:groupItems>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:use>false</dcsset:use>
+								<dcsset:field>Статус</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+						</dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:StructureItemGroup">
+							<dcsset:groupItems>
+								<dcsset:item xsi:type="dcsset:GroupItemField">
+									<dcsset:use>false</dcsset:use>
+									<dcsset:field>Приоритет</dcsset:field>
+									<dcsset:groupType>Items</dcsset:groupType>
+									<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+									<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+									<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+								</dcsset:item>
+							</dcsset:groupItems>
+							<dcsset:item xsi:type="dcsset:StructureItemGroup">
+								<dcsset:groupItems>
+									<dcsset:item xsi:type="dcsset:GroupItemField">
+										<dcsset:use>false</dcsset:use>
+										<dcsset:field>СтатусПланированияВстречи</dcsset:field>
+										<dcsset:groupType>Items</dcsset:groupType>
+										<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+										<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+										<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+									</dcsset:item>
+								</dcsset:groupItems>
+								<dcsset:item xsi:type="dcsset:StructureItemGroup">
+									<dcsset:groupItems>
+										<dcsset:item xsi:type="dcsset:GroupItemField">
+											<dcsset:field>ПолеДополнительнойГруппировки</dcsset:field>
+											<dcsset:groupType>Items</dcsset:groupType>
+											<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+											<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+											<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+										</dcsset:item>
+									</dcsset:groupItems>
+								</dcsset:item>
+							</dcsset:item>
+						</dcsset:item>
+					</dcsset:item>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="ОбщееКоличествоЗаявок" id="58">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Общее количество заявок</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ЗаявкиНаЗвонок</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ЗаявкиНаЗвонок.Статус</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.СтатусЗаявкиCallBack.БылиПопыткиДозвониться</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#FFAC40</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+	<Commands>
+		<Command name="ПередатьЗвонок" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Передача текущего звонка на указанный номер телефона</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перевести звонок</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.Телефония_ПередатьЗвонок</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаВыполнитьПередатьЗвонок</Action>
+			<Representation>Picture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаОтобразитьКнопки" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда отобразить кнопки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показать/Скрыть цифровые кнопки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаОтобразитьКнопки</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаДозвон" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда дозвон</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Набрать номер</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.Телефония_Дозвон</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаДозвон</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Набрать_1" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>1</v8:content>
+				</v8:item>
+			</Title>
+			<Action>КомандаОбработкаЦифровыхКнопок</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Набрать_2" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>2</v8:content>
+				</v8:item>
+			</Title>
+			<Action>КомандаОбработкаЦифровыхКнопок</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Набрать_3" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>3</v8:content>
+				</v8:item>
+			</Title>
+			<Action>КомандаОбработкаЦифровыхКнопок</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Набрать_4" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>4</v8:content>
+				</v8:item>
+			</Title>
+			<Action>КомандаОбработкаЦифровыхКнопок</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Набрать_5" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>5</v8:content>
+				</v8:item>
+			</Title>
+			<Action>КомандаОбработкаЦифровыхКнопок</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Набрать_6" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>6</v8:content>
+				</v8:item>
+			</Title>
+			<Action>КомандаОбработкаЦифровыхКнопок</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Набрать_7" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>7</v8:content>
+				</v8:item>
+			</Title>
+			<Action>КомандаОбработкаЦифровыхКнопок</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Набрать_8" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>8</v8:content>
+				</v8:item>
+			</Title>
+			<Action>КомандаОбработкаЦифровыхКнопок</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Набрать_9" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>9</v8:content>
+				</v8:item>
+			</Title>
+			<Action>КомандаОбработкаЦифровыхКнопок</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Набрать_0" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>0</v8:content>
+				</v8:item>
+			</Title>
+			<Action>КомандаОбработкаЦифровыхКнопок</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Набрать_р" id="18">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>#</v8:content>
+				</v8:item>
+			</Title>
+			<Action>КомандаОбработкаЦифровыхКнопок</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Набрать_з" id="19">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>*</v8:content>
+				</v8:item>
+			</Title>
+			<Action>КомандаОбработкаЦифровыхКнопок</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаНастройки" id="21">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть окно настроек</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.РазделАдминистрирование</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаНастройки</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаПодключить" id="26">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подключить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подключить телефон</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаПодключить</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаОтключить" id="27">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отключить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отключить телефон</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаОтключить</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаОПрограмме" id="22">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>О программе</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда о программе</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.Информация</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаОПрограмме</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="УправляемаяПередачаЗвонка" id="34">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Управляемая передача звонка</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ставит текущий звонок на удержание и начинает звонок на указанный номер</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.Телефония_УправляемаяПередачаЗвонка</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаУправляемаяПередачаЗвонка</Action>
+			<Representation>Picture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="УправляемуюПередачуВыполнить" id="37">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Управляемую передачу выполнить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Соединяет звонок на удержании с активным звонком</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.Телефония_УправляемуюПередачуВыполнить</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаУправляемуюПередачуВыполнить</Action>
+			<Representation>Picture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="УправляемуюПередачуПрервать" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Управляемую передачу прервать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Завершает текущий звонок и переключает абонента на звонок, находящийся на удержании</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.Телефония_УправляемуюПередачуПрервать</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаУправляемуюПередачуПрервать</Action>
+			<Representation>Picture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОбновитьСосоянияЛиний" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить сосояния линий</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить сосояния линий</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.СинхронизацияДанныхОтключение</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ОбновитьСосоянияЛиний</Action>
+			<Representation>Picture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаСтереть" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>С</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Набрать номер</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.СтрелкаВлево</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаСтереть</Action>
+			<Representation>Picture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОтклонитьЗвонок" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отклонить звонок</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отклонить звонок</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.Телефония_Завершить</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ОтклонитьЗвонок</Action>
+			<Representation>Picture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПеревестиЗвонокСОжиданием" id="20">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перевести звонок</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перевести звонок</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.Телефония_Передать</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ПеревестиЗвонокСОжиданием</Action>
+			<Representation>Picture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПеревестиЗвонокБезОжидания" id="23">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Передать звонок без ожидания</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Передать звонок без ожидания</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.Телефония_УправляемуюПередачуПрервать</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ПеревестиЗвонокБезОжидания</Action>
+			<Representation>Picture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаПерейтиВРаботуСКлиентом" id="24">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Поиск клиента</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Найти клиента по номеру телефона</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Find</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаПерейтиВРаботаСКлиентом</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="НомерТелефона_Линия1_КонтекстСкопировать" id="25">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Скопировать номер</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер телефона линия1 контекст скопировать</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>НомерТелефона_Линия_КонтекстноеМеню_КопироватьНомер</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОтветитьНаЗвонок" id="28">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ответить на звонок</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ответить на звонок</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.Телефония_ОтветитьНаЗвонок_нов</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ОтветитьНаЗвонок</Action>
+			<Representation>Picture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="УдержаниеЗвонка" id="29">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удержание звонка</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удержание звонка</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.Телефония_ПоставитьНаУдержание</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>УдержаниеЗвонка</Action>
+			<Representation>Picture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОтправитьSMS" id="30">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отправить SMS</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отправить SMS</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.НаписатьSMS</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ОтправитьSMS</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="СоздатьЗаявкуНаЗвонок" id="31">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать заявку на звонок</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать заявку на звонок</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CreateListItem</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СоздатьЗаявкуНаЗвонок</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="СкопироватьНомер" id="32">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Скопировать номер</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Скопировать номер</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Shortcut>Ctrl+C</Shortcut>
+			<Picture>
+				<xr:Ref>CommonPicture.СкопироватьВБуферОбмена</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СкопироватьНомер</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="СоздатьЗаявку" id="33">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать заявку</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать заявку</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CreateListItem</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СоздатьЗаявку</Action>
+			<Representation>Picture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаПерейтиВРаботуСКлиентом_ЗаявкиНаЗвонок" id="35">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Найти клиента</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Найти клиента по номеру телефона</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Find</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаПерейтиВРаботаСКлиентом_ЗаявкиНаЗвонок</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаПозвонитьПоЗаявкеНаЗвонок" id="36">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Позвонить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда позвонить по заявке на звонок</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.Телефония_Дозвон</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаПозвонитьПоЗаявкеНаЗвонок</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаОтменитьВзаимодействиеПоЗаявкеНаЗвонок" id="38">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отменить взаимодействие</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отменить взаимодействие</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.Ошибка32</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаОтменитьВзаимодействиеПоЗаявкеНаЗвонок</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаПеренестиВзаимодействие" id="39">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перенести взаимодействие</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перенести взаимодействие</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ЗаявкиНаЗвонок_ПеренестиВзаимодействие</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаПеренестиВзаимодействие</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаУстановитьСтатусВРаботе" id="40">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить статус в работе</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить статус в работе</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ЗаявкиНаЗвонок_ВРаботе</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаУстановитьСтатусВРаботе</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаУстановитьСтатусОбработано" id="41">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить статус обработано</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить статус обработано</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ЗаявкиНаЗвонок_Обработано</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаУстановитьСтатусОбработано</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаУстановитьПлановоеВремя" id="42">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перенести заявку</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить плановое время</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ЗаявкиНаЗвонок_УстановитьПлановоеВремя</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>КомандаУстановитьПлановоеВремя</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОткрытьУправлениеРаспределениемЗаявок" id="43">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Управление заявками</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть управление распределением заявок</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Use>
+				<xr:Common>false</xr:Common>
+				<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+				<xr:Value name="Role.ОбработкаЗаявокНаЗвонок_Администратор">true</xr:Value>
+			</Use>
+			<Action>ОткрытьУправлениеЗаявками</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОтчетПоВзаимодействиям" id="44">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отчет по взаимодействиям</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отчет по взаимодействиям</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Use>
+				<xr:Common>false</xr:Common>
+				<xr:Value name="Role.ОбработкаЗаявокНаЗвонок_Администратор">true</xr:Value>
+			</Use>
+			<Action>ОтчетПоВзаимодействиям</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОтчетПоЭффективностиМенеджетраГПТ" id="45">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Эффективность менеджера ГПТ</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отчет по эффективности менеджетра ГПТ</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОтчетПоЭффективностиМенеджетраГПТ</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОбновитьФорму" id="46">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить заявки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить форму</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.СинхронизацияДанныхПодсистема</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ОбновитьФорму</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

@@ -1,0 +1,1005 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НазначеноВстреч</dataPath>
+			<field>НазначеноВстреч</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Назначено встреч</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+					<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИсходящиеПервичныеЗвонки</dataPath>
+			<field>ИсходящиеПервичныеЗвонки</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Исходящие первичные звонки</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+					<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПервичныеЗвонки</dataPath>
+			<field>ПервичныеЗвонки</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Первичные звонки</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+					<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаПользователя</dataPath>
+			<field>ГруппаПользователя</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа пользователя</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+					<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОтказНетКонтакта</dataPath>
+			<field>ОтказНетКонтакта</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отказ нет контакта</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+					<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Пользователь</dataPath>
+			<field>Пользователь</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+					<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВсегоПоток</dataPath>
+			<field>ВсегоПоток</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Всего поток</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+					<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаПользователей</dataPath>
+			<field>ГруппаПользователей</field>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+					<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВходящиеПервичныеЗвонки</dataPath>
+			<field>ВходящиеПервичныеЗвонки</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Входящие первичные звонки</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+					<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗавершеноНазначенныхВстреч</dataPath>
+			<field>ЗавершеноНазначенныхВстреч</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Завершено назначенных встреч</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+					<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	СоставыГруппПользователейИсторияИзменийСрезПоследних.Пользователь КАК Пользователь,
+	ВЫРАЗИТЬ(СоставыГруппПользователейИсторияИзменийСрезПоследних.ГруппаПользователей КАК Справочник.ГруппыПользователей) КАК ГруппаПользователя
+ПОМЕСТИТЬ ВТ_АктуальныеСотрудникиГПТ
+ИЗ
+	РегистрСведений.СоставыГруппПользователейИсторияИзмений.СрезПоследних(
+			{(&amp;ТекущаяДатаПараметр)},
+			ГруппаПользователей В
+				(ВЫБРАТЬ
+					ГруппыПользователей.Ссылка КАК Ссылка
+				ИЗ
+					Справочник.ГруппыПользователей КАК ГруппыПользователей
+				ГДЕ
+					ГруппыПользователей.Наименование = "ГПТ")) КАК СоставыГруппПользователейИсторияИзменийСрезПоследних
+ГДЕ
+	(СоставыГруппПользователейИсторияИзменийСрезПоследних.ДатаВыходаИзГруппы МЕЖДУ &amp;ПериодНачало И &amp;ПериодКонец
+			ИЛИ СоставыГруппПользователейИсторияИзменийСрезПоследних.ДатаВыходаИзГруппы = ДАТАВРЕМЯ(1, 1, 1))
+
+ИНДЕКСИРОВАТЬ ПО
+	Пользователь
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_АктуальныеСотрудникиГПТ.Пользователь КАК Пользователь,
+	МАКСИМУМ(ГруппыПользователейСостав.Ссылка) КАК ГруппаПользователя
+ПОМЕСТИТЬ ВТ_СоставСменГПТ
+ИЗ
+	Справочник.ГруппыПользователей.Состав КАК ГруппыПользователейСостав
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТ_АктуальныеСотрудникиГПТ КАК ВТ_АктуальныеСотрудникиГПТ
+		ПО ГруппыПользователейСостав.Пользователь = ВТ_АктуальныеСотрудникиГПТ.Пользователь
+ГДЕ
+	ГруппыПользователейСостав.Ссылка В ИЕРАРХИИ
+			(ВЫБРАТЬ
+				ВТ_АктуальныеСотрудникиГПТ.ГруппаПользователя
+			ИЗ
+				ВТ_АктуальныеСотрудникиГПТ КАК ВТ_АктуальныеСотрудникиГПТ)
+
+СГРУППИРОВАТЬ ПО
+	ВТ_АктуальныеСотрудникиГПТ.Пользователь
+
+ИНДЕКСИРОВАТЬ ПО
+	Пользователь
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	КОЛИЧЕСТВО(ИсторияЗвонков.ID_Звонка) КАК Количество,
+	ИсторияЗвонков.Ответственный КАК Ответственный,
+	ЕСТЬNULL(ВТ_СоставСменГПТ.ГруппаПользователя, ВЫРАЗИТЬ(СоставыГруппПользователейИсторияИзменийСрезПоследних.ГруппаПользователей КАК Справочник.ГруппыПользователей)) КАК ГруппаПользователя
+ПОМЕСТИТЬ ВТ_ПрямыеЗвонки
+ИЗ
+	РегистрСведений.ИсторияЗвонков КАК ИсторияЗвонков
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.СоставыГруппПользователейИсторияИзмений.СрезПоследних({(&amp;ТекущаяДатаПараметр)}, ) КАК СоставыГруппПользователейИсторияИзменийСрезПоследних
+			ЛЕВОЕ СОЕДИНЕНИЕ ВТ_СоставСменГПТ КАК ВТ_СоставСменГПТ
+			ПО (ВТ_СоставСменГПТ.Пользователь = СоставыГруппПользователейИсторияИзменийСрезПоследних.Пользователь)
+		ПО ИсторияЗвонков.Ответственный = СоставыГруппПользователейИсторияИзменийСрезПоследних.Пользователь
+			И (СоставыГруппПользователейИсторияИзменийСрезПоследних.ДатаВключенияВГруппу &lt;= ИсторияЗвонков.ДатаНачалаЗвонка)
+			И (СоставыГруппПользователейИсторияИзменийСрезПоследних.ДатаВыходаИзГруппы = ДАТАВРЕМЯ(1, 1, 1)
+				ИЛИ СоставыГруппПользователейИсторияИзменийСрезПоследних.ДатаВыходаИзГруппы &gt; ИсторияЗвонков.ДатаНачалаЗвонка)
+ГДЕ
+	ИсторияЗвонков.ДатаНачалаЗвонка МЕЖДУ &amp;ПериодНачало И &amp;ПериодКонец
+	И ИсторияЗвонков.ТипЗвонка = ЗНАЧЕНИЕ(Перечисление.ТипыЗвонков.Прямой)
+	И ЕСТЬNULL(ВТ_СоставСменГПТ.ГруппаПользователя, ВЫРАЗИТЬ(СоставыГруппПользователейИсторияИзменийСрезПоследних.ГруппаПользователей КАК Справочник.ГруппыПользователей)) В ИЕРАРХИИ
+			(ВЫБРАТЬ
+				ВТ_АктуальныеСотрудникиГПТ.ГруппаПользователя
+			ИЗ
+				ВТ_АктуальныеСотрудникиГПТ КАК ВТ_АктуальныеСотрудникиГПТ)
+
+СГРУППИРОВАТЬ ПО
+	ИсторияЗвонков.Ответственный,
+	ЕСТЬNULL(ВТ_СоставСменГПТ.ГруппаПользователя, ВЫРАЗИТЬ(СоставыГруппПользователейИсторияИзменийСрезПоследних.ГруппаПользователей КАК Справочник.ГруппыПользователей))
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	Взаимодействия.Взаимодействие КАК Взаимодействие,
+	Взаимодействия.Предмет КАК Предмет,
+	Взаимодействия.ДатаВзаимодействия КАК ДатаВзаимодействия,
+	Взаимодействия.Ответственный КАК Ответственный,
+	ЕСТЬNULL(ВТ_СоставСменГПТ.ГруппаПользователя, Взаимодействия.ГруппаОтветственного) КАК ГруппаОтветственного
+ПОМЕСТИТЬ ВТ_ПервичныеЗвонки
+ИЗ
+	РегистрСведений.Взаимодействия КАК Взаимодействия
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_СоставСменГПТ КАК ВТ_СоставСменГПТ
+		ПО (ВТ_СоставСменГПТ.Пользователь = Взаимодействия.Ответственный)
+ГДЕ
+	Взаимодействия.ДатаВзаимодействия МЕЖДУ &amp;ПериодНачало И &amp;ПериодКонец
+	И Взаимодействия.ТипВзаимодействия = ЗНАЧЕНИЕ(Перечисление.ТипыВзаимодействий.ТелефонныйЗвонок)
+	И Взаимодействия.Статус = ЗНАЧЕНИЕ(Перечисление.СтатусыВзаимодействий.Завершено)
+	И Взаимодействия.АктивностьВзаимодействия = ЗНАЧЕНИЕ(Перечисление.ТипАктивностиВзаимодействия.Первичное)
+	И Взаимодействия.ГруппаОтветственного.Наименование = "ГПТ"
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	СоответствиеЗапросовЗвонкам.Взаимодействие КАК Взаимодействие,
+	ВТ_ПервичныеЗвонки.Ответственный КАК Ответственный,
+	ЕСТЬNULL(ВТ_СоставСменГПТ.ГруппаПользователя, ВТ_ПервичныеЗвонки.ГруппаОтветственного) КАК ГруппаОтветственного,
+	ИсторияЗвонков.ID_Звонка КАК ID_Звонка
+ПОМЕСТИТЬ ВТ_ВходящиеЗвонкиГПТ
+ИЗ
+	ВТ_ПервичныеЗвонки КАК ВТ_ПервичныеЗвонки
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.СоответствиеЗапросовЗвонкам КАК СоответствиеЗапросовЗвонкам
+			ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.ИсторияЗвонков КАК ИсторияЗвонков
+			ПО (ИсторияЗвонков.ID_Звонка = СоответствиеЗапросовЗвонкам.ID_Звонка)
+				И (ИсторияЗвонков.ВидЗвонка = ЗНАЧЕНИЕ(Перечисление.ВидыЗвонков.Входящий))
+		ПО ВТ_ПервичныеЗвонки.Взаимодействие = СоответствиеЗапросовЗвонкам.Взаимодействие
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_СоставСменГПТ КАК ВТ_СоставСменГПТ
+		ПО (ВТ_СоставСменГПТ.Пользователь = ВТ_ПервичныеЗвонки.Ответственный)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	СоответствиеЗапросовЗвонкам.Взаимодействие КАК Взаимодействие,
+	ВТ_ПервичныеЗвонки.Ответственный КАК Ответственный,
+	ЕСТЬNULL(ВТ_СоставСменГПТ.ГруппаПользователя, ВТ_ПервичныеЗвонки.ГруппаОтветственного) КАК ГруппаОтветственного,
+	ИсторияЗвонков.ID_Звонка КАК ID_Звонка
+ПОМЕСТИТЬ ВТ_ИсходящиеЗвонкиГПТ
+ИЗ
+	ВТ_ПервичныеЗвонки КАК ВТ_ПервичныеЗвонки
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.СоответствиеЗапросовЗвонкам КАК СоответствиеЗапросовЗвонкам
+			ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.ИсторияЗвонков КАК ИсторияЗвонков
+			ПО (ИсторияЗвонков.ID_Звонка = СоответствиеЗапросовЗвонкам.ID_Звонка)
+				И (ИсторияЗвонков.ВидЗвонка = ЗНАЧЕНИЕ(Перечисление.ВидыЗвонков.Исходящий))
+		ПО ВТ_ПервичныеЗвонки.Взаимодействие = СоответствиеЗапросовЗвонкам.Взаимодействие
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_СоставСменГПТ КАК ВТ_СоставСменГПТ
+		ПО (ВТ_СоставСменГПТ.Пользователь = ВТ_ПервичныеЗвонки.Ответственный)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_ПервичныеЗвонки.Взаимодействие КАК Взаимодействие,
+	ВТ_ПервичныеЗвонки.Ответственный КАК Ответственный,
+	ЕСТЬNULL(ВТ_СоставСменГПТ.ГруппаПользователя, ВТ_ПервичныеЗвонки.ГруппаОтветственного) КАК ГруппаОтветственного
+ПОМЕСТИТЬ ВТ_ЗвонкиГПТ_НетКонтакта
+ИЗ
+	ВТ_ПервичныеЗвонки КАК ВТ_ПервичныеЗвонки
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.ПараметрыЗапросаЛинейный КАК ПараметрыЗапросаЛинейный
+		ПО ВТ_ПервичныеЗвонки.Предмет = ПараметрыЗапросаЛинейный.Регистратор
+			И (ПараметрыЗапросаЛинейный.Стадия = ЗНАЧЕНИЕ(Перечисление.СтадииЗапроса.Звонок))
+			И (ПараметрыЗапросаЛинейный.РасшифровкаСтатуса = ЗНАЧЕНИЕ(Справочник.ПричиныСтатусовЗапроса.НетКонтакта))
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_СоставСменГПТ КАК ВТ_СоставСменГПТ
+		ПО (ВТ_СоставСменГПТ.Пользователь = ВТ_ПервичныеЗвонки.Ответственный)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	Взаимодействия.Взаимодействие КАК Взаимодействие,
+	Взаимодействия.Ответственный КАК Ответственный,
+	Взаимодействия.ГруппаОтветственного КАК ГруппаОтветственного,
+	Взаимодействия.Статус КАК Статус,
+	Взаимодействия.Взаимодействие.Автор КАК Автор,
+	Взаимодействия.ПериодВзаимодействия КАК ПериодВзаимодействия
+ПОМЕСТИТЬ ВТ_ВстречиАвтораГПТ_Врем
+ИЗ
+	РегистрСведений.Взаимодействия КАК Взаимодействия
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТ_ПервичныеЗвонки КАК ВТ_ПервичныеЗвонки
+		ПО (ВТ_ПервичныеЗвонки.Предмет = Взаимодействия.Предмет)
+			И Взаимодействия.ПериодВзаимодействия &gt;= ВТ_ПервичныеЗвонки.ДатаВзаимодействия
+ГДЕ
+	Взаимодействия.ТипВзаимодействия = ЗНАЧЕНИЕ(Перечисление.ТипыВзаимодействий.Встреча)
+	И Взаимодействия.ГруппаОтветственного.Наименование В ("Филиал", "Центральный офис", "Земля розница", "Коммерческая недвижимость")
+	И Взаимодействия.Предмет В
+			(ВЫБРАТЬ
+				ВТ_ПервичныеЗвонки.Предмет КАК Предмет
+			ИЗ
+				ВТ_ПервичныеЗвонки КАК ВТ_ПервичныеЗвонки)
+
+ИНДЕКСИРОВАТЬ ПО
+	Автор,
+	ПериодВзаимодействия
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	Взаимодействия.Взаимодействие КАК Взаимодействие,
+	Взаимодействия.Автор КАК Ответственный,
+	ЕСТЬNULL(ВТ_СоставСменГПТ.ГруппаПользователя, ВЫРАЗИТЬ(СоставыГруппПользователейИсторияИзменийСрезПоследних.ГруппаПользователей КАК Справочник.ГруппыПользователей)) КАК ГруппаОтветственного,
+	Взаимодействия.Статус КАК Статус
+ПОМЕСТИТЬ ВТ_ВстречиАвтораГПТ
+ИЗ
+	ВТ_ВстречиАвтораГПТ_Врем КАК Взаимодействия
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.СоставыГруппПользователейИсторияИзмений.СрезПоследних(
+				{(&amp;ТекущаяДатаПараметр)},
+				ГруппаПользователей В
+					(ВЫБРАТЬ
+						ГруппыПользователей.Ссылка КАК Ссылка
+					ИЗ
+						Справочник.ГруппыПользователей КАК ГруппыПользователей
+					ГДЕ
+						ГруппыПользователей.Наименование = "ГПТ")) КАК СоставыГруппПользователейИсторияИзменийСрезПоследних
+			ЛЕВОЕ СОЕДИНЕНИЕ ВТ_СоставСменГПТ КАК ВТ_СоставСменГПТ
+			ПО (ВТ_СоставСменГПТ.Пользователь = СоставыГруппПользователейИсторияИзменийСрезПоследних.Пользователь)
+		ПО Взаимодействия.Автор = СоставыГруппПользователейИсторияИзменийСрезПоследних.Пользователь
+			И (СоставыГруппПользователейИсторияИзменийСрезПоследних.ДатаВключенияВГруппу &lt;= Взаимодействия.ПериодВзаимодействия)
+			И (СоставыГруппПользователейИсторияИзменийСрезПоследних.ДатаВыходаИзГруппы = ДАТАВРЕМЯ(1, 1, 1)
+				ИЛИ СоставыГруппПользователейИсторияИзменийСрезПоследних.ДатаВыходаИзГруппы &gt; Взаимодействия.ПериодВзаимодействия)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	Взаимодействия.Взаимодействие КАК Взаимодействие,
+	Взаимодействия.Ответственный КАК Ответственный,
+	Взаимодействия.ГруппаОтветственного КАК ГруппаОтветственного
+ПОМЕСТИТЬ ВТ_ЗавершенныеВстречиАвтораГПТ
+ИЗ
+	ВТ_ВстречиАвтораГПТ КАК Взаимодействия
+ГДЕ
+	Взаимодействия.Статус = ЗНАЧЕНИЕ(Перечисление.СтатусыВзаимодействий.Завершено)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ВТ_ПервичныеЗвонки.Взаимодействие) КАК Количество,
+	ВТ_ПервичныеЗвонки.Ответственный КАК Ответственный,
+	ВТ_ПервичныеЗвонки.ГруппаОтветственного КАК ГруппаОтветственного
+ПОМЕСТИТЬ ВТ_КоличествоПервичныхЗвонков
+ИЗ
+	ВТ_ПервичныеЗвонки КАК ВТ_ПервичныеЗвонки
+
+СГРУППИРОВАТЬ ПО
+	ВТ_ПервичныеЗвонки.Ответственный,
+	ВТ_ПервичныеЗвонки.ГруппаОтветственного
+
+ИНДЕКСИРОВАТЬ ПО
+	Ответственный,
+	ГруппаОтветственного
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ВТ_ВходящиеЗвонкиГПТ.Взаимодействие) КАК Количество,
+	ВТ_ВходящиеЗвонкиГПТ.Ответственный КАК Ответственный,
+	ВТ_ВходящиеЗвонкиГПТ.ГруппаОтветственного КАК ГруппаОтветственного
+ПОМЕСТИТЬ ВТ_КоличествоВходящиеЗвонкиГПТ
+ИЗ
+	ВТ_ВходящиеЗвонкиГПТ КАК ВТ_ВходящиеЗвонкиГПТ
+
+СГРУППИРОВАТЬ ПО
+	ВТ_ВходящиеЗвонкиГПТ.Ответственный,
+	ВТ_ВходящиеЗвонкиГПТ.ГруппаОтветственного
+
+ИНДЕКСИРОВАТЬ ПО
+	Ответственный,
+	ГруппаОтветственного
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_ИсходящиеЗвонкиГПТ.ГруппаОтветственного КАК ГруппаОтветственного,
+	ВТ_ИсходящиеЗвонкиГПТ.Ответственный КАК Ответственный,
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ВТ_ИсходящиеЗвонкиГПТ.Взаимодействие) КАК Количество
+ПОМЕСТИТЬ ВТ_КоличествоИсходящиеЗвонкиГПТ
+ИЗ
+	ВТ_ИсходящиеЗвонкиГПТ КАК ВТ_ИсходящиеЗвонкиГПТ
+
+СГРУППИРОВАТЬ ПО
+	ВТ_ИсходящиеЗвонкиГПТ.Ответственный,
+	ВТ_ИсходящиеЗвонкиГПТ.ГруппаОтветственного
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ВТ_ЗвонкиГПТ_НетКонтакта.Взаимодействие) КАК Количество,
+	ВТ_ЗвонкиГПТ_НетКонтакта.Ответственный КАК Ответственный,
+	ВТ_ЗвонкиГПТ_НетКонтакта.ГруппаОтветственного КАК ГруппаОтветственного
+ПОМЕСТИТЬ ВТ_КоличествоЗвонкиГПТ_НетКонтакта
+ИЗ
+	ВТ_ЗвонкиГПТ_НетКонтакта КАК ВТ_ЗвонкиГПТ_НетКонтакта
+
+СГРУППИРОВАТЬ ПО
+	ВТ_ЗвонкиГПТ_НетКонтакта.Ответственный,
+	ВТ_ЗвонкиГПТ_НетКонтакта.ГруппаОтветственного
+
+ИНДЕКСИРОВАТЬ ПО
+	Ответственный,
+	ГруппаОтветственного
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ВТ_ВстречиАвтораГПТ.Взаимодействие) КАК Количество,
+	ВТ_ВстречиАвтораГПТ.Ответственный КАК Ответственный,
+	ВТ_ВстречиАвтораГПТ.ГруппаОтветственного КАК ГруппаОтветственного
+ПОМЕСТИТЬ ВТ_КоличествоВстречиАвтораГПТ
+ИЗ
+	ВТ_ВстречиАвтораГПТ КАК ВТ_ВстречиАвтораГПТ
+
+СГРУППИРОВАТЬ ПО
+	ВТ_ВстречиАвтораГПТ.Ответственный,
+	ВТ_ВстречиАвтораГПТ.ГруппаОтветственного
+
+ИНДЕКСИРОВАТЬ ПО
+	Ответственный,
+	ГруппаОтветственного
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ВТ_ЗавершенныеВстречиАвтораГПТ.Взаимодействие) КАК Количество,
+	ВТ_ЗавершенныеВстречиАвтораГПТ.Ответственный КАК Ответственный,
+	ВТ_ЗавершенныеВстречиАвтораГПТ.ГруппаОтветственного КАК ГруппаОтветственного
+ПОМЕСТИТЬ ВТ_КоличествоЗавершенныеВстречиАвтораГПТ
+ИЗ
+	ВТ_ЗавершенныеВстречиАвтораГПТ КАК ВТ_ЗавершенныеВстречиАвтораГПТ
+
+СГРУППИРОВАТЬ ПО
+	ВТ_ЗавершенныеВстречиАвтораГПТ.Ответственный,
+	ВТ_ЗавершенныеВстречиАвтораГПТ.ГруппаОтветственного
+
+ИНДЕКСИРОВАТЬ ПО
+	Ответственный,
+	ГруппаОтветственного
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_СоставСменГПТ.ГруппаПользователя КАК ГруппаПользователя,
+	ВТ_СоставСменГПТ.Пользователь КАК Пользователь,
+	0 КАК ВсегоПоток,
+	0 КАК ПервичныеЗвонки,
+	0 КАК ВходящиеПервичныеЗвонки,
+	0 КАК ИсходящиеПервичныеЗвонки,
+	0 КАК ОтказНетКонтакта,
+	0 КАК НазначеноВстреч,
+	0 КАК ЗавершеноНазначенныхВстреч
+ИЗ
+	ВТ_СоставСменГПТ КАК ВТ_СоставСменГПТ
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	ВТ_ПрямыеЗвонки.ГруппаПользователя,
+	ВТ_ПрямыеЗвонки.Ответственный,
+	ВТ_ПрямыеЗвонки.Количество,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0
+ИЗ
+	ВТ_ПрямыеЗвонки КАК ВТ_ПрямыеЗвонки
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	ВТ_КоличествоПервичныхЗвонков.ГруппаОтветственного,
+	ВТ_КоличествоПервичныхЗвонков.Ответственный,
+	0,
+	ЕСТЬNULL(ВТ_КоличествоПервичныхЗвонков.Количество, 0),
+	0,
+	0,
+	0,
+	0,
+	0
+ИЗ
+	ВТ_КоличествоПервичныхЗвонков КАК ВТ_КоличествоПервичныхЗвонков
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	ВТ_КоличествоВходящиеЗвонкиГПТ.ГруппаОтветственного,
+	ВТ_КоличествоВходящиеЗвонкиГПТ.Ответственный,
+	0,
+	0,
+	ВТ_КоличествоВходящиеЗвонкиГПТ.Количество,
+	0,
+	0,
+	0,
+	0
+ИЗ
+	ВТ_КоличествоВходящиеЗвонкиГПТ КАК ВТ_КоличествоВходящиеЗвонкиГПТ
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	ВТ_КоличествоИсходящиеЗвонкиГПТ.ГруппаОтветственного,
+	ВТ_КоличествоИсходящиеЗвонкиГПТ.Ответственный,
+	0,
+	0,
+	0,
+	ВТ_КоличествоИсходящиеЗвонкиГПТ.Количество,
+	0,
+	0,
+	0
+ИЗ
+	ВТ_КоличествоИсходящиеЗвонкиГПТ КАК ВТ_КоличествоИсходящиеЗвонкиГПТ
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	ВТ_КоличествоЗвонкиГПТ_НетКонтакта.ГруппаОтветственного,
+	ВТ_КоличествоЗвонкиГПТ_НетКонтакта.Ответственный,
+	0,
+	0,
+	0,
+	0,
+	ВТ_КоличествоЗвонкиГПТ_НетКонтакта.Количество,
+	0,
+	0
+ИЗ
+	ВТ_КоличествоЗвонкиГПТ_НетКонтакта КАК ВТ_КоличествоЗвонкиГПТ_НетКонтакта
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	ВТ_КоличествоВстречиАвтораГПТ.ГруппаОтветственного,
+	ВТ_КоличествоВстречиАвтораГПТ.Ответственный,
+	0,
+	0,
+	0,
+	0,
+	0,
+	ВТ_КоличествоВстречиАвтораГПТ.Количество,
+	0
+ИЗ
+	ВТ_КоличествоВстречиАвтораГПТ КАК ВТ_КоличествоВстречиАвтораГПТ
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	ВТ_КоличествоЗавершенныеВстречиАвтораГПТ.ГруппаОтветственного,
+	ВТ_КоличествоЗавершенныеВстречиАвтораГПТ.Ответственный,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	ВТ_КоличествоЗавершенныеВстречиАвтораГПТ.Количество
+ИЗ
+	ВТ_КоличествоЗавершенныеВстречиАвтораГПТ КАК ВТ_КоличествоЗавершенныеВстречиАвтораГПТ</query>
+	</dataSet>
+	<calculatedField>
+		<dataPath>ОтказНетКонтактаПроцентОтПервичных</dataPath>
+		<expression>Выбор когда ПервичныеЗвонки = 0 Тогда 0 Иначе ОтказНетКонтакта / ПервичныеЗвонки * 100 Конец </expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Отказ - нет контакта (% от первичных)</v8:content>
+			</v8:item>
+		</title>
+		<useRestriction>
+			<condition>true</condition>
+		</useRestriction>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+				<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+			</dcscor:item>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="xs:string">ЧЦ='15'; ЧДЦ='2'</dcscor:value>
+			</dcscor:item>
+		</appearance>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>15</v8:Digits>
+				<v8:FractionDigits>2</v8:FractionDigits>
+				<v8:AllowedSign>Any</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ЗавершеноНазначенныхВстречПроцент</dataPath>
+		<expression>Выбор когда НазначеноВстреч = 0 Тогда 0 Иначе ЗавершеноНазначенныхВстреч / НазначеноВстреч * 100 Конец</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Завершено назначенных встреч (%)</v8:content>
+			</v8:item>
+		</title>
+		<useRestriction>
+			<condition>true</condition>
+		</useRestriction>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+				<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+			</dcscor:item>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="xs:string">ЧЦ='15'; ЧДЦ='2'</dcscor:value>
+			</dcscor:item>
+		</appearance>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>15</v8:Digits>
+				<v8:FractionDigits>2</v8:FractionDigits>
+				<v8:AllowedSign>Any</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>НазначеноВстречПроцентОтПервичных</dataPath>
+		<expression>Выбор когда ПервичныеЗвонки = 0 Тогда 0 Иначе НазначеноВстреч / ПервичныеЗвонки * 100 Конец </expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Назначено встреч (% от первичных)</v8:content>
+			</v8:item>
+		</title>
+		<useRestriction>
+			<condition>true</condition>
+		</useRestriction>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+				<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+			</dcscor:item>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧЦ='15'; ЧДЦ='2'</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>15</v8:Digits>
+				<v8:FractionDigits>2</v8:FractionDigits>
+				<v8:AllowedSign>Any</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ВходящиеПервичныеЗвонкиРасчет</dataPath>
+		<expression>ПервичныеЗвонки - ИсходящиеПервичныеЗвонки</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Входящие первичные звонки</v8:content>
+			</v8:item>
+		</title>
+		<useRestriction>
+			<condition>true</condition>
+		</useRestriction>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+				<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+			</dcscor:item>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧЦ=15; ЧДЦ=</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>15</v8:Digits>
+				<v8:FractionDigits>2</v8:FractionDigits>
+				<v8:AllowedSign>Any</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+	</calculatedField>
+	<totalField>
+		<dataPath>ВсегоПоток</dataPath>
+		<expression>Сумма(ВсегоПоток)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ВходящиеПервичныеЗвонки</dataPath>
+		<expression>Сумма(ВходящиеПервичныеЗвонки)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗавершеноНазначенныхВстреч</dataPath>
+		<expression>Сумма(ЗавершеноНазначенныхВстреч)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ИсходящиеПервичныеЗвонки</dataPath>
+		<expression>Сумма(ИсходящиеПервичныеЗвонки)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>НазначеноВстреч</dataPath>
+		<expression>Сумма(НазначеноВстреч)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>НазначеноВстречПроцентОтПервичных</dataPath>
+		<expression>Выбор когда Сумма(ПервичныеЗвонки) = 0 Тогда 0 Иначе Сумма(НазначеноВстреч) / Сумма(ПервичныеЗвонки) Конец * 100</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ОтказНетКонтакта</dataPath>
+		<expression>Сумма(ОтказНетКонтакта)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ОтказНетКонтактаПроцентОтПервичных</dataPath>
+		<expression>Выбор когда Сумма(ПервичныеЗвонки) = 0 Тогда 0 Иначе Сумма(ОтказНетКонтакта) / Сумма(ПервичныеЗвонки) Конец * 100</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПервичныеЗвонки</dataPath>
+		<expression>Сумма(ПервичныеЗвонки)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗавершеноНазначенныхВстречПроцент</dataPath>
+		<expression>Выбор когда Сумма(НазначеноВстреч) = 0 Тогда 0 Иначе Сумма(ЗавершеноНазначенныхВстреч) / Сумма(НазначеноВстреч) * 100 Конец</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ВходящиеПервичныеЗвонкиРасчет</dataPath>
+		<expression>Сумма(ВходящиеПервичныеЗвонкиРасчет)</expression>
+	</totalField>
+	<parameter>
+		<name>ПериодКонец</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период конец</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;ПериодОтчета.ДатаОкончания</expression>
+	</parameter>
+	<parameter>
+		<name>ПериодНачало</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период начало</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;ПериодОтчета.ДатаНачала</expression>
+	</parameter>
+	<parameter>
+		<name>ТекущаяДатаПараметр</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Текущая дата параметр</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>ТекущаяДата()</expression>
+	</parameter>
+	<parameter>
+		<name>ПериодОтчета</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Статистика по менеджерам ГПТ</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ВсегоПоток</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПервичныеЗвонки</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ВходящиеПервичныеЗвонкиРасчет</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ИсходящиеПервичныеЗвонки</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ОтказНетКонтакта</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ОтказНетКонтактаПроцентОтПервичных</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>НазначеноВстреч</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>НазначеноВстречПроцентОтПервичных</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ЗавершеноНазначенныхВстреч</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ЗавершеноНазначенныхВстречПроцент</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Пользователь</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>e6abeee4-8a47-4193-9a68-b1f5778d1b3a</dcsset:userSettingID>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ТекущаяДатаПараметр</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+					<dcsset:userSettingID>c6127ced-b43d-490c-9561-5b575ebaabe8</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ПериодОтчета</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">ThisMonth</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>33e66ed8-75e7-4c26-b060-3ca79d144eb4</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>ГруппаПользователя</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">МакетОформленияКвартирограммыНовый</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ГоризонтальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВертикальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">Auto</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ТипДиаграммы</dcscor:parameter>
+					<dcscor:value xsi:type="v8ui:ChartType">Column3D</dcscor:value>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>ТипДиаграммы.СтильГраницы</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
+							<v8ui:style xsi:type="v8ui:SpreadsheetDocumentDrawingLineType">Dotted</v8ui:style>
+						</dcscor:value>
+					</dcscor:item>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Заголовок</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Статистика по менеджерам ГПТ</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>ГруппаПользователя</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Пользователь</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

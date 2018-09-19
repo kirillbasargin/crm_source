@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.6">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="AfterWriteAtServer">ПослеЗаписиНаСервере</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="Код" id="1">
+			<DataPath>Объект.Code</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="КодКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="КодРасширеннаяПодсказка" id="3"/>
+		</InputField>
+		<InputField name="Наименование" id="4">
+			<DataPath>Объект.Description</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="НаименованиеКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="6"/>
+		</InputField>
+		<InputField name="Login" id="7">
+			<DataPath>Объект.Login</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="LoginКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="LoginРасширеннаяПодсказка" id="9"/>
+		</InputField>
+		<InputField name="Password1" id="28">
+			<DataPath>Password</DataPath>
+			<PasswordMode>true</PasswordMode>
+			<ContextMenu name="Password1КонтекстноеМеню" id="29"/>
+			<ExtendedTooltip name="Password1РасширеннаяПодсказка" id="30"/>
+		</InputField>
+		<InputField name="Password" id="10">
+			<DataPath>Объект.Password</DataPath>
+			<Visible>false</Visible>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="PasswordКонтекстноеМеню" id="11"/>
+			<ExtendedTooltip name="PasswordРасширеннаяПодсказка" id="12"/>
+		</InputField>
+		<CheckBoxField name="ПолучатьОбращения" id="13">
+			<DataPath>Объект.ПолучатьОбращения</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="ПолучатьОбращенияКонтекстноеМеню" id="14"/>
+			<ExtendedTooltip name="ПолучатьОбращенияРасширеннаяПодсказка" id="15"/>
+		</CheckBoxField>
+		<InputField name="ВидПериода" id="16">
+			<DataPath>Объект.ВидПериода</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ListChoiceMode>true</ListChoiceMode>
+			<ChoiceList>
+				<xr:Item>
+					<xr:Presentation/>
+					<xr:CheckState>0</xr:CheckState>
+					<xr:Value xsi:type="FormChoiceListDesTimeValue">
+						<Presentation>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Текущая дата</v8:content>
+							</v8:item>
+						</Presentation>
+						<Value xsi:type="xr:DesignTimeRef">Enum.ВидыПериодов.EnumValue.Дата</Value>
+					</xr:Value>
+				</xr:Item>
+				<xr:Item>
+					<xr:Presentation/>
+					<xr:CheckState>0</xr:CheckState>
+					<xr:Value xsi:type="FormChoiceListDesTimeValue">
+						<Presentation>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Период</v8:content>
+							</v8:item>
+						</Presentation>
+						<Value xsi:type="xr:DesignTimeRef">Enum.ВидыПериодов.EnumValue.День</Value>
+					</xr:Value>
+				</xr:Item>
+			</ChoiceList>
+			<ContextMenu name="ВидПериодаКонтекстноеМеню" id="17"/>
+			<ExtendedTooltip name="ВидПериодаРасширеннаяПодсказка" id="18"/>
+			<Events>
+				<Event name="OnChange">ВидПериодаПриИзменении</Event>
+			</Events>
+		</InputField>
+		<InputField name="ПериодНачало" id="19">
+			<DataPath>Объект.ПериодНачало</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ПериодНачалоКонтекстноеМеню" id="20"/>
+			<ExtendedTooltip name="ПериодНачалоРасширеннаяПодсказка" id="21"/>
+		</InputField>
+		<InputField name="ПериодОкончание" id="22">
+			<DataPath>Объект.ПериодОкончание</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ПериодОкончаниеКонтекстноеМеню" id="23"/>
+			<ExtendedTooltip name="ПериодОкончаниеРасширеннаяПодсказка" id="24"/>
+		</InputField>
+		<InputField name="ID" id="25">
+			<DataPath>Объект.ID</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="IDКонтекстноеМеню" id="26"/>
+			<ExtendedTooltip name="IDРасширеннаяПодсказка" id="27"/>
+		</InputField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.ПараметрыПолученияОбращенийComagic</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="Password" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Password</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>100</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+</Form>

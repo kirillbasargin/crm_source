@@ -1,0 +1,786 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Ответственный</dataPath>
+			<field>Ответственный</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ответственный</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоВторичныхВстреч</dataPath>
+			<field>КоличествоВторичныхВстреч</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вторичные встречи</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоВзаимодействийПоЗаявке</dataPath>
+			<field>КоличествоВзаимодействийПоЗаявке</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Встреч менеджера по заявке</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоПервичныхВстреч</dataPath>
+			<field>КоличествоПервичныхВстреч</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Первичные встречи</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаявкаНаСделку</dataPath>
+			<field>ЗаявкаНаСделку</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СделкаРасторгнута</dataPath>
+			<field>СделкаРасторгнута</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сделка расторгнута</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Проект</dataPath>
+			<field>Проект</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВстречПоЗаявке</dataPath>
+			<field>ВстречПоЗаявке</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Всего встреч по заявке</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДоляПоСделке</dataPath>
+			<field>ДоляПоСделке</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сделки</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>4</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДоляПоСделкеСУчетомРасторженных</dataPath>
+			<field>ДоляПоСделкеСУчетомРасторженных</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сделки с учетом расторженных</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>4</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТипОбъектаНедвижимости</dataPath>
+			<field>ТипОбъектаНедвижимости</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тип объекта недвижимости</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	Взаимодействия.Ответственный КАК Ответственный,
+	СУММА(ВЫБОР
+			КОГДА Взаимодействия.АктивностьВзаимодействия = ЗНАЧЕНИЕ(Перечисление.ТипАктивностиВзаимодействия.Первичное)
+				ТОГДА 1
+			ИНАЧЕ 0
+		КОНЕЦ) КАК КоличествоПервичныхВстреч,
+	СУММА(ВЫБОР
+			КОГДА Взаимодействия.АктивностьВзаимодействия = ЗНАЧЕНИЕ(Перечисление.ТипАктивностиВзаимодействия.Вторичное)
+				ТОГДА 1
+			ИНАЧЕ 0
+		КОНЕЦ) КАК КоличествоВторичныхВстреч,
+	Взаимодействия.Проект КАК Проект
+ПОМЕСТИТЬ вт_ЗавершённыеВстречиФилиала
+ИЗ
+	РегистрСведений.Взаимодействия КАК Взаимодействия
+ГДЕ
+	Взаимодействия.ДатаВзаимодействия МЕЖДУ &amp;ПериодНачало И &amp;ПериодКонец
+	И Взаимодействия.Статус = ЗНАЧЕНИЕ(Перечисление.СтатусыВзаимодействий.Завершено)
+	И Взаимодействия.Взаимодействие ССЫЛКА Документ.Встреча
+	И Взаимодействия.ГруппаОтветственного.Наименование В ("Филиал", "Земля Розница", "Центральный офис")
+	И Взаимодействия.Офис В ("Филиал", "ОПО", "ЦО")
+{ГДЕ
+	Взаимодействия.Проект.*,
+	Взаимодействия.Предмет.ТипОбъектаНедвижимости КАК ТипОбъектаНедвижимости}
+
+СГРУППИРОВАТЬ ПО
+	Взаимодействия.Ответственный,
+	Взаимодействия.Проект
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ДокументЗаявкаНаСделку.Ссылка КАК ЗаявкаНаСделку,
+	ДокументЗаявкаНаСделку.Дата КАК ДатаЗаявки,
+	ДокументЗаявкаНаСделку.ДокументОснование КАК Запрос,
+	ДокументЗаявкаНаСделку.Ответственный КАК Ответственный,
+	Сделки.Ссылка КАК Ссылка,
+	ВЫБОР
+		КОГДА Сделки.СтатусСделки = ЗНАЧЕНИЕ(Перечисление.СтатусыСделокСправочник.Расторгнута)
+			ТОГДА ИСТИНА
+		ИНАЧЕ ЛОЖЬ
+	КОНЕЦ КАК СделкаРасторгнута,
+	ДокументЗаявкаНаСделку.Проект КАК Проект
+ПОМЕСТИТЬ вт_СписокЗаявокНаСделку
+ИЗ
+	Документ.ЗаявкаНаСделку КАК ДокументЗаявкаНаСделку
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.СтатусыСделки.СрезПоследних КАК СтатусыСделкиСрезПоследних
+		ПО ДокументЗаявкаНаСделку.Ссылка = СтатусыСделкиСрезПоследних.ЗаявкаНаСделку
+			И (СтатусыСделкиСрезПоследних.Статус &lt;&gt; ЗНАЧЕНИЕ(Перечисление.СтатусыСделки.Отказ))
+		ЛЕВОЕ СОЕДИНЕНИЕ Справочник.Сделки КАК Сделки
+		ПО ДокументЗаявкаНаСделку.Ссылка = Сделки.ЗаявкаНаСделку
+ГДЕ
+	ДокументЗаявкаНаСделку.Дата МЕЖДУ &amp;ПериодНачало И &amp;ПериодКонец
+	И НЕ СтатусыСделкиСрезПоследних.ЗаявкаНаСделку ЕСТЬ NULL
+	И НЕ Сделки.Ссылка ЕСТЬ NULL
+{ГДЕ
+	ДокументЗаявкаНаСделку.Проект.*,
+	ДокументЗаявкаНаСделку.ДокументОснование.ТипОбъектаНедвижимости КАК ТипОбъектаНедвижимости}
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	вт_СписокЗаявокНаСделку.ЗаявкаНаСделку КАК ЗаявкаНаСделку,
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ Взаимодействия.Взаимодействие) КАК КоличествоВзаимодействийПоЗаявке,
+	Взаимодействия.Ответственный КАК Ответственный,
+	вт_СписокЗаявокНаСделку.СделкаРасторгнута КАК СделкаРасторгнута,
+	вт_СписокЗаявокНаСделку.Проект КАК Проект
+ПОМЕСТИТЬ вт_ВзаимодействияПоЗаявкеНаСделку
+ИЗ
+	вт_СписокЗаявокНаСделку КАК вт_СписокЗаявокНаСделку
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.Взаимодействия КАК Взаимодействия
+		ПО вт_СписокЗаявокНаСделку.Запрос = Взаимодействия.Предмет
+			И (Взаимодействия.Статус = ЗНАЧЕНИЕ(Перечисление.СтатусыВзаимодействий.Завершено))
+			И (Взаимодействия.Взаимодействие ССЫЛКА Документ.Встреча)
+			И (Взаимодействия.ГруппаОтветственного.Наименование В ("Филиал", "Земля Розница", "Центральный офис"))
+ГДЕ
+	РАЗНОСТЬДАТ(Взаимодействия.ДатаВзаимодействия, вт_СписокЗаявокНаСделку.ДатаЗаявки, ДЕНЬ) &lt;= 180
+	И РАЗНОСТЬДАТ(Взаимодействия.ДатаВзаимодействия, вт_СписокЗаявокНаСделку.ДатаЗаявки, ДЕНЬ) &gt;= 0
+	И Взаимодействия.Офис В ("Филиал", "ОПО", "ЦО")
+{ГДЕ
+	Взаимодействия.Проект.*}
+
+СГРУППИРОВАТЬ ПО
+	вт_СписокЗаявокНаСделку.ЗаявкаНаСделку,
+	Взаимодействия.Ответственный,
+	вт_СписокЗаявокНаСделку.СделкаРасторгнута,
+	вт_СписокЗаявокНаСделку.Проект
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	вт_ВзаимодействияПоЗаявкеНаСделку.ЗаявкаНаСделку КАК ЗаявкаНаСделку,
+	СУММА(вт_ВзаимодействияПоЗаявкеНаСделку.КоличествоВзаимодействийПоЗаявке) КАК КоличествоВзаимодействийПоЗаявке
+ПОМЕСТИТЬ вт_КоличествоВзаимодействийПоЗаявке
+ИЗ
+	вт_ВзаимодействияПоЗаявкеНаСделку КАК вт_ВзаимодействияПоЗаявкеНаСделку
+
+СГРУППИРОВАТЬ ПО
+	вт_ВзаимодействияПоЗаявкеНаСделку.ЗаявкаНаСделку
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ЕСТЬNULL(вт_ВзаимодействияПоЗаявкеНаСделку.Проект, вт_ЗавершённыеВстречиФилиала.Проект) КАК Проект,
+	ВЫБОР
+		КОГДА ЕСТЬNULL(вт_ВзаимодействияПоЗаявкеНаСделку.Ответственный.Недействителен, вт_ЗавершённыеВстречиФилиала.Ответственный.Недействителен) = ИСТИНА
+			ТОГДА "&lt;Уволенные сотрудники&gt;"
+		ИНАЧЕ ЕСТЬNULL(вт_ВзаимодействияПоЗаявкеНаСделку.Ответственный, вт_ЗавершённыеВстречиФилиала.Ответственный)
+	КОНЕЦ КАК Ответственный,
+	вт_ВзаимодействияПоЗаявкеНаСделку.ЗаявкаНаСделку КАК ЗаявкаНаСделку,
+	вт_ВзаимодействияПоЗаявкеНаСделку.СделкаРасторгнута КАК СделкаРасторгнута,
+	ЕСТЬNULL(вт_ЗавершённыеВстречиФилиала.КоличествоПервичныхВстреч, 0) КАК КоличествоПервичныхВстреч,
+	ЕСТЬNULL(вт_ЗавершённыеВстречиФилиала.КоличествоВторичныхВстреч, 0) КАК КоличествоВторичныхВстреч,
+	ЕСТЬNULL(вт_ВзаимодействияПоЗаявкеНаСделку.КоличествоВзаимодействийПоЗаявке, 0) КАК КоличествоВзаимодействийПоЗаявке,
+	вт_КоличествоВзаимодействийПоЗаявке.КоличествоВзаимодействийПоЗаявке КАК ВстречПоЗаявке,
+	вт_ВзаимодействияПоЗаявкеНаСделку.КоличествоВзаимодействийПоЗаявке / ВЫБОР
+		КОГДА ЕСТЬNULL(вт_КоличествоВзаимодействийПоЗаявке.КоличествоВзаимодействийПоЗаявке, 0) = 0
+			ТОГДА 1
+		ИНАЧЕ вт_КоличествоВзаимодействийПоЗаявке.КоличествоВзаимодействийПоЗаявке
+	КОНЕЦ КАК ДоляПоСделке,
+	ВЫБОР
+		КОГДА вт_ВзаимодействияПоЗаявкеНаСделку.СделкаРасторгнута
+			ТОГДА 0
+		ИНАЧЕ вт_ВзаимодействияПоЗаявкеНаСделку.КоличествоВзаимодействийПоЗаявке / ВЫБОР
+				КОГДА ЕСТЬNULL(вт_КоличествоВзаимодействийПоЗаявке.КоличествоВзаимодействийПоЗаявке, 0) = 0
+					ТОГДА 1
+				ИНАЧЕ вт_КоличествоВзаимодействийПоЗаявке.КоличествоВзаимодействийПоЗаявке
+			КОНЕЦ
+	КОНЕЦ КАК ДоляПоСделкеСУчетомРасторженных
+{ВЫБРАТЬ
+	Проект.*,
+	Ответственный.*,
+	ЗаявкаНаСделку.*,
+	СделкаРасторгнута,
+	КоличествоПервичныхВстреч,
+	КоличествоВторичныхВстреч,
+	КоличествоВзаимодействийПоЗаявке,
+	ВстречПоЗаявке,
+	ДоляПоСделке,
+	ДоляПоСделкеСУчетомРасторженных}
+ИЗ
+	вт_ВзаимодействияПоЗаявкеНаСделку КАК вт_ВзаимодействияПоЗаявкеНаСделку
+		ПОЛНОЕ СОЕДИНЕНИЕ вт_ЗавершённыеВстречиФилиала КАК вт_ЗавершённыеВстречиФилиала
+		ПО вт_ВзаимодействияПоЗаявкеНаСделку.Ответственный = вт_ЗавершённыеВстречиФилиала.Ответственный
+			И вт_ВзаимодействияПоЗаявкеНаСделку.Проект = вт_ЗавершённыеВстречиФилиала.Проект
+		ПОЛНОЕ СОЕДИНЕНИЕ вт_КоличествоВзаимодействийПоЗаявке КАК вт_КоличествоВзаимодействийПоЗаявке
+		ПО вт_ВзаимодействияПоЗаявкеНаСделку.ЗаявкаНаСделку = вт_КоличествоВзаимодействийПоЗаявке.ЗаявкаНаСделку
+{ГДЕ
+	(ВЫБОР
+			КОГДА ЕСТЬNULL(вт_ВзаимодействияПоЗаявкеНаСделку.Ответственный.Недействителен, вт_ЗавершённыеВстречиФилиала.Ответственный.Недействителен) = ИСТИНА
+				ТОГДА "&lt;Уволенные сотрудники&gt;"
+			ИНАЧЕ ЕСТЬNULL(вт_ВзаимодействияПоЗаявкеНаСделку.Ответственный, вт_ЗавершённыеВстречиФилиала.Ответственный)
+		КОНЕЦ).* КАК Ответственный}</query>
+		<autoFillFields>false</autoFillFields>
+	</dataSet>
+	<calculatedField>
+		<dataPath>Эффективность</dataPath>
+		<expression>0</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Эффективность</v8:content>
+			</v8:item>
+		</title>
+		<useRestriction>
+			<condition>true</condition>
+			<group>true</group>
+		</useRestriction>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="xs:string">ЧЦ='5'; ЧДЦ='2'</dcscor:value>
+			</dcscor:item>
+		</appearance>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>5</v8:Digits>
+				<v8:FractionDigits>2</v8:FractionDigits>
+				<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ЭффективностьСУчетомРасторженных</dataPath>
+		<expression>0</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Эффективность с учетом расторженных</v8:content>
+			</v8:item>
+		</title>
+		<useRestriction>
+			<condition>true</condition>
+			<group>true</group>
+		</useRestriction>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="xs:string">ЧЦ='5'; ЧДЦ='2'</dcscor:value>
+			</dcscor:item>
+		</appearance>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>5</v8:Digits>
+				<v8:FractionDigits>2</v8:FractionDigits>
+				<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+	</calculatedField>
+	<totalField>
+		<dataPath>КоличествоВзаимодействийПоЗаявке</dataPath>
+		<expression>Сумма(КоличествоВзаимодействийПоЗаявке)</expression>
+		<group>ЗаявкаНаСделку</group>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоВторичныхВстреч</dataPath>
+		<expression>Максимум(КоличествоВторичныхВстреч)</expression>
+		<group>Ответственный</group>
+		<group>Ответственный Иерархия</group>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоПервичныхВстреч</dataPath>
+		<expression>Максимум(КоличествоПервичныхВстреч)</expression>
+		<group>Ответственный</group>
+		<group>Ответственный Иерархия</group>
+	</totalField>
+	<totalField>
+		<dataPath>ВстречПоЗаявке</dataPath>
+		<expression>Сумма(ВстречПоЗаявке)</expression>
+		<group>ЗаявкаНаСделку</group>
+	</totalField>
+	<totalField>
+		<dataPath>ДоляПоСделке</dataPath>
+		<expression>Сумма(ДоляПоСделке)</expression>
+		<group>ЗаявкаНаСделку</group>
+		<group>Ответственный</group>
+		<group>Ответственный Иерархия</group>
+		<group>Проект</group>
+	</totalField>
+	<totalField>
+		<dataPath>ДоляПоСделкеСУчетомРасторженных</dataPath>
+		<expression>Сумма(ДоляПоСделкеСУчетомРасторженных)</expression>
+		<group>ЗаявкаНаСделку</group>
+		<group>Ответственный</group>
+		<group>Ответственный Иерархия</group>
+		<group>Проект</group>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоПервичныхВстреч</dataPath>
+		<expression>Сумма(ВычислитьВыражениеСГруппировкойМассив("Максимум(КоличествоПервичныхВстреч)", "Ответственный"))</expression>
+		<group>Проект</group>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоВторичныхВстреч</dataPath>
+		<expression>Сумма(ВычислитьВыражениеСГруппировкойМассив("Максимум(КоличествоВторичныхВстреч)", "Ответственный"))</expression>
+		<group>Проект</group>
+	</totalField>
+	<totalField>
+		<dataPath>Эффективность</dataPath>
+		<expression>Сумма(ДоляПоСделке)/выбор когда Сумма(ВычислитьВыражениеСГруппировкойМассив("Максимум(КоличествоПервичныхВстреч)", "Ответственный")) = 0 Тогда 1 иначе Сумма(ВычислитьВыражениеСГруппировкойМассив("Максимум(КоличествоПервичныхВстреч)", "Ответственный")) конец * 100</expression>
+		<group>Проект</group>
+	</totalField>
+	<totalField>
+		<dataPath>ЭффективностьСУчетомРасторженных</dataPath>
+		<expression>Сумма(ДоляПоСделкеСУчетомРасторженных)/выбор когда Сумма(ВычислитьВыражениеСГруппировкойМассив("Максимум(КоличествоПервичныхВстреч)", "Ответственный")) =0 Тогда 1 иначе Сумма(ВычислитьВыражениеСГруппировкойМассив("Максимум(КоличествоПервичныхВстреч)", "Ответственный")) конец * 100</expression>
+		<group>Проект</group>
+	</totalField>
+	<totalField>
+		<dataPath>Эффективность</dataPath>
+		<expression>Сумма(ДоляПоСделке)/выбор когда Максимум(КоличествоПервичныхВстреч) = 0Тогда 1 иначе Максимум(КоличествоПервичныхВстреч) конец * 100</expression>
+		<group>Ответственный</group>
+		<group>Ответственный Иерархия</group>
+	</totalField>
+	<totalField>
+		<dataPath>ЭффективностьСУчетомРасторженных</dataPath>
+		<expression>Сумма(ДоляПоСделкеСУчетомРасторженных)/выбор когда Максимум(КоличествоПервичныхВстреч) = 0 Тогда 1 иначе Максимум(КоличествоПервичныхВстреч) конец * 100</expression>
+		<group>Ответственный</group>
+		<group>Ответственный Иерархия</group>
+	</totalField>
+	<parameter>
+		<name>ПериодКонец</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период конец</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаОкончания</expression>
+	</parameter>
+	<parameter>
+		<name>ПериодНачало</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период начало</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаНачала</expression>
+	</parameter>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Проект</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Ответственный</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ЗаявкаНаСделку</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоПервичныхВстреч</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоВторичныхВстреч</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоВзаимодействийПоЗаявке</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ВстречПоЗаявке</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДоляПоСделке</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДоляПоСделкеСУчетомРасторженных</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Эффективность</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ЭффективностьСУчетомРасторженных</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Проект</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>b067e1a3-e965-499c-9718-ef85db7402d0</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ТипОбъектаНедвижимости</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="xs:string"/>
+					<dcsset:userSettingID>db463e97-af75-491e-be7e-298333839a70</dcsset:userSettingID>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">ThisMonth</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>f2f60091-0c5e-4a91-8a7b-3ebe1428474d</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Море</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ТипДиаграммы</dcscor:parameter>
+					<dcscor:value xsi:type="v8ui:ChartType">Column3D</dcscor:value>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ТипДиаграммы.ВидПодписей</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:ChartLabelType">Value</dcscor:value>
+					</dcscor:item>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Проект</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Ответственный</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+					<dcsset:item xsi:type="dcsset:StructureItemGroup">
+						<dcsset:groupItems>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>ЗаявкаНаСделку</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+						</dcsset:groupItems>
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ЗаявкаНаСделку</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:use>false</dcsset:use>
+								<dcsset:field>КоличествоПервичныхВстреч</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:use>false</dcsset:use>
+								<dcsset:field>КоличествоВторичныхВстреч</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>КоличествоВзаимодействийПоЗаявке</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ВстречПоЗаявке</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ДоляПоСделке</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ДоляПоСделкеСУчетомРасторженных</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:use>false</dcsset:use>
+								<dcsset:field>Эффективность</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:use>false</dcsset:use>
+								<dcsset:field>ЭффективностьСУчетомРасторженных</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+					</dcsset:item>
+				</dcsset:item>
+			</dcsset:item>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto">
+						<dcsset:use>false</dcsset:use>
+					</dcsset:item>
+				</dcsset:selection>
+			</dcsset:item>
+			<dcsset:item xsi:type="dcsset:StructureItemChart">
+				<dcsset:point>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Ответственный</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto">
+							<dcsset:use>false</dcsset:use>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>ЭффективностьСУчетомРасторженных</dcsset:field>
+							<dcsset:orderType>Desc</dcsset:orderType>
+						</dcsset:item>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:point>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto">
+						<dcsset:use>false</dcsset:use>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ЭффективностьСУчетомРасторженных</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:conditionalAppearance>
+					<dcsset:item>
+						<dcsset:selection>
+							<dcsset:item>
+								<dcsset:field>Ответственный</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+						<dcsset:filter>
+							<dcsset:item xsi:type="dcsset:FilterItemComparison">
+								<dcsset:left xsi:type="dcscor:Field">ЭффективностьСУчетомРасторженных</dcsset:left>
+								<dcsset:comparisonType>GreaterOrEqual</dcsset:comparisonType>
+								<dcsset:right xsi:type="xs:decimal">35</dcsset:right>
+							</dcsset:item>
+						</dcsset:filter>
+						<dcsset:appearance>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>ЦветВДиаграмме</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Color">web:GreenYellow</dcscor:value>
+							</dcscor:item>
+						</dcsset:appearance>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:selection>
+							<dcsset:item>
+								<dcsset:field>Ответственный</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+						<dcsset:filter>
+							<dcsset:item xsi:type="dcsset:FilterItemGroup">
+								<dcsset:groupType>AndGroup</dcsset:groupType>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">ЭффективностьСУчетомРасторженных</dcsset:left>
+									<dcsset:comparisonType>GreaterOrEqual</dcsset:comparisonType>
+									<dcsset:right xsi:type="xs:decimal">30</dcsset:right>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">ЭффективностьСУчетомРасторженных</dcsset:left>
+									<dcsset:comparisonType>Less</dcsset:comparisonType>
+									<dcsset:right xsi:type="xs:decimal">35</dcsset:right>
+								</dcsset:item>
+							</dcsset:item>
+						</dcsset:filter>
+						<dcsset:appearance>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>ЦветВДиаграмме</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Color">web:Yellow</dcscor:value>
+							</dcscor:item>
+						</dcsset:appearance>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:selection>
+							<dcsset:item>
+								<dcsset:field>Ответственный</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+						<dcsset:filter>
+							<dcsset:item xsi:type="dcsset:FilterItemComparison">
+								<dcsset:left xsi:type="dcscor:Field">ЭффективностьСУчетомРасторженных</dcsset:left>
+								<dcsset:comparisonType>Less</dcsset:comparisonType>
+								<dcsset:right xsi:type="xs:decimal">30</dcsset:right>
+							</dcsset:item>
+						</dcsset:filter>
+						<dcsset:appearance>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>ЦветВДиаграмме</dcscor:parameter>
+								<dcscor:value xsi:type="v8ui:Color">web:NavajoWhite</dcscor:value>
+							</dcscor:item>
+						</dcsset:appearance>
+					</dcsset:item>
+				</dcsset:conditionalAppearance>
+				<dcsset:outputParameters>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ТипДиаграммы</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:ChartType">Bar</dcscor:value>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ТипДиаграммы.ВидПодписей</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:ChartLabelType">Value</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:use>false</dcscor:use>
+							<dcscor:parameter>ТипДиаграммы.Окантовка</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:use>false</dcscor:use>
+							<dcscor:parameter>ТипДиаграммы.Градиент</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ТипДиаграммы.СтильГраницы</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Line" width="1" gap="false">
+								<v8ui:style xsi:type="v8ui:SpreadsheetDocumentDrawingLineType">Dotted</v8ui:style>
+							</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ТипДиаграммы.РасположениеЛегенды</dcscor:parameter>
+							<dcscor:value xsi:type="dcsset:DataCompositionChartLegendPlacement">None</dcscor:value>
+						</dcscor:item>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ВыводитьЗаголовок</dcscor:parameter>
+						<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">Output</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Заголовок</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Диаграмма эффективности, %</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</dcsset:outputParameters>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

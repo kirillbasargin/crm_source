@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОбъемСредствНаПокупку</dataPath>
+			<field>ОбъемСредствНаПокупку</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Ссылка</dataPath>
+			<field>Ссылка</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоКомнат_1</dataPath>
+			<field>КоличествоКомнат_1</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоКомнат_2</dataPath>
+			<field>КоличествоКомнат_2</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоКомнат_3</dataPath>
+			<field>КоличествоКомнат_3</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоКомнат_4</dataPath>
+			<field>КоличествоКомнат_4</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Отделка</dataPath>
+			<field>Отделка</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Мотивация</dataPath>
+			<field>Мотивация</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Мотивация</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ФакторВыбора</dataPath>
+			<field>ФакторВыбора</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Фактор выбора</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ФормаОплаты</dataPath>
+			<field>ФормаОплаты</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Форма оплаты</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЦельПокупки</dataPath>
+			<field>ЦельПокупки</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Цель покупки</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СтопФактор</dataPath>
+			<field>СтопФактор</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Стоп фактор</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ПараметрыЗапроса.Регистратор КАК Ссылка,
+	ВЫБОР
+		КОГДА ПараметрыЗапроса.Параметр = ЗНАЧЕНИЕ(Справочник.ПараметрыЗапроса.Мотивация)
+			ТОГДА ВЫРАЗИТЬ(ПараметрыЗапроса.ЗначениеСсылка КАК Справочник.Мотивации)
+		ИНАЧЕ NULL
+	КОНЕЦ КАК Мотивация,
+	ВЫБОР
+		КОГДА ПараметрыЗапроса.Параметр = ЗНАЧЕНИЕ(Справочник.ПараметрыЗапроса.ИмеющиесяНаличныеСредства)
+			ТОГДА ПараметрыЗапроса.ЗначениеЧисло
+		ИНАЧЕ 0
+	КОНЕЦ КАК ОбъемСредствНаПокупку,
+	ВЫБОР
+		КОГДА ПараметрыЗапроса.Параметр = ЗНАЧЕНИЕ(Справочник.ПараметрыЗапроса.ФакторВыбора)
+			ТОГДА ВЫРАЗИТЬ(ПараметрыЗапроса.ЗначениеСсылка КАК Справочник.ФакторыВыбораОН)
+		ИНАЧЕ NULL
+	КОНЕЦ КАК ФакторВыбора,
+	ВЫБОР
+		КОГДА ПараметрыЗапроса.Параметр = ЗНАЧЕНИЕ(Справочник.ПараметрыЗапроса.СтопФактор)
+			ТОГДА ВЫРАЗИТЬ(ПараметрыЗапроса.ЗначениеСсылка КАК Справочник.ФакторыВыбораОН)
+		ИНАЧЕ NULL
+	КОНЕЦ КАК СтопФактор,
+	ВЫБОР
+		КОГДА ПараметрыЗапроса.Параметр = ЗНАЧЕНИЕ(Справочник.ПараметрыЗапроса.ФормаОплаты)
+			ТОГДА ВЫРАЗИТЬ(ПараметрыЗапроса.ЗначениеСсылка КАК Перечисление.ФормыОплаты)
+		ИНАЧЕ NULL
+	КОНЕЦ КАК ФормаОплаты,
+	ВЫБОР
+		КОГДА ПараметрыЗапроса.Параметр = ЗНАЧЕНИЕ(Справочник.ПараметрыЗапроса.КоличествоКомнат_1)
+			ТОГДА ПараметрыЗапроса.ЗначениеЧисло
+		ИНАЧЕ 0
+	КОНЕЦ КАК КоличествоКомнат_1,
+	ВЫБОР
+		КОГДА ПараметрыЗапроса.Параметр = ЗНАЧЕНИЕ(Справочник.ПараметрыЗапроса.КоличествоКомнат_2)
+			ТОГДА ПараметрыЗапроса.ЗначениеЧисло
+		ИНАЧЕ 0
+	КОНЕЦ КАК КоличествоКомнат_2,
+	ВЫБОР
+		КОГДА ПараметрыЗапроса.Параметр = ЗНАЧЕНИЕ(Справочник.ПараметрыЗапроса.КоличествоКомнат_3)
+			ТОГДА ПараметрыЗапроса.ЗначениеЧисло
+		ИНАЧЕ 0
+	КОНЕЦ КАК КоличествоКомнат_3,
+	ВЫБОР
+		КОГДА ПараметрыЗапроса.Параметр = ЗНАЧЕНИЕ(Справочник.ПараметрыЗапроса.КоличествоКомнат_4)
+			ТОГДА ПараметрыЗапроса.ЗначениеЧисло
+		ИНАЧЕ 0
+	КОНЕЦ КАК КоличествоКомнат_4,
+	ВЫБОР
+		КОГДА ПараметрыЗапроса.Параметр = ЗНАЧЕНИЕ(Справочник.ПараметрыЗапроса.Отделка)
+			ТОГДА ПараметрыЗапроса.ЗначениеБулево
+		ИНАЧЕ ЛОЖЬ
+	КОНЕЦ КАК Отделка,
+	ВЫБОР
+		КОГДА ПараметрыЗапроса.Параметр = ЗНАЧЕНИЕ(Справочник.ПараметрыЗапроса.ЦельПокупки)
+			ТОГДА ВЫРАЗИТЬ(ПараметрыЗапроса.ЗначениеСсылка КАК Перечисление.ЦельПокупки)
+		ИНАЧЕ NULL
+	КОНЕЦ КАК ЦельПокупки
+ИЗ
+	РегистрСведений.ПараметрыЗапроса КАК ПараметрыЗапроса
+ГДЕ
+	ПараметрыЗапроса.Параметр В (ЗНАЧЕНИЕ(Справочник.ПараметрыЗапроса.Мотивация), ЗНАЧЕНИЕ(Справочник.ПараметрыЗапроса.ИмеющиесяНаличныеСредства), ЗНАЧЕНИЕ(Справочник.ПараметрыЗапроса.ФакторВыбора), ЗНАЧЕНИЕ(Справочник.ПараметрыЗапроса.СтопФактор), ЗНАЧЕНИЕ(Справочник.ПараметрыЗапроса.ФормаОплаты), ЗНАЧЕНИЕ(Справочник.ПараметрыЗапроса.КоличествоКомнат_1), ЗНАЧЕНИЕ(Справочник.ПараметрыЗапроса.КоличествоКомнат_2), ЗНАЧЕНИЕ(Справочник.ПараметрыЗапроса.КоличествоКомнат_3), ЗНАЧЕНИЕ(Справочник.ПараметрыЗапроса.КоличествоКомнат_4), ЗНАЧЕНИЕ(Справочник.ПараметрыЗапроса.Отделка), ЗНАЧЕНИЕ(Справочник.ПараметрыЗапроса.ЦельПокупки))</query>
+	</dataSet>
+	<calculatedField>
+		<dataPath>КоличествоКомнат</dataPath>
+		<expression>Выбор Когда КоличествоКомнат_1 Тогда "1" Иначе "" Конец + Выбор когда КоличествоКомнат_1 И КоличествоКомнат_2 Тогда ",2" Когда КоличествоКомнат_2 Тогда "2" Иначе "" Конец + Выбор когда КоличествоКомнат_2 И КоличествоКомнат_3 Тогда ",3" Когда КоличествоКомнат_3 Тогда "3" Иначе "" Конец + Выбор когда КоличествоКомнат_3 И КоличествоКомнат_4 Тогда ",4" Когда КоличествоКомнат_4 Тогда "4" Иначе "" Конец</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Количество комнат</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ФормыОплаты</dataPath>
+		<expression>Массив(Различные ФормаОплаты)</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Формы оплаты</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ЦелиПокупки</dataPath>
+		<expression>Массив(Различные ЦельПокупки)</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Цели покупки</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>СтопФакторы</dataPath>
+		<expression>Массив(Различные СтопФактор)</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Стоп факторы</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ФакторыВыбора</dataPath>
+		<expression>Массив(Различные ФакторВыбора)</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Факторы выбора</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>Мотивации</dataPath>
+		<expression>Массив(Различные Мотивация)</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Мотивации</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<totalField>
+		<dataPath>СтопФакторы</dataPath>
+		<expression>СоединитьСтроки(СтопФакторы, ";")</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ФакторыВыбора</dataPath>
+		<expression>СоединитьСтроки(ФакторыВыбора, ";")</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЦелиПокупки</dataPath>
+		<expression>СоединитьСтроки(ЦелиПокупки, ";")</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Мотивации</dataPath>
+		<expression>СоединитьСтроки(Мотивации, ";")</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ФормыОплаты</dataPath>
+		<expression>СоединитьСтроки(ФормыОплаты, ";")</expression>
+	</totalField>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Ссылка</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Мотивации</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Мотивация</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ОбъемСредствНаПокупку</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоКомнат</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СтопФакторы</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>СтопФакторы</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ФакторыВыбора</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ФакторыВыбора</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ФормыОплаты</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ФормыОплаты</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ЦелиПокупки</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЦельПокупки</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Отделка</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">Ссылка</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

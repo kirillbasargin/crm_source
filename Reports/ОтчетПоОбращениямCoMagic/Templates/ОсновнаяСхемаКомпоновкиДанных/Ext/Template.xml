@@ -1,0 +1,587 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>ДанныеCallTracking</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РекламнаяКампания</dataPath>
+			<field>РекламнаяКампания</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">30</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>РастягиватьПоГоризонтали</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ID_Звонка</dataPath>
+			<field>ID_Звонка</field>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">30</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>РастягиватьПоГоризонтали</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Сайт</dataPath>
+			<field>Сайт</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">14</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>РастягиватьПоГоризонтали</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ID</dataPath>
+			<field>ID</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПериодОбращения</dataPath>
+			<field>ПериодОбращения</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НомерТелефона</dataPath>
+			<field>НомерТелефона</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Контакт</dataPath>
+			<field>Контакт</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Контакт</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Стадия</dataPath>
+			<field>Стадия</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Стадия</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>АктивностьВзаимодействия</dataPath>
+			<field>АктивностьВзаимодействия</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаВзаимодействия</dataPath>
+			<field>ДатаВзаимодействия</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Статус</dataPath>
+			<field>Статус</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Статус</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Клиент</dataPath>
+			<field>Клиент</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Клиент</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">24</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>РастягиватьПоГоризонтали</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Проект</dataPath>
+			<field>Проект</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Взаимодействие</dataPath>
+			<field>Взаимодействие</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Взаимодействие</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Запрос</dataPath>
+			<field>Запрос</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Запрос</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СтатусЗвонка</dataPath>
+			<field>СтатусЗвонка</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Статус звонка</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СостояниеЗвонка</dataPath>
+			<field>СостояниеЗвонка</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Состояние звонка</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВызываемыйНомер</dataPath>
+			<field>ВызываемыйНомер</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вызываемый номер</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КонтактЗвонка</dataPath>
+			<field>КонтактЗвонка</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Контакт звонка</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаНачалаЗвонка</dataPath>
+			<field>ДатаНачалаЗвонка</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата начала звонка</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВызывающийНомер</dataPath>
+			<field>ВызывающийНомер</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вызывающий номер</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>UTM_Term</dataPath>
+			<field>UTM_Term</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>UTM_Source</dataPath>
+			<field>UTM_Source</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>UTM_Campaign</dataPath>
+			<field>UTM_Campaign</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>UTM_Medium</dataPath>
+			<field>UTM_Medium</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ДанныеCallTracking.ПериодОбращения КАК ПериодОбращения,
+	ДанныеCallTracking.ID КАК ID,
+	ДанныеCallTracking.Сайт КАК Сайт,
+	ДанныеCallTracking.НомерТелефона КАК НомерТелефона,
+	ДанныеCallTracking.РекламнаяКампания КАК РекламнаяКампания,
+	ДанныеCallTracking.ID_Звонка КАК ID_Звонка,
+	ДанныеCallTracking.ИмяЗвонящего КАК Контакт,
+	ДанныеCallTracking.UTM_Source КАК UTM_Source,
+	ДанныеCallTracking.UTM_Campaign КАК UTM_Campaign,
+	ДанныеCallTracking.UTM_Medium КАК UTM_Medium,
+	ДанныеCallTracking.UTM_Term КАК UTM_Term,
+	ЕСТЬNULL(СоответствиеЗапросовЗвонкам.Запрос, ЗНАЧЕНИЕ(Документ.Запрос.ПустаяСсылка)) КАК Запрос,
+	ЕСТЬNULL(СоответствиеЗапросовЗвонкам.Взаимодействие, ЗНАЧЕНИЕ(Документ.ТелефонныйЗвонок.ПустаяСсылка)) КАК Взаимодействие,
+	ЕСТЬNULL(ИсторияЗвонков.СостояниеЗвонка, ЗНАЧЕНИЕ(Перечисление.СостоянияТелефонныхЗвонков.ПустаяСсылка)) КАК СостояниеЗвонка,
+	ЕСТЬNULL(ИсторияЗвонков.СтатусЗвонка, ЗНАЧЕНИЕ(Справочник.СтатусыЗвонков.ПустаяСсылка)) КАК СтатусЗвонка,
+	ЕСТЬNULL(ИсторияЗвонков.ДатаНачалаЗвонка, ДАТАВРЕМЯ(1, 1, 1)) КАК ДатаНачалаЗвонка,
+	ЕСТЬNULL(ИсторияЗвонков.ВызывающийНомер, "") КАК ВызывающийНомер,
+	ЕСТЬNULL(ИсторияЗвонков.ВызываемыйНомер, "") КАК ВызываемыйНомер,
+	ЕСТЬNULL(ИсторияЗвонков.Контакт, НЕОПРЕДЕЛЕНО) КАК КонтактЗвонка
+ПОМЕСТИТЬ ВТ_ДанныеCallTracking
+ИЗ
+	РегистрСведений.ДанныеCallTracking КАК ДанныеCallTracking
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.СоответствиеЗапросовЗвонкам КАК СоответствиеЗапросовЗвонкам
+		ПО ДанныеCallTracking.ID_Звонка = СоответствиеЗапросовЗвонкам.ID_Звонка
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ИсторияЗвонков КАК ИсторияЗвонков
+		ПО ДанныеCallTracking.ID_Звонка = ИсторияЗвонков.ID_Звонка
+ГДЕ
+	ДанныеCallTracking.ПериодОбращения МЕЖДУ &amp;ПериодНачало И &amp;ПериодКонец
+	И ДанныеCallTracking.ТипОбращения = ЗНАЧЕНИЕ(Перечисление.ТипыОбращенийComagic.Звонок)
+
+ИНДЕКСИРОВАТЬ ПО
+	Взаимодействие
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ПараметрыЗапросаЛинейный.Регистратор КАК Запрос,
+	ПараметрыЗапросаЛинейный.Стадия КАК Стадия,
+	ПараметрыЗапросаЛинейный.Статус КАК Статус
+ПОМЕСТИТЬ ВТ_ПараметрыЗапроса
+ИЗ
+	РегистрСведений.ПараметрыЗапросаЛинейный КАК ПараметрыЗапросаЛинейный
+ГДЕ
+	ПараметрыЗапросаЛинейный.Регистратор В
+			(ВЫБРАТЬ
+				ВТ_ДанныеCallTracking.Запрос КАК Запрос
+			ИЗ
+				ВТ_ДанныеCallTracking КАК ВТ_ДанныеCallTracking)
+
+ИНДЕКСИРОВАТЬ ПО
+	Запрос
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	Взаимодействия.Взаимодействие КАК Взаимодействие,
+	Взаимодействия.Предмет КАК Предмет,
+	Взаимодействия.АктивностьВзаимодействия КАК АктивностьВзаимодействия,
+	Взаимодействия.Проект КАК Проект,
+	Взаимодействия.Контакт КАК Контакт,
+	Взаимодействия.ДатаВзаимодействия КАК ДатаВзаимодействия
+ПОМЕСТИТЬ ВТ_Взаимодействия
+ИЗ
+	РегистрСведений.Взаимодействия КАК Взаимодействия
+ГДЕ
+	Взаимодействия.Взаимодействие В
+			(ВЫБРАТЬ
+				ВТ_ДанныеCallTracking.Взаимодействие КАК Взаимодействие
+			ИЗ
+				ВТ_ДанныеCallTracking КАК ВТ_ДанныеCallTracking)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_ДанныеCallTracking.ПериодОбращения КАК ПериодОбращения,
+	ВТ_ДанныеCallTracking.ID КАК ID,
+	ВТ_ДанныеCallTracking.Сайт КАК Сайт,
+	ВТ_ДанныеCallTracking.НомерТелефона КАК НомерТелефона,
+	ВТ_ДанныеCallTracking.РекламнаяКампания КАК РекламнаяКампания,
+	ВТ_ДанныеCallTracking.ID_Звонка КАК ID_Звонка,
+	ВТ_Взаимодействия.ДатаВзаимодействия КАК ДатаВзаимодействия,
+	ВТ_Взаимодействия.АктивностьВзаимодействия КАК АктивностьВзаимодействия,
+	ВТ_Взаимодействия.Проект КАК Проект,
+	ВТ_Взаимодействия.Контакт КАК Клиент,
+	ЕСТЬNULL(ВТ_ПараметрыЗапроса.Стадия, ЗНАЧЕНИЕ(Перечисление.СтадииЗапроса.ПустаяСсылка)) КАК Стадия,
+	ЕСТЬNULL(ВТ_ПараметрыЗапроса.Статус, ЗНАЧЕНИЕ(Перечисление.СтатусыЗапроса.ПустаяСсылка)) КАК Статус,
+	ВТ_ДанныеCallTracking.Запрос КАК Запрос,
+	ВТ_ДанныеCallTracking.Взаимодействие КАК Взаимодействие,
+	ВТ_ДанныеCallTracking.СостояниеЗвонка КАК СостояниеЗвонка,
+	ВТ_ДанныеCallTracking.СтатусЗвонка КАК СтатусЗвонка,
+	ВТ_ДанныеCallTracking.ДатаНачалаЗвонка КАК ДатаНачалаЗвонка,
+	ВТ_ДанныеCallTracking.ВызывающийНомер КАК ВызывающийНомер,
+	ВТ_ДанныеCallTracking.ВызываемыйНомер КАК ВызываемыйНомер,
+	ВТ_ДанныеCallTracking.КонтактЗвонка КАК КонтактЗвонка,
+	ВТ_ДанныеCallTracking.UTM_Source КАК UTM_Source,
+	ВТ_ДанныеCallTracking.UTM_Campaign КАК UTM_Campaign,
+	ВТ_ДанныеCallTracking.UTM_Medium КАК UTM_Medium,
+	ВТ_ДанныеCallTracking.UTM_Term КАК UTM_Term
+{ВЫБРАТЬ
+	ПериодОбращения,
+	ID,
+	Сайт.*,
+	НомерТелефона,
+	РекламнаяКампания.*,
+	ID_Звонка,
+	Стадия,
+	Статус,
+	Запрос.*,
+	Взаимодействие.*,
+	СостояниеЗвонка.*,
+	СтатусЗвонка.*,
+	UTM_Source.*,
+	UTM_Campaign.*,
+	UTM_Medium.*,
+	UTM_Term.*}
+ИЗ
+	ВТ_ДанныеCallTracking КАК ВТ_ДанныеCallTracking
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ПараметрыЗапроса КАК ВТ_ПараметрыЗапроса
+		ПО ВТ_ДанныеCallTracking.Запрос = ВТ_ПараметрыЗапроса.Запрос
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_Взаимодействия КАК ВТ_Взаимодействия
+		ПО ВТ_ДанныеCallTracking.Взаимодействие = ВТ_Взаимодействия.Взаимодействие
+{ГДЕ
+	ВТ_ДанныеCallTracking.ПериодОбращения,
+	ВТ_ДанныеCallTracking.ID,
+	ВТ_ДанныеCallTracking.Сайт.*,
+	ВТ_ДанныеCallTracking.НомерТелефона,
+	ВТ_ДанныеCallTracking.РекламнаяКампания.*,
+	ВТ_ДанныеCallTracking.ID_Звонка,
+	ВТ_ДанныеCallTracking.Контакт.*,
+	(ЕСТЬNULL(ВТ_ПараметрыЗапроса.Стадия, ЗНАЧЕНИЕ(Перечисление.СтадииЗапроса.ПустаяСсылка))) КАК Стадия,
+	(ЕСТЬNULL(ВТ_ПараметрыЗапроса.Статус, ЗНАЧЕНИЕ(Перечисление.СтатусыЗапроса.ПустаяСсылка))) КАК Статус,
+	ВТ_ДанныеCallTracking.Запрос.*,
+	ВТ_ДанныеCallTracking.Взаимодействие.*,
+	ВТ_ДанныеCallTracking.СостояниеЗвонка.*,
+	ВТ_ДанныеCallTracking.СтатусЗвонка.*,
+	ВТ_ДанныеCallTracking.UTM_Source.*,
+	ВТ_ДанныеCallTracking.UTM_Campaign.*,
+	ВТ_ДанныеCallTracking.UTM_Medium.*,
+	ВТ_ДанныеCallTracking.UTM_Term.*}</query>
+	</dataSet>
+	<parameter>
+		<name>ПериодКонец</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период конец</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;СтандартныйПериод.ДатаОкончания</expression>
+	</parameter>
+	<parameter>
+		<name>ПериодНачало</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период начало</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;СтандартныйПериод.ДатаНачала</expression>
+	</parameter>
+	<parameter>
+		<name>СтандартныйПериод</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Стандартный период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Отчет по обращениям CoMagic</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПериодОбращения</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ID</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Сайт</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>НомерТелефона</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>РекламнаяКампания</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ID_Звонка</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СостояниеЗвонка</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СтатусЗвонка</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДатаВзаимодействия</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>АктивностьВзаимодействия</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Проект</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Клиент</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Стадия</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Статус</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Запрос</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Взаимодействие</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>UTM_Campaign</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>UTM_Medium</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>UTM_Source</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>UTM_Term</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Проект</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>d80ec7b2-771c-463e-a8d4-1c0c598e802e</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">РекламнаяКампания</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>a0c0a62c-9b51-4387-ba70-6f474131e741</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Сайт</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>ecad84b2-d3b3-48f2-b195-0067c716e3b7</dcsset:userSettingID>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>СтандартныйПериод</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">ThisMonth</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>b279b669-8360-42fc-b379-92184aeab649</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>ПериодОбращения</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">МакетОформленияКвартирограммыНовый</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ГоризонтальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВертикальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Заголовок</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отчет по обращениям Comagic</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьПараметрыДанных</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.6">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<ChildItems>
+		<InputField name="Код" id="1">
+			<DataPath>Объект.Code</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="КодКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="КодРасширеннаяПодсказка" id="3"/>
+		</InputField>
+		<InputField name="Наименование" id="4">
+			<DataPath>Объект.Description</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="НаименованиеКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="6"/>
+		</InputField>
+		<InputField name="Владелец" id="7">
+			<DataPath>Объект.Owner</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ВладелецКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="ВладелецРасширеннаяПодсказка" id="9"/>
+		</InputField>
+		<InputField name="ВидСобытия" id="10">
+			<DataPath>Объект.ВидСобытия</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ВидСобытияКонтекстноеМеню" id="11"/>
+			<ExtendedTooltip name="ВидСобытияРасширеннаяПодсказка" id="12"/>
+		</InputField>
+		<InputField name="ТипСобытия" id="65">
+			<DataPath>Объект.ТипСобытия</DataPath>
+			<ContextMenu name="ТипСобытияКонтекстноеМеню" id="66"/>
+			<ExtendedTooltip name="ТипСобытияРасширеннаяПодсказка" id="67"/>
+		</InputField>
+		<InputField name="ID" id="13">
+			<DataPath>Объект.ID</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="IDКонтекстноеМеню" id="14"/>
+			<ExtendedTooltip name="IDРасширеннаяПодсказка" id="15"/>
+		</InputField>
+		<InputField name="ИмяМетода" id="53">
+			<DataPath>1/0:7f4c60f1-42b7-45f4-93f0-e84946311e37</DataPath>
+			<ContextMenu name="ИмяМетодаКонтекстноеМеню" id="54"/>
+			<ExtendedTooltip name="ИмяМетодаРасширеннаяПодсказка" id="55"/>
+		</InputField>
+		<CheckBoxField name="Включено" id="16">
+			<DataPath>Объект.Включено</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="ВключеноКонтекстноеМеню" id="17"/>
+			<ExtendedTooltip name="ВключеноРасширеннаяПодсказка" id="18"/>
+		</CheckBoxField>
+		<InputField name="ИмяСобытияCQ" id="50">
+			<DataPath>Объект.ИмяСобытияCQ</DataPath>
+			<ContextMenu name="ИмяСобытияCQКонтекстноеМеню" id="51"/>
+			<ExtendedTooltip name="ИмяСобытияCQРасширеннаяПодсказка" id="52"/>
+		</InputField>
+		<InputField name="СвойствоСортировки" id="56">
+			<DataPath>Объект.СвойствоСортировки</DataPath>
+			<ContextMenu name="СвойствоСортировкиКонтекстноеМеню" id="57"/>
+			<ExtendedTooltip name="СвойствоСортировкиРасширеннаяПодсказка" id="58"/>
+		</InputField>
+		<InputField name="НаправлениеСортировки" id="59">
+			<DataPath>Объект.НаправлениеСортировки</DataPath>
+			<ContextMenu name="НаправлениеСортировкиКонтекстноеМеню" id="60"/>
+			<ExtendedTooltip name="НаправлениеСортировкиРасширеннаяПодсказка" id="61"/>
+		</InputField>
+		<InputField name="Лимит" id="62">
+			<DataPath>Объект.Лимит</DataPath>
+			<ContextMenu name="ЛимитКонтекстноеМеню" id="63"/>
+			<ExtendedTooltip name="ЛимитРасширеннаяПодсказка" id="64"/>
+		</InputField>
+		<InputField name="ФильтрСтрокой" id="19">
+			<DataPath>Объект.ФильтрСтрокой</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<Width>56</Width>
+			<HorizontalStretch>false</HorizontalStretch>
+			<VerticalStretch>true</VerticalStretch>
+			<MultiLine>true</MultiLine>
+			<ContextMenu name="ФильтрСтрокойКонтекстноеМеню" id="20"/>
+			<ExtendedTooltip name="ФильтрСтрокойРасширеннаяПодсказка" id="21"/>
+		</InputField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.СобытияCQ</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+</Form>
