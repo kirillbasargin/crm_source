@@ -229,6 +229,11 @@
 					</Picture>
 					<ExtendedTooltip name="ПечатьТаблицыРасширеннаяПодсказка" id="777"/>
 				</Button>
+				<Button name="ОтправитьКлиенту" id="796">
+					<Type>UsualButton</Type>
+					<CommandName>Form.Command.ОтправитьКлиенту</CommandName>
+					<ExtendedTooltip name="ОтправитьКлиентуРасширеннаяПодсказка" id="797"/>
+				</Button>
 			</ChildItems>
 		</UsualGroup>
 		<UsualGroup name="БыстрыеНастройки" id="416">
@@ -1367,6 +1372,42 @@
 							<ContextMenu name="РезультатПодбораОбъектСтроительстваКонтекстноеМеню" id="756"/>
 							<ExtendedTooltip name="РезультатПодбораОбъектСтроительстваРасширеннаяПодсказка" id="757"/>
 						</InputField>
+						<InputField name="РезультатПодбораПлощадь" id="778">
+							<DataPath>РезультатПодбора.Площадь</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="РезультатПодбораПлощадьКонтекстноеМеню" id="779"/>
+							<ExtendedTooltip name="РезультатПодбораПлощадьРасширеннаяПодсказка" id="780"/>
+						</InputField>
+						<InputField name="РезультатПодбораКоличествоКомнат" id="781">
+							<DataPath>РезультатПодбора.КоличествоКомнат</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="РезультатПодбораКоличествоКомнатКонтекстноеМеню" id="782"/>
+							<ExtendedTooltip name="РезультатПодбораКоличествоКомнатРасширеннаяПодсказка" id="783"/>
+						</InputField>
+						<InputField name="РезультатПодбораЭтаж" id="793">
+							<DataPath>РезультатПодбора.Этаж</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="РезультатПодбораЭтажКонтекстноеМеню" id="794"/>
+							<ExtendedTooltip name="РезультатПодбораЭтажРасширеннаяПодсказка" id="795"/>
+						</InputField>
+						<InputField name="РезультатПодбораСтоимость" id="784">
+							<DataPath>РезультатПодбора.Стоимость</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="РезультатПодбораСтоимостьКонтекстноеМеню" id="785"/>
+							<ExtendedTooltip name="РезультатПодбораСтоимостьРасширеннаяПодсказка" id="786"/>
+						</InputField>
+						<InputField name="РезультатПодбораСтоимостьСУчетомСкидки" id="787">
+							<DataPath>РезультатПодбора.СтоимостьСУчетомСкидки</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="РезультатПодбораСтоимостьСУчетомСкидкиКонтекстноеМеню" id="788"/>
+							<ExtendedTooltip name="РезультатПодбораСтоимостьСУчетомСкидкиРасширеннаяПодсказка" id="789"/>
+						</InputField>
+						<InputField name="РезультатПодбораМаксимальнаяСкидка" id="790">
+							<DataPath>РезультатПодбора.МаксимальнаяСкидка</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="РезультатПодбораМаксимальнаяСкидкаКонтекстноеМеню" id="791"/>
+							<ExtendedTooltip name="РезультатПодбораМаксимальнаяСкидкаРасширеннаяПодсказка" id="792"/>
+						</InputField>
 					</ChildItems>
 				</Table>
 			</ChildItems>
@@ -2089,7 +2130,7 @@
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Подобранные объекты недвижимости</v8:content>
+							<v8:content>Объект недвижимости</v8:content>
 						</v8:item>
 					</Title>
 					<Type>
@@ -2109,6 +2150,172 @@
 							<v8:Length>0</v8:Length>
 							<v8:AllowedLength>Variable</v8:AllowedLength>
 						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Площадь" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Площадь</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="КоличествоКомнат" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Количество комнат</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:EnumRef.Комнатность</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Стоимость" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Стоимость</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="СтоимостьСУчетомСкидки" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Стоимость с учетом скидки</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="МаксимальнаяСкидка" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Максимальная скидка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="Этаж" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Этаж</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>3</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ЦветФона" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Цвет фона</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>v8ui:Color</v8:Type>
+					</Type>
+				</Column>
+				<Column name="НомерКвартиры" id="10">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номер квартиры</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ТипДома" id="11">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Тип дома</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:EnumRef.ВидыМатериалов</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Секция" id="12">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Секция</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Подъезды</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Отделка" id="13">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отделка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Цена" id="14">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Цена</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
 					</Type>
 				</Column>
 			</Columns>
@@ -2134,6 +2341,20 @@
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
+		</Attribute>
+		<Attribute name="КлиентыЗапроса" id="68">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Клиенты запроса</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+			<Settings xsi:type="v8:TypeDescription">
+				<v8:Type>cfg:CatalogRef.Клиенты</v8:Type>
+			</Settings>
 		</Attribute>
 	</Attributes>
 	<Commands>
@@ -2395,6 +2616,26 @@
 			</ToolTip>
 			<Action>ПечатьТаблицы</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОтправитьКлиенту" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отправить клиенту</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отправить клиенту</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ЭлектронноеПисьмо</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ОтправитьКлиенту</Action>
+			<Representation>TextPicture</Representation>
 		</Command>
 	</Commands>
 	<Parameters>

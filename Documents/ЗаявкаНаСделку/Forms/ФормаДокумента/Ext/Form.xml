@@ -329,6 +329,7 @@
 													<ChildItems>
 														<LabelField name="ОбъектыНедвижимостиНомерСтроки" id="75">
 															<DataPath>Объект.ОбъектыНедвижимости.LineNumber</DataPath>
+															<ReadOnly>true</ReadOnly>
 															<EditMode>EnterOnInput</EditMode>
 															<ContextMenu name="ОбъектыНедвижимостиНомерСтрокиКонтекстноеМеню" id="76"/>
 															<ExtendedTooltip name="ОбъектыНедвижимостиНомерСтрокиРасширеннаяПодсказка" id="77"/>
@@ -350,6 +351,7 @@
 														</InputField>
 														<InputField name="ОбъектыНедвижимостиНомерБТИ" id="373">
 															<DataPath>Объект.ОбъектыНедвижимости.НомерБТИ</DataPath>
+															<ReadOnly>true</ReadOnly>
 															<EditMode>EnterOnInput</EditMode>
 															<Width>6</Width>
 															<HorizontalStretch>false</HorizontalStretch>
@@ -358,12 +360,14 @@
 														</InputField>
 														<InputField name="ОбъектыНедвижимостиСтоимость" id="191">
 															<DataPath>Объект.ОбъектыНедвижимости.Стоимость</DataPath>
+															<ReadOnly>true</ReadOnly>
 															<EditMode>EnterOnInput</EditMode>
 															<ContextMenu name="ОбъектыНедвижимостиСтоимостьКонтекстноеМеню" id="192"/>
 															<ExtendedTooltip name="ОбъектыНедвижимостиСтоимостьРасширеннаяПодсказка" id="193"/>
 														</InputField>
 														<InputField name="ОбъектСтроительства" id="171">
 															<DataPath>Объект.ОбъектыНедвижимости.ОбъектНедвижимости.Owner</DataPath>
+															<ReadOnly>true</ReadOnly>
 															<Title>
 																<v8:item>
 																	<v8:lang>ru</v8:lang>

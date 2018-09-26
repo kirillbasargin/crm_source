@@ -4,6 +4,13 @@
 	<setForAttributesByDefault>true</setForAttributesByDefault>
 	<independentRightsOfChildObjects>false</independentRightsOfChildObjects>
 	<object>
+		<name>Task.ЗадачаИсполнителя.Attribute.РезультатВыполнения</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
 		<name>Catalog.МаркетинговыеМероприятия</name>
 		<right>
 			<name>Read</name>
@@ -19,7 +26,21 @@
 		</right>
 	</object>
 	<object>
+		<name>Task.ЗадачаИсполнителя.AddressingAttribute.ДополнительныйОбъектАдресации</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
 		<name>InformationRegister.ДольщикиЗаявкиНаСделку.Dimension.Дольщик</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Task.ЗадачаИсполнителя.AddressingAttribute.ОсновнойОбъектАдресации</name>
 		<right>
 			<name>Edit</name>
 			<value>false</value>
@@ -34,6 +55,13 @@
 		<right>
 			<name>View</name>
 			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Task.ЗадачаИсполнителя.Attribute.ДатаНачала</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
 		</right>
 	</object>
 	<object>
@@ -70,6 +98,13 @@
 		</right>
 	</object>
 	<object>
+		<name>Task.ЗадачаИсполнителя.Attribute.ГруппаИсполнителейЗадач</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
 		<name>Task.ЗадачаИсполнителя</name>
 		<right>
 			<name>Read</name>
@@ -88,24 +123,64 @@
 			<value>true</value>
 		</right>
 		<right>
-			<name>InteractiveInsert</name>
-			<value>true</value>
-		</right>
-		<right>
-			<name>Edit</name>
-			<value>true</value>
-		</right>
-		<right>
 			<name>InputByString</name>
 			<value>true</value>
 		</right>
+	</object>
+	<object>
+		<name>Task.ЗадачаИсполнителя.StandardAttribute.Executed</name>
 		<right>
-			<name>Execute</name>
-			<value>true</value>
+			<name>Edit</name>
+			<value>false</value>
 		</right>
+	</object>
+	<object>
+		<name>Task.ЗадачаИсполнителя.StandardAttribute.Description</name>
 		<right>
-			<name>InteractiveExecute</name>
-			<value>true</value>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Task.ЗадачаИсполнителя.StandardAttribute.RoutePoint</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Task.ЗадачаИсполнителя.StandardAttribute.BusinessProcess</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Task.ЗадачаИсполнителя.StandardAttribute.Ref</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Task.ЗадачаИсполнителя.StandardAttribute.DeletionMark</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Task.ЗадачаИсполнителя.StandardAttribute.Date</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Task.ЗадачаИсполнителя.StandardAttribute.Number</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
 		</right>
 	</object>
 	<object>
@@ -158,6 +233,20 @@
 		<right>
 			<name>InputByString</name>
 			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Task.ЗадачаИсполнителя.Attribute.АвторСтрокой</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Task.ЗадачаИсполнителя.Attribute.СрокИсполнения</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
 		</right>
 	</object>
 	<object>
@@ -262,6 +351,13 @@
 		</right>
 	</object>
 	<object>
+		<name>Task.ЗадачаИсполнителя.Attribute.ДатаПринятияКИсполнению</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
 		<name>Catalog.Отборы</name>
 		<right>
 			<name>Read</name>
@@ -274,6 +370,13 @@
 		<right>
 			<name>InputByString</name>
 			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Task.ЗадачаИсполнителя.AddressingAttribute.Исполнитель</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
 		</right>
 	</object>
 	<object>
@@ -341,6 +444,27 @@
 		</right>
 	</object>
 	<object>
+		<name>Task.ЗадачаИсполнителя.Attribute.Предмет</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Task.ЗадачаИсполнителя.Attribute.Важность</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Task.ЗадачаИсполнителя.AddressingAttribute.РольИсполнителя</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
 		<name>Catalog.МаркетинговыеКомпании</name>
 		<right>
 			<name>Read</name>
@@ -353,6 +477,20 @@
 		<right>
 			<name>InputByString</name>
 			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Task.ЗадачаИсполнителя.Attribute.ПредметСтрокой</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Task.ЗадачаИсполнителя.Attribute.СостояниеБизнесПроцесса</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
 		</right>
 	</object>
 	<object>
@@ -462,6 +600,13 @@
 		</right>
 	</object>
 	<object>
+		<name>Task.ЗадачаИсполнителя.Attribute.ПринятаКИсполнению</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
 		<name>Catalog.МаркетинговыеМероприятияПрисоединенныеФайлы</name>
 		<right>
 			<name>Read</name>
@@ -511,6 +656,27 @@
 		<right>
 			<name>InputByString</name>
 			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Task.ЗадачаИсполнителя.Attribute.Описание</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Task.ЗадачаИсполнителя.Attribute.ДатаИсполнения</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Task.ЗадачаИсполнителя.Attribute.Автор</name>
+		<right>
+			<name>Edit</name>
+			<value>false</value>
 		</right>
 	</object>
 	<restrictionTemplate>
