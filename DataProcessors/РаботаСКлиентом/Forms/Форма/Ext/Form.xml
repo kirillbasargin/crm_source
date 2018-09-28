@@ -2925,7 +2925,7 @@
 			</UseAlways>
 			<Settings xsi:type="DynamicList">
 				<ManualQuery>true</ManualQuery>
-				<DynamicDataRead>false</DynamicDataRead>
+				<DynamicDataRead>true</DynamicDataRead>
 				<QueryText>ВЫБРАТЬ РАЗРЕШЕННЫЕ
 	ИпотечныеЗаявкиВБанкСрезПоследних.Ответственный КАК Ответственный,
 	ИпотечныеЗаявкиВБанкСрезПоследних.ДатаРешенияБанка КАК ДатаРешенияБанка,
@@ -2938,8 +2938,8 @@
 	ВЫРАЗИТЬ(ИпотечныеЗаявкиВБанкСрезПоследних.Регистратор КАК Документ.ИпотечнаяЗаявка).РасчетИпотеки КАК РасчетИпотеки,
 	ВЫРАЗИТЬ(ИпотечныеЗаявкиВБанкСрезПоследних.Регистратор КАК Документ.ИпотечнаяЗаявка).РасчетИпотеки.Запрос КАК Запрос
 ИЗ
-	РегистрСведений.ИпотечныеЗаявкиВБанк.СрезПоследних КАК ИпотечныеЗаявкиВБанкСрезПоследних</QueryText>
-				<MainTable>InformationRegister.ИпотечныеЗаявкиВБанк.SliceLast</MainTable>
+	РегистрСведений.ИпотечныеЗаявкиВБанк КАК ИпотечныеЗаявкиВБанкСрезПоследних</QueryText>
+				<MainTable>InformationRegister.ИпотечныеЗаявкиВБанк</MainTable>
 				<ListSettings>
 					<dcsset:filter>
 						<dcsset:viewMode>Normal</dcsset:viewMode>
