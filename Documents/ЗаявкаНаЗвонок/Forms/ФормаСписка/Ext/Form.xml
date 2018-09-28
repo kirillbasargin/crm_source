@@ -57,6 +57,11 @@
 						<CommandName>Form.Command.РаспределениеЗаявок</CommandName>
 						<ExtendedTooltip name="ФормаРаспределениеЗаявокРасширеннаяПодсказка" id="100"/>
 					</Button>
+					<Button name="ФормаЗагрузкаЗаявокДомКлик" id="115">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ЗагрузкаЗаявокДомКлик</CommandName>
+						<ExtendedTooltip name="ФормаЗагрузкаЗаявокДомКликРасширеннаяПодсказка" id="116"/>
+					</Button>
 				</ChildItems>
 			</ButtonGroup>
 		</ChildItems>
@@ -419,6 +424,21 @@
 			</ToolTip>
 			<Action>ЗагрузитьЗаявкиCQ</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ЗагрузкаЗаявокДомКлик" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузка заявок ДомКлик</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузка заявок дом клик</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗагрузкаЗаявокДомКлик</Action>
 		</Command>
 	</Commands>
 </Form>

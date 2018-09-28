@@ -1449,6 +1449,66 @@
 			</v8:NumberQualifiers>
 		</valueType>
 	</calculatedField>
+	<calculatedField>
+		<dataPath>_КоличествоКомнат</dataPath>
+		<expression>КоличествоКомнат</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Количество комнат</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>_Отделка</dataPath>
+		<expression>Отделка</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Отделка</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>_СпециальноеПредложение</dataPath>
+		<expression>СпециальноеПредложение</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Специальное предложение</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>_Статус</dataPath>
+		<expression>Статус</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Статус</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>_БронированиеДомКлик</dataPath>
+		<expression>БронированиеДомКлик</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Бронирование дом клик</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>_ВидМатериала</dataPath>
+		<expression>ВидМатериала</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Вид материала</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
 	<totalField>
 		<dataPath>ГруппаПравообладателя</dataPath>
 		<expression>Массив(Различные выбор когда не (ГруппаПравообладателя is null ИЛИ ГруппаПравообладателя = Значение(Справочник.ГруппыПравообладателя.ПустаяСсылка))тогда ГруппаПравообладателя конец)</expression>
@@ -1562,6 +1622,30 @@
 	<totalField>
 		<dataPath>БронированиеДомКлик</dataPath>
 		<expression>БронированиеДомКлик</expression>
+	</totalField>
+	<totalField>
+		<dataPath>_КоличествоКомнат</dataPath>
+		<expression>(_КоличествоКомнат)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>_Отделка</dataPath>
+		<expression>(_Отделка)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>_СпециальноеПредложение</dataPath>
+		<expression>(_СпециальноеПредложение)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>_Статус</dataPath>
+		<expression>(_Статус)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>_БронированиеДомКлик</dataPath>
+		<expression>(_БронированиеДомКлик)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>_ВидМатериала</dataPath>
+		<expression>(_ВидМатериала)</expression>
 	</totalField>
 	<parameter>
 		<name>ТекущаяДата</name>
@@ -1736,6 +1820,66 @@
 				<dcsat:field>Подъезд_Ссылка</dcsat:field>
 				<dcsat:expression>Подъезд_Ссылка</dcsat:expression>
 			</dcsat:fieldExpression>
+			<dcsat:fieldExpression>
+				<dcsat:field>Площадь</dcsat:field>
+				<dcsat:expression>Площадь</dcsat:expression>
+			</dcsat:fieldExpression>
+			<dcsat:fieldExpression>
+				<dcsat:field>_КоличествоКомнат</dcsat:field>
+				<dcsat:expression>_КоличествоКомнат</dcsat:expression>
+			</dcsat:fieldExpression>
+			<dcsat:fieldExpression>
+				<dcsat:field>_Этаж</dcsat:field>
+				<dcsat:expression>_Этаж</dcsat:expression>
+			</dcsat:fieldExpression>
+			<dcsat:fieldExpression>
+				<dcsat:field>Стоимость</dcsat:field>
+				<dcsat:expression>Стоимость</dcsat:expression>
+			</dcsat:fieldExpression>
+			<dcsat:fieldExpression>
+				<dcsat:field>СтоимостьСУчетомСкидки</dcsat:field>
+				<dcsat:expression>СтоимостьСУчетомСкидки</dcsat:expression>
+			</dcsat:fieldExpression>
+			<dcsat:fieldExpression>
+				<dcsat:field>МаксимальнаяСкидка</dcsat:field>
+				<dcsat:expression>МаксимальнаяСкидка</dcsat:expression>
+			</dcsat:fieldExpression>
+			<dcsat:fieldExpression>
+				<dcsat:field>НомерКвартиры</dcsat:field>
+				<dcsat:expression>НомерКвартиры</dcsat:expression>
+			</dcsat:fieldExpression>
+			<dcsat:fieldExpression>
+				<dcsat:field>_Отделка</dcsat:field>
+				<dcsat:expression>_Отделка</dcsat:expression>
+			</dcsat:fieldExpression>
+			<dcsat:fieldExpression>
+				<dcsat:field>ЦенаЗаМетр</dcsat:field>
+				<dcsat:expression>ЦенаЗаМетр</dcsat:expression>
+			</dcsat:fieldExpression>
+			<dcsat:fieldExpression>
+				<dcsat:field>НомерКвартирыБТИ</dcsat:field>
+				<dcsat:expression>НомерКвартирыБТИ</dcsat:expression>
+			</dcsat:fieldExpression>
+			<dcsat:fieldExpression>
+				<dcsat:field>ПлощадьБТИ</dcsat:field>
+				<dcsat:expression>ПлощадьБТИ</dcsat:expression>
+			</dcsat:fieldExpression>
+			<dcsat:fieldExpression>
+				<dcsat:field>_Статус</dcsat:field>
+				<dcsat:expression>_Статус</dcsat:expression>
+			</dcsat:fieldExpression>
+			<dcsat:fieldExpression>
+				<dcsat:field>_СпециальноеПредложение</dcsat:field>
+				<dcsat:expression>_СпециальноеПредложение</dcsat:expression>
+			</dcsat:fieldExpression>
+			<dcsat:fieldExpression>
+				<dcsat:field>_БронированиеДомКлик</dcsat:field>
+				<dcsat:expression>_БронированиеДомКлик</dcsat:expression>
+			</dcsat:fieldExpression>
+			<dcsat:fieldExpression>
+				<dcsat:field>_ВидМатериала</dcsat:field>
+				<dcsat:expression>_ВидМатериала</dcsat:expression>
+			</dcsat:fieldExpression>
 		</parameter>
 	</template>
 	<template>
@@ -1870,6 +2014,66 @@
 			<dcsat:fieldExpression>
 				<dcsat:field>Подъезд_Ссылка</dcsat:field>
 				<dcsat:expression>Подъезд_Ссылка</dcsat:expression>
+			</dcsat:fieldExpression>
+			<dcsat:fieldExpression>
+				<dcsat:field>Площадь</dcsat:field>
+				<dcsat:expression>Площадь</dcsat:expression>
+			</dcsat:fieldExpression>
+			<dcsat:fieldExpression>
+				<dcsat:field>_КоличествоКомнат</dcsat:field>
+				<dcsat:expression>_КоличествоКомнат</dcsat:expression>
+			</dcsat:fieldExpression>
+			<dcsat:fieldExpression>
+				<dcsat:field>_Этаж</dcsat:field>
+				<dcsat:expression>_Этаж</dcsat:expression>
+			</dcsat:fieldExpression>
+			<dcsat:fieldExpression>
+				<dcsat:field>Стоимость</dcsat:field>
+				<dcsat:expression>Стоимость</dcsat:expression>
+			</dcsat:fieldExpression>
+			<dcsat:fieldExpression>
+				<dcsat:field>СтоимостьСУчетомСкидки</dcsat:field>
+				<dcsat:expression>СтоимостьСУчетомСкидки</dcsat:expression>
+			</dcsat:fieldExpression>
+			<dcsat:fieldExpression>
+				<dcsat:field>МаксимальнаяСкидка</dcsat:field>
+				<dcsat:expression>МаксимальнаяСкидка</dcsat:expression>
+			</dcsat:fieldExpression>
+			<dcsat:fieldExpression>
+				<dcsat:field>НомерКвартиры</dcsat:field>
+				<dcsat:expression>НомерКвартиры</dcsat:expression>
+			</dcsat:fieldExpression>
+			<dcsat:fieldExpression>
+				<dcsat:field>_Отделка</dcsat:field>
+				<dcsat:expression>_Отделка</dcsat:expression>
+			</dcsat:fieldExpression>
+			<dcsat:fieldExpression>
+				<dcsat:field>ЦенаЗаМетр</dcsat:field>
+				<dcsat:expression>ЦенаЗаМетр</dcsat:expression>
+			</dcsat:fieldExpression>
+			<dcsat:fieldExpression>
+				<dcsat:field>НомерКвартирыБТИ</dcsat:field>
+				<dcsat:expression>НомерКвартирыБТИ</dcsat:expression>
+			</dcsat:fieldExpression>
+			<dcsat:fieldExpression>
+				<dcsat:field>ПлощадьБТИ</dcsat:field>
+				<dcsat:expression>ПлощадьБТИ</dcsat:expression>
+			</dcsat:fieldExpression>
+			<dcsat:fieldExpression>
+				<dcsat:field>_Статус</dcsat:field>
+				<dcsat:expression>_Статус</dcsat:expression>
+			</dcsat:fieldExpression>
+			<dcsat:fieldExpression>
+				<dcsat:field>_СпециальноеПредложение</dcsat:field>
+				<dcsat:expression>_СпециальноеПредложение</dcsat:expression>
+			</dcsat:fieldExpression>
+			<dcsat:fieldExpression>
+				<dcsat:field>_БронированиеДомКлик</dcsat:field>
+				<dcsat:expression>_БронированиеДомКлик</dcsat:expression>
+			</dcsat:fieldExpression>
+			<dcsat:fieldExpression>
+				<dcsat:field>_ВидМатериала</dcsat:field>
+				<dcsat:expression>_ВидМатериала</dcsat:expression>
 			</dcsat:fieldExpression>
 		</parameter>
 	</template>
