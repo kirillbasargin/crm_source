@@ -44,6 +44,9 @@
 				<ContextMenu name="КлиентыЗапросаУправлениеПоискомКонтекстноеМеню" id="12"/>
 				<ExtendedTooltip name="КлиентыЗапросаУправлениеПоискомРасширеннаяПодсказка" id="13"/>
 			</SearchControlAddition>
+			<Events>
+				<Event name="OnStartEdit">КлиентыЗапросаПриНачалеРедактирования</Event>
+			</Events>
 			<ChildItems>
 				<CheckBoxField name="КлиентыЗапросаОтправить" id="17">
 					<DataPath>КлиентыЗапроса.Отправлять</DataPath>
@@ -69,13 +72,28 @@
 				</InputField>
 			</ChildItems>
 		</Table>
-		<Button name="Отправить" id="23">
-			<Type>UsualButton</Type>
-			<DefaultButton>true</DefaultButton>
-			<DefaultItem>true</DefaultItem>
-			<CommandName>Form.Command.Отправить</CommandName>
-			<ExtendedTooltip name="ОтправитьРасширеннаяПодсказка" id="24"/>
-		</Button>
+		<UsualGroup name="Группа1" id="27">
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="28"/>
+			<ChildItems>
+				<Button name="ФормаОбновить" id="25">
+					<Type>UsualButton</Type>
+					<Width>4</Width>
+					<Height>1</Height>
+					<CommandName>Form.Command.Обновить</CommandName>
+					<ExtendedTooltip name="ФормаОбновитьРасширеннаяПодсказка" id="26"/>
+				</Button>
+				<Button name="Отправить" id="23">
+					<Type>UsualButton</Type>
+					<DefaultButton>true</DefaultButton>
+					<DefaultItem>true</DefaultItem>
+					<CommandName>Form.Command.Отправить</CommandName>
+					<ExtendedTooltip name="ОтправитьРасширеннаяПодсказка" id="24"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
 	</ChildItems>
 	<Attributes>
 		<Attribute name="РезультатПодбора" id="1">
@@ -389,6 +407,26 @@
 				</v8:item>
 			</ToolTip>
 			<Action>Отправить</Action>
+		</Command>
+		<Command name="Обновить" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Refresh</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Обновить</Action>
+			<Representation>Picture</Representation>
 		</Command>
 	</Commands>
 </Form>
