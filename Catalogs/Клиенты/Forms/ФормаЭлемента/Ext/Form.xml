@@ -9,6 +9,54 @@
 				<CommandName>Form.Command.Позвонить</CommandName>
 				<ExtendedTooltip name="ФормаПозвонитьРасширеннаяПодсказка" id="208"/>
 			</Button>
+			<Popup name="ПодменюВзаимодействия" id="215">
+				<Visible>false</Visible>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Подменю взаимодействия</v8:content>
+					</v8:item>
+				</Title>
+				<ToolTip>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Подменю взаимодействия</v8:content>
+					</v8:item>
+				</ToolTip>
+				<ToolTipRepresentation>Button</ToolTipRepresentation>
+				<Picture>
+					<xr:Ref>CommonPicture.ОтветитьНаЭлектронноеПисьмоВсем</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<Representation>Picture</Representation>
+				<ExtendedTooltip name="ПодменюВзаимодействияРасширеннаяПодсказка" id="216"/>
+				<ChildItems>
+					<Button name="ФормаЖурналДокументовВзаимодействияЗапланироватьВстречуПоКонтакту" id="217">
+						<Type>CommandBarButton</Type>
+						<CommandName>DocumentJournal.Взаимодействия.Command.ЗапланироватьВстречуПоКонтакту</CommandName>
+						<DataPath>Объект.Ref</DataPath>
+						<ExtendedTooltip name="ФормаЖурналДокументовВзаимодействияЗапланироватьВстречуПоКонтактуРасширеннаяПодсказка" id="218"/>
+					</Button>
+					<Button name="ФормаЖурналДокументовВзаимодействияНаписатьSMSПоКонтакту" id="219">
+						<Type>CommandBarButton</Type>
+						<CommandName>DocumentJournal.Взаимодействия.Command.НаписатьSMSПоКонтакту</CommandName>
+						<DataPath>Объект.Ref</DataPath>
+						<ExtendedTooltip name="ФормаЖурналДокументовВзаимодействияНаписатьSMSПоКонтактуРасширеннаяПодсказка" id="220"/>
+					</Button>
+					<Button name="ФормаЖурналДокументовВзаимодействияНаписатьЭлектронноеПисьмоПоКонтакту" id="221">
+						<Type>CommandBarButton</Type>
+						<CommandName>DocumentJournal.Взаимодействия.Command.НаписатьЭлектронноеПисьмоПоКонтакту</CommandName>
+						<DataPath>Объект.Ref</DataPath>
+						<ExtendedTooltip name="ФормаЖурналДокументовВзаимодействияНаписатьЭлектронноеПисьмоПоКонтактуРасширеннаяПодсказка" id="222"/>
+					</Button>
+					<Button name="ФормаЖурналДокументовВзаимодействияПозвонитьПоКонтакту" id="223">
+						<Type>CommandBarButton</Type>
+						<CommandName>DocumentJournal.Взаимодействия.Command.ПозвонитьПоКонтакту</CommandName>
+						<DataPath>Объект.Ref</DataPath>
+						<ExtendedTooltip name="ФормаЖурналДокументовВзаимодействияПозвонитьПоКонтактуРасширеннаяПодсказка" id="224"/>
+					</Button>
+				</ChildItems>
+			</Popup>
 		</ChildItems>
 	</AutoCommandBar>
 	<Events>

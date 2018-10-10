@@ -25,6 +25,47 @@
 				<CommandSource>FormCommandPanelGlobalCommands</CommandSource>
 				<ExtendedTooltip name="ФормаГлобальныеКомандыРасширеннаяПодсказка" id="683"/>
 			</ButtonGroup>
+			<Popup name="ПодменюСоздатьНаОсновании" id="724">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Создать на основании</v8:content>
+					</v8:item>
+				</Title>
+				<ToolTip>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Подменю создать на основании</v8:content>
+					</v8:item>
+				</ToolTip>
+				<ExtendedTooltip name="ПодменюСоздатьНаОснованииРасширеннаяПодсказка" id="725"/>
+				<ChildItems>
+					<Button name="ФормаДокументАнкетаСоздатьНаОсновании" id="726">
+						<Type>CommandBarButton</Type>
+						<Visible>false</Visible>
+						<CommandName>Document.Анкета.StandardCommand.CreateBasedOn</CommandName>
+						<DataPath>Объект.Ref</DataPath>
+						<ExtendedTooltip name="ФормаДокументАнкетаСоздатьНаОснованииРасширеннаяПодсказка" id="727"/>
+					</Button>
+					<Button name="ФормаДокументИпотечнаяЗаявкаСоздатьНаОсновании" id="728">
+						<Type>CommandBarButton</Type>
+						<Visible>false</Visible>
+						<CommandName>Document.ИпотечнаяЗаявка.StandardCommand.CreateBasedOn</CommandName>
+						<DataPath>Объект.Ref</DataPath>
+						<ExtendedTooltip name="ФормаДокументИпотечнаяЗаявкаСоздатьНаОснованииРасширеннаяПодсказка" id="729"/>
+					</Button>
+					<Button name="ФормаАнкетаСоздатьНаОсновании" id="732">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.АнкетаСоздатьНаОсновании</CommandName>
+						<ExtendedTooltip name="ФормаАнкетаСоздатьНаОснованииРасширеннаяПодсказка" id="733"/>
+					</Button>
+					<Button name="ФормаИпотечнаяЗаявкаСоздатьНаОсновании" id="730">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ИпотечнаяЗаявкаСоздатьНаОсновании</CommandName>
+						<ExtendedTooltip name="ФормаИпотечнаяЗаявкаСоздатьНаОснованииРасширеннаяПодсказка" id="731"/>
+					</Button>
+				</ChildItems>
+			</Popup>
 		</ChildItems>
 	</AutoCommandBar>
 	<Events>
@@ -4857,6 +4898,36 @@
 			</ToolTip>
 			<Action>ЗаменитьЗаемщика</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="АнкетаСоздатьНаОсновании" id="23">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Анкета</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Анкета создать на основании</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>АнкетаСоздатьНаОсновании</Action>
+		</Command>
+		<Command name="ИпотечнаяЗаявкаСоздатьНаОсновании" id="24">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ипотечная заявка</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ипотечная заявка создать на основании</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ИпотечнаяЗаявкаСоздатьНаОсновании</Action>
 		</Command>
 	</Commands>
 </Form>

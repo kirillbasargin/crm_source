@@ -77,6 +77,7 @@
 			<ChildItems>
 				<Table name="Шаблоны" id="39">
 					<Representation>List</Representation>
+					<Visible>false</Visible>
 					<ChangeRowSet>false</ChangeRowSet>
 					<ChangeRowOrder>false</ChangeRowOrder>
 					<RowSelectionMode>Row</RowSelectionMode>
@@ -142,6 +143,64 @@
 							<EditMode>EnterOnInput</EditMode>
 							<ContextMenu name="ШаблоныПредставлениеКонтекстноеМеню" id="56"/>
 							<ExtendedTooltip name="ШаблоныПредставлениеРасширеннаяПодсказка" id="57"/>
+						</InputField>
+					</ChildItems>
+				</Table>
+				<Table name="Шаблоны_Дерево" id="78">
+					<Representation>Tree</Representation>
+					<AutoInsertNewRow>true</AutoInsertNewRow>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<DataPath>Шаблоны_Дерево</DataPath>
+					<ContextMenu name="Шаблоны_ДеревоКонтекстноеМеню" id="79"/>
+					<AutoCommandBar name="Шаблоны_ДеревоКоманднаяПанель" id="80">
+						<Autofill>false</Autofill>
+					</AutoCommandBar>
+					<ExtendedTooltip name="Шаблоны_ДеревоРасширеннаяПодсказка" id="81"/>
+					<SearchStringAddition name="Шаблоны_ДеревоСтрокаПоиска" id="82">
+						<AdditionSource>
+							<Item>Шаблоны_Дерево</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="Шаблоны_ДеревоСтрокаПоискаКонтекстноеМеню" id="83"/>
+						<ExtendedTooltip name="Шаблоны_ДеревоСтрокаПоискаРасширеннаяПодсказка" id="84"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="Шаблоны_ДеревоСостояниеПросмотра" id="85">
+						<AdditionSource>
+							<Item>Шаблоны_Дерево</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="Шаблоны_ДеревоСостояниеПросмотраКонтекстноеМеню" id="86"/>
+						<ExtendedTooltip name="Шаблоны_ДеревоСостояниеПросмотраРасширеннаяПодсказка" id="87"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="Шаблоны_ДеревоУправлениеПоиском" id="88">
+						<AdditionSource>
+							<Item>Шаблоны_Дерево</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="Шаблоны_ДеревоУправлениеПоискомКонтекстноеМеню" id="89"/>
+						<ExtendedTooltip name="Шаблоны_ДеревоУправлениеПоискомРасширеннаяПодсказка" id="90"/>
+					</SearchControlAddition>
+					<Events>
+						<Event name="Selection">Шаблоны_ДеревоВыбор</Event>
+						<Event name="BeforeAddRow">Шаблоны_ДеревоПередНачаломДобавления</Event>
+						<Event name="OnActivateRow">Шаблоны_ДеревоПриАктивизацииСтроки</Event>
+						<Event name="BeforeRowChange">Шаблоны_ДеревоПередНачаломИзменения</Event>
+					</Events>
+					<ChildItems>
+						<InputField name="Шаблоны_ДеревоРодитель" id="112">
+							<DataPath>Шаблоны_Дерево.РодительПредставление</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<Width>2</Width>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ContextMenu name="Шаблоны_ДеревоРодительКонтекстноеМеню" id="113"/>
+							<ExtendedTooltip name="Шаблоны_ДеревоРодительРасширеннаяПодсказка" id="114"/>
+						</InputField>
+						<InputField name="Шаблоны_ДеревоПредставление" id="94">
+							<DataPath>Шаблоны_Дерево.Представление</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="Шаблоны_ДеревоПредставлениеКонтекстноеМеню" id="95"/>
+							<ExtendedTooltip name="Шаблоны_ДеревоПредставлениеРасширеннаяПодсказка" id="96"/>
 						</InputField>
 					</ChildItems>
 				</Table>
@@ -431,6 +490,123 @@
 					<v8:AllowedLength>Variable</v8:AllowedLength>
 				</v8:StringQualifiers>
 			</Type>
+		</Attribute>
+		<Attribute name="Шаблоны_Дерево" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шаблоны</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Имя" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Имя</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Представление" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Представление</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ТекстШаблона" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Текст шаблона</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ТипТекстаПисьма" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Тип текста письма</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:EnumRef.СпособыРедактированияЭлектронныхПисем</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Ссылка" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ссылка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ШаблоныСообщений</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ЕстьПроизвольныеПараметры" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Есть произвольные параметры</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ШаблонПоВнешнейОбработке" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Шаблон по внешней обработке</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="РодительПредставление" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
 		</Attribute>
 	</Attributes>
 	<Commands>
