@@ -91,7 +91,7 @@
 		КОГДА ПредметыПапкиВзаимодействий.Взаимодействие ССЫЛКА Документ.ЭлектронноеПисьмоВходящее
 			ТОГДА 3
 		КОГДА ПредметыПапкиВзаимодействий.Взаимодействие ССЫЛКА Документ.ЭлектронноеПисьмоИсходящее
-			ТОГДА 4
+			ТОГДА 4			
 	КОНЕЦ КАК ИндексКартинки,
 	ПредметыПапкиВзаимодействий.ПериодВзаимодействия КАК Дата,
 	ПредметыПапкиВзаимодействий.Ответственный КАК Ответственный,
@@ -1117,8 +1117,8 @@
 					<dcsset:filter>
 						<dcsset:item xsi:type="dcsset:FilterItemComparison">
 							<dcsset:left xsi:type="dcscor:Field">СтатусВзаимодействия</dcsset:left>
-							<dcsset:comparisonType>BeginsWith</dcsset:comparisonType>
-							<dcsset:right xsi:type="xs:string">Запланировано</dcsset:right>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.СтатусыВзаимодействий.Запланировано</dcsset:right>
 						</dcsset:item>
 					</dcsset:filter>
 					<dcsset:appearance>

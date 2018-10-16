@@ -42,11 +42,6 @@
 						<CommandName>Form.Command.ЗагрузитьЗаявкиCQ</CommandName>
 						<ExtendedTooltip name="ФормаЗагрузитьЗаявкиCQРасширеннаяПодсказка" id="114"/>
 					</Button>
-					<Button name="ФормаЗагрузитьПисьмаCQ" id="117">
-						<Type>CommandBarButton</Type>
-						<CommandName>Form.Command.ЗагрузитьПисьмаCQ</CommandName>
-						<ExtendedTooltip name="ФормаЗагрузитьПисьмаCQРасширеннаяПодсказка" id="118"/>
-					</Button>
 					<Button name="ФормаПроверкаЗаявокНаЗвонокПоПлановомуВремени" id="103">
 						<Type>CommandBarButton</Type>
 						<CommandName>Form.Command.ПроверкаЗаявокНаЗвонокПоПлановомуВремени</CommandName>
@@ -444,22 +439,6 @@
 				</v8:item>
 			</ToolTip>
 			<Action>ЗагрузкаЗаявокДомКлик</Action>
-		</Command>
-		<Command name="ЗагрузитьПисьмаCQ" id="10">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Загрузить письма CQ</v8:content>
-				</v8:item>
-			</Title>
-			<ToolTip>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Загрузить заявки CQ</v8:content>
-				</v8:item>
-			</ToolTip>
-			<Action>ЗагрузитьПисьмаCQ</Action>
-			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
 	</Commands>
 </Form>
