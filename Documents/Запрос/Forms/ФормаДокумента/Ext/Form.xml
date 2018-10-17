@@ -270,6 +270,7 @@
 										</InputField>
 										<InputField name="Статус" id="85">
 											<DataPath>Объект.Статус</DataPath>
+											<Visible>false</Visible>
 											<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
 											<EditMode>EnterOnInput</EditMode>
 											<ContextMenu name="СтатусКонтекстноеМеню" id="86"/>
@@ -277,6 +278,7 @@
 										</InputField>
 										<InputField name="РасшифровкаСтатуса" id="88">
 											<DataPath>Объект.РасшифровкаСтатуса</DataPath>
+											<Visible>false</Visible>
 											<Title>
 												<v8:item>
 													<v8:lang>ru</v8:lang>
@@ -293,6 +295,39 @@
 											<ContextMenu name="РасшифровкаСтатусаКонтекстноеМеню" id="89"/>
 											<ExtendedTooltip name="РасшифровкаСтатусаРасширеннаяПодсказка" id="90"/>
 										</InputField>
+										<UsualGroup name="ГруппаСтатусРасшифровкаСтатуса" id="927">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа статус расшифровка статуса</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа статус расшифровка статуса</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаСтатусРасшифровкаСтатусаРасширеннаяПодсказка" id="928"/>
+											<ChildItems>
+												<InputField name="СтатусЗапроса" id="929">
+													<DataPath>СтатусЗапроса</DataPath>
+													<Enabled>false</Enabled>
+													<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
+													<ContextMenu name="СтатусЗапросаКонтекстноеМеню" id="930"/>
+													<ExtendedTooltip name="СтатусЗапросаРасширеннаяПодсказка" id="931"/>
+												</InputField>
+												<InputField name="РасшифровкаСтатусаЗапроса" id="932">
+													<DataPath>РасшифровкаСтатусаЗапроса</DataPath>
+													<Enabled>false</Enabled>
+													<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
+													<ContextMenu name="РасшифровкаСтатусаЗапросаКонтекстноеМеню" id="933"/>
+													<ExtendedTooltip name="РасшифровкаСтатусаЗапросаРасширеннаяПодсказка" id="934"/>
+												</InputField>
+											</ChildItems>
+										</UsualGroup>
 										<CheckBoxField name="Оптовый" id="73">
 											<DataPath>Объект.Оптовый</DataPath>
 											<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
@@ -2975,6 +3010,39 @@
 			</Title>
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СтатусЗапроса" id="23">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Статус</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.СтатусыЗапроса</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="РасшифровкаСтатусаЗапроса" id="24">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Расшифровка статуса</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ПричиныСтатусовЗапроса</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СтадияЗапроса" id="25">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Стадия запроса</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.СтадииЗапроса</v8:Type>
 			</Type>
 		</Attribute>
 		<ConditionalAppearance>

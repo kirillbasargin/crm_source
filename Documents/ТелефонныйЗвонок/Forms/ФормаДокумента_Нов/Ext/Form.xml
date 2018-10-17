@@ -11,14 +11,27 @@
 		<ChildItems>
 			<Button name="ФормаЗаписатьИЗакрыть" id="153">
 				<Type>CommandBarButton</Type>
-				<DefaultButton>true</DefaultButton>
+				<Visible>false</Visible>
 				<CommandName>Form.StandardCommand.WriteAndClose</CommandName>
 				<ExtendedTooltip name="ФормаЗаписатьИЗакрытьРасширеннаяПодсказка" id="154"/>
 			</Button>
 			<Button name="ФормаЗаписать" id="155">
 				<Type>CommandBarButton</Type>
+				<Visible>false</Visible>
+				<Representation>Picture</Representation>
 				<CommandName>Form.StandardCommand.Write</CommandName>
 				<ExtendedTooltip name="ФормаЗаписатьРасширеннаяПодсказка" id="156"/>
+			</Button>
+			<Button name="ФормаКомандаЗаписатьИЗакрыть" id="221">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.КомандаЗаписатьИЗакрыть</CommandName>
+				<ExtendedTooltip name="ФормаКомандаЗаписатьИЗакрытьРасширеннаяПодсказка" id="222"/>
+			</Button>
+			<Button name="ФормаКомандаЗаписать" id="219">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.КомандаЗаписать</CommandName>
+				<ExtendedTooltip name="ФормаКомандаЗаписатьРасширеннаяПодсказка" id="220"/>
 			</Button>
 			<Button name="ФормаОткрытьОбработкуРаботаСКлиентами" id="183">
 				<Type>CommandBarButton</Type>
@@ -164,6 +177,7 @@
 		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
 		<Event name="OnReadAtServer">ПриЧтенииНаСервере</Event>
 		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="BeforeClose">ПередЗакрытием</Event>
 		<Event name="BeforeWriteAtServer">ПередЗаписьюНаСервере</Event>
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 		<Event name="OnWriteAtServer">ПриЗаписиНаСервере</Event>
@@ -640,6 +654,64 @@
 			<ContextMenu name="ОписаниеКонтекстноеМеню" id="12"/>
 			<ExtendedTooltip name="ОписаниеExtendedTooltip" id="123"/>
 		</InputField>
+		<UsualGroup name="ГруппаСтатусРасшифровкаСтатуса" id="211">
+			<Visible>false</Visible>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа статус расшифровка статуса</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа статус расшифровка статуса</v8:content>
+				</v8:item>
+			</ToolTip>
+			<HorizontalStretch>false</HorizontalStretch>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаСтатусРасшифровкаСтатусаРасширеннаяПодсказка" id="212"/>
+			<ChildItems>
+				<InputField name="СтатусЗапроса" id="213">
+					<DataPath>Объект.СтатусЗапроса</DataPath>
+					<TitleLocation>Top</TitleLocation>
+					<Width>39</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ListChoiceMode>true</ListChoiceMode>
+					<ChooseType>false</ChooseType>
+					<ChoiceList>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation/>
+								<Value xsi:type="xr:DesignTimeRef">Enum.СтатусыЗапроса.EnumValue.ВРаботе</Value>
+							</xr:Value>
+						</xr:Item>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation/>
+								<Value xsi:type="xr:DesignTimeRef">Enum.СтатусыЗапроса.EnumValue.Отказ</Value>
+							</xr:Value>
+						</xr:Item>
+					</ChoiceList>
+					<ContextMenu name="СтатусЗапросаКонтекстноеМеню" id="214"/>
+					<ExtendedTooltip name="СтатусЗапросаРасширеннаяПодсказка" id="215"/>
+				</InputField>
+				<InputField name="РасшифровкаСтатусаЗапроса" id="216">
+					<DataPath>Объект.РасшифровкаСтатусаЗапроса</DataPath>
+					<TitleLocation>Top</TitleLocation>
+					<Width>50</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="РасшифровкаСтатусаЗапросаКонтекстноеМеню" id="217"/>
+					<ExtendedTooltip name="РасшифровкаСтатусаЗапросаРасширеннаяПодсказка" id="218"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
 		<UsualGroup name="ГруппаНиз" id="195">
 			<Title>
 				<v8:item>
@@ -681,8 +753,7 @@
 						<InputField name="Номер" id="185">
 							<DataPath>Объект.Number</DataPath>
 							<ReadOnly>true</ReadOnly>
-							<Width>11</Width>
-							<HorizontalStretch>false</HorizontalStretch>
+							<TitleLocation>Top</TitleLocation>
 							<ContextMenu name="НомерКонтекстноеМеню" id="186"/>
 							<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="187"/>
 						</InputField>
@@ -720,7 +791,7 @@
 					<ChildItems>
 						<InputField name="Предмет" id="15">
 							<DataPath>Предмет</DataPath>
-							<TitleLocation>Left</TitleLocation>
+							<TitleLocation>Top</TitleLocation>
 							<Width>50</Width>
 							<AutoMaxWidth>false</AutoMaxWidth>
 							<HorizontalStretch>false</HorizontalStretch>
@@ -735,6 +806,7 @@
 							<ExtendedTooltip name="ПредметExtendedTooltip" id="106"/>
 							<Events>
 								<Event name="StartChoice">ПредметНачалоВыбора</Event>
+								<Event name="ChoiceProcessing">ПредметОбработкаВыбора</Event>
 							</Events>
 						</InputField>
 						<LabelField name="Дата" id="180">
@@ -893,6 +965,17 @@
 				<v8:Type>cfg:EnumRef.ТипАктивностиВзаимодействия</v8:Type>
 			</Type>
 		</Attribute>
+		<Attribute name="ЭтоМенеджерФилиала" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Это менеджер филиала</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="СоздатьКонтакт" id="1">
@@ -950,7 +1033,49 @@
 			<Action>ОткрытьОбработкуРаботаСКлиентами</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
+		<Command name="КомандаЗаписать" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда записать</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.SaveFile</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ФормаЗаписать</Action>
+		</Command>
+		<Command name="КомандаЗаписатьИЗакрыть" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать и закрыть</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда записать и закрыть</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаЗаписатьИЗакрыть</Action>
+		</Command>
 	</Commands>
+	<Parameters>
+		<Parameter name="СозданиеЗвонкаИзТелефонии">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<KeyParameter>true</KeyParameter>
+		</Parameter>
+	</Parameters>
 	<CommandInterface>
 		<NavigationPanel>
 			<Item>

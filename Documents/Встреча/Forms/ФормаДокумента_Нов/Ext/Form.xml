@@ -10,12 +10,13 @@
 		<ChildItems>
 			<Button name="ФормаЗаписатьИЗакрыть" id="176">
 				<Type>CommandBarButton</Type>
-				<DefaultButton>true</DefaultButton>
+				<Visible>false</Visible>
 				<CommandName>Form.StandardCommand.WriteAndClose</CommandName>
 				<ExtendedTooltip name="ФормаЗаписатьИЗакрытьРасширеннаяПодсказка" id="177"/>
 			</Button>
 			<Button name="ФормаЗаписать" id="178">
 				<Type>CommandBarButton</Type>
+				<Visible>false</Visible>
 				<Representation>Picture</Representation>
 				<CommandName>Form.StandardCommand.Write</CommandName>
 				<Picture>
@@ -23,6 +24,17 @@
 					<xr:LoadTransparent>true</xr:LoadTransparent>
 				</Picture>
 				<ExtendedTooltip name="ФормаЗаписатьРасширеннаяПодсказка" id="179"/>
+			</Button>
+			<Button name="ФормаКомандаЗаписатьИЗакрыть" id="249">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.КомандаЗаписатьИЗакрыть</CommandName>
+				<ExtendedTooltip name="ФормаКомандаЗаписатьИЗакрытьРасширеннаяПодсказка" id="250"/>
+			</Button>
+			<Button name="ФормаКомандаЗаписать" id="251">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.КомандаЗаписать</CommandName>
+				<ExtendedTooltip name="ФормаКомандаЗаписатьРасширеннаяПодсказка" id="252"/>
 			</Button>
 			<Button name="ФормаОткрытьОбработкуРаботаСКлиентами" id="209">
 				<Type>CommandBarButton</Type>
@@ -183,6 +195,7 @@
 		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
 		<Event name="OnReadAtServer">ПриЧтенииНаСервере</Event>
 		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="BeforeClose">ПередЗакрытием</Event>
 		<Event name="BeforeWriteAtServer">ПередЗаписьюНаСервере</Event>
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 		<Event name="OnWriteAtServer">ПриЗаписиНаСервере</Event>
@@ -860,6 +873,64 @@
 			<ContextMenu name="ОписаниеКонтекстноеМеню" id="77"/>
 			<ExtendedTooltip name="ОписаниеExtendedTooltip" id="134"/>
 		</InputField>
+		<UsualGroup name="ГруппаСтатусРасшифровкаСтатуса" id="241">
+			<Visible>false</Visible>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа статус расшифровка статуса</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа статус расшифровка статуса</v8:content>
+				</v8:item>
+			</ToolTip>
+			<HorizontalStretch>false</HorizontalStretch>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаСтатусРасшифровкаСтатусаРасширеннаяПодсказка" id="242"/>
+			<ChildItems>
+				<InputField name="СтатусЗапроса" id="243">
+					<DataPath>Объект.СтатусЗапроса</DataPath>
+					<TitleLocation>Top</TitleLocation>
+					<Width>39</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ListChoiceMode>true</ListChoiceMode>
+					<ChooseType>false</ChooseType>
+					<ChoiceList>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation/>
+								<Value xsi:type="xr:DesignTimeRef">Enum.СтатусыЗапроса.EnumValue.ВРаботе</Value>
+							</xr:Value>
+						</xr:Item>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation/>
+								<Value xsi:type="xr:DesignTimeRef">Enum.СтатусыЗапроса.EnumValue.Отказ</Value>
+							</xr:Value>
+						</xr:Item>
+					</ChoiceList>
+					<ContextMenu name="СтатусЗапросаКонтекстноеМеню" id="244"/>
+					<ExtendedTooltip name="СтатусЗапросаРасширеннаяПодсказка" id="245"/>
+				</InputField>
+				<InputField name="РасшифровкаСтатусаЗапроса" id="246">
+					<DataPath>Объект.РасшифровкаСтатусаЗапроса</DataPath>
+					<TitleLocation>Top</TitleLocation>
+					<Width>50</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="РасшифровкаСтатусаЗапросаКонтекстноеМеню" id="247"/>
+					<ExtendedTooltip name="РасшифровкаСтатусаЗапросаРасширеннаяПодсказка" id="248"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
 		<UsualGroup name="ГруппаНиз" id="222">
 			<Title>
 				<v8:item>
@@ -930,6 +1001,8 @@
 							<v8:content>Группа низ лев</v8:content>
 						</v8:item>
 					</ToolTip>
+					<Width>40</Width>
+					<HorizontalStretch>false</HorizontalStretch>
 					<Group>Vertical</Group>
 					<Representation>None</Representation>
 					<ShowTitle>false</ShowTitle>
@@ -979,7 +1052,7 @@
 								<InputField name="Предмет" id="48">
 									<DataPath>Предмет</DataPath>
 									<TitleLocation>Top</TitleLocation>
-									<Width>60</Width>
+									<Width>50</Width>
 									<AutoMaxWidth>false</AutoMaxWidth>
 									<HorizontalStretch>false</HorizontalStretch>
 									<Wrap>false</Wrap>
@@ -995,39 +1068,6 @@
 										<Event name="ChoiceProcessing">ПредметОбработкаВыбора</Event>
 									</Events>
 								</InputField>
-								<UsualGroup name="Группа2" id="239">
-									<Representation>None</Representation>
-									<ShowTitle>false</ShowTitle>
-									<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="240"/>
-									<ChildItems>
-										<InputField name="Статус" id="233">
-											<DataPath>Объект.Статус</DataPath>
-											<Visible>false</Visible>
-											<ReadOnly>true</ReadOnly>
-											<Title>
-												<v8:item>
-													<v8:lang>ru</v8:lang>
-													<v8:content>Статус</v8:content>
-												</v8:item>
-											</Title>
-											<ContextMenu name="СтатусКонтекстноеМеню" id="234"/>
-											<ExtendedTooltip name="СтатусРасширеннаяПодсказка" id="235"/>
-										</InputField>
-										<InputField name="РасшифровкаСтатуса" id="236">
-											<DataPath>Объект.РасшифровкаСтатуса</DataPath>
-											<Visible>false</Visible>
-											<ReadOnly>true</ReadOnly>
-											<Title>
-												<v8:item>
-													<v8:lang>ru</v8:lang>
-													<v8:content>Расшифровка</v8:content>
-												</v8:item>
-											</Title>
-											<ContextMenu name="РасшифровкаСтатусаКонтекстноеМеню" id="237"/>
-											<ExtendedTooltip name="РасшифровкаСтатусаРасширеннаяПодсказка" id="238"/>
-										</InputField>
-									</ChildItems>
-								</UsualGroup>
 							</ChildItems>
 						</UsualGroup>
 						<LabelField name="Дата" id="110">
@@ -1261,6 +1301,17 @@
 				<v8:Type>cfg:EnumRef.ТипАктивностиВзаимодействия</v8:Type>
 			</Type>
 		</Attribute>
+		<Attribute name="ЭтоМенеджерФилиала" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Это менеджер филиала</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="СоздатьКонтакт" id="2">
@@ -1321,6 +1372,40 @@
 			<Action>ОткрытьКалендарьВстреч</Action>
 			<Representation>TextPicture</Representation>
 			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КомандаЗаписать" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда записать</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.SaveFile</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ФормаЗаписать</Action>
+		</Command>
+		<Command name="КомандаЗаписатьИЗакрыть" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать и закрыть</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Команда записать и закрыть</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КомандаЗаписатьИЗакрыть</Action>
 		</Command>
 	</Commands>
 	<CommandInterface>

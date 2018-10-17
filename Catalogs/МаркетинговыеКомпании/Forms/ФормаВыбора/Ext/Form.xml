@@ -103,6 +103,12 @@
 					<ContextMenu name="ДатаКонцаКонтекстноеМеню" id="32"/>
 					<ExtendedTooltip name="ДатаКонцаРасширеннаяПодсказка" id="33"/>
 				</LabelField>
+				<CheckBoxField name="ВыдачаДисконтныхКарт" id="34">
+					<DataPath>Список.ВыдачаДисконтныхКарт</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ВыдачаДисконтныхКартКонтекстноеМеню" id="35"/>
+					<ExtendedTooltip name="ВыдачаДисконтныхКартРасширеннаяПодсказка" id="36"/>
+				</CheckBoxField>
 			</ChildItems>
 		</Table>
 	</ChildItems>
