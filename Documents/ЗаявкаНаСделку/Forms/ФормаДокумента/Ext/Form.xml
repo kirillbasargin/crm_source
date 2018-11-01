@@ -797,6 +797,17 @@
 																		<Event name="StartChoice">МаркетинговаяКомпанияНачалоВыбора</Event>
 																	</Events>
 																</InputField>
+																<InputField name="ДисконтнаяКарта" id="379">
+																	<DataPath>Объект.ДисконтнаяКарта</DataPath>
+																	<Visible>false</Visible>
+																	<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
+																	<ChoiceButton>true</ChoiceButton>
+																	<ContextMenu name="ДисконтнаяКартаКонтекстноеМеню" id="380"/>
+																	<ExtendedTooltip name="ДисконтнаяКартаРасширеннаяПодсказка" id="381"/>
+																	<Events>
+																		<Event name="StartChoice">ДисконтнаяКартаНачалоВыбора</Event>
+																	</Events>
+																</InputField>
 																<InputField name="АгентствоНедвижимости" id="46">
 																	<DataPath>Объект.АгентствоНедвижимости</DataPath>
 																	<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
@@ -882,10 +893,15 @@
 																			<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
 																			<EditMode>EnterOnInput</EditMode>
 																			<HorizontalStretch>false</HorizontalStretch>
+																			<DropListButton>false</DropListButton>
+																			<ChoiceButton>true</ChoiceButton>
+																			<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+																			<TextEdit>false</TextEdit>
 																			<ContextMenu name="СрокБронированияКонтекстноеМеню" id="41"/>
 																			<ExtendedTooltip name="СрокБронированияРасширеннаяПодсказка" id="42"/>
 																			<Events>
 																				<Event name="OnChange">СрокБронированияПриИзменении</Event>
+																				<Event name="StartChoice">СрокБронированияНачалоВыбора</Event>
 																			</Events>
 																		</InputField>
 																		<InputField name="ДатаКонцаСрокаБронирования" id="357">

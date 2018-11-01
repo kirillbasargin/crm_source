@@ -2587,14 +2587,14 @@
 											<ExtendedTooltip name="ЗаявкиНаЗвонокПроведенРасширеннаяПодсказка" id="1453"/>
 										</CheckBoxField>
 										<CheckBoxField name="ЗаявкиНаЗвонокРассмотрено" id="1457">
-											<DataPath>ЗаявкиНаЗвонок.Рассмотрено</DataPath>
+											<DataPath>~ЗаявкиНаЗвонок.Рассмотрено</DataPath>
 											<Visible>false</Visible>
 											<CheckBoxType>Auto</CheckBoxType>
 											<ContextMenu name="ЗаявкиНаЗвонокРассмотреноКонтекстноеМеню" id="1458"/>
 											<ExtendedTooltip name="ЗаявкиНаЗвонокРассмотреноРасширеннаяПодсказка" id="1459"/>
 										</CheckBoxField>
 										<LabelField name="ЗаявкиНаЗвонокРассмотретьПосле" id="1460">
-											<DataPath>ЗаявкиНаЗвонок.РассмотретьПосле</DataPath>
+											<DataPath>~ЗаявкиНаЗвонок.РассмотретьПосле</DataPath>
 											<Visible>false</Visible>
 											<Font ref="style:NormalTextFont" height="9" kind="StyleItem"/>
 											<ContextMenu name="ЗаявкиНаЗвонокРассмотретьПослеКонтекстноеМеню" id="1461"/>
@@ -3313,8 +3313,11 @@
 	ДокументЗаявкаНаЗвонок.Ответственный КАК Ответственный,
 	ДокументЗаявкаНаЗвонок.Комментарий КАК Комментарий,
 	ДокументЗаявкаНаЗвонок.МоментВремени КАК МоментВремени,
-	ЕСТЬNULL(ПредметыПапкиВзаимодействий.Рассмотрено, ЛОЖЬ) КАК Рассмотрено,
-	ЕСТЬNULL(ПредметыПапкиВзаимодействий.РассмотретьПосле, ДАТАВРЕМЯ(1, 1, 1)) КАК РассмотретьПосле,
+	//ЕСТЬNULL(ПредметыПапкиВзаимодействий.Рассмотрено, ЛОЖЬ) КАК Рассмотрено,
+	//ЕСТЬNULL(ПредметыПапкиВзаимодействий.РассмотретьПосле, ДАТАВРЕМЯ(1, 1, 1)) КАК РассмотретьПосле,
+	ЕСТЬNULL(Взаимодействия.Статус, Значение(Перечисление.СтатусыВзаимодействий.ПустаяСсылка)) КАК СтатусВзаимодействия,
+	ЕСТЬNULL(Взаимодействия.СтатусЗапроса, Значение(Перечисление.СтатусыЗапроса.ПустаяСсылка)) КАК СтатусЗапроса,
+	ЕСТЬNULL(ПараметрыЗапросаЛинейный.Стадия, Значение(Перечисление.СтадииЗапроса.ПустаяСсылка)) КАК СтадияЗапроса,
 	ВЫБОР
 		КОГДА ДокументЗаявкаНаЗвонок.Взаимодействие ССЫЛКА Документ.Встреча
 			ТОГДА ЗНАЧЕНИЕ(Перечисление.ТипыВзаимодействий.Встреча)
@@ -3326,8 +3329,12 @@
 	ДокументЗаявкаНаЗвонок.ПолеДополнительнойГруппировки КАК ПолеДополнительнойГруппировки
 ИЗ
 	Документ.ЗаявкаНаЗвонок КАК ДокументЗаявкаНаЗвонок
-		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ПредметыПапкиВзаимодействий КАК ПредметыПапкиВзаимодействий
-		ПО ДокументЗаявкаНаЗвонок.Взаимодействие = ПредметыПапкиВзаимодействий.Взаимодействие
+		//ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ПредметыПапкиВзаимодействий КАК ПредметыПапкиВзаимодействий
+		//ПО ДокументЗаявкаНаЗвонок.Взаимодействие = ПредметыПапкиВзаимодействий.Взаимодействие
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.Взаимодействия КАК Взаимодействия
+		ПО  ДокументЗаявкаНаЗвонок.Взаимодействие = Взаимодействия.Взаимодействие		
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ПараметрыЗапросаЛинейный КАК ПараметрыЗапросаЛинейный
+		ПО  ДокументЗаявкаНаЗвонок.ПредметВзаимодействия = ПараметрыЗапросаЛинейный.Запрос	
 {ГДЕ
 	(ДокументЗаявкаНаЗвонок.Ответственный = &amp;Ответственный)}</QueryText>
 				<MainTable>Document.ЗаявкаНаЗвонок</MainTable>
@@ -3351,7 +3358,7 @@
 							</dcsset:item>
 							<dcsset:item xsi:type="dcsset:FilterItemComparison">
 								<dcsset:left xsi:type="dcscor:Field">ДатаРаспределения</dcsset:left>
-								<dcsset:comparisonType>LessOrEqual</dcsset:comparisonType>
+								<dcsset:comparisonType>Less</dcsset:comparisonType>
 								<dcsset:right xsi:type="v8:StandardBeginningDate">
 									<v8:variant xsi:type="v8:StandardBeginningDateVariant">BeginningOfNextDay</v8:variant>
 								</dcsset:right>
@@ -3512,6 +3519,31 @@
 								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 									<dcscor:parameter>ЦветФона</dcscor:parameter>
 									<dcscor:value xsi:type="v8ui:Color">#FFCC99</dcscor:value>
+								</dcscor:item>
+							</dcsset:appearance>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:selection/>
+							<dcsset:filter>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">СтатусЗапроса</dcsset:left>
+									<dcsset:comparisonType>NotFilled</dcsset:comparisonType>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">СтатусВзаимодействия</dcsset:left>
+									<dcsset:comparisonType>Equal</dcsset:comparisonType>
+									<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.СтатусыВзаимодействий.Завершено</dcsset:right>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">СтадияЗапроса</dcsset:left>
+									<dcsset:comparisonType>Equal</dcsset:comparisonType>
+									<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.СтадииЗапроса.Звонок</dcsset:right>
+								</dcsset:item>
+							</dcsset:filter>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>ЦветФона</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Color">#CD5C5C</dcscor:value>
 								</dcscor:item>
 							</dcsset:appearance>
 						</dcsset:item>

@@ -1,6 +1,110 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.6">
-	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Popup name="ФормаГруппаСозданиеВзаимодействий" id="52">
+				<ToolTip>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Форма группа создание взаимодействий</v8:content>
+					</v8:item>
+				</ToolTip>
+				<Picture>
+					<xr:Ref>CommonPicture.ОтветитьНаЭлектронноеПисьмоВсем</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<BackColor>#CCFFCC</BackColor>
+				<ExtendedTooltip name="ФормаГруппаСозданиеВзаимодействийРасширеннаяПодсказка" id="53"/>
+				<ChildItems>
+					<Button name="ФормаЖурналДокументовВзаимодействияЗапланироватьВстречуПоПредмету" id="56">
+						<Type>CommandBarButton</Type>
+						<CommandName>DocumentJournal.Взаимодействия.Command.ЗапланироватьВстречуПоПредмету</CommandName>
+						<DataPath>Items.Список.CurrentData.Ссылка</DataPath>
+						<ExtendedTooltip name="ФормаЖурналДокументовВзаимодействияЗапланироватьВстречуПоПредметуРасширеннаяПодсказка" id="57"/>
+					</Button>
+					<Button name="ФормаЖурналДокументовВзаимодействияПозвонитьПоПредмету" id="54">
+						<Type>CommandBarButton</Type>
+						<CommandName>DocumentJournal.Взаимодействия.Command.ПозвонитьПоПредмету</CommandName>
+						<DataPath>Items.Список.CurrentData.Ссылка</DataPath>
+						<ExtendedTooltip name="ФормаЖурналДокументовВзаимодействияПозвонитьПоПредметуРасширеннаяПодсказка" id="55"/>
+					</Button>
+					<Button name="ФормаЖурналДокументовВзаимодействияНаписатьSMSПоПредмету" id="58">
+						<Type>CommandBarButton</Type>
+						<Visible>false</Visible>
+						<CommandName>DocumentJournal.Взаимодействия.Command.НаписатьSMSПоПредмету</CommandName>
+						<DataPath>Items.Список.CurrentData.Ссылка</DataPath>
+						<ExtendedTooltip name="ФормаЖурналДокументовВзаимодействияНаписатьSMSПоПредметуРасширеннаяПодсказка" id="59"/>
+					</Button>
+					<Button name="ФормаНаписатьSMSПоШаблону" id="68">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.НаписатьSMSПоШаблону</CommandName>
+						<ExtendedTooltip name="ФормаНаписатьSMSПоШаблонуРасширеннаяПодсказка" id="69"/>
+					</Button>
+					<Button name="ФормаЖурналДокументовВзаимодействияНаписатьЭлектронноеПисьмоПоПредмету" id="60">
+						<Type>CommandBarButton</Type>
+						<CommandName>DocumentJournal.Взаимодействия.Command.НаписатьЭлектронноеПисьмоПоПредмету</CommandName>
+						<DataPath>Items.Список.CurrentData.Ссылка</DataPath>
+						<ExtendedTooltip name="ФормаЖурналДокументовВзаимодействияНаписатьЭлектронноеПисьмоПоПредметуРасширеннаяПодсказка" id="61"/>
+					</Button>
+					<Button name="ФормаОбщаяКомандаОтправитьПисьмо" id="64">
+						<Type>CommandBarButton</Type>
+						<Visible>false</Visible>
+						<CommandName>CommonCommand.ОтправитьПисьмо</CommandName>
+						<DataPath>Items.Список.CurrentData.Ссылка</DataPath>
+						<ExtendedTooltip name="ФормаОбщаяКомандаОтправитьПисьмоРасширеннаяПодсказка" id="65"/>
+					</Button>
+					<Button name="ФормаОбщаяКомандаОтправитьSMS" id="66">
+						<Type>CommandBarButton</Type>
+						<Visible>false</Visible>
+						<CommandName>CommonCommand.ОтправитьSMS</CommandName>
+						<DataPath>Items.Список.CurrentData.Ссылка</DataPath>
+						<ExtendedTooltip name="ФормаОбщаяКомандаОтправитьSMSРасширеннаяПодсказка" id="67"/>
+					</Button>
+				</ChildItems>
+			</Popup>
+			<Popup name="ФормаГруппаСозатьНаОсновании" id="70">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Созать на основании</v8:content>
+					</v8:item>
+				</Title>
+				<ToolTip>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Форма группа созать на основании</v8:content>
+					</v8:item>
+				</ToolTip>
+				<ExtendedTooltip name="ФормаГруппаСозатьНаОснованииРасширеннаяПодсказка" id="71"/>
+				<ChildItems>
+					<Button name="ФормаДокументРасчетИпотекиСоздатьНаОсновании" id="72">
+						<Type>CommandBarButton</Type>
+						<CommandName>Document.РасчетИпотеки.StandardCommand.CreateBasedOn</CommandName>
+						<DataPath>Items.Список.CurrentData.Ссылка</DataPath>
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Расчет ипотеки</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="ФормаДокументРасчетИпотекиСоздатьНаОснованииРасширеннаяПодсказка" id="73"/>
+					</Button>
+					<Button name="ФормаДокументВыдачаДисконтныйКартСоздатьНаОсновании" id="74">
+						<Type>CommandBarButton</Type>
+						<Visible>false</Visible>
+						<CommandName>Document.ВыдачаДисконтныйКарт.StandardCommand.CreateBasedOn</CommandName>
+						<DataPath>Items.Список.CurrentData.Ссылка</DataPath>
+						<ExtendedTooltip name="ФормаДокументВыдачаДисконтныйКартСоздатьНаОснованииРасширеннаяПодсказка" id="75"/>
+					</Button>
+					<Button name="ФормаСоздатьНаОсновании_ВыдачаДисконтныхКарт" id="76">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.СоздатьНаОсновании_ВыдачаДисконтныхКарт</CommandName>
+						<ExtendedTooltip name="ФормаСоздатьНаОсновании_ВыдачаДисконтныхКартРасширеннаяПодсказка" id="77"/>
+					</Button>
+				</ChildItems>
+			</Popup>
+		</ChildItems>
+	</AutoCommandBar>
 	<ChildItems>
 		<UsualGroup name="СписокКомпоновщикНастроекПользовательскиеНастройки" id="1">
 			<Title>
@@ -225,4 +329,40 @@
 			</Settings>
 		</Attribute>
 	</Attributes>
+	<Commands>
+		<Command name="НаписатьSMSПоШаблону" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Написать SMS</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Написать SMS</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.Взаимодействие_СообщениеSMS</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>НаписатьSMSПоШаблону</Action>
+		</Command>
+		<Command name="СоздатьНаОсновании_ВыдачаДисконтныхКарт" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дисконтная карта</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать на основании выдача дисконтных карт</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СоздатьНаОсновании_ВыдачаДисконтныхКарт</Action>
+		</Command>
+	</Commands>
 </Form>

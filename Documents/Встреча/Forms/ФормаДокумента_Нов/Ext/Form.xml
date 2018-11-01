@@ -66,6 +66,52 @@
 				</Title>
 				<ExtendedTooltip name="ФормаПоказатьВЖурналеРасширеннаяПодсказка" id="175"/>
 			</Button>
+			<Popup name="ФормаГруппаСозданиеВзаимодействий" id="253">
+				<ToolTip>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Форма группа создание взаимодействий</v8:content>
+					</v8:item>
+				</ToolTip>
+				<Picture>
+					<xr:Ref>CommonPicture.ОтветитьНаЭлектронноеПисьмоВсем</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<BackColor>#CCFFCC</BackColor>
+				<ExtendedTooltip name="ФормаГруппаСозданиеВзаимодействийРасширеннаяПодсказка" id="254"/>
+				<ChildItems>
+					<Button name="ФормаЖурналДокументовВзаимодействияЗапланироватьВстречуПоПредмету" id="261">
+						<Type>CommandBarButton</Type>
+						<CommandName>DocumentJournal.Взаимодействия.Command.ЗапланироватьВстречуПоПредмету</CommandName>
+						<DataPath>Объект.Ref</DataPath>
+						<ExtendedTooltip name="ФормаЖурналДокументовВзаимодействияЗапланироватьВстречуПоПредметуРасширеннаяПодсказка" id="262"/>
+					</Button>
+					<Button name="ФормаЖурналДокументовВзаимодействияПозвонитьПоПредмету" id="255">
+						<Type>CommandBarButton</Type>
+						<CommandName>DocumentJournal.Взаимодействия.Command.ПозвонитьПоПредмету</CommandName>
+						<DataPath>Объект.Ref</DataPath>
+						<ExtendedTooltip name="ФормаЖурналДокументовВзаимодействияПозвонитьПоПредметуРасширеннаяПодсказка" id="256"/>
+					</Button>
+					<Button name="ФормаЖурналДокументовВзаимодействияНаписатьSMSПоПредмету" id="259">
+						<Type>CommandBarButton</Type>
+						<Visible>false</Visible>
+						<CommandName>DocumentJournal.Взаимодействия.Command.НаписатьSMSПоПредмету</CommandName>
+						<DataPath>Объект.Ref</DataPath>
+						<ExtendedTooltip name="ФормаЖурналДокументовВзаимодействияНаписатьSMSПоПредметуРасширеннаяПодсказка" id="260"/>
+					</Button>
+					<Button name="ФормаНаписатьSMSПоШаблону" id="263">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.НаписатьSMSПоШаблону</CommandName>
+						<ExtendedTooltip name="ФормаНаписатьSMSПоШаблонуРасширеннаяПодсказка" id="264"/>
+					</Button>
+					<Button name="ФормаЖурналДокументовВзаимодействияНаписатьЭлектронноеПисьмоПоПредмету" id="257">
+						<Type>CommandBarButton</Type>
+						<CommandName>DocumentJournal.Взаимодействия.Command.НаписатьЭлектронноеПисьмоПоПредмету</CommandName>
+						<DataPath>Объект.Ref</DataPath>
+						<ExtendedTooltip name="ФормаЖурналДокументовВзаимодействияНаписатьЭлектронноеПисьмоПоПредметуРасширеннаяПодсказка" id="258"/>
+					</Button>
+				</ChildItems>
+			</Popup>
 			<ButtonGroup name="ФормаГлобальныеКоманды" id="182">
 				<Title>
 					<v8:item>
@@ -196,6 +242,7 @@
 		<Event name="OnReadAtServer">ПриЧтенииНаСервере</Event>
 		<Event name="OnOpen">ПриОткрытии</Event>
 		<Event name="BeforeClose">ПередЗакрытием</Event>
+		<Event name="BeforeWrite">ПередЗаписью</Event>
 		<Event name="BeforeWriteAtServer">ПередЗаписьюНаСервере</Event>
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 		<Event name="OnWriteAtServer">ПриЗаписиНаСервере</Event>
@@ -905,7 +952,12 @@
 							<xr:Presentation/>
 							<xr:CheckState>0</xr:CheckState>
 							<xr:Value xsi:type="FormChoiceListDesTimeValue">
-								<Presentation/>
+								<Presentation>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>В работе</v8:content>
+									</v8:item>
+								</Presentation>
 								<Value xsi:type="xr:DesignTimeRef">Enum.СтатусыЗапроса.EnumValue.ВРаботе</Value>
 							</xr:Value>
 						</xr:Item>
@@ -913,13 +965,34 @@
 							<xr:Presentation/>
 							<xr:CheckState>0</xr:CheckState>
 							<xr:Value xsi:type="FormChoiceListDesTimeValue">
-								<Presentation/>
+								<Presentation>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Отказ</v8:content>
+									</v8:item>
+								</Presentation>
 								<Value xsi:type="xr:DesignTimeRef">Enum.СтатусыЗапроса.EnumValue.Отказ</Value>
+							</xr:Value>
+						</xr:Item>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Завершено</v8:content>
+									</v8:item>
+								</Presentation>
+								<Value xsi:type="xr:DesignTimeRef">Enum.СтатусыЗапроса.EnumValue.Завершено</Value>
 							</xr:Value>
 						</xr:Item>
 					</ChoiceList>
 					<ContextMenu name="СтатусЗапросаКонтекстноеМеню" id="244"/>
 					<ExtendedTooltip name="СтатусЗапросаРасширеннаяПодсказка" id="245"/>
+					<Events>
+						<Event name="StartChoice">СтатусЗапросаНачалоВыбора</Event>
+					</Events>
 				</InputField>
 				<InputField name="РасшифровкаСтатусаЗапроса" id="246">
 					<DataPath>Объект.РасшифровкаСтатусаЗапроса</DataPath>
@@ -1406,6 +1479,25 @@
 				</v8:item>
 			</ToolTip>
 			<Action>КомандаЗаписатьИЗакрыть</Action>
+		</Command>
+		<Command name="НаписатьSMSПоШаблону" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Написать SMS</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Написать SMS</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.Взаимодействие_СообщениеSMS</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>НаписатьSMSПоШаблону</Action>
 		</Command>
 	</Commands>
 	<CommandInterface>

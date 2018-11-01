@@ -343,6 +343,20 @@
 						<v8:Type>cfg:EnumRef.ВидыОбъектовНедвижимости</v8:Type>
 					</Type>
 				</Column>
+				<Column name="ЗапросДата" id="12">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Запрос дата</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>DateTime</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
 			</Columns>
 		</Attribute>
 		<Attribute name="РежимРаботы" id="3">

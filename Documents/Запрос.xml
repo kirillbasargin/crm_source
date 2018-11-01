@@ -2776,6 +2776,28 @@
 					<Shortcut/>
 				</Properties>
 			</Command>
+			<Command uuid="39aaaa63-9351-4eaa-84d2-bcfab4034231">
+				<Properties>
+					<Name>ОткрытьСвязанныеДокументыВыдачаДисконтныйКарт</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Выдача дисконтных карт</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+					<Group>FormNavigationPanelImportant</Group>
+					<CommandParameterType>
+						<v8:Type>cfg:DocumentRef.Запрос</v8:Type>
+					</CommandParameterType>
+					<ParameterUseMode>Single</ParameterUseMode>
+					<ModifiesData>false</ModifiesData>
+					<Representation>Auto</Representation>
+					<ToolTip/>
+					<Picture/>
+					<Shortcut/>
+				</Properties>
+			</Command>
 		</ChildObjects>
 	</Document>
 </MetaDataObject>

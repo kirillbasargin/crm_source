@@ -135,6 +135,13 @@
 		</right>
 	</object>
 	<object>
+		<name>CommonCommand.ОтправитьSMS</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
 		<name>InformationRegister.ПредметыПапкиВзаимодействий</name>
 		<right>
 			<name>Read</name>
@@ -382,6 +389,13 @@
 		</right>
 		<right>
 			<name>InputByString</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>DocumentJournal.Взаимодействия.Command.НаписатьSMSПоПредмету</name>
+		<right>
+			<name>View</name>
 			<value>true</value>
 		</right>
 	</object>

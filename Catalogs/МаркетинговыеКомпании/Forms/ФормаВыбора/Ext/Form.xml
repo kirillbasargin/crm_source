@@ -109,6 +109,12 @@
 					<ContextMenu name="ВыдачаДисконтныхКартКонтекстноеМеню" id="35"/>
 					<ExtendedTooltip name="ВыдачаДисконтныхКартРасширеннаяПодсказка" id="36"/>
 				</CheckBoxField>
+				<CheckBoxField name="ТретьеЛицо" id="37">
+					<DataPath>Список.ТретьеЛицо</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ТретьеЛицоКонтекстноеМеню" id="38"/>
+					<ExtendedTooltip name="ТретьеЛицоРасширеннаяПодсказка" id="39"/>
+				</CheckBoxField>
 			</ChildItems>
 		</Table>
 	</ChildItems>
