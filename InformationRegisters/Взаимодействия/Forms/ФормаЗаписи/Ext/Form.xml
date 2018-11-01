@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.6">
 	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
-	<AutoCommandBar name="" id="-1"/>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
 	<ChildItems>
 		<InputField name="Взаимодействие" id="1">
 			<DataPath>Запись.Взаимодействие</DataPath>
@@ -77,6 +77,26 @@
 			<DataPath>Запись.МестоПроведенияВстречи</DataPath>
 			<ContextMenu name="МестоПроведенияВстречиКонтекстноеМеню" id="44"/>
 			<ExtendedTooltip name="МестоПроведенияВстречиРасширеннаяПодсказка" id="45"/>
+		</InputField>
+		<InputField name="СтадияЗапроса" id="46">
+			<DataPath>Запись.СтадияЗапроса</DataPath>
+			<ContextMenu name="СтадияЗапросаКонтекстноеМеню" id="47"/>
+			<ExtendedTooltip name="СтадияЗапросаРасширеннаяПодсказка" id="48"/>
+		</InputField>
+		<InputField name="СтатусЗапроса" id="49">
+			<DataPath>Запись.СтатусЗапроса</DataPath>
+			<ContextMenu name="СтатусЗапросаКонтекстноеМеню" id="50"/>
+			<ExtendedTooltip name="СтатусЗапросаРасширеннаяПодсказка" id="51"/>
+		</InputField>
+		<InputField name="РасшифровкаСтатусаЗапроса" id="52">
+			<DataPath>Запись.РасшифровкаСтатусаЗапроса</DataPath>
+			<ContextMenu name="РасшифровкаСтатусаЗапросаКонтекстноеМеню" id="53"/>
+			<ExtendedTooltip name="РасшифровкаСтатусаЗапросаРасширеннаяПодсказка" id="54"/>
+		</InputField>
+		<InputField name="ДатаПоследнегоИзменения" id="55">
+			<DataPath>Запись.ДатаПоследнегоИзменения</DataPath>
+			<ContextMenu name="ДатаПоследнегоИзмененияКонтекстноеМеню" id="56"/>
+			<ExtendedTooltip name="ДатаПоследнегоИзмененияРасширеннаяПодсказка" id="57"/>
 		</InputField>
 	</ChildItems>
 	<Attributes>

@@ -1,6 +1,55 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.6">
-	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Popup name="ФормаГруппаСозданиеВзаимодействий" id="31">
+				<ToolTip>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Форма группа создание взаимодействий</v8:content>
+					</v8:item>
+				</ToolTip>
+				<Picture>
+					<xr:Ref>CommonPicture.ОтветитьНаЭлектронноеПисьмоВсем</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<BackColor>#CCFFCC</BackColor>
+				<ExtendedTooltip name="ФормаГруппаСозданиеВзаимодействийРасширеннаяПодсказка" id="32"/>
+				<ChildItems>
+					<Button name="ФормаЖурналДокументовВзаимодействияЗапланироватьВстречуПоПредмету" id="52">
+						<Type>CommandBarButton</Type>
+						<CommandName>DocumentJournal.Взаимодействия.Command.ЗапланироватьВстречуПоПредмету</CommandName>
+						<DataPath>Items.Список.CurrentData.Предмет</DataPath>
+						<ExtendedTooltip name="ФормаЖурналДокументовВзаимодействияЗапланироватьВстречуПоПредметуРасширеннаяПодсказка" id="53"/>
+					</Button>
+					<Button name="ФормаЖурналДокументовВзаимодействияПозвонитьПоПредмету" id="48">
+						<Type>CommandBarButton</Type>
+						<CommandName>DocumentJournal.Взаимодействия.Command.ПозвонитьПоПредмету</CommandName>
+						<DataPath>Items.Список.CurrentData.Предмет</DataPath>
+						<ExtendedTooltip name="ФормаЖурналДокументовВзаимодействияПозвонитьПоПредметуРасширеннаяПодсказка" id="49"/>
+					</Button>
+					<Button name="ФормаЖурналДокументовВзаимодействияНаписатьSMSПоПредмету" id="50">
+						<Type>CommandBarButton</Type>
+						<Visible>false</Visible>
+						<CommandName>DocumentJournal.Взаимодействия.Command.НаписатьSMSПоПредмету</CommandName>
+						<DataPath>Items.Список.CurrentData.Предмет</DataPath>
+						<ExtendedTooltip name="ФормаЖурналДокументовВзаимодействияНаписатьSMSПоПредметуРасширеннаяПодсказка" id="51"/>
+					</Button>
+					<Button name="ФормаНаписатьSMSПоШаблону" id="44">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.НаписатьSMSПоШаблону</CommandName>
+						<ExtendedTooltip name="ФормаНаписатьSMSПоШаблонуРасширеннаяПодсказка" id="45"/>
+					</Button>
+					<Button name="ФормаЖурналДокументовВзаимодействияНаписатьЭлектронноеПисьмоПоПредмету" id="46">
+						<Type>CommandBarButton</Type>
+						<CommandName>DocumentJournal.Взаимодействия.Command.НаписатьЭлектронноеПисьмоПоПредмету</CommandName>
+						<DataPath>Items.Список.CurrentData.Предмет</DataPath>
+						<ExtendedTooltip name="ФормаЖурналДокументовВзаимодействияНаписатьЭлектронноеПисьмоПоПредметуРасширеннаяПодсказка" id="47"/>
+					</Button>
+				</ChildItems>
+			</Popup>
+		</ChildItems>
+	</AutoCommandBar>
 	<Events>
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 	</Events>
@@ -77,13 +126,13 @@
 			</SearchControlAddition>
 			<ChildItems>
 				<LabelField name="Дата" id="16">
-					<DataPath>Список.Date</DataPath>
+					<DataPath>Список.Дата</DataPath>
 					<DefaultItem>true</DefaultItem>
 					<ContextMenu name="ДатаКонтекстноеМеню" id="17"/>
 					<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="18"/>
 				</LabelField>
 				<LabelField name="Номер" id="19">
-					<DataPath>Список.Number</DataPath>
+					<DataPath>Список.Номер</DataPath>
 					<ContextMenu name="НомерКонтекстноеМеню" id="20"/>
 					<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="21"/>
 				</LabelField>
@@ -102,6 +151,11 @@
 					<ContextMenu name="АвторКонтекстноеМеню" id="23"/>
 					<ExtendedTooltip name="АвторРасширеннаяПодсказка" id="24"/>
 				</LabelField>
+				<LabelField name="Предмет" id="41">
+					<DataPath>Список.Предмет</DataPath>
+					<ContextMenu name="ПредметКонтекстноеМеню" id="42"/>
+					<ExtendedTooltip name="ПредметРасширеннаяПодсказка" id="43"/>
+				</LabelField>
 			</ChildItems>
 		</Table>
 	</ChildItems>
@@ -115,24 +169,27 @@
 				<ManualQuery>true</ManualQuery>
 				<DynamicDataRead>true</DynamicDataRead>
 				<QueryText>ВЫБРАТЬ
-	ДокументВстреча.Ссылка,
-	ДокументВстреча.ПометкаУдаления,
-	ДокументВстреча.Номер,
-	ДокументВстреча.Дата,
-	ДокументВстреча.Проведен,
-	ДокументВстреча.Автор,
-	ДокументВстреча.Важность,
-	ДокументВстреча.ДатаНачала,
-	ДокументВстреча.ДатаОкончания,
-	ДокументВстреча.МестоПроведенияВстречи,
-	ДокументВстреча.Описание,
-	ДокументВстреча.Ответственный,
-	ДокументВстреча.СписокУчастников,
-	ДокументВстреча.ВзаимодействиеОснование,
-	ДокументВстреча.Тема,
-	ДокументВстреча.Комментарий
+	ДокументВстреча.Ссылка КАК Ссылка,
+	ДокументВстреча.ПометкаУдаления КАК ПометкаУдаления,
+	ДокументВстреча.Номер КАК Номер,
+	ДокументВстреча.Дата КАК Дата,
+	ДокументВстреча.Проведен КАК Проведен,
+	ДокументВстреча.Автор КАК Автор,
+	ДокументВстреча.Важность КАК Важность,
+	ДокументВстреча.ДатаНачала КАК ДатаНачала,
+	ДокументВстреча.ДатаОкончания КАК ДатаОкончания,
+	ДокументВстреча.МестоПроведенияВстречи КАК МестоПроведенияВстречи,
+	ДокументВстреча.Описание КАК Описание,
+	ДокументВстреча.Ответственный КАК Ответственный,
+	ДокументВстреча.СписокУчастников КАК СписокУчастников,
+	ДокументВстреча.ВзаимодействиеОснование КАК ВзаимодействиеОснование,
+	ДокументВстреча.Тема КАК Тема,
+	ДокументВстреча.Комментарий КАК Комментарий,
+	ЕСТЬNULL(Взаимодействия.Предмет, ЗНАЧЕНИЕ(Документ.Запрос.ПустаяСсылка)) КАК Предмет
 ИЗ
-	Документ.Встреча КАК ДокументВстреча</QueryText>
+	Документ.Встреча КАК ДокументВстреча
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.Взаимодействия КАК Взаимодействия
+		ПО (Взаимодействия.Взаимодействие = ДокументВстреча.Ссылка)</QueryText>
 				<MainTable>Document.Встреча</MainTable>
 				<ListSettings>
 					<dcsset:filter>
@@ -153,6 +210,27 @@
 			</Settings>
 		</Attribute>
 	</Attributes>
+	<Commands>
+		<Command name="НаписатьSMSПоШаблону" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Написать SMS</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Написать SMS</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.Взаимодействие_СообщениеSMS</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>НаписатьSMSПоШаблону</Action>
+		</Command>
+	</Commands>
 	<CommandInterface>
 		<CommandBar>
 			<Item>

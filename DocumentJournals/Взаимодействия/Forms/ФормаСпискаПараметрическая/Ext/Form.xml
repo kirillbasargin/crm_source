@@ -467,6 +467,18 @@
 												<CommandName>Form.Command.СоздатьЭлектронноеПисьмо</CommandName>
 												<ExtendedTooltip name="СписокСоздатьЭлектронноеПисьмоExtendedTooltip" id="164"/>
 											</Button>
+											<Button name="СписокНаписатьSMSПоШаблону" id="292">
+												<Type>CommandBarButton</Type>
+												<Visible>false</Visible>
+												<Representation>Text</Representation>
+												<CommandName>Form.Command.НаписатьSMSПоШаблону</CommandName>
+												<ExtendedTooltip name="СписокНаписатьSMSПоШаблонуРасширеннаяПодсказка" id="293"/>
+											</Button>
+											<Button name="СписокСоздатьСообщениеSMS" id="290">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.СоздатьСообщениеSMS</CommandName>
+												<ExtendedTooltip name="СписокСоздатьСообщениеSMSРасширеннаяПодсказка" id="291"/>
+											</Button>
 										</ChildItems>
 									</Popup>
 									<ButtonGroup name="ГруппаКомандыВзаимодействий" id="77">
@@ -885,6 +897,13 @@
 												<Type>CommandBarButton</Type>
 												<CommandName>Form.Command.СоздатьСообщениеSMS</CommandName>
 												<ExtendedTooltip name="ДеревоВзаимодействийСоздатьСообщениеSMSРасширеннаяПодсказка" id="220"/>
+											</Button>
+											<Button name="СписокНаписатьSMSПоШаблону1" id="294">
+												<Type>CommandBarButton</Type>
+												<Visible>false</Visible>
+												<Representation>Text</Representation>
+												<CommandName>Form.Command.НаписатьSMSПоШаблону</CommandName>
+												<ExtendedTooltip name="СписокНаписатьSMSПоШаблону1РасширеннаяПодсказка" id="295"/>
 											</Button>
 											<Button name="СписокСоздатьТелефонныйЗвонокДерево" id="123">
 												<Type>CommandBarButton</Type>
@@ -1926,6 +1945,22 @@
 			</ToolTip>
 			<Action>ОткрытьОбработкуРаботаСКлиентами</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="НаписатьSMSПоШаблону" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Написать SMS</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Написать SMS</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>НаписатьSMSПоШаблону</Action>
+			<Representation>Text</Representation>
 		</Command>
 	</Commands>
 </Form>

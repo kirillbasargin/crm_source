@@ -718,6 +718,8 @@
 			<Role>н_РаботаСЗаявкойНаВыводОНВПродажуРасширенная</Role>
 			<Role>РаботаСОбращениямиCQ</Role>
 			<Role>БронированиеДомКлик</Role>
+			<Role>н_ВыдачаДисконтныхКарт</Role>
+			<Role>н_ВыдачаДисконтныхКартРедактирование</Role>
 			<CommonTemplate>ИнструкцияКакВыполнитьУстановкуОбновленияВручную</CommonTemplate>
 			<CommonTemplate>КомпонентаTWAIN</CommonTemplate>
 			<CommonTemplate>КомпонентаПечатиQRКода</CommonTemplate>
@@ -1518,6 +1520,7 @@
 			<Constant>УдялятьЗаявкиССайтов</Constant>
 			<Constant>ХранитьФайлыВТомахНаДиске</Constant>
 			<Constant>ЭтоАвтономноеРабочееМесто</Constant>
+			<Constant>ЗаписыватьИзмененияВзаимодействия</Constant>
 			<CommonForm>АдреснаяКнига</CommonForm>
 			<CommonForm>БлокировкаРаботыСВнешнимиРесурсами</CommonForm>
 			<CommonForm>ВводЗначенийСпискомСФлажками</CommonForm>
@@ -1770,6 +1773,7 @@
 			<Document>ЭлектронноеПисьмоВходящее</Document>
 			<Document>ЭлектронноеПисьмоИсходящее</Document>
 			<Document>ЗаявкаНаВыводОНВПродажу</Document>
+			<Document>ВыдачаДисконтныйКарт</Document>
 			<DocumentJournal>Взаимодействия</DocumentJournal>
 			<Enum>БулевоТриСостояния</Enum>
 			<Enum>ВажностьПроблемыУчета</Enum>
@@ -2223,6 +2227,7 @@
 			<InformationRegister>СоответствиеПроектовДомКлик</InformationRegister>
 			<InformationRegister>СоответствиеПроектовОтделениямБанков</InformationRegister>
 			<InformationRegister>ДисконтныеКарты</InformationRegister>
+			<InformationRegister>СоставКомплекснойКампании</InformationRegister>
 			<AccumulationRegister>ОчередьБронирования</AccumulationRegister>
 			<ChartOfCharacteristicTypes>ВопросыДляАнкетирования</ChartOfCharacteristicTypes>
 			<ChartOfCharacteristicTypes>ДополнительныеРеквизитыИСведения</ChartOfCharacteristicTypes>

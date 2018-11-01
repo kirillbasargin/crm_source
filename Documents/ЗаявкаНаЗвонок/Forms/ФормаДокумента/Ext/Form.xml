@@ -483,6 +483,9 @@
 									<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
 									<ContextMenu name="ВзаимодействиеКонтекстноеМеню" id="188"/>
 									<ExtendedTooltip name="ВзаимодействиеРасширеннаяПодсказка" id="189"/>
+									<Events>
+										<Event name="Opening">ВзаимодействиеОткрытие</Event>
+									</Events>
 								</InputField>
 								<InputField name="Запрос" id="184">
 									<DataPath>Объект.ПредметВзаимодействия</DataPath>

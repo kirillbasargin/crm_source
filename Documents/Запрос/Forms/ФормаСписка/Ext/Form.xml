@@ -1,6 +1,110 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.6">
-	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Popup name="ФормаГруппаСозданиеВзаимодействий" id="52">
+				<ToolTip>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Форма группа создание взаимодействий</v8:content>
+					</v8:item>
+				</ToolTip>
+				<Picture>
+					<xr:Ref>CommonPicture.ОтветитьНаЭлектронноеПисьмоВсем</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<BackColor>#CCFFCC</BackColor>
+				<ExtendedTooltip name="ФормаГруппаСозданиеВзаимодействийРасширеннаяПодсказка" id="53"/>
+				<ChildItems>
+					<Button name="ФормаЖурналДокументовВзаимодействияЗапланироватьВстречуПоПредмету" id="56">
+						<Type>CommandBarButton</Type>
+						<CommandName>DocumentJournal.Взаимодействия.Command.ЗапланироватьВстречуПоПредмету</CommandName>
+						<DataPath>Items.Список.CurrentData.Ссылка</DataPath>
+						<ExtendedTooltip name="ФормаЖурналДокументовВзаимодействияЗапланироватьВстречуПоПредметуРасширеннаяПодсказка" id="57"/>
+					</Button>
+					<Button name="ФормаЖурналДокументовВзаимодействияПозвонитьПоПредмету" id="54">
+						<Type>CommandBarButton</Type>
+						<CommandName>DocumentJournal.Взаимодействия.Command.ПозвонитьПоПредмету</CommandName>
+						<DataPath>Items.Список.CurrentData.Ссылка</DataPath>
+						<ExtendedTooltip name="ФормаЖурналДокументовВзаимодействияПозвонитьПоПредметуРасширеннаяПодсказка" id="55"/>
+					</Button>
+					<Button name="ФормаЖурналДокументовВзаимодействияНаписатьSMSПоПредмету" id="58">
+						<Type>CommandBarButton</Type>
+						<Visible>false</Visible>
+						<CommandName>DocumentJournal.Взаимодействия.Command.НаписатьSMSПоПредмету</CommandName>
+						<DataPath>Items.Список.CurrentData.Ссылка</DataPath>
+						<ExtendedTooltip name="ФормаЖурналДокументовВзаимодействияНаписатьSMSПоПредметуРасширеннаяПодсказка" id="59"/>
+					</Button>
+					<Button name="ФормаНаписатьSMSПоШаблону" id="68">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.НаписатьSMSПоШаблону</CommandName>
+						<ExtendedTooltip name="ФормаНаписатьSMSПоШаблонуРасширеннаяПодсказка" id="69"/>
+					</Button>
+					<Button name="ФормаЖурналДокументовВзаимодействияНаписатьЭлектронноеПисьмоПоПредмету" id="60">
+						<Type>CommandBarButton</Type>
+						<CommandName>DocumentJournal.Взаимодействия.Command.НаписатьЭлектронноеПисьмоПоПредмету</CommandName>
+						<DataPath>Items.Список.CurrentData.Ссылка</DataPath>
+						<ExtendedTooltip name="ФормаЖурналДокументовВзаимодействияНаписатьЭлектронноеПисьмоПоПредметуРасширеннаяПодсказка" id="61"/>
+					</Button>
+					<Button name="ФормаОбщаяКомандаОтправитьПисьмо" id="64">
+						<Type>CommandBarButton</Type>
+						<Visible>false</Visible>
+						<CommandName>CommonCommand.ОтправитьПисьмо</CommandName>
+						<DataPath>Items.Список.CurrentData.Ссылка</DataPath>
+						<ExtendedTooltip name="ФормаОбщаяКомандаОтправитьПисьмоРасширеннаяПодсказка" id="65"/>
+					</Button>
+					<Button name="ФормаОбщаяКомандаОтправитьSMS" id="66">
+						<Type>CommandBarButton</Type>
+						<Visible>false</Visible>
+						<CommandName>CommonCommand.ОтправитьSMS</CommandName>
+						<DataPath>Items.Список.CurrentData.Ссылка</DataPath>
+						<ExtendedTooltip name="ФормаОбщаяКомандаОтправитьSMSРасширеннаяПодсказка" id="67"/>
+					</Button>
+				</ChildItems>
+			</Popup>
+			<Popup name="ФормаГруппаСозатьНаОсновании" id="70">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Созать на основании</v8:content>
+					</v8:item>
+				</Title>
+				<ToolTip>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Форма группа созать на основании</v8:content>
+					</v8:item>
+				</ToolTip>
+				<ExtendedTooltip name="ФормаГруппаСозатьНаОснованииРасширеннаяПодсказка" id="71"/>
+				<ChildItems>
+					<Button name="ФормаДокументРасчетИпотекиСоздатьНаОсновании" id="72">
+						<Type>CommandBarButton</Type>
+						<CommandName>Document.РасчетИпотеки.StandardCommand.CreateBasedOn</CommandName>
+						<DataPath>Items.Список.CurrentData.Ссылка</DataPath>
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Расчет ипотеки</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="ФормаДокументРасчетИпотекиСоздатьНаОснованииРасширеннаяПодсказка" id="73"/>
+					</Button>
+					<Button name="ФормаДокументВыдачаДисконтныйКартСоздатьНаОсновании" id="74">
+						<Type>CommandBarButton</Type>
+						<Visible>false</Visible>
+						<CommandName>Document.ВыдачаДисконтныйКарт.StandardCommand.CreateBasedOn</CommandName>
+						<DataPath>Items.Список.CurrentData.Ссылка</DataPath>
+						<ExtendedTooltip name="ФормаДокументВыдачаДисконтныйКартСоздатьНаОснованииРасширеннаяПодсказка" id="75"/>
+					</Button>
+					<Button name="ФормаСоздатьНаОсновании_ВыдачаДисконтныхКарт" id="76">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.СоздатьНаОсновании_ВыдачаДисконтныхКарт</CommandName>
+						<ExtendedTooltip name="ФормаСоздатьНаОсновании_ВыдачаДисконтныхКартРасширеннаяПодсказка" id="77"/>
+					</Button>
+				</ChildItems>
+			</Popup>
+		</ChildItems>
+	</AutoCommandBar>
 	<ChildItems>
 		<UsualGroup name="СписокКомпоновщикНастроекПользовательскиеНастройки" id="1">
 			<Title>
@@ -68,14 +172,14 @@
 			</SearchControlAddition>
 			<ChildItems>
 				<LabelField name="Дата" id="16">
-					<DataPath>Список.Date</DataPath>
+					<DataPath>Список.Дата</DataPath>
 					<DefaultItem>true</DefaultItem>
 					<Width>5</Width>
 					<ContextMenu name="ДатаКонтекстноеМеню" id="17"/>
 					<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="18"/>
 				</LabelField>
 				<LabelField name="Номер" id="34">
-					<DataPath>Список.Number</DataPath>
+					<DataPath>Список.Номер</DataPath>
 					<ContextMenu name="НомерКонтекстноеМеню" id="35"/>
 					<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="36"/>
 				</LabelField>
@@ -93,18 +197,47 @@
 				</LabelField>
 				<LabelField name="Статус" id="31">
 					<DataPath>Список.Статус</DataPath>
+					<Visible>false</Visible>
 					<ContextMenu name="СтатусКонтекстноеМеню" id="32"/>
 					<ExtendedTooltip name="СтатусРасширеннаяПодсказка" id="33"/>
 				</LabelField>
 				<LabelField name="Стадия" id="28">
 					<DataPath>Список.Стадия</DataPath>
+					<Visible>false</Visible>
 					<ContextMenu name="СтадияКонтекстноеМеню" id="29"/>
 					<ExtendedTooltip name="СтадияРасширеннаяПодсказка" id="30"/>
+				</LabelField>
+				<LabelField name="СтадияЗапроса" id="37">
+					<DataPath>Список.СтадияЗапроса</DataPath>
+					<ContextMenu name="СтадияЗапросаКонтекстноеМеню" id="38"/>
+					<ExtendedTooltip name="СтадияЗапросаРасширеннаяПодсказка" id="39"/>
+				</LabelField>
+				<LabelField name="СтатусЗапроса" id="40">
+					<DataPath>Список.СтатусЗапроса</DataPath>
+					<ContextMenu name="СтатусЗапросаКонтекстноеМеню" id="41"/>
+					<ExtendedTooltip name="СтатусЗапросаРасширеннаяПодсказка" id="42"/>
+				</LabelField>
+				<LabelField name="РасшифровкаСтатусаЗапроса" id="43">
+					<DataPath>Список.РасшифровкаСтатусаЗапроса</DataPath>
+					<ContextMenu name="РасшифровкаСтатусаЗапросаКонтекстноеМеню" id="44"/>
+					<ExtendedTooltip name="РасшифровкаСтатусаЗапросаРасширеннаяПодсказка" id="45"/>
+				</LabelField>
+				<LabelField name="ДатаПоследнегоИзменения" id="46">
+					<DataPath>~Список.ДатаПоследнегоИзменения</DataPath>
+					<Visible>false</Visible>
+					<ContextMenu name="ДатаПоследнегоИзмененияКонтекстноеМеню" id="47"/>
+					<ExtendedTooltip name="ДатаПоследнегоИзмененияРасширеннаяПодсказка" id="48"/>
 				</LabelField>
 				<LabelField name="Ответственный" id="22">
 					<DataPath>Список.Ответственный</DataPath>
 					<ContextMenu name="ОтветственныйКонтекстноеМеню" id="23"/>
 					<ExtendedTooltip name="ОтветственныйРасширеннаяПодсказка" id="24"/>
+				</LabelField>
+				<LabelField name="Ссылка" id="49">
+					<DataPath>Список.Ссылка</DataPath>
+					<Visible>false</Visible>
+					<ContextMenu name="СсылкаКонтекстноеМеню" id="50"/>
+					<ExtendedTooltip name="СсылкаРасширеннаяПодсказка" id="51"/>
 				</LabelField>
 			</ChildItems>
 		</Table>
@@ -115,9 +248,67 @@
 				<v8:Type>cfg:DynamicList</v8:Type>
 			</Type>
 			<MainAttribute>true</MainAttribute>
+			<UseAlways>
+				<Field>Список.Ссылка</Field>
+			</UseAlways>
 			<Settings xsi:type="DynamicList">
-				<ManualQuery>false</ManualQuery>
+				<ManualQuery>true</ManualQuery>
 				<DynamicDataRead>true</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ
+	ДокументЗапрос.Ссылка КАК Ссылка,
+	ДокументЗапрос.ПометкаУдаления КАК ПометкаУдаления,
+	ДокументЗапрос.Номер КАК Номер,
+	ДокументЗапрос.Дата КАК Дата,
+	ДокументЗапрос.Проведен КАК Проведен,
+	ДокументЗапрос.Автор КАК Автор,
+	ДокументЗапрос.АгентствоНедвижимости КАК АгентствоНедвижимости,
+	ДокументЗапрос.БезОтделки КАК БезОтделки,
+	ДокументЗапрос.Блок КАК Блок,
+	ДокументЗапрос.ВидСделки КАК ВидСделки,
+	ДокументЗапрос.ВозрастнаяГруппа КАК ВозрастнаяГруппа,
+	ДокументЗапрос.ГруппаПравообладателей КАК ГруппаПравообладателей,
+	ДокументЗапрос.ИмеющиесяНаличныеСредства КАК ИмеющиесяНаличныеСредства,
+	ДокументЗапрос.ИсточникПриходаКлиента КАК ИсточникПриходаКлиента,
+	ДокументЗапрос.Клиент КАК Клиент,
+	ДокументЗапрос.КоличествоКомнат_1 КАК КоличествоКомнат_1,
+	ДокументЗапрос.КоличествоКомнат_2 КАК КоличествоКомнат_2,
+	ДокументЗапрос.КоличествоКомнат_3 КАК КоличествоКомнат_3,
+	ДокументЗапрос.КоличествоКомнат_4 КАК КоличествоКомнат_4,
+	ДокументЗапрос.КоличествоСекций_Несколько КАК КоличествоСекций_Несколько,
+	ДокументЗапрос.КоличествоСекций_Одна КАК КоличествоСекций_Одна,
+	ДокументЗапрос.Комментарий КАК Комментарий,
+	ДокументЗапрос.НеПервыйЭтаж КАК НеПервыйЭтаж,
+	ДокументЗапрос.НеПоследнийЭтаж КАК НеПоследнийЭтаж,
+	ДокументЗапрос.ОбъемСредствНаПокупку КАК ОбъемСредствНаПокупку,
+	ДокументЗапрос.Оптовый КАК Оптовый,
+	ДокументЗапрос.Ответственный КАК Ответственный,
+	ДокументЗапрос.Отделка КАК Отделка,
+	ДокументЗапрос.ПервоначальныйОбъект КАК ПервоначальныйОбъект,
+	ДокументЗапрос.ПлощадьДо КАК ПлощадьДо,
+	ДокументЗапрос.ПлощадьОт КАК ПлощадьОт,
+	ДокументЗапрос.Проект КАК Проект,
+	ДокументЗапрос.Проживает КАК Проживает,
+	ДокументЗапрос.Расстояние КАК Расстояние,
+	ДокументЗапрос.РасшифровкаИсточниковПриходаКлиента КАК РасшифровкаИсточниковПриходаКлиента,
+	ДокументЗапрос.РасшифровкаСтатуса КАК РасшифровкаСтатуса,
+	ДокументЗапрос.СоставСемьи КАК СоставСемьи,
+	ДокументЗапрос.СрокСдачи КАК СрокСдачи,
+	ДокументЗапрос.Стадия КАК Стадия,
+	ДокументЗапрос.Статус КАК Статус,
+	ДокументЗапрос.ТипДомаМонолит КАК ТипДомаМонолит,
+	ДокументЗапрос.ТипДомаПанель КАК ТипДомаПанель,
+	ДокументЗапрос.ТипОбъектаНедвижимости КАК ТипОбъектаНедвижимости,
+	ДокументЗапрос.УточнениеРасшифровкиИсточникаПрихода КАК УточнениеРасшифровкиИсточникаПрихода,
+	ДокументЗапрос.ЭтажДо КАК ЭтажДо,
+	ДокументЗапрос.ЭтажОт КАК ЭтажОт,
+	ДокументЗапрос.МоментВремени КАК МоментВремени,
+	ПараметрыЗапросаЛинейный.Стадия КАК СтадияЗапроса,
+	ПараметрыЗапросаЛинейный.Статус КАК СтатусЗапроса,
+	ПараметрыЗапросаЛинейный.РасшифровкаСтатуса КАК РасшифровкаСтатусаЗапроса
+ИЗ
+	Документ.Запрос КАК ДокументЗапрос
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ПараметрыЗапросаЛинейный КАК ПараметрыЗапросаЛинейный
+		ПО (ПараметрыЗапросаЛинейный.Регистратор = ДокументЗапрос.Ссылка)</QueryText>
 				<MainTable>Document.Запрос</MainTable>
 				<ListSettings>
 					<dcsset:filter>
@@ -138,4 +329,40 @@
 			</Settings>
 		</Attribute>
 	</Attributes>
+	<Commands>
+		<Command name="НаписатьSMSПоШаблону" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Написать SMS</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Написать SMS</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.Взаимодействие_СообщениеSMS</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>НаписатьSMSПоШаблону</Action>
+		</Command>
+		<Command name="СоздатьНаОсновании_ВыдачаДисконтныхКарт" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дисконтная карта</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать на основании выдача дисконтных карт</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СоздатьНаОсновании_ВыдачаДисконтныхКарт</Action>
+		</Command>
+	</Commands>
 </Form>
