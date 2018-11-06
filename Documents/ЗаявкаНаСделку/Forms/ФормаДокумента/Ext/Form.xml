@@ -471,6 +471,7 @@
 													<Events>
 														<Event name="BeforeAddRow">ДольщикиПередНачаломДобавления</Event>
 														<Event name="AfterDeleteRow">ДольщикиПослеУдаления</Event>
+														<Event name="OnChange">ДольщикиПриИзменении</Event>
 													</Events>
 													<ChildItems>
 														<LabelField name="ДольщикиНомерСтроки" id="96">
