@@ -1,7 +1,23 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.6">
 	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
-	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<CommandSet>
+		<ExcludedCommand>Choose</ExcludedCommand>
+		<ExcludedCommand>Copy</ExcludedCommand>
+		<ExcludedCommand>Create</ExcludedCommand>
+		<ExcludedCommand>Post</ExcludedCommand>
+		<ExcludedCommand>UndoPosting</ExcludedCommand>
+	</CommandSet>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаВыбратьМК" id="46">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.ВыбратьДК</CommandName>
+				<ExtendedTooltip name="ФормаВыбратьМКРасширеннаяПодсказка" id="47"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
 	<Events>
 		<Event name="BeforeClose">ПередЗакрытием</Event>
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
@@ -29,6 +45,13 @@
 			<EnableStartDrag>true</EnableStartDrag>
 			<DataPath>Список</DataPath>
 			<RowPictureDataPath>Список.DefaultPicture</RowPictureDataPath>
+			<CommandSet>
+				<ExcludedCommand>Choose</ExcludedCommand>
+				<ExcludedCommand>Copy</ExcludedCommand>
+				<ExcludedCommand>Create</ExcludedCommand>
+				<ExcludedCommand>Post</ExcludedCommand>
+				<ExcludedCommand>UndoPosting</ExcludedCommand>
+			</CommandSet>
 			<AutoRefresh>false</AutoRefresh>
 			<AutoRefreshPeriod>60</AutoRefreshPeriod>
 			<Period>
@@ -74,13 +97,26 @@
 			</SearchControlAddition>
 			<Events>
 				<Event name="Selection">СписокВыбор</Event>
+				<Event name="BeforeAddRow">СписокПередНачаломДобавления</Event>
 			</Events>
 			<ChildItems>
 				<LabelField name="НомерКарты" id="16">
 					<DataPath>Список.НомерКарты</DataPath>
+					<Visible>false</Visible>
 					<DefaultItem>true</DefaultItem>
 					<ContextMenu name="НомерКартыКонтекстноеМеню" id="17"/>
 					<ExtendedTooltip name="НомерКартыРасширеннаяПодсказка" id="18"/>
+				</LabelField>
+				<LabelField name="Ссылка" id="48">
+					<DataPath>Список.Ref</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номер карты</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="СсылкаКонтекстноеМеню" id="49"/>
+					<ExtendedTooltip name="СсылкаРасширеннаяПодсказка" id="50"/>
 				</LabelField>
 				<LabelField name="МаркетинговаяКампания" id="19">
 					<DataPath>Список.МаркетинговаяКампания</DataPath>
@@ -149,7 +185,7 @@
 			<Settings xsi:type="DynamicList">
 				<ManualQuery>false</ManualQuery>
 				<DynamicDataRead>true</DynamicDataRead>
-				<MainTable>Document.ВыдачаДисконтныйКарт</MainTable>
+				<MainTable>Document.ВыдачаДисконтныхКарт</MainTable>
 				<ListSettings>
 					<dcsset:filter>
 						<dcsset:viewMode>Normal</dcsset:viewMode>
@@ -169,4 +205,21 @@
 			</Settings>
 		</Attribute>
 	</Attributes>
+	<Commands>
+		<Command name="ВыбратьДК" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбрать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбрать ДК</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ВыбратьДК</Action>
+		</Command>
+	</Commands>
 </Form>

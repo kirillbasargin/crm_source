@@ -75,19 +75,33 @@
 			<ChildItems>
 				<LabelField name="Дата" id="16">
 					<DataPath>Список.Date</DataPath>
+					<Visible>false</Visible>
 					<DefaultItem>true</DefaultItem>
 					<ContextMenu name="ДатаКонтекстноеМеню" id="17"/>
 					<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="18"/>
 				</LabelField>
 				<LabelField name="Номер" id="19">
 					<DataPath>Список.Number</DataPath>
+					<Visible>false</Visible>
 					<ContextMenu name="НомерКонтекстноеМеню" id="20"/>
 					<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="21"/>
 				</LabelField>
 				<LabelField name="НомерКарты" id="22">
 					<DataPath>Список.НомерКарты</DataPath>
+					<Visible>false</Visible>
 					<ContextMenu name="НомерКартыКонтекстноеМеню" id="23"/>
 					<ExtendedTooltip name="НомерКартыРасширеннаяПодсказка" id="24"/>
+				</LabelField>
+				<LabelField name="Ссылка" id="49">
+					<DataPath>Список.Ref</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Карта</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="СсылкаКонтекстноеМеню" id="50"/>
+					<ExtendedTooltip name="СсылкаРасширеннаяПодсказка" id="51"/>
 				</LabelField>
 				<LabelField name="МаркетинговаяКампания" id="25">
 					<DataPath>Список.МаркетинговаяКампания</DataPath>
@@ -142,7 +156,7 @@
 			<Settings xsi:type="DynamicList">
 				<ManualQuery>false</ManualQuery>
 				<DynamicDataRead>true</DynamicDataRead>
-				<MainTable>Document.ВыдачаДисконтныйКарт</MainTable>
+				<MainTable>Document.ВыдачаДисконтныхКарт</MainTable>
 				<ListSettings>
 					<dcsset:filter>
 						<dcsset:viewMode>Normal</dcsset:viewMode>

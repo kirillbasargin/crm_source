@@ -1,23 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.6">
 	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
-	<CommandSet>
-		<ExcludedCommand>Choose</ExcludedCommand>
-	</CommandSet>
-	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
-		<ChildItems>
-			<Button name="ФормаВыбратьМК" id="43">
-				<Type>CommandBarButton</Type>
-				<DefaultButton>true</DefaultButton>
-				<CommandName>Form.Command.ВыбратьМК</CommandName>
-				<ExtendedTooltip name="ФормаВыбратьМКРасширеннаяПодсказка" id="44"/>
-			</Button>
-		</ChildItems>
-	</AutoCommandBar>
-	<Events>
-		<Event name="BeforeClose">ПередЗакрытием</Event>
-		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
-	</Events>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
 	<ChildItems>
 		<UsualGroup name="СписокКомпоновщикНастроекПользовательскиеНастройки" id="1">
 			<Title>
@@ -84,62 +68,79 @@
 				<ContextMenu name="СписокУправлениеПоискомКонтекстноеМеню" id="14"/>
 				<ExtendedTooltip name="СписокУправлениеПоискомРасширеннаяПодсказка" id="15"/>
 			</SearchControlAddition>
-			<Events>
-				<Event name="Selection">СписокВыбор</Event>
-				<Event name="OnChange">СписокПриИзменении</Event>
-			</Events>
 			<ChildItems>
-				<LabelField name="Наименование" id="16">
-					<DataPath>Список.Description</DataPath>
-					<DefaultItem>true</DefaultItem>
-					<ContextMenu name="НаименованиеКонтекстноеМеню" id="17"/>
-					<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="18"/>
-				</LabelField>
-				<LabelField name="Код" id="19">
-					<DataPath>Список.Code</DataPath>
-					<ContextMenu name="КодКонтекстноеМеню" id="20"/>
-					<ExtendedTooltip name="КодРасширеннаяПодсказка" id="21"/>
-				</LabelField>
-				<CheckBoxField name="ЗаполнятьАгентствоВДоговоре" id="22">
-					<DataPath>Список.ЗаполнятьАгентствоВДоговоре</DataPath>
-					<CheckBoxType>Auto</CheckBoxType>
-					<ContextMenu name="ЗаполнятьАгентствоВДоговореКонтекстноеМеню" id="23"/>
-					<ExtendedTooltip name="ЗаполнятьАгентствоВДоговореРасширеннаяПодсказка" id="24"/>
-				</CheckBoxField>
-				<CheckBoxField name="ВыдачаСертификатов" id="25">
-					<DataPath>Список.ВыдачаСертификатов</DataPath>
-					<CheckBoxType>Auto</CheckBoxType>
-					<ContextMenu name="ВыдачаСертификатовКонтекстноеМеню" id="26"/>
-					<ExtendedTooltip name="ВыдачаСертификатовРасширеннаяПодсказка" id="27"/>
-				</CheckBoxField>
-				<CheckBoxField name="ИспользуетсяВОтчетах" id="28">
-					<DataPath>Список.ИспользуетсяВОтчетах</DataPath>
-					<CheckBoxType>Auto</CheckBoxType>
-					<ContextMenu name="ИспользуетсяВОтчетахКонтекстноеМеню" id="29"/>
-					<ExtendedTooltip name="ИспользуетсяВОтчетахРасширеннаяПодсказка" id="30"/>
-				</CheckBoxField>
-				<LabelField name="ДатаКонца" id="31">
-					<DataPath>Список.ДатаКонца</DataPath>
-					<ContextMenu name="ДатаКонцаКонтекстноеМеню" id="32"/>
-					<ExtendedTooltip name="ДатаКонцаРасширеннаяПодсказка" id="33"/>
-				</LabelField>
-				<CheckBoxField name="ВыдачаДисконтныхКарт" id="34">
-					<DataPath>Список.ВыдачаДисконтныхКарт</DataPath>
-					<CheckBoxType>Auto</CheckBoxType>
-					<ContextMenu name="ВыдачаДисконтныхКартКонтекстноеМеню" id="35"/>
-					<ExtendedTooltip name="ВыдачаДисконтныхКартРасширеннаяПодсказка" id="36"/>
-				</CheckBoxField>
-				<CheckBoxField name="ТретьеЛицо" id="37">
-					<DataPath>Список.ТретьеЛицо</DataPath>
-					<CheckBoxType>Auto</CheckBoxType>
-					<ContextMenu name="ТретьеЛицоКонтекстноеМеню" id="38"/>
-					<ExtendedTooltip name="ТретьеЛицоРасширеннаяПодсказка" id="39"/>
-				</CheckBoxField>
-				<LabelField name="Ссылка" id="40">
-					<DataPath>Список.Ref</DataPath>
+				<LabelField name="НомерКарты" id="16">
+					<DataPath>Список.НомерКарты</DataPath>
 					<Visible>false</Visible>
-					<ContextMenu name="СсылкаКонтекстноеМеню" id="41"/>
-					<ExtendedTooltip name="СсылкаРасширеннаяПодсказка" id="42"/>
+					<DefaultItem>true</DefaultItem>
+					<ContextMenu name="НомерКартыКонтекстноеМеню" id="17"/>
+					<ExtendedTooltip name="НомерКартыРасширеннаяПодсказка" id="18"/>
+				</LabelField>
+				<LabelField name="Ссылка" id="46">
+					<DataPath>Список.Ref</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номер карты</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="СсылкаКонтекстноеМеню" id="47"/>
+					<ExtendedTooltip name="СсылкаРасширеннаяПодсказка" id="48"/>
+				</LabelField>
+				<LabelField name="МаркетинговаяКампания" id="19">
+					<DataPath>Список.МаркетинговаяКампания</DataPath>
+					<DefaultItem>true</DefaultItem>
+					<ContextMenu name="МаркетинговаяКампанияКонтекстноеМеню" id="20"/>
+					<ExtendedTooltip name="МаркетинговаяКампанияРасширеннаяПодсказка" id="21"/>
+				</LabelField>
+				<LabelField name="Запрос" id="22">
+					<DataPath>Список.Запрос</DataPath>
+					<DefaultItem>true</DefaultItem>
+					<ContextMenu name="ЗапросКонтекстноеМеню" id="23"/>
+					<ExtendedTooltip name="ЗапросРасширеннаяПодсказка" id="24"/>
+				</LabelField>
+				<LabelField name="Проект" id="25">
+					<DataPath>Список.Проект</DataPath>
+					<DefaultItem>true</DefaultItem>
+					<ContextMenu name="ПроектКонтекстноеМеню" id="26"/>
+					<ExtendedTooltip name="ПроектРасширеннаяПодсказка" id="27"/>
+				</LabelField>
+				<LabelField name="ЗаявкаНаСделку" id="28">
+					<DataPath>Список.ЗаявкаНаСделку</DataPath>
+					<DefaultItem>true</DefaultItem>
+					<ContextMenu name="ЗаявкаНаСделкуКонтекстноеМеню" id="29"/>
+					<ExtendedTooltip name="ЗаявкаНаСделкуРасширеннаяПодсказка" id="30"/>
+				</LabelField>
+				<CheckBoxField name="Использована" id="31">
+					<DataPath>Список.Использована</DataPath>
+					<DefaultItem>true</DefaultItem>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ИспользованаКонтекстноеМеню" id="32"/>
+					<ExtendedTooltip name="ИспользованаРасширеннаяПодсказка" id="33"/>
+				</CheckBoxField>
+				<LabelField name="Получатель" id="34">
+					<DataPath>Список.Получатель</DataPath>
+					<DefaultItem>true</DefaultItem>
+					<ContextMenu name="ПолучательКонтекстноеМеню" id="35"/>
+					<ExtendedTooltip name="ПолучательРасширеннаяПодсказка" id="36"/>
+				</LabelField>
+				<LabelField name="Выгодоприобретатель" id="37">
+					<DataPath>Список.Выгодоприобретатель</DataPath>
+					<DefaultItem>true</DefaultItem>
+					<ContextMenu name="ВыгодоприобретательКонтекстноеМеню" id="38"/>
+					<ExtendedTooltip name="ВыгодоприобретательРасширеннаяПодсказка" id="39"/>
+				</LabelField>
+				<LabelField name="Ответственный" id="40">
+					<DataPath>Список.Ответственный</DataPath>
+					<DefaultItem>true</DefaultItem>
+					<ContextMenu name="ОтветственныйКонтекстноеМеню" id="41"/>
+					<ExtendedTooltip name="ОтветственныйРасширеннаяПодсказка" id="42"/>
+				</LabelField>
+				<LabelField name="ДатаВыдачи" id="43">
+					<DataPath>Список.ДатаВыдачи</DataPath>
+					<DefaultItem>true</DefaultItem>
+					<ContextMenu name="ДатаВыдачиКонтекстноеМеню" id="44"/>
+					<ExtendedTooltip name="ДатаВыдачиРасширеннаяПодсказка" id="45"/>
 				</LabelField>
 			</ChildItems>
 		</Table>
@@ -150,28 +151,12 @@
 				<v8:Type>cfg:DynamicList</v8:Type>
 			</Type>
 			<MainAttribute>true</MainAttribute>
-			<UseAlways>
-				<Field>Список.Ref</Field>
-				<Field>Список.ДатаКонца</Field>
-			</UseAlways>
 			<Settings xsi:type="DynamicList">
 				<ManualQuery>false</ManualQuery>
 				<DynamicDataRead>true</DynamicDataRead>
-				<MainTable>Catalog.МаркетинговыеКомпании</MainTable>
+				<MainTable>Document.ВыдачаДисконтныхКарт</MainTable>
 				<ListSettings>
 					<dcsset:filter>
-						<dcsset:item xsi:type="dcsset:FilterItemComparison">
-							<dcsset:left xsi:type="dcscor:Field">ИспользуетсяВОтчетах</dcsset:left>
-							<dcsset:comparisonType>Equal</dcsset:comparisonType>
-							<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:FilterItemComparison">
-							<dcsset:left xsi:type="dcscor:Field">ДатаКонца</dcsset:left>
-							<dcsset:comparisonType>GreaterOrEqual</dcsset:comparisonType>
-							<dcsset:right xsi:type="v8:StandardBeginningDate">
-								<v8:variant xsi:type="v8:StandardBeginningDateVariant">BeginningOfThisDay</v8:variant>
-							</dcsset:right>
-						</dcsset:item>
 						<dcsset:viewMode>Normal</dcsset:viewMode>
 						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
 					</dcsset:filter>
@@ -189,21 +174,4 @@
 			</Settings>
 		</Attribute>
 	</Attributes>
-	<Commands>
-		<Command name="ВыбратьМК" id="1">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Выбрать</v8:content>
-				</v8:item>
-			</Title>
-			<ToolTip>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Выбрать МК</v8:content>
-				</v8:item>
-			</ToolTip>
-			<Action>ВыбратьМК</Action>
-		</Command>
-	</Commands>
 </Form>

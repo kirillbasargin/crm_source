@@ -46,6 +46,7 @@
 	</AutoCommandBar>
 	<Events>
 		<Event name="BeforeWrite">ПередЗаписью</Event>
+		<Event name="BeforeWriteAtServer">ПередЗаписьюНаСервере</Event>
 	</Events>
 	<ChildItems>
 		<UsualGroup name="Группа1" id="47">
@@ -113,8 +114,29 @@
 					<ShowTitle>false</ShowTitle>
 					<ExtendedTooltip name="Группа8РасширеннаяПодсказка" id="62"/>
 					<ChildItems>
+						<InputField name="НомерДисконтнойКарты" id="65">
+							<DataPath>Объект.НомерДисконтнойКарты</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Номер карты</v8:content>
+								</v8:item>
+							</Title>
+							<Width>32</Width>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<HorizontalStretch>false</HorizontalStretch>
+							<ContextMenu name="НомерДисконтнойКартыКонтекстноеМеню" id="66"/>
+							<ExtendedTooltip name="НомерДисконтнойКартыРасширеннаяПодсказка" id="67"/>
+						</InputField>
 						<InputField name="НомерКарты" id="7">
 							<DataPath>Объект.НомерКарты</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Номер карты(старый)</v8:content>
+								</v8:item>
+							</Title>
 							<EditMode>EnterOnInput</EditMode>
 							<Width>32</Width>
 							<HorizontalStretch>false</HorizontalStretch>
@@ -224,7 +246,7 @@
 	<Attributes>
 		<Attribute name="Объект" id="1">
 			<Type>
-				<v8:Type>cfg:DocumentObject.ВыдачаДисконтныйКарт</v8:Type>
+				<v8:Type>cfg:DocumentObject.ВыдачаДисконтныхКарт</v8:Type>
 			</Type>
 			<MainAttribute>true</MainAttribute>
 			<SavedData>true</SavedData>

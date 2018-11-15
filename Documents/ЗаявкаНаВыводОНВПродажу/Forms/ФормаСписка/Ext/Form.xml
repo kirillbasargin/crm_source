@@ -18,6 +18,18 @@
 				<CommandName>Form.Command.ОткрытьОтчетШахматка</CommandName>
 				<ExtendedTooltip name="ФормаОткрытьОтчетШахматкаРасширеннаяПодсказка" id="61"/>
 			</Button>
+			<Button name="ФормаСогласовать" id="66">
+				<Type>CommandBarButton</Type>
+				<Visible>false</Visible>
+				<CommandName>Form.Command.Согласовать</CommandName>
+				<ExtendedTooltip name="ФормаСогласоватьРасширеннаяПодсказка" id="67"/>
+			</Button>
+			<Button name="ФормаОтклонить" id="64">
+				<Type>CommandBarButton</Type>
+				<Visible>false</Visible>
+				<CommandName>Form.Command.Отклонить</CommandName>
+				<ExtendedTooltip name="ФормаОтклонитьРасширеннаяПодсказка" id="65"/>
+			</Button>
 		</ChildItems>
 	</AutoCommandBar>
 	<Events>
@@ -101,6 +113,7 @@
 			</SearchControlAddition>
 			<Events>
 				<Event name="BeforeAddRow">СписокПередНачаломДобавления</Event>
+				<Event name="BeforeLoadUserSettingsAtServer">СписокПередЗагрузкойПользовательскихНастроекНаСервере</Event>
 			</Events>
 			<ChildItems>
 				<LabelField name="Дата" id="4">
@@ -205,6 +218,7 @@
 				<Field>Список.Автор</Field>
 				<Field>Список.Проект</Field>
 				<Field>Список.ПроектВидНедвижимости</Field>
+				<Field>Список.Ссылка</Field>
 				<Field>Список.Статус</Field>
 			</UseAlways>
 			<Settings xsi:type="DynamicList">
@@ -308,6 +322,47 @@
 			</Picture>
 			<Action>ОткрытьОтчетШахматка</Action>
 			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Отклонить" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отклонить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отклонить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Use>
+				<xr:Common>false</xr:Common>
+				<xr:Value name="Role.РедактированиеСрокаБронирования">true</xr:Value>
+			</Use>
+			<Action>Отклонить</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Согласовать" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Согласовать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Согласовать</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Use>
+				<xr:Common>false</xr:Common>
+				<xr:Value name="Role.МенеджерФилиала">false</xr:Value>
+				<xr:Value name="Role.РедактированиеСрокаБронирования">true</xr:Value>
+			</Use>
+			<Action>Согласовать</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
 	</Commands>

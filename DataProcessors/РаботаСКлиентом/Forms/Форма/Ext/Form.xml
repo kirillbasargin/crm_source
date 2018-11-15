@@ -116,6 +116,24 @@
 													<CommandName>Form.Command.ОбновитьФорму</CommandName>
 													<ExtendedTooltip name="ОбновитьФормуРасширеннаяПодсказка" id="466"/>
 												</Button>
+												<InputField name="СписокВыбораТипаОН" id="1351">
+													<DataPath>СписокВыбораТипаОН</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Вид недвижимости</v8:content>
+														</v8:item>
+													</Title>
+													<Width>17</Width>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ClearButton>true</ClearButton>
+													<ContextMenu name="СписокВыбораТипаОНКонтекстноеМеню" id="1352"/>
+													<ExtendedTooltip name="СписокВыбораТипаОНРасширеннаяПодсказка" id="1353"/>
+													<Events>
+														<Event name="OnChange">СписокВыбораТипаОНПриИзменении</Event>
+													</Events>
+												</InputField>
 												<PictureDecoration name="Декорация1" id="457">
 													<Width>1</Width>
 													<Height>1</Height>
@@ -429,7 +447,10 @@
 												<ExtendedTooltip name="КлиентыУправлениеПоискомРасширеннаяПодсказка" id="13"/>
 											</SearchControlAddition>
 											<Events>
+												<Event name="OnLoadUserSettingsAtServer">КлиентыПриЗагрузкеПользовательскихНастроекНаСервере</Event>
 												<Event name="OnActivateRow">КлиентыПриАктивизацииСтроки</Event>
+												<Event name="OnGetDataAtServer">КлиентыПриПолученииДанныхНаСервере</Event>
+												<Event name="RefreshRequestProcessing">КлиентыОбработкаЗапросаОбновления</Event>
 											</Events>
 											<ChildItems>
 												<LabelField name="КлиентыФИО" id="20">
@@ -456,7 +477,7 @@
 													<ExtendedTooltip name="КлиентыКомментарийРасширеннаяПодсказка" id="52"/>
 												</LabelField>
 												<CheckBoxField name="КлиентыНеЗвонить" id="41">
-													<DataPath>Клиенты.НеЗвонить</DataPath>
+													<DataPath>~Клиенты.НеЗвонить</DataPath>
 													<Visible>false</Visible>
 													<Title>
 														<v8:item>
@@ -469,7 +490,7 @@
 													<ExtendedTooltip name="КлиентыНеЗвонитьРасширеннаяПодсказка" id="43"/>
 												</CheckBoxField>
 												<CheckBoxField name="КлиентыНеРассылатьСМС" id="44">
-													<DataPath>Клиенты.НеРассылатьСМС</DataPath>
+													<DataPath>~Клиенты.НеРассылатьСМС</DataPath>
 													<Visible>false</Visible>
 													<Title>
 														<v8:item>
@@ -482,7 +503,7 @@
 													<ExtendedTooltip name="КлиентыНеРассылатьСМСРасширеннаяПодсказка" id="46"/>
 												</CheckBoxField>
 												<CheckBoxField name="КлиентыНеРассылатьПочту" id="47">
-													<DataPath>Клиенты.НеРассылатьПочту</DataPath>
+													<DataPath>~Клиенты.НеРассылатьПочту</DataPath>
 													<Visible>false</Visible>
 													<Title>
 														<v8:item>
@@ -511,6 +532,12 @@
 													<Visible>false</Visible>
 													<ContextMenu name="КлиентыСсылкаКонтекстноеМеню" id="481"/>
 													<ExtendedTooltip name="КлиентыСсылкаРасширеннаяПодсказка" id="482"/>
+												</LabelField>
+												<LabelField name="КлиентыТипОбъектаНедвижимости" id="1348">
+													<DataPath>Клиенты.ТипОбъектаНедвижимости</DataPath>
+													<Visible>false</Visible>
+													<ContextMenu name="КлиентыТипОбъектаНедвижимостиКонтекстноеМеню" id="1349"/>
+													<ExtendedTooltip name="КлиентыТипОбъектаНедвижимостиРасширеннаяПодсказка" id="1350"/>
 												</LabelField>
 											</ChildItems>
 										</Table>
@@ -749,6 +776,13 @@
 											<ThroughAlign>Use</ThroughAlign>
 											<ExtendedTooltip name="ГруппаПравоРасширеннаяПодсказка" id="298"/>
 											<ChildItems>
+												<LabelField name="ИсточникОбращения" id="1345">
+													<DataPath>ИсточникОбращения</DataPath>
+													<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
+													<Font ref="style:NormalTextFont" bold="false" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+													<ContextMenu name="ИсточникОбращенияКонтекстноеМеню" id="1346"/>
+													<ExtendedTooltip name="ИсточникОбращенияРасширеннаяПодсказка" id="1347"/>
+												</LabelField>
 												<LabelField name="ЦельПокупки" id="299">
 													<DataPath>ЦельПокупки</DataPath>
 													<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
@@ -758,6 +792,7 @@
 												</LabelField>
 												<LabelField name="Мотивация" id="302">
 													<DataPath>Мотивация</DataPath>
+													<Visible>false</Visible>
 													<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
 													<Font ref="style:NormalTextFont" bold="false" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
 													<ContextMenu name="МотивацияКонтекстноеМеню" id="303"/>
@@ -2187,39 +2222,35 @@
 				<Field>Клиенты.Телефоны</Field>
 			</UseAlways>
 			<Settings xsi:type="DynamicList">
+				<AutoFillAvailableFields>false</AutoFillAvailableFields>
 				<ManualQuery>true</ManualQuery>
 				<DynamicDataRead>true</DynamicDataRead>
-				<QueryText>ВЫБРАТЬ
+				<QueryText>ВЫБРАТЬ РАЗЛИЧНЫЕ
 	СправочникКлиенты.Ссылка КАК Ссылка,
-	СправочникКлиенты.ПометкаУдаления КАК ПометкаУдаления,
-	СправочникКлиенты.Родитель КАК Родитель,
-	СправочникКлиенты.ЭтоГруппа КАК ЭтоГруппа,
-	СправочникКлиенты.Код КАК Код,
-	СправочникКлиенты.Наименование КАК Наименование,
 	СправочникКлиенты.ФИО КАК ФИО,
-	СправочникКлиенты.ТипКлиента КАК ТипКлиента,
-	СправочникКлиенты.МестоРождения КАК МестоРождения,
-	СправочникКлиенты.ДатаРождения КАК ДатаРождения,
-	СправочникКлиенты.Пол КАК Пол,
-	СправочникКлиенты.Брокер КАК Брокер,
 	СправочникКлиенты.ОсновнойТелефон КАК ОсновнойТелефон,
-	СправочникКлиенты.НеЗвонить КАК НеЗвонить,
-	СправочникКлиенты.НеРассылатьСМС КАК НеРассылатьСМС,
-	СправочникКлиенты.НеРассылатьПочту КАК НеРассылатьПочту,
 	СправочникКлиенты.Комментарий КАК Комментарий,
-	СправочникКлиенты.Ответственный КАК Ответственный,
-	СправочникКлиенты.Автор КАК Автор,
-	СправочникКлиенты.Предопределенный КАК Предопределенный,
-	СправочникКлиенты.ИмяПредопределенныхДанных КАК ИмяПредопределенныхДанных,
 	ЕСТЬNULL(КлиентыКонтактнаяИнформация.Телефоны, "") КАК Телефоны,
-	ЕСТЬNULL(КлиентыКонтактнаяИнформация.Email, "") КАК Email
+	ЕСТЬNULL(КлиентыКонтактнаяИнформация.Email, "") КАК Email,
+	ЕСТЬNULL(ПараметрыЗапросаЛинейный.ТипОбъектаНедвижимости, ЗНАЧЕНИЕ(Перечисление.ВидыОбъектовНедвижимости.ПустаяСсылка)) КАК ТипОбъектаНедвижимости
+{ВЫБРАТЬ
+	Ссылка,
+	ФИО,
+	ОсновнойТелефон,
+	Комментарий,
+	Телефоны,
+	Email,
+	ТипОбъектаНедвижимости}
 ИЗ
 	Справочник.Клиенты КАК СправочникКлиенты
-		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.КлиентыКонтактнаяИнформация КАК КлиентыКонтактнаяИнформация
-		ПО (КлиентыКонтактнаяИнформация.Клиент = СправочникКлиенты.Ссылка)
+		{ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.КлиентыКонтактнаяИнформация КАК КлиентыКонтактнаяИнформация
+		ПО (КлиентыКонтактнаяИнформация.Клиент = СправочникКлиенты.Ссылка)}
+		{ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ПараметрыЗапросаЛинейный КАК ПараметрыЗапросаЛинейный
+		ПО (ПараметрыЗапросаЛинейный.Клиент = СправочникКлиенты.Ссылка)}
 {ГДЕ
 	(КлиентыКонтактнаяИнформация.Телефоны ПОДОБНО &amp;Телефоны),
-	(СправочникКлиенты.ФИО ПОДОБНО &amp;ФИО)}</QueryText>
+	(СправочникКлиенты.ФИО ПОДОБНО &amp;ФИО),
+	(ПараметрыЗапросаЛинейный.ТипОбъектаНедвижимости = &amp;ТипОН)}</QueryText>
 				<MainTable>Catalog.Клиенты</MainTable>
 				<AutoSaveUserSettings>false</AutoSaveUserSettings>
 				<GetInvisibleFieldPresentations>false</GetInvisibleFieldPresentations>
@@ -3153,6 +3184,54 @@
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
+		<Attribute name="ИсточникОбращения" id="40">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Источник обращения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>500</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СписокВыбораТипаОН" id="41">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список выбора типа ОН</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.ВидыОбъектовНедвижимости</v8:Type>
+			</Type>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ИсточникОбращения</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ИсточникОбращения</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:string">Рекомендации</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#33CC33</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
 	</Attributes>
 	<Commands>
 		<Command name="СоздатьЗапрос" id="1">

@@ -716,6 +716,79 @@
 								</LabelDecoration>
 							</ChildItems>
 						</UsualGroup>
+						<UsualGroup name="ГруппаЗаявкиНаВыводВПродажу" id="353">
+							<UserVisible>
+								<xr:Common>false</xr:Common>
+								<xr:Value name="Role.Администрирование">true</xr:Value>
+								<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+								<xr:Value name="Role.РедактированиеСрокаБронирования">true</xr:Value>
+							</UserVisible>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Заявки на вывод в продажу</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа бронь</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Width>30</Width>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаЗаявкиНаВыводВПродажуРасширеннаяПодсказка" id="354"/>
+							<ChildItems>
+								<LabelDecoration name="ВыводВПул_ЗаявкаНаВыводВПродажу" id="355">
+									<Width>21</Width>
+									<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Согласование на вывод в пул
+</v8:content>
+										</v8:item>
+									</Title>
+									<Hyperlink>true</Hyperlink>
+									<ContextMenu name="ВыводВПул_ЗаявкаНаВыводВПродажуКонтекстноеМеню" id="356"/>
+									<ExtendedTooltip name="ВыводВПул_ЗаявкаНаВыводВПродажуРасширеннаяПодсказка" id="357"/>
+									<Events>
+										<Event name="Click">ВыводВПродажу_ЗаявкаНаВыводНажатие</Event>
+									</Events>
+								</LabelDecoration>
+								<LabelDecoration name="ВыводВПродажу_Тире" id="358">
+									<Width>1</Width>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>-</v8:content>
+										</v8:item>
+									</Title>
+									<HorizontalAlign>Right</HorizontalAlign>
+									<ContextMenu name="ВыводВПродажу_ТиреКонтекстноеМеню" id="359"/>
+									<ExtendedTooltip name="ВыводВПродажу_ТиреРасширеннаяПодсказка" id="360"/>
+								</LabelDecoration>
+								<LabelDecoration name="ВыводВПродажу_Количество" id="361">
+									<Width>5</Width>
+									<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>0</v8:content>
+										</v8:item>
+									</Title>
+									<Hyperlink>true</Hyperlink>
+									<HorizontalAlign>Right</HorizontalAlign>
+									<ContextMenu name="ВыводВПродажу_КоличествоКонтекстноеМеню" id="362"/>
+									<ExtendedTooltip name="ВыводВПродажу_КоличествоРасширеннаяПодсказка" id="363"/>
+									<Events>
+										<Event name="Click">ВыводВПродажу_ЗаявкаНаВыводНажатие</Event>
+									</Events>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
 						<UsualGroup name="ГруппаНаправленыНаКонсультацию" id="330">
 							<UserVisible>
 								<xr:Common>false</xr:Common>
@@ -1759,6 +1832,27 @@
 									</Title>
 									<ExtendedTooltip name="ОтчетПоВзаимодействиямЗУРасширеннаяПодсказка" id="238"/>
 								</Button>
+								<Button name="ОтчетПоВзаимодействиямЗУ_Подробный" id="351">
+									<Type>Hyperlink</Type>
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+										<xr:Value name="Role.Администрирование">true</xr:Value>
+										<xr:Value name="Role.ИспользованиеРабочегоСтолаМенеджераОСС">false</xr:Value>
+										<xr:Value name="Role.МенеджерИпотечный">false</xr:Value>
+										<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+										<xr:Value name="Role.РедактированиеСрокаБронированиеВЗаявкеНаСделку">true</xr:Value>
+										<xr:Value name="Role.Юрист">false</xr:Value>
+									</UserVisible>
+									<CommandName>Form.Command.ОтчетПоВзаимодействиямЗУ_Подробный</CommandName>
+									<Font ref="style:NormalTextFont" faceName="Calibri" height="14" kind="StyleItem"/>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Взаимодействия ЗУ(подробный)</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ОтчетПоВзаимодействиямЗУ_ПодробныйРасширеннаяПодсказка" id="352"/>
+								</Button>
 								<Button name="ОтчетПоИсточникамРекламы" id="239">
 									<Type>Hyperlink</Type>
 									<UserVisible>
@@ -2312,6 +2406,21 @@
 			</ToolTip>
 			<Action>ИпотечныеПоказателиПроекты</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОтчетПоВзаимодействиямЗУ_Подробный" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отчет по взаимодействиям ЗУ подробный</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отчет по взаимодействиям з у подробный</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОтчетПоВзаимодействиямЗУ_Подробный</Action>
 		</Command>
 	</Commands>
 </Form>

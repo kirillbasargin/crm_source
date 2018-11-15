@@ -114,9 +114,20 @@
 			<dataPath>ЦелиПокупки.ЦельПокупки</dataPath>
 			<field>ЦелиПокупки.ЦельПокупки</field>
 		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИсточникОбращения</dataPath>
+			<field>ИсточникОбращения</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Источник обращения</v8:content>
+				</v8:item>
+			</title>
+		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ
 	Запрос.Ссылка КАК Ссылка,
+	Запрос.РасшифровкаИсточниковПриходаКлиента КАК ИсточникОбращения,
 	Запрос.Мотивации.(
 		Ссылка КАК Ссылка,
 		НомерСтроки КАК НомерСтроки,
@@ -244,6 +255,9 @@
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>Отделка</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ИсточникОбращения</dcsset:field>
 				</dcsset:item>
 			</dcsset:selection>
 			<dcsset:filter>

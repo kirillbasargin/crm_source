@@ -113,7 +113,7 @@
 					<Button name="ФормаДокументВыдачаДисконтныйКартСоздатьНаОсновании" id="943">
 						<Type>CommandBarButton</Type>
 						<Visible>false</Visible>
-						<CommandName>Document.ВыдачаДисконтныйКарт.StandardCommand.CreateBasedOn</CommandName>
+						<CommandName>Document.ВыдачаДисконтныхКарт.StandardCommand.CreateBasedOn</CommandName>
 						<DataPath>Объект.Ref</DataPath>
 						<ExtendedTooltip name="ФормаДокументВыдачаДисконтныйКартСоздатьНаОснованииРасширеннаяПодсказка" id="944"/>
 					</Button>
@@ -2249,6 +2249,8 @@
 									<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
 									<FooterHorizontalAlign>Center</FooterHorizontalAlign>
 									<Width>5</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<HorizontalStretch>false</HorizontalStretch>
 									<ContextMenu name="ЛистингОбъектНедвижимостиКонтекстноеМеню" id="265"/>
 									<ExtendedTooltip name="ЛистингОбъектНедвижимостиРасширеннаяПодсказка" id="266"/>
 								</InputField>
@@ -2262,7 +2264,8 @@
 									</Title>
 									<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
 									<EditMode>EnterOnInput</EditMode>
-									<Width>6</Width>
+									<Width>5</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
 									<HorizontalStretch>false</HorizontalStretch>
 									<ContextMenu name="ЛистингСтроительныйНомерКонтекстноеМеню" id="925"/>
 									<ExtendedTooltip name="ЛистингСтроительныйНомерРасширеннаяПодсказка" id="926"/>
@@ -2271,6 +2274,10 @@
 									<DataPath>Листинг.Статус</DataPath>
 									<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
 									<EditMode>EnterOnInput</EditMode>
+									<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+									<Width>7</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<HorizontalStretch>false</HorizontalStretch>
 									<ContextMenu name="ЛистингСтатусКонтекстноеМеню" id="890"/>
 									<ExtendedTooltip name="ЛистингСтатусРасширеннаяПодсказка" id="891"/>
 								</InputField>
@@ -2288,7 +2295,9 @@
 									<EditMode>EnterOnInput</EditMode>
 									<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
 									<FooterHorizontalAlign>Center</FooterHorizontalAlign>
-									<Width>10</Width>
+									<Width>7</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<HorizontalStretch>false</HorizontalStretch>
 									<ContextMenu name="ЛистингКоличествоКомнатКонтекстноеМеню" id="301"/>
 									<ExtendedTooltip name="ЛистингКоличествоКомнатРасширеннаяПодсказка" id="302"/>
 								</InputField>
@@ -2296,6 +2305,9 @@
 									<DataPath>Листинг.ПлощадьПроектная</DataPath>
 									<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
 									<EditMode>EnterOnInput</EditMode>
+									<Width>14</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<HorizontalStretch>false</HorizontalStretch>
 									<ContextMenu name="ЛистингПлощадьПроектнаяКонтекстноеМеню" id="922"/>
 									<ExtendedTooltip name="ЛистингПлощадьПроектнаяРасширеннаяПодсказка" id="923"/>
 								</InputField>
@@ -2313,7 +2325,9 @@
 									<EditMode>EnterOnInput</EditMode>
 									<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
 									<FooterHorizontalAlign>Center</FooterHorizontalAlign>
-									<Width>10</Width>
+									<Width>5</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<HorizontalStretch>false</HorizontalStretch>
 									<ContextMenu name="ЛистингПлощадьКонтекстноеМеню" id="304"/>
 									<ExtendedTooltip name="ЛистингПлощадьРасширеннаяПодсказка" id="305"/>
 								</InputField>
@@ -2325,6 +2339,9 @@
 									<EditMode>EnterOnInput</EditMode>
 									<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
 									<FooterHorizontalAlign>Center</FooterHorizontalAlign>
+									<Width>11</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<HorizontalStretch>false</HorizontalStretch>
 									<ContextMenu name="ЛистингСтоимостьКонтекстноеМеню" id="853"/>
 									<ExtendedTooltip name="ЛистингСтоимостьРасширеннаяПодсказка" id="854"/>
 								</InputField>
@@ -2336,6 +2353,9 @@
 									<EditMode>EnterOnInput</EditMode>
 									<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
 									<FooterHorizontalAlign>Center</FooterHorizontalAlign>
+									<Width>8</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<HorizontalStretch>false</HorizontalStretch>
 									<ContextMenu name="ЛистингМаксимальнаяСкидкаКонтекстноеМеню" id="856"/>
 									<ExtendedTooltip name="ЛистингМаксимальнаяСкидкаРасширеннаяПодсказка" id="857"/>
 								</InputField>
@@ -2347,6 +2367,9 @@
 									<EditMode>EnterOnInput</EditMode>
 									<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
 									<FooterHorizontalAlign>Center</FooterHorizontalAlign>
+									<Width>11</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<HorizontalStretch>false</HorizontalStretch>
 									<ContextMenu name="ЛистингСтоимостьСоСкидкойКонтекстноеМеню" id="859"/>
 									<ExtendedTooltip name="ЛистингСтоимостьСоСкидкойРасширеннаяПодсказка" id="860"/>
 								</InputField>
@@ -2358,6 +2381,9 @@
 									<EditMode>EnterOnInput</EditMode>
 									<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
 									<FooterHorizontalAlign>Center</FooterHorizontalAlign>
+									<Width>4</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<HorizontalStretch>false</HorizontalStretch>
 									<ContextMenu name="ЛистингЭтажКонтекстноеМеню" id="289"/>
 									<ExtendedTooltip name="ЛистингЭтажРасширеннаяПодсказка" id="290"/>
 								</InputField>
@@ -2369,6 +2395,9 @@
 									<EditMode>EnterOnInput</EditMode>
 									<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
 									<FooterHorizontalAlign>Center</FooterHorizontalAlign>
+									<Width>8</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<HorizontalStretch>false</HorizontalStretch>
 									<ContextMenu name="ЛистингВидМатериалаКонтекстноеМеню" id="286"/>
 									<ExtendedTooltip name="ЛистингВидМатериалаРасширеннаяПодсказка" id="287"/>
 								</InputField>
@@ -2380,8 +2409,22 @@
 									<EditMode>EnterOnInput</EditMode>
 									<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
 									<FooterHorizontalAlign>Center</FooterHorizontalAlign>
+									<Width>7</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<HorizontalStretch>false</HorizontalStretch>
 									<ContextMenu name="ЛистингТипОтделкиКонтекстноеМеню" id="307"/>
 									<ExtendedTooltip name="ЛистингТипОтделкиРасширеннаяПодсказка" id="308"/>
+								</InputField>
+								<InputField name="ЛистингСтатусПула" id="947">
+									<DataPath>Листинг.СтатусПула</DataPath>
+									<TitleTextColor>style:CRM_ЦветЗаголовка</TitleTextColor>
+									<EditMode>EnterOnInput</EditMode>
+									<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+									<Width>7</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ContextMenu name="ЛистингСтатусПулаКонтекстноеМеню" id="948"/>
+									<ExtendedTooltip name="ЛистингСтатусПулаРасширеннаяПодсказка" id="949"/>
 								</InputField>
 							</ChildItems>
 						</Table>
@@ -2820,6 +2863,17 @@
 						</v8:StringQualifiers>
 					</Type>
 				</Column>
+				<Column name="СтатусПула" id="29">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Статус пула</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:EnumRef.СтатусыПулов</v8:Type>
+					</Type>
+				</Column>
 			</Columns>
 		</Attribute>
 		<Attribute name="ИзменялисьДанныеВЛистинге" id="4">
@@ -3110,6 +3164,17 @@
 				<v8:Type>cfg:EnumRef.СтадииЗапроса</v8:Type>
 			</Type>
 		</Attribute>
+		<Attribute name="Рекомендации" id="26">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Рекомендации</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.РасшифровкаИсточниковПриходаКлиента</v8:Type>
+			</Type>
+		</Attribute>
 		<ConditionalAppearance>
 			<dcsset:item>
 				<dcsset:selection>
@@ -3210,6 +3275,31 @@
 					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 						<dcscor:parameter>ЦветФона</dcscor:parameter>
 						<dcscor:value xsi:type="v8ui:Color">#FFFF00</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>РасшифровкаИсточниковПриходаКлиента</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">Объект.РасшифровкаИсточниковПриходаКлиента</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="dcscor:Field">Рекомендации</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>ЦветФона</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#33CC33</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">#33CC33</dcscor:value>
 					</dcscor:item>
 				</dcsset:appearance>
 			</dcsset:item>
