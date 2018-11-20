@@ -279,9 +279,29 @@
 			<dataPath>ПериодВзаимодействия</dataPath>
 			<field>ПериодВзаимодействия</field>
 		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Описание</dataPath>
+			<field>Описание</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Описание</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ФормыОплатыСтрокой</dataPath>
+			<field>ФормыОплатыСтрокой</field>
+		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
 	Взаимодействия.Взаимодействие КАК Взаимодействие,
+	ВЫБОР
+		КОГДА НЕ(Взаимодействия.Взаимодействие ССЫЛКА Справочник.Сделки
+					ИЛИ Взаимодействия.Взаимодействие ССЫЛКА Документ.ЗаявкаНаСделку)
+			ТОГДА Взаимодействия.Взаимодействие.Описание
+		ИНАЧЕ ""
+	КОНЕЦ КАК Описание,	
 	Взаимодействия.ГруппаОтветственного КАК ГруппаОтветственного,
 	Взаимодействия.ТипВзаимодействия КАК ТипВзаимодействия,
 	Взаимодействия.ДатаВзаимодействия КАК ДатаВзаимодействия,
@@ -305,7 +325,7 @@
 	ПараметрыЗапросаЛинейный.УточнениеРасшифровкиИсточникаПрихода КАК УточнениеРасшифровкиИсточникаПрихода,
 	ПараметрыЗапросаЛинейный.Статус СтатусЗапроса, 
 	1 КАК Количество,
-	//Взаимодействия.ФормыОплатыСтрокой КАК ФормыОплатыСтрокой,
+	Взаимодействия.ФормыОплатыСтрокой КАК ФормыОплатыСтрокой,
 	Взаимодействия.МестоПроведенияВстречи КАК МестоПроведенияВстречи,
 	Взаимодействия.Офис КАК Офис,
 	Взаимодействия.Взаимодействие.Автор КАК ВзаимодействиеАвтор,
@@ -329,10 +349,11 @@
 	УточнениеРасшифровкиИсточникаПрихода.*,
 	СтатусЗапроса.*,
 	Количество,
-	//ФормыОплатыСтрокой,
+	ФормыОплатыСтрокой,
 	МестоПроведенияВстречи.*,
 	Офис,
-	ВзаимодействиеАвтор.*}
+	ВзаимодействиеАвтор.*,
+	Описание}
 ИЗ
 	РегистрСведений.Взаимодействия КАК Взаимодействия
 		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.Запрос КАК Запрос
@@ -1075,8 +1096,9 @@
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:FilterItemComparison">
 					<dcsset:left xsi:type="dcscor:Field">ГруппаОтветственного.Наименование</dcsset:left>
-					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:comparisonType>InList</dcsset:comparisonType>
 					<dcsset:right xsi:type="xs:string">ГПТ</dcsset:right>
+					<dcsset:right xsi:type="xs:string">Координаторы</dcsset:right>
 					<dcsset:viewMode>Inaccessible</dcsset:viewMode>
 				</dcsset:item>
 			</dcsset:filter>
@@ -2280,6 +2302,9 @@
 								</dcsset:item>
 								<dcsset:item xsi:type="dcsset:SelectedItemField">
 									<dcsset:field>Мотивации</dcsset:field>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>Описание</dcsset:field>
 								</dcsset:item>
 							</dcsset:selection>
 							<dcsset:outputParameters>
