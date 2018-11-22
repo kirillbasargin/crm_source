@@ -48,6 +48,17 @@
 				<CommandName>Form.StandardCommand.Close</CommandName>
 				<ExtendedTooltip name="ФормаЗакрытьРасширеннаяПодсказка" id="97"/>
 			</Button>
+			<Button name="ФормаСохранитьОписание" id="147">
+				<Type>CommandBarButton</Type>
+				<UserVisible>
+					<xr:Common>false</xr:Common>
+					<xr:Value name="Role.АдминистраторСистемы">true</xr:Value>
+					<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+					<xr:Value name="Role.РедактированиеОписанияОН">true</xr:Value>
+				</UserVisible>
+				<CommandName>Form.Command.СохранитьОписание</CommandName>
+				<ExtendedTooltip name="ФормаСохранитьОписаниеРасширеннаяПодсказка" id="148"/>
+			</Button>
 		</ChildItems>
 	</AutoCommandBar>
 	<Events>
@@ -84,6 +95,7 @@
 			</ChildItems>
 		</UsualGroup>
 		<UsualGroup name="ГруппаШапка" id="49">
+			<ReadOnly>true</ReadOnly>
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
@@ -270,7 +282,6 @@
 							<ExtendedTooltip name="СобственникРасширеннаяПодсказка" id="109"/>
 						</InputField>
 						<InputField name="СтоимостьПоДоговору" id="28">
-							<DataPath>1/0:a9e96709-db6c-49de-9d6b-240651f14e03</DataPath>
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
@@ -343,6 +354,7 @@
 			</ChildItems>
 		</UsualGroup>
 		<UsualGroup name="ГруппаОсновнаяПанель" id="59">
+			<ReadOnly>true</ReadOnly>
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
@@ -515,11 +527,28 @@
 		</UsualGroup>
 		<InputField name="Примечание" id="37">
 			<DataPath>Объект.Примечание</DataPath>
+			<ReadOnly>true</ReadOnly>
 			<EditMode>EnterOnInput</EditMode>
 			<AutoMaxWidth>false</AutoMaxWidth>
 			<HorizontalStretch>true</HorizontalStretch>
 			<ContextMenu name="ПримечаниеКонтекстноеМеню" id="38"/>
 			<ExtendedTooltip name="ПримечаниеРасширеннаяПодсказка" id="39"/>
+		</InputField>
+		<InputField name="Описание" id="144">
+			<DataPath>Объект.Описание</DataPath>
+			<UserVisible>
+				<xr:Common>false</xr:Common>
+				<xr:Value name="Role.АдминистраторСистемы">true</xr:Value>
+				<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+				<xr:Value name="Role.РедактированиеОписанияОН">true</xr:Value>
+			</UserVisible>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<Height>2</Height>
+			<AutoMaxHeight>false</AutoMaxHeight>
+			<HorizontalStretch>true</HorizontalStretch>
+			<VerticalStretch>false</VerticalStretch>
+			<ContextMenu name="ОписаниеКонтекстноеМеню" id="145"/>
+			<ExtendedTooltip name="ОписаниеРасширеннаяПодсказка" id="146"/>
 		</InputField>
 	</ChildItems>
 	<Attributes>
@@ -835,6 +864,26 @@
 			</ToolTip>
 			<Action>ОткрытьПланировкуЭтажа</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="СохранитьОписание" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить описание</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить описание</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.SaveFile</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СохранитьОписание</Action>
+			<Representation>TextPicture</Representation>
 		</Command>
 	</Commands>
 </Form>
